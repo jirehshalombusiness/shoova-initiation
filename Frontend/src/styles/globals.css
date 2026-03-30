@@ -35,3 +35,45 @@ body {
     transform: rotate(360deg);
   }
 }
+
+#cc-main {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px 20px;
+}
+
+#cc-main .cc__modal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* TEXT */
+#cc-main .cc__text {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* BUTTONS */
+#cc-main .cc__btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ACCEPT BUTTON */
+#cc-main .cc__btn--primary {
+  background-color: #166534;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* REMOVE BULKY BUTTON STYLE */
+#cc-main .cc__btn {
+  min-width: auto;
+}
