@@ -98,7 +98,7 @@ export default function CampusExperienceSection() {
           className="relative h-[400px] md:h-[500px] overflow-hidden rounded-2xl"
         >
           <img
-            src="/img/campus.png"
+            src="/img/plan.png"
             alt="Campus Academic Center"
             className="w-full h-full object-cover"
           />

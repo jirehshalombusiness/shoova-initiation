@@ -58,7 +58,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
       name: "William Agyekum",
       role: "President & Executive Director",
       detail: "Project Management — USA",
-      image: "/img/willie.jpg",
+      image: "/img/portriat.jpg",
     },
     {
       name: "Salome Agyekum, CA",
@@ -76,7 +76,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
       name: "Julius Botchchway",
       role: "Director of Ghana Operations",
       detail: "IT Infrastructure — Ghana",
-      image: "/img/julius.jpeg",
+      image: "/img/juliuss.jpg",
     },
     {
       name: "Isaac Waddy Adjei-Ampofo",
@@ -361,17 +361,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
 
                 </p>
-
-                <p className="text-lg text-text mb-6 leading-relaxed">
-
-                  For years, our professional lives were rooted in the corporate
-                  world — portfolio management, accounting precision, and
-                  strategic project execution. But when we looked at the landscape
-                  of the Eastern Region, we saw a different kind of portfolio in
-                  need of transformation: the land itself.
-
-                </p>
-
                 <p className="text-lg text-text leading-relaxed">
 
                   Shoova Initiative was created to apply the same analytical
@@ -660,7 +649,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 to="/donate"
                 className="bg-secondary hover:bg-secondaryHover text-white px-8 py-4 rounded-full font-semibold transition shadow-lg"
               >
-                Sponsor a Future Architect
+                Sponsor a Future Leader
               </Link>
 
               <Link

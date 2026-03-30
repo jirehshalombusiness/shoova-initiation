@@ -24,7 +24,7 @@ const Footer = () => {
               </h3>
             </div>
 
-            <p className="text-white/80 text-sm leading-relaxed mb-5">
+            <p className="text-white/80 text-md leading-relaxed mb-5">
               Building a restoration movement in Ghana’s Eastern Region—
               restoring land, equipping youth, and rebuilding communities.
             </p>
@@ -52,11 +52,11 @@ const Footer = () => {
           {/* ================= CONTACT ================= */}
           <div className="max-w-xs">
 
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60 mb-5">
+            <h4 className="text-md font-semibold uppercase tracking-[0.2em] text-white mb-5">
               Offices & Contact
             </h4>
 
-            <div className="space-y-5 text-white/80 text-sm">
+            <div className="space-y-5 text-white/80 text-md">
 
               <div>
                 <p className="font-semibold text-white mb-1">Ghana Office</p>
@@ -65,7 +65,8 @@ const Footer = () => {
 
               <div>
                 <p className="font-semibold text-white mb-1">United States Office</p>
-                <p className="text-white/70">St. Michael, Minnesota</p>
+                <p className="text-white/70">5775 Wayzata Boulevard, Suite 700 </p>
+                <p className="text-white/70">St. Louis Park, MN 55416, USA</p>
               </div>
 
               <div className="pt-2 space-y-1 text-white/70">
@@ -82,11 +83,11 @@ const Footer = () => {
           {/* ================= TRUST ================= */}
           <div className="max-w-xs">
 
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60 mb-5">
+            <h4 className="text-md font-semibold uppercase tracking-[0.2em] text-white mb-5">
               Trust & Transparency
             </h4>
 
-            <p className="text-white/80 text-sm leading-relaxed mb-6">
+            <p className="text-white/80 text-md leading-relaxed mb-6">
               Your support funds training, land restoration, and the Shoova
               Restoration Campus—creating sustainable pathways beyond illegal mining.
             </p>
@@ -94,11 +95,11 @@ const Footer = () => {
             {/* LEGAL BLOCK */}
             <div className="border-t border-white/10 pt-4">
 
-              <p className="text-white text-sm font-medium">
+              <p className="text-white text-md font-medium">
                 Shoova Initiative is a 501(c)(3) nonprofit public charity.
               </p>
 
-              <p className="text-white/50 text-xs mt-1 leading-relaxed">
+              <p className="text-white/50 text-md mt-1 leading-relaxed">
                 Your donations are tax-deductible as permitted by law.
               </p>
 

@@ -20,110 +20,110 @@ import CountUp from "../components/CountUp"
 
 export const IndexPage = ({ className, children, variant, contentKey, ...props }) => {
 
-  const [birthday, setBirthday] = useState(null);
-  const [subscribed, setSubscribed] = useState(false);
+  // const [birthday, setBirthday] = useState(null);
+  // const [subscribed, setSubscribed] = useState(false);
 
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    birthdayMonth: "",
-    birthdayDay: "",
-    birthdayYear: "",
-    birthdayReminder: false
-  });
+  // const [formData, setFormData] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   birthdayMonth: "",
+  //   birthdayDay: "",
+  //   birthdayYear: "",
+  //   birthdayReminder: false
+  // });
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  // const handleChange = (e) => {
+  //   const { name, value, type, checked } = e.target;
 
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value
-    });
-  };
+  //   setFormData({
+  //     ...formData,
+  //     [name]: type === "checkbox" ? checked : value
+  //   });
+  // };
+  // const handleSubscribe = async (e) => {
 
-  const handleSubscribe = async (e) => {
+  //   e.preventDefault();
 
-    e.preventDefault();
+  //   try {
 
-    try {
+  //     const res = await fetch("https://shoova-initiation.onrender.com/newsletter/subscribe", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify({
+  //         ...formData,
+  //         birthday: birthday ? birthday.toISOString() : null
+  //       })
+  //     });
 
-      const res = await fetch("https://shoova-initiation.onrender.com/newsletter/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          ...formData,
-          birthday: birthday ? birthday.toISOString() : null
-        })
-      });
+  //     const data = await res.json();
 
-      const data = await res.json();
+  //     console.log("SERVER RESPONSE:", data);
 
-      console.log("SERVER RESPONSE:", data);
+  //     if (data.success) {
+  //       setSubscribed(true);
 
-      if (data.success) {
-        setSubscribed(true);
+  //       // clear form
+  //       setFormData({
+  //         firstName: "",
+  //         lastName: "",
+  //         email: "",
+  //         birthdayMonth: "",
+  //         birthdayDay: "",
+  //         birthdayYear: "",
+  //         birthdayReminder: false
+  //       });
 
-        // clear form
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          birthdayMonth: "",
-          birthdayDay: "",
-          birthdayYear: "",
-          birthdayReminder: false
-        });
+  //       setBirthday(null);
 
-        setBirthday(null);
+  //       window.scrollTo({ top: 0, behavior: "smooth" });
+  //     }
 
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+  //   } catch (error) {
 
-    } catch (error) {
+  //     console.error("Subscription failed:", error);
 
-      console.error("Subscription failed:", error);
+  //   }
 
-    }
+  // };
 
-  };
-
-  const impactTabs = [
-    {
-      id: "environment",
-      label: "Environment",
-      eyebrow: "WHY RESTORATION?",
-      title: "Because healthy land sustains life",
-      image: "/img/envi.jpg",
-      text: "Reclaiming land damaged by illegal mining restores soil health, protects water sources, and rebuilds ecosystems that communities depend on.",
-    },
-    {
-      id: "youth",
-      label: "Youth",
-      eyebrow: "WHY YOUTH?",
-      title: "Because opportunity changes destinies",
-      image: "/img/youth.jpg",
-      text: "When young people gain technical and environmental skills, they can build dignified livelihoods that replace destructive mining practices.",
-    },
-    {
-      id: "communities",
-      label: "Communities",
-      eyebrow: "WHY COMMUNITIES?",
-      title: "Because restoration begins at home",
-      image: "/img/community.jpg",
-      text: "Communities that lead restoration efforts protect their environment while creating sustainable opportunities for present and future generations.",
-    },
-    {
-      id: "future",
-      label: "Future",
-      eyebrow: "WHY THE FUTURE?",
-      title: "Because what we restore today shapes tomorrow",
-      image: "/img/future.jpg",
-      text: "Restoring landscapes today ensures that future generations inherit healthier ecosystems, stronger livelihoods, and renewed hope.",
-    },
-  ];
+  // const impactTabs = [
+  //   {
+  //     id: "environment",
+  //     label: "Environment",
+  //     eyebrow: "WHY RESTORATION?",
+  //     title: "Because healthy land sustains life",
+  //     image: "/img/envi.jpg",
+  //     text: "Reclaiming land damaged by illegal mining restores soil health, protects water sources, and rebuilds ecosystems that communities depend on.",
+  //   },
+  //   {
+  //     id: "youth",
+  //     label: "Youth",
+  //     eyebrow: "WHY YOUTH?",
+  //     title: "Because opportunity changes destinies",
+  //     image: "/img/youth.jpg",
+  //     text: "When young people gain technical and environmental skills, they can build dignified livelihoods that replace destructive mining practices.",
+  //   },
+  //   {
+  //     id: "communities",
+  //     label: "Communities",
+  //     eyebrow: "WHY COMMUNITIES?",
+  //     title: "Because restoration begins at home",
+  //     image: "/img/community.jpg",
+  //     text: "Communities that lead restoration efforts protect their environment while creating sustainable opportunities for present and future generations.",
+  //   },
+  //   {
+  //     id: "future",
+  //     label: "Future",
+  //     eyebrow: "WHY THE FUTURE?",
+  //     title: "Because what we restore today shapes tomorrow",
+  //     image: "/img/future.jpg",
+  //     text: "Restoring landscapes today ensures that future generations inherit healthier ecosystems, stronger livelihoods, and renewed hope.",
+  //   },
+  // ];
+  // const [activeImpact, setActiveImpact] = useState(impactTabs[0]);
 
   const videoRef = useRef(null);
 
@@ -140,9 +140,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const [activeImpact, setActiveImpact] = useState(impactTabs[0]);
-
 
 
   const container = {
@@ -192,8 +189,8 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
   return (
 
     <div className="font-body cursor-default antialiased">
-      {subscribed && (
-        <div className="fixed top-0 left-0 w-full bg-primary text-white py-4 px-6 flex justify-between items-center z-[9999] shadow-lg">
+      {/* {subscribed && (
+        <div className="fixed -top-2 left-0 w-full bg-primary text-white py-4 px-6 flex justify-between items-center z-[9999] shadow-lg">
 
           <p className="text-sm md:text-base">
             You're signed up! You'll now receive Shoova restoration updates.
@@ -207,7 +204,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           </button>
 
         </div>
-      )}
+      )} */}
       <>
         {/* Hero Section */}
         <motion.section
@@ -246,7 +243,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                 <div className="bg-white text-black px-4 py-2 rounded-sm shadow">
                   <span className="text-2xl md:text-4xl lg:text-5xl font-bold">
-                    Halt Galamsey,
+                    Halt illegal mining,
                   </span>
                 </div>
                 <div className="bg-white px-4 ml-10 py-2 rounded-sm shadow">
@@ -269,13 +266,13 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </div>
 
               {/* 🔥 CTA (MATCHED TO DESIGN SYSTEM) */}
-              <Link
+              {/* <Link
                 to="/donate"
                 className="inline-flex items-center gap-2 bg-secondary hover:bg-secondaryHover text-white px-6 py-3 rounded-sm font-bold text-sm md:text-base tracking-wide transition shadow-md active:scale-[0.97]"
               >
                 Donate Now
                 <span className="text-lg">→</span>
-              </Link>
+              </Link> */}
 
             </div>
           </div>
@@ -312,13 +309,14 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               <div className="relative">
 
                 <motion.img
-                  src="/img/remove.png"
+                  src="/img/couples2.png"
                   alt="Shoova Founder"
-                  className="w-[340px] md:w-[420px] object-contain drop-shadow-2xl"
+                  className=" w-[340px] md:w-[520px] object-contain drop-shadow-2xl"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1 }}
                 />
+                
 
                 {/* glow */}
                 <motion.div
@@ -340,28 +338,42 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               >
                 Founder’s Message
               </motion.p>
+              <motion.p
+                variants={fadeUp}
+                className="text-sm uppercase tracking-widest text-primary font-semibold mb-4"
+              >
+                Rooted in a Higher Vision
+              </motion.p>
+
 
               {/* quote */}
               <motion.div
                 variants={fadeUp}
                 className="relative pl-6 mb-8"
               >
-                <span className="absolute left-0 top-0 text-4xl text-secondary/30 leading-none">
+                <span className="absolute left-0 top-0 text-4xl text-secondary leading-none">
                   “
                 </span>
 
-                <p className="text-2xl md:text-3xl font-semibold text-gray-900 leading-snug mb-4">
-                  For years, our professional lives were defined by the language of the
-                  corporate world, portfolio management, accounting precision, and strategic scaling.
+                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug">
+                  The desolation caused by illegal mining (galamsey) isn&#39;t just an environmental crisis; it is a human one.
+                  We saw a generation of youth trapped in extractive labor and a landscape that had become prey to
+                  destruction. It was then that we realized our skills weren&#39;t just to help the boardroom, they were also
+                  meant to help the people and the land.
+                </p>
+                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug ">
+                  Our motivation and love sacrifice are anchored in Isaiah 42:22: &#39;But this is a people plundered and
+                  looted; all of them are trapped in holes and hidden in prisons. They have become prey with no one to
+                  rescue them, spoil with no one to say, Restore!&#39;
+                </p>
+                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug mb-4">
+                  We are here to say, &#39;Restore.&#39; We invite you to join us as we turn the &#39;cracked earth&#39; of the past into
+                  the &#39;Rising Sun&#39; of a sustainable future for Ghana.
                 </p>
 
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  We built careers centered on optimization and efficiency. But as we looked at the
-                  landscape of the Eastern Region in Ghana, we saw a different kind of "portfolio"
-                  that was in desperate need of a turnaround.
-                </p>
 
-                <span className="text-secondary/30 text-3xl ml-1">”</span>
+
+                <span className="text-secondary text-3xl ml-1">”</span>
               </motion.div>
 
               {/* NAME */}
@@ -370,8 +382,8 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 transition={{ delay: 0.2 }}
                 className="text-gray-800 font-medium"
               >
-                <span className="font-semibold">William Agyekum</span>
-                <span className="text-gray-500">, Founder, Shoova Initiative</span>
+                <span className="font-semibold">William Agyekum &amp; Salome Agyekum</span>
+                <span className="text-gray-500">, Co-Founders, Shoova Initiative</span>
               </motion.h2>
 
             </motion.div>
@@ -511,7 +523,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </motion.div>
 
             </motion.div>
-
           </div>
         </motion.section>
         {/* ================= OUR PROCESS ================= */}
@@ -601,11 +612,10 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           </div>
 
         </section>
-
         {/* Why This Movement Matters */}
-        <section id="why_this_movement_matters" className="py-24 bg-primary/20">
+        {/* <section id="why_this_movement_matters" className="py-24 bg-primary/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Heading */}
+         
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -622,7 +632,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </h2>
             </motion.div>
 
-            {/* Tabs */}
             <div className="flex flex-wrap justify-center gap-3 mb-10">
               {impactTabs.map((tab) => {
                 const isActive = activeImpact.id === tab.id;
@@ -642,7 +651,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               })}
             </div>
 
-            {/* Main Visual Block */}
             <motion.div
               key={activeImpact.id}
               initial={{ opacity: 0, y: 35 }}
@@ -650,18 +658,18 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               transition={{ duration: 0.55, ease: "easeOut" }}
               className="relative rounded-3xl overflow-hidden min-h-[620px] shadow-xl"
             >
-              {/* Background image */}
+           
               <img
                 src={activeImpact.image}
                 alt={activeImpact.label}
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* Cinematic overlay */}
+             
               <div className="absolute inset-0 bg-black/20"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
 
-              {/* Floating story card */}
+             
               <motion.div
                 key={`${activeImpact.id}-card`}
                 initial={{ opacity: 0, y: 25 }}
@@ -687,783 +695,8 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </motion.div>
             </motion.div>
           </div>
-        </section>
-
-
-        <section id="impact" className="py-28 bg-white">
-
-          <div className="max-w-7xl mx-auto px-6 md:px-10">
-
-            {/* HEADER */}
-            <div className="text-center mb-20">
-
-              <p className="text-sm uppercase tracking-[0.25em] text-secondary/80 mb-4">
-                Projected Impact
-              </p>
-
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-textDark mb-6">
-                The Impact We Are Building
-              </h2>
-
-              <p className="text-text text-lg max-w-2xl mx-auto">
-                With the establishment of the Shoova Restoration Campus, this is the
-                measurable transformation we are working toward across land, water, and livelihoods.
-              </p>
-
-            </div>
-
-
-            {/* IMPACT GRID */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-              {/* LAND */}
-              <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
-
-                <p className="text-xs uppercase tracking-widest text-primary mb-4">
-                  Land
-                </p>
-
-                <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
-                  <CountUp end={500} suffix="+" />
-                </h3>
-
-                <p className="text-lg font-semibold text-textDark mb-2">
-                  Acres Restored
-                </p>
-
-                <p className="text-text text-sm leading-relaxed">
-                  Restoring land damaged by illegal mining into thriving ecosystems
-                  capable of supporting communities and agriculture.
-                </p>
-
-              </div>
-
-
-              {/* WATER */}
-              <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
-
-                <p className="text-xs uppercase tracking-widest text-secondary mb-4">
-                  Water
-                </p>
-
-                <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
-                  <CountUp end={65} suffix="%" />
-                </h3>
-
-                <p className="text-lg font-semibold text-textDark mb-2">
-                  Pollution Reduction
-                </p>
-
-                <p className="text-text text-sm leading-relaxed">
-                  Improving river systems through the reduction of mercury, silt,
-                  and harmful contaminants caused by illegal mining.
-                </p>
-
-              </div>
-
-
-              {/* PEOPLE */}
-              <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
-
-                <p className="text-xs uppercase tracking-widest text-primary mb-4">
-                  People
-                </p>
-
-                <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
-                  <CountUp end={1200} suffix="+" />
-                </h3>
-
-                <p className="text-lg font-semibold text-textDark mb-2">
-                  Youth Empowered
-                </p>
-
-                <p className="text-text text-sm leading-relaxed">
-                  Transitioning young people from dangerous mining into skilled,
-                  dignified, and sustainable livelihoods.
-                </p>
-
-              </div>
-
-            </div>
-
-
-            {/* SMALL DISCLAIMER (VERY IMPORTANT) */}
-            <p className="text-center text-xs text-gray-500 mt-10 max-w-xl mx-auto">
-              Projected impact based on full implementation of the Shoova Restoration Campus.
-            </p>
-
-
-            {/* CTA */}
-            <div className="text-center mt-12">
-              <Link
-                to="/donate"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold rounded-full hover:bg-secondaryHover transition"
-              >
-                Support This Impact
-                <span>→</span>
-              </Link>
-            </div>
-
-          </div>
-
-        </section>
-
-        <section className="py-28 bg-[#F9FAFB] relative overflow-hidden">
-
-          {/* SUBTLE BACKGROUND ACCENT */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.08),transparent_60%)]"></div>
-
-          <div className="relative max-w-5xl mx-auto px-6 text-center">
-
-            {/* LABEL */}
-            <p className="text-sm uppercase font-bold tracking-[0.3em] text-[#D4AF37] mb-4">
-              Campus Development
-            </p>
-
-            {/* TITLE */}
-            <h2 className="text-3xl md:text-3xl font-bold text-gray-900 mb-3 leading-tight">
-              The Shoova Restoration Campus is Under Development
-            </h2>
-
-            {/* BODY */}
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
-              Our 8-acre campus in Ghana’s Eastern Region is currently in its planning phase.
-              This space will soon host academic training, technical production, and a
-              residential community designed to restore both land and livelihoods.
-            </p>
-
-            {/* STATUS BADGE */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="inline-block px-6 py-3 bg-white border border-gray-200 rounded-full shadow-sm text-gray-800 font-semibold mb-10"
-            >
-              🚧 Coming Soon
-            </motion.div>
-
-            {/* OPTIONAL CTA */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
-              <Link
-                to="/contact"
-                className="px-8 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondaryHover transition"
-              >
-                Partner With Us
-              </Link>
-
-              <Link
-                to="/about"
-                className="px-8 py-3 border border-gray-300 rounded-full font-semibold text-gray-800 hover:bg-gray-100 transition"
-              >
-                Learn More
-              </Link>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        <motion.section
-          id="restoration_report"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          className="py-24 bg-white border-t border-gray-100"
-        >
-          <div className="max-w-7xl mx-auto px-6">
-
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-              {/* IMAGE */}
-              <motion.div variants={fadeLeft} className="relative">
-
-                <motion.img
-                  src="/img/Header.png"
-                  alt="Receive real-time updates on land restoration."
-                  className="w-full h-[520px] object-cover rounded-2xl shadow-xl"
-                  initial={{ opacity: 0, scale: 0.97 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1 }}
-                />
-
-                {/* Caption */}
-                <motion.div
-                  variants={fadeUp}
-                  className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-6 py-4 rounded-xl shadow-lg max-w-xs"
-                >
-                  <p className="text-sm text-gray-700 font-medium">
-                    Receive real-time updates on land restoration, student progress, and the impact your support is making.
-                  </p>
-                </motion.div>
-
-              </motion.div>
-
-              {/* FORM */}
-              <motion.form
-                onSubmit={handleSubscribe}
-                variants={fadeRight}
-                className="bg-[#f7f7f7] p-10 rounded-2xl shadow-sm space-y-6"
-              >
-
-                {/* Heading */}
-                <motion.div variants={fadeUp}>
-                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-textDark mb-3">
-                    Subscribe to the Shoova Restoration Report
-                  </h2>
-
-                  <p className="text-lg text-text leading-relaxed">
-                    Receive updates on land restoration, youth training, and the progress of the Shoova Restoration Campus.
-                  </p>
-                </motion.div>
-
-                {/* Name Fields */}
-                <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold tracking-wide mb-2">
-                      FIRST NAME
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="First name"
-                      value={formData.firstName}
-                      onChange={(e) =>
-                        setFormData({ ...formData, firstName: e.target.value })
-                      }
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none transition"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold tracking-wide mb-2">
-                      LAST NAME
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Last name"
-                      value={formData.lastName}
-                      onChange={(e) =>
-                        setFormData({ ...formData, lastName: e.target.value })
-                      }
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none transition"
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Email */}
-                <motion.div variants={fadeUp}>
-                  <label className="block text-xs font-semibold tracking-wide mb-2">
-                    EMAIL
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none transition"
-                  />
-                </motion.div>
-
-                {/* Birthday */}
-                <motion.div variants={fadeUp}>
-                  <label className="block text-xs font-semibold tracking-wide mb-2">
-                    BIRTHDAY (OPTIONAL)
-                  </label>
-
-                  <DatePicker
-                    selected={birthday}
-                    onChange={(date) => setBirthday(date)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none"
-                  />
-                </motion.div>
-
-                {/* Checkbox */}
-                <motion.div variants={fadeUp} className="flex items-start gap-3">
-                  <input
-                    type="checkbox"
-                    checked={formData.birthdayReminder}
-                    onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        birthdayReminder: e.target.checked
-                      })
-                    }
-                    className="mt-1"
-                  />
-
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    Set a reminder to pledge my birthday and help restore land and empower communities.
-                  </p>
-                </motion.div>
-
-                {/* BUTTON */}
-                <motion.button
-                  variants={fadeUp}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="w-full bg-secondary hover:bg-secondaryHover text-white font-semibold py-4 rounded-md transition shadow-md"
-                >
-                  Keep Me Informed
-                </motion.button>
-
-                {/* Privacy */}
-                <motion.p variants={fadeUp} className="text-xs text-gray-500 leading-relaxed">
-                  By clicking “Subscribe”, you agree to receive updates from the Shoova Restoration Initiative.
-                </motion.p>
-
-              </motion.form>
-
-            </div>
-
-          </div>
-        </motion.section>
-
-        {/* Share the Story */}
-        <section id="share_the_story" className="py-24 bg-background border-t border-gray-100">
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-
-            {/* Image Side */}
-            <div className="relative">
-              <img
-                src="/img/share.jpg"
-                alt="Illegal mining destruction in Ghana"
-                className="rounded-2xl shadow-xl w-full h-[420px] object-cover"
-              />
-
-            </div>
-
-            {/* Content */}
-            <div>
-
-              <p className="text-secondary font-bold tracking-wider uppercase text-sm mb-4">
-                Share the Story
-              </p>
-
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-textDark mb-6">
-                From Galamsey to Growth
-              </h2>
-
-              <p className="text-lg text-text leading-relaxed mb-8">
-                The destruction caused by illegal mining is one of the most urgent
-                environmental crises facing Ghana today. But restoration is possible.
-                Help more people understand the challenge — and the solution — by
-                sharing the Shoova restoration story.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-
-                {/* 📄 FACT SHEET */}
-                <button
-                  onClick={() => {
-                    // track download
-                    fetch("http://localhost:5000/engagement/track-download", {
-                      method: "POST"
-                    });
-
-                    // force open in new tab
-                    window.open("/docs/galamsey-to-growth.pdf", "_blank");
-                  }}
-                  className="inline-flex items-center justify-center px-8 py-4 bg-secondary hover:bg-secondaryHover text-white font-semibold rounded-full transition shadow-lg"
-                >
-                  Download Fact Sheet
-                </button>
-
-                {/* 🔁 SHARE */}
-                <button
-
-                  onClick={async () => {
-                    const url = window.location.origin + "#share_the_story";
-
-                    const text =
-                      "Galamsey is destroying lands across Ghana.\n\n" +
-                      "Shoova is restoring these ecosystems and communities.\n\n" +
-                      "Learn more:";
-
-                    try {
-                      if (navigator.share) {
-                        await navigator.share({
-                          title: "Shoova Restoration Initiative",
-                          text,
-                          url,
-                        });
-                      } else {
-                        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
-                        window.open(whatsappUrl, "_blank");
-                      }
-                    } catch (err) {
-                      console.warn("Share cancelled or failed:", err);
-                      // optional fallback
-                      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
-                      window.open(whatsappUrl, "_blank");
-                    }
-                  }}
-                  className="inline-flex items-center justify-center px-8 py-4 border border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition"
-                >
-                  Share With Your Network
-                </button>
-
-              </div>
-
-              <p className="text-sm text-gray-500 mt-6">
-                Community awareness is the first step toward environmental restoration.
-              </p>
-
-            </div>
-
-          </div>
-        </section>
-
-        {/* Meet the People Behind the Restoration */}
-        <section id="meet_the_team" className="py-24 bg-primary text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-              {/* Left Content */}
-              <div>
-                <p className="text-secondary font-bold tracking-wider uppercase text-sm mb-4">
-                  Leadership & Trust
-                </p>
-
-                <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-                  Meet the People Behind the Restoration
-                </h2>
-
-                <p className="text-teal-100 text-lg mb-8 leading-relaxed max-w-xl">
-                  Shoova Initiative is led by a coalition of project managers, data
-                  scientists, engineers, and community leaders united by one mission:
-                  to restore land, rebuild livelihoods, and equip the next generation
-                  of technical leaders in Ghana’s Eastern Region.
-                </p>
-
-                <ul className="space-y-4">
-                  <li className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-accent" />
-                    </div>
-                    <Text className="text-xl font-medium">
-                      Minnesota-based leadership and governance
-                    </Text>
-                  </li>
-
-                  <li className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-accent" />
-                    </div>
-                    <Text className="text-xl font-medium">
-                      Ghana-rooted operations and partnerships
-                    </Text>
-                  </li>
-
-                  <li className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-accent" />
-                    </div>
-                    <Text className="text-xl font-medium">
-                      Financial stewardship and accountability
-                    </Text>
-                  </li>
-
-                  <li className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-accent" />
-                    </div>
-                    <Text className="text-xl font-medium">
-                      Technical, legal, and community expertise
-                    </Text>
-                  </li>
-                </ul>
-
-                <Link
-                  to="/about"
-                  className="inline-block mt-8 px-7 py-3 border border-white/40 rounded-full font-semibold hover:bg-white hover:text-primary transition"
-                >
-                  Meet the Full Team
-                </Link>
-              </div>
-
-              {/* Right Portrait Grid */}
-              <div className="grid grid-cols-2 gap-6">
-
-                {/* Member 1 */}
-                <div className="group relative transform translate-y-8">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <img
-                      src="/img/willie.jpg"
-                      alt="William Agyekum"
-                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-
-                    {/* Expanding Social Rail */}
-                    {/* Expanding Social Rail */}
-                    <div className="absolute left-0 bottom-0 group/social">
-                      <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
-
-                        {/* Main Share Icon */}
-                        <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
-                          <Share2 className="w-4 h-4 text-white" />
-                        </div>
-
-                        {/* Hidden Icons */}
-                        <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Facebook className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Twitter className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Instagram className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Youtube className="w-4 h-4 text-white" />
-                          </a>
-
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">William Agyekum</h3>
-                    <p className="text-sm text-teal-100 mt-1">President &amp; Executive Director</p>
-                    <p className="text-xs text-white/70 mt-1">USA</p>
-                  </div>
-                </div>
-
-                {/* Member 2 */}
-                <div className="group relative">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <img
-                      src="/img/salome.jpg"
-                      alt="Salome Agyekum"
-                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-
-                    {/* Expanding Social Rail */}
-                    <div className="absolute left-0 bottom-0 group/social">
-                      <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
-
-                        {/* Main Share Icon */}
-                        <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
-                          <Share2 className="w-4 h-4 text-white" />
-                        </div>
-
-                        {/* Hidden Icons */}
-                        <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Facebook className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Twitter className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Instagram className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Youtube className="w-4 h-4 text-white" />
-                          </a>
-
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">Salome Agyekum, CA</h3>
-                    <p className="text-sm text-teal-100 mt-1">Treasurer</p>
-                    <p className="text-xs text-white/70 mt-1">USA</p>
-                  </div>
-                </div>
-
-                {/* Member 3 */}
-                <div className="group relative transform translate-y-8">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <img
-                      src="/img/opon.jpg"
-                      alt="Kwame Opon-Yeboah"
-                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-
-                    {/* Expanding Social Rail */}
-                    <div className="absolute left-0 bottom-0 group/social">
-                      <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
-
-                        {/* Main Share Icon */}
-                        <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
-                          <Share2 className="w-4 h-4 text-white" />
-                        </div>
-
-                        {/* Hidden Icons */}
-                        <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Facebook className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Twitter className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Instagram className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Youtube className="w-4 h-4 text-white" />
-                          </a>
-
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">Kwame Opon-Yeboah</h3>
-                    <p className="text-sm text-teal-100 mt-1">Head of Ghana Operations</p>
-                    <p className="text-xs text-white/70 mt-1">Ghana</p>
-                  </div>
-                </div>
-
-                {/* Member 4 */}
-                <div className="group relative">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <img
-                      src="/img/julius.jpeg"
-                      alt="Julius Botchchway"
-                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-
-                    {/* Expanding Social Rail */}
-                    <div className="absolute left-0 bottom-0 group/social">
-                      <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
-
-                        {/* Main Share Icon */}
-                        <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
-                          <Share2 className="w-4 h-4 text-white" />
-                        </div>
-
-                        {/* Hidden Icons */}
-                        <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Facebook className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Twitter className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Instagram className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Youtube className="w-4 h-4 text-white" />
-                          </a>
-
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">Julius Botchchway</h3>
-                    <p className="text-sm text-teal-100 mt-1">Director of Ghana Operations</p>
-                    <p className="text-xs text-white/70 mt-1">Ghana</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* From Donation to Restoration */}
-        {/* <section id="from_donation_to_restoration" className="py-24 bg-white cursor-default">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <Text className="text-secondary font-bold tracking-wider uppercase text-sm">
-                How Support Creates Change
-              </Text>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-textDark mt-2 mb-6">
-                From Donation to Restoration
-              </h2>
-              <p className="text-xl text-text max-w-3xl mx-auto">
-                Every contribution to Shoova Initiative helps transform damaged land,
-                equip young people with skills, and build a future rooted in restoration.
-              </p>
-            </div>
-
-            <div className="relative">
-              <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0"></div>
-
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-                <div className="bg-white p-6 text-center">
-                  <div className="w-16 h-16 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg border-4 border-white">
-                    1
-                  </div>
-                  <h3 className="text-xl font-bold text-textDark mb-2">Give</h3>
-                  <p className="text-text text-sm">
-                    Your support fuels the restoration movement and helps invest in the
-                    next generation of technical leaders.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 text-center">
-                  <div className="w-16 h-16 mx-auto bg-white border-2 border-primary text-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg">
-                    2
-                  </div>
-                  <h3 className="text-xl font-bold text-textDark mb-2">Equip</h3>
-                  <p className="text-text text-sm">
-                    We provide students with tools, training, and hands-on instruction
-                    through the Shoova Restoration Campus.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 text-center">
-                  <div className="w-16 h-16 mx-auto bg-white border-2 border-primary text-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg">
-                    3
-                  </div>
-                  <h3 className="text-xl font-bold text-textDark mb-2">Restore</h3>
-                  <p className="text-text text-sm">
-                    Graduates apply their skills to reclaim land, protect water, and
-                    create sustainable alternatives to galamsey.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 text-center">
-                  <div className="w-16 h-16 mx-auto bg-white border-2 border-primary text-primary rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg">
-                    4
-                  </div>
-                  <h3 className="text-xl font-bold text-textDark mb-2">Multiply</h3>
-                  <p className="text-text text-sm">
-                    Restored land, dignified livelihoods, and stronger communities
-                    create long-term impact for future generations.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </section> */}
+
         {/* Ready to Restore the Land */}
         <section id="ready_to_restore" className="py-24 bg-[#f7f3ea]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1757,10 +990,682 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
           </div>
         </section>
-        {/* Final CTA */}
-        <section id="join_the_restoration" className="py-24 relative overflow-hidden">
+        {/* PROJECTED IMPACT */}
+        {/* <section id="impact" className="py-28 bg-white">
 
-          {/* Background */}
+          <div className="max-w-7xl mx-auto px-6 md:px-10">
+
+            <div className="text-center mb-20">
+
+              <p className="text-sm uppercase tracking-[0.25em] text-secondary/80 mb-4">
+                Projected Impact
+              </p>
+
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-textDark mb-6">
+                The Impact We Are Building
+              </h2>
+
+              <p className="text-text text-lg max-w-2xl mx-auto">
+                With the establishment of the Shoova Restoration Campus, this is the
+                measurable transformation we are working toward across land, water, and livelihoods.
+              </p>
+
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
+
+                <p className="text-xs uppercase tracking-widest text-primary mb-4">
+                  Land
+                </p>
+
+                <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
+                  <CountUp end={500} suffix="+" />
+                </h3>
+
+                <p className="text-lg font-semibold text-textDark mb-2">
+                  Acres Restored
+                </p>
+
+                <p className="text-text text-sm leading-relaxed">
+                  Restoring land damaged by illegal mining into thriving ecosystems
+                  capable of supporting communities and agriculture.
+                </p>
+
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
+
+                <p className="text-xs uppercase tracking-widest text-secondary mb-4">
+                  Water
+                </p>
+
+                <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
+                  <CountUp end={65} suffix="%" />
+                </h3>
+
+                <p className="text-lg font-semibold text-textDark mb-2">
+                  Pollution Reduction
+                </p>
+
+                <p className="text-text text-sm leading-relaxed">
+                  Improving river systems through the reduction of mercury, silt,
+                  and harmful contaminants caused by illegal mining.
+                </p>
+
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
+
+                <p className="text-xs uppercase tracking-widest text-primary mb-4">
+                  People
+                </p>
+
+                <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
+                  <CountUp end={1200} suffix="+" />
+                </h3>
+
+                <p className="text-lg font-semibold text-textDark mb-2">
+                  Youth Empowered
+                </p>
+
+                <p className="text-text text-sm leading-relaxed">
+                  Transitioning young people from dangerous mining into skilled,
+                  dignified, and sustainable livelihoods.
+                </p>
+
+              </div>
+
+            </div>
+            <p className="text-center text-xs text-gray-500 mt-10 max-w-xl mx-auto">
+              Projected impact based on full implementation of the Shoova Restoration Campus.
+            </p>
+            <div className="text-center mt-12">
+              <Link
+                to="/donate"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold rounded-full hover:bg-secondaryHover transition"
+              >
+                Support This Impact
+                <span>→</span>
+              </Link>
+            </div>
+          </div>
+        </section> */}
+        <section className="py-16 bg-[#F9FAFB] relative overflow-hidden">
+
+          {/* SUBTLE BACKGROUND ACCENT */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.08),transparent_60%)]"></div>
+
+          <div className="relative max-w-5xl mx-auto px-6 text-center">
+
+            {/* LABEL */}
+            <p className="text-sm uppercase font-bold tracking-[0.3em] text-[#D4AF37] mb-4">
+              Campus Development
+            </p>
+
+            {/* TITLE */}
+            <h2 className="text-3xl md:text-3xl font-bold text-gray-900 mb-3 leading-tight">
+              The Shoova Restoration Campus is Under Development
+            </h2>
+
+            {/* BODY */}
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
+              Our 8-acre campus in Ghana’s Eastern Region is currently in its planning phase.
+              This space will soon host academic training, technical production, and a
+              residential community designed to restore both land and livelihoods.
+            </p>
+
+            {/* STATUS BADGE */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="inline-block px-6 py-3 bg-white border border-gray-200 rounded-full shadow-sm text-gray-800 font-semibold mb-10"
+            >
+              🚧 Coming Soon
+            </motion.div>
+
+            {/* OPTIONAL CTA */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+              <Link
+                to="/contact"
+                className="px-8 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondaryHover transition"
+              >
+                Partner With Us
+              </Link>
+
+              <Link
+                to="/about"
+                className="px-8 py-3 border border-gray-300 rounded-full font-semibold text-gray-800 hover:bg-gray-100 transition"
+              >
+                Learn More
+              </Link>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* NEWS LETTER SECTION */}
+        {/* <motion.section
+          id="restoration_report"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="py-24 bg-white border-t border-gray-100"
+        >
+          <div className="max-w-7xl mx-auto px-6">
+
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+              
+              <motion.div variants={fadeLeft} className="relative">
+
+                <motion.img
+                  src="/img/Header.png"
+                  alt="Receive real-time updates on land restoration."
+                  className="w-full h-[520px] object-cover rounded-2xl shadow-xl"
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1 }}
+                />
+
+              
+                <motion.div
+                  variants={fadeUp}
+                  className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-6 py-4 rounded-xl shadow-lg max-w-xs"
+                >
+                  <p className="text-sm text-gray-700 font-medium">
+                    Receive real-time updates on land restoration, student progress, and the impact your support is making.
+                  </p>
+                </motion.div>
+
+              </motion.div>
+
+            
+              <motion.form
+                onSubmit={handleSubscribe}
+                variants={fadeRight}
+                className="bg-[#f7f7f7] p-10 rounded-2xl shadow-sm space-y-6"
+              >
+
+                <motion.div variants={fadeUp}>
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-textDark mb-3">
+                    Subscribe to the Shoova Restoration Report
+                  </h2>
+
+                  <p className="text-lg text-text leading-relaxed">
+                    Receive updates on land restoration, youth training, and the progress of the Shoova Restoration Campus.
+                  </p>
+                </motion.div>
+                <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-semibold tracking-wide mb-2">
+                      FIRST NAME
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="First name"
+                      value={formData.firstName}
+                      onChange={(e) =>
+                        setFormData({ ...formData, firstName: e.target.value })
+                      }
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none transition"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold tracking-wide mb-2">
+                      LAST NAME
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                      value={formData.lastName}
+                      onChange={(e) =>
+                        setFormData({ ...formData, lastName: e.target.value })
+                      }
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none transition"
+                    />
+                  </div>
+                </motion.div>
+                <motion.div variants={fadeUp}>
+                  <label className="block text-xs font-semibold tracking-wide mb-2">
+                    EMAIL
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none transition"
+                  />
+                </motion.div>
+                <motion.div variants={fadeUp}>
+                  <label className="block text-xs font-semibold tracking-wide mb-2">
+                    BIRTHDAY (OPTIONAL)
+                  </label>
+
+                  <DatePicker
+                    selected={birthday}
+                    onChange={(date) => setBirthday(date)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none"
+                  />
+                </motion.div>
+                <motion.div variants={fadeUp} className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    checked={formData.birthdayReminder}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        birthdayReminder: e.target.checked
+                      })
+                    }
+                    className="mt-1"
+                  />
+
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    Set a reminder to pledge my birthday and help restore land and empower communities.
+                  </p>
+                </motion.div>
+                <motion.button
+                  variants={fadeUp}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className="w-full bg-secondary hover:bg-secondaryHover text-white font-semibold py-4 rounded-md transition shadow-md"
+                >
+                  Keep Me Informed
+                </motion.button>
+                <motion.p variants={fadeUp} className="text-xs text-gray-500 leading-relaxed">
+                  By clicking “Subscribe”, you agree to receive updates from the Shoova Restoration Initiative.
+                </motion.p>
+
+              </motion.form>
+
+            </div>
+
+          </div>
+        </motion.section> */}
+
+        {/* Share the Story */}
+        {/* <section id="share_the_story" className="py-24 bg-background border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <img
+                src="/img/share.jpg"
+                alt="Illegal mining destruction in Ghana"
+                className="rounded-2xl shadow-xl w-full h-[420px] object-cover"
+              />
+
+            </div>
+
+            <div>
+
+              <p className="text-secondary font-bold tracking-wider uppercase text-sm mb-4">
+                Share the Story
+              </p>
+
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-textDark mb-6">
+                From Galamsey to Growth
+              </h2>
+
+              <p className="text-lg text-text leading-relaxed mb-8">
+                The destruction caused by illegal mining is one of the most urgent
+                environmental crises facing Ghana today. But restoration is possible.
+                Help more people understand the challenge — and the solution — by
+                sharing the Shoova restoration story.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+
+               
+                <button
+                  onClick={() => {
+                
+                    fetch("http://localhost:5000/engagement/track-download", {
+                      method: "POST"
+                    });
+
+                 
+                    window.open("/docs/galamsey-to-growth.pdf", "_blank");
+                  }}
+                  className="inline-flex items-center justify-center px-8 py-4 bg-secondary hover:bg-secondaryHover text-white font-semibold rounded-full transition shadow-lg"
+                >
+                  Download Fact Sheet
+                </button>
+
+                
+                <button
+
+                  onClick={async () => {
+                    const url = window.location.origin + "#share_the_story";
+
+                    const text =
+                      "Galamsey is destroying lands across Ghana.\n\n" +
+                      "Shoova is restoring these ecosystems and communities.\n\n" +
+                      "Learn more:";
+
+                    try {
+                      if (navigator.share) {
+                        await navigator.share({
+                          title: "Shoova Restoration Initiative",
+                          text,
+                          url,
+                        });
+                      } else {
+                        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
+                        window.open(whatsappUrl, "_blank");
+                      }
+                    } catch (err) {
+                      console.warn("Share cancelled or failed:", err);
+                     
+                      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
+                      window.open(whatsappUrl, "_blank");
+                    }
+                  }}
+                  className="inline-flex items-center justify-center px-8 py-4 border border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition"
+                >
+                  Share With Your Network
+                </button>
+
+              </div>
+
+              <p className="text-sm text-gray-500 mt-6">
+                Community awareness is the first step toward environmental restoration.
+              </p>
+
+            </div>
+
+          </div>
+        </section> */}
+
+        {/* Meet the People Behind the Restoration */}
+        <section id="meet_the_team" className="py-24 bg-primary text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+              {/* Left Content */}
+              <div>
+                <p className="text-secondary font-bold tracking-wider uppercase text-sm mb-4">
+                  Leadership & Trust
+                </p>
+
+                <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 leading-tight">
+                  Meet the People Behind the Restoration
+                </h2>
+
+                <p className="text-teal-100 text-lg mb-8 leading-relaxed max-w-xl">
+                  Shoova Initiative is led by a coalition of project managers, data
+                  scientists, engineers, and community leaders united by one mission:
+                  to restore land, rebuild livelihoods, and equip the next generation
+                  of technical leaders in Ghana’s Eastern Region.
+                </p>
+
+                <ul className="space-y-4">
+                  <li className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-accent" />
+                    </div>
+                    <Text className="text-xl font-medium">
+                      Minnesota-based leadership and governance
+                    </Text>
+                  </li>
+
+                  <li className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-accent" />
+                    </div>
+                    <Text className="text-xl font-medium">
+                      Ghana-rooted operations and partnerships
+                    </Text>
+                  </li>
+
+                  <li className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-accent" />
+                    </div>
+                    <Text className="text-xl font-medium">
+                      Financial stewardship and accountability
+                    </Text>
+                  </li>
+
+                  <li className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-accent" />
+                    </div>
+                    <Text className="text-xl font-medium">
+                      Technical, legal, and community expertise
+                    </Text>
+                  </li>
+                </ul>
+
+                <Link
+                  to="/about"
+                  className="inline-block mt-8 px-7 py-3 border border-white/40 rounded-full font-semibold hover:bg-white hover:text-primary transition"
+                >
+                  Meet the Full Team
+                </Link>
+              </div>
+
+              {/* Right Portrait Grid */}
+              <div className="grid grid-cols-2 gap-6">
+
+                {/* Member 1 */}
+                <div className="group relative transform translate-y-8">
+                  <div className="relative overflow-hidden rounded-xl">
+                    <img
+                      src="/img/portriat.jpg"
+                      alt="William Agyekum"
+                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    {/* Expanding Social Rail */}
+                    {/* Expanding Social Rail */}
+                    <div className="absolute left-0 bottom-0 group/social">
+                      <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
+
+                        {/* Main Share Icon */}
+                        <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
+                          <Share2 className="w-4 h-4 text-white" />
+                        </div>
+
+                        {/* Hidden Icons */}
+                        <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Facebook className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Twitter className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Instagram className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Youtube className="w-4 h-4 text-white" />
+                          </a>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <h3 className="text-xl font-heading font-bold">William Agyekum</h3>
+                    <p className="text-sm text-teal-100 mt-1">President &amp; Executive Director</p>
+                    <p className="text-xs text-white/70 mt-1">USA</p>
+                  </div>
+                </div>
+
+                {/* Member 2 */}
+                <div className="group relative">
+                  <div className="relative overflow-hidden rounded-xl">
+                    <img
+                      src="/img/salome.jpg"
+                      alt="Salome Agyekum"
+                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    {/* Expanding Social Rail */}
+                    <div className="absolute left-0 bottom-0 group/social">
+                      <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
+
+                        {/* Main Share Icon */}
+                        <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
+                          <Share2 className="w-4 h-4 text-white" />
+                        </div>
+
+                        {/* Hidden Icons */}
+                        <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Facebook className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Twitter className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Instagram className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Youtube className="w-4 h-4 text-white" />
+                          </a>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <h3 className="text-xl font-heading font-bold">Salome Agyekum, CA</h3>
+                    <p className="text-sm text-teal-100 mt-1">Treasurer</p>
+                    <p className="text-xs text-white/70 mt-1">USA</p>
+                  </div>
+                </div>
+
+                {/* Member 3 */}
+                <div className="group relative transform translate-y-8">
+                  <div className="relative overflow-hidden rounded-xl">
+                    <img
+                      src="/img/opon.jpg"
+                      alt="Kwame Opon-Yeboah"
+                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    {/* Expanding Social Rail */}
+                    <div className="absolute left-0 bottom-0 group/social">
+                      <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
+
+                        {/* Main Share Icon */}
+                        <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
+                          <Share2 className="w-4 h-4 text-white" />
+                        </div>
+
+                        {/* Hidden Icons */}
+                        <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Facebook className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Twitter className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Instagram className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Youtube className="w-4 h-4 text-white" />
+                          </a>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <h3 className="text-xl font-heading font-bold">Kwame Opon-Yeboah</h3>
+                    <p className="text-sm text-teal-100 mt-1">Head of Ghana Operations</p>
+                    <p className="text-xs text-white/70 mt-1">Ghana</p>
+                  </div>
+                </div>
+
+                {/* Member 4 */}
+                <div className="group relative">
+                  <div className="relative overflow-hidden rounded-xl">
+                    <img
+                      src="/img/juliuss.jpg"
+                      alt="Julius Botchchway"
+                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    {/* Expanding Social Rail */}
+                    <div className="absolute left-0 bottom-0 group/social">
+                      <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
+
+                        {/* Main Share Icon */}
+                        <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
+                          <Share2 className="w-4 h-4 text-white" />
+                        </div>
+
+                        {/* Hidden Icons */}
+                        <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Facebook className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Twitter className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Instagram className="w-4 h-4 text-white" />
+                          </a>
+
+                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
+                            <Youtube className="w-4 h-4 text-white" />
+                          </a>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <h3 className="text-xl font-heading font-bold">Julius Botchchway</h3>
+                    <p className="text-sm text-teal-100 mt-1">Director of Ghana Operations</p>
+                    <p className="text-xs text-white/70 mt-1">Ghana</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* Final CTA */}
+        {/* <section id="join_the_restoration" className="py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-primary">
             <Image
               variant="cover"
@@ -1771,8 +1676,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           </div>
 
           <div className="absolute inset-0 bg-black/30"></div>
-
-          {/* Content */}
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
 
             <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
@@ -1802,7 +1705,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
             </div>
 
           </div>
-        </section>
+        </section> */}
       </>
     </div>
   );

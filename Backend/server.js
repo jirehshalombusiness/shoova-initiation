@@ -1,5 +1,9 @@
+import path from "path";
 import dotenv from "dotenv";
-dotenv.config();
+
+dotenv.config({
+  path: path.resolve(process.cwd(), ".env")
+});
 import express from "express";
 import Stripe from "stripe";
 import cors from "cors";
@@ -10,7 +14,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import Admin from "./models/Admin.js";
 import { sendReceipt } from "./utils/sendReceipt.js";
-import path from "path";
 import fs from "fs";
 import generateDonationNumber from "./utils/generateDonationNumber.js";
 import newsletterRoutes from "./routes/newsletterRoutes.js";

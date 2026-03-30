@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 
 import { IndexPage } from "./pages/IndexPage";
 import { AboutPage } from "./pages/AboutPage";
-import  BlogPage  from "./pages/BlogPage";
+import  StoryPage  from "./pages/StoryPage";
 import { ProgramsPage } from "./pages/ProgramsPage";
 import { ContactPage } from "./pages/ContactPage";
 import { DonatePage } from "./pages/DonatePage";
@@ -23,7 +23,8 @@ import DonorProfile from "./admin/pages/DonorProfile";
 import Newsletter from "./admin/pages/Newsletter";
 import { Toaster } from "react-hot-toast";
 import SuccessPage from "./pages/successPage"; // adjust path
-
+import WhyItMatters from "./pages/WhyItMatters";
+import { RestorationUpdates } from "./pages/RestorationUpdates";
 
 
 const App = () => {
@@ -51,10 +52,12 @@ const App = () => {
           <Route path="/" element={<IndexPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
-          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/story" element={<StoryPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/success" element={<SuccessPage />} />
+          <Route path="/why-it-matters" element={<WhyItMatters />} />
+          <Route path="/restoration-updates" element={<RestorationUpdates />} />
 
         </Route>
 

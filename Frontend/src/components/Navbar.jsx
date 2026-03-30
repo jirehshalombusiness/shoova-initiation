@@ -1,112 +1,147 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Link, NavLink } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [pathwaysOpen, setPathwaysOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const location = useLocation();
+
+  const isPathwaysActive =
+    location.pathname === "/our-story" ||
+    location.pathname === "/why-it-matters" ||
+    location.pathname === "/restoration-updates";
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
-
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
-      setScrollProgress((scrollTop / docHeight) * 100);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto";
-  }, [mobileMenuOpen]);
+  const navLinkClass = ({ isActive }) => `
+    relative text-[15.5px] font-semibold tracking-[0.06em]
+    transition duration-300
 
-  const navLinkClass = ({ isActive }) =>
-    `
-    text-[17px] font-medium tracking-[0.02em] transition duration-300 relative
-    text-gray-700 hover:text-gray-900
-    after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-secondary
-    after:transition-all after:duration-300 hover:after:w-full
+    ${scrolled
+      ? "text-gray-800 hover:text-secondary"
+      : "text-white hover:text-secondary"
+    }
+
     ${isActive ? "text-secondary after:w-full" : ""}
+
+    after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+    after:bg-secondary after:transition-all after:duration-300
+
+    ${isActive ? "" : "after:w-0 hover:after:w-full"}
   `;
 
   return (
     <header>
-
-      {/* SCROLL PROGRESS */}
-      <div
-        className="fixed top-0 left-0 h-[3px] bg-secondary z-[100]"
-        style={{ width: `${scrollProgress}%` }}
-      />
-
-      {/* NAV */}
       <nav
-        className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-white shadow-md border-b border-gray-100"
-            : "bg-white/80 backdrop-blur-md"
-        }`}
-      >
-        <div
-          className={`max-w-7xl mx-auto px-6 md:px-10 transition-all duration-500 ${
-            scrolled ? "mt-0" : "mt-2"
+        className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${scrolled
+            ? "bg-white shadow-sm border-b border-gray-100"
+            : "bg-transparent"
           }`}
-        >
-          <div
-            className={`flex items-center justify-between transition-all duration-500 ${
-              scrolled ? "h-16" : "h-22"
-            }`}
-          >
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="flex items-center justify-between h-20">
 
             {/* LOGO */}
-            <div
-              className={`transition-all duration-500 ${
-                scrolled ? "w-[150px]" : "w-[200px]"
-              }`}
-            >
-              <Link to="/">
-                <img
-                  src="/img/shoova_logo.png"
-                  alt="Shoova Initiative"
-                  className="w-full h-auto object-contain"
-                />
-              </Link>
-            </div>
+            <Link to="/" className="flex items-center gap-3">
+              <img src="/favicon.png" alt="logo" className="h-16" />
+              <span className="font-bold tracking-widest text-secondary">
+                SHOOVA INITIATIVE
+              </span>
+            </Link>
 
             {/* DESKTOP NAV */}
-            <div className="hidden md:flex flex-1 justify-center">
-              <div className="flex font-body text-[15px] font-semibold tracking-[0.05em] items-center gap-10">
+            <div className="hidden md:flex items-center gap-10 relative">
 
-                <NavLink to="/about" className={navLinkClass}>
-                  About
-                </NavLink>
+              <NavLink to="/about" className={navLinkClass}>
+                About
+              </NavLink>
 
-                <NavLink to="/programs" className={navLinkClass}>
-                  Programs
-                </NavLink>
+              <NavLink to="/programs" className={navLinkClass}>
+                Programs
+              </NavLink>
 
-                <NavLink to="/blog" className={navLinkClass}>
-                  Our Story
-                </NavLink>
+              {/* 🔥 SHOOVA PATHWAYS */}
+              <div
+                className="relative group"
+                onMouseEnter={() => setPathwaysOpen(true)}
+                onMouseLeave={() => setPathwaysOpen(false)}
+              >
+                <div
+                  className={`
+                    relative flex items-center gap-1 cursor-pointer
+                    text-[15.5px] font-semibold tracking-[0.06em]
+                    transition duration-300
 
-                <NavLink to="/contact" className={navLinkClass}>
-                  Contact
-                </NavLink>
+                    ${scrolled
+                      ? "text-gray-800 hover:text-secondary"
+                      : "text-white hover:text-secondary"
+                    }
 
+                    ${isPathwaysActive ? "text-secondary after:w-full" : ""}
+
+                    after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+                    after:bg-secondary after:transition-all after:duration-300
+                    ${isPathwaysActive ? "" : "after:w-0 hover:after:w-full"}
+                  `}
+                >
+                  Shoova Pathways
+                  <ChevronDown className="w-4 h-4 mt-[2px]" />
+                </div>
+
+                {/* DROPDOWN */}
+                <div
+                  className={`absolute left-0 top-full pt-4 transition-all duration-300 ${pathwaysOpen
+                      ? "opacity-100 translate-y-0 visible"
+                      : "opacity-0 translate-y-2 invisible"
+                    }`}
+                >
+                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-3 w-56">
+
+                    <Link
+                      to="/story"
+                      className="block px-5 py-3 text-gray-700 hover:text-secondary hover:bg-gray-50 transition"
+                    >
+                      Our Story
+                    </Link>
+
+                    <Link
+                      to="/why-it-matters"
+                      className="block px-5 py-3 text-gray-700 hover:text-secondary hover:bg-gray-50 transition"
+                    >
+                      Why It Matters
+                    </Link>
+
+                    <Link
+                      to="/restoration-updates"
+                      className="block px-5 py-3 text-gray-700 hover:text-secondary hover:bg-gray-50 transition"
+                    >
+                      Restoration Updates
+                    </Link>
+
+                  </div>
+                </div>
               </div>
+
+              <NavLink to="/contact" className={navLinkClass}>
+                Contact
+              </NavLink>
             </div>
 
             {/* CTA */}
-            <div className="hidden md:flex w-[160px] justify-end">
+            <div className="hidden md:block">
               <Link
                 to="/donate"
-                className="bg-secondary hover:bg-[#B85D2F] text-white px-5 py-2 rounded-full text-[14px] font-medium transition shadow-sm hover:shadow-md"
+                className="px-5 py-2 rounded-full bg-secondary text-white hover:bg-[#B85D2F] transition"
               >
                 Donate
               </Link>
@@ -114,64 +149,134 @@ const Navbar = () => {
 
             {/* MOBILE BUTTON */}
             <button
-              className="md:hidden text-gray-800"
+              className={`md:hidden ${scrolled ? "text-gray-800" : "text-white"
+                }`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? (
-                <X className="w-7 h-7" />
-              ) : (
-                <Menu className="w-7 h-7" />
-              )}
+              {mobileMenuOpen ? <X /> : <Menu />}
             </button>
-
           </div>
         </div>
       </nav>
-
       {/* OVERLAY */}
       <div
         onClick={() => setMobileMenuOpen(false)}
-        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all duration-300 ${
-          mobileMenuOpen
-            ? "opacity-100 visible"
-            : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all duration-300 ${mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
       />
 
       {/* MOBILE MENU */}
       <div
-        className={`fixed top-0 right-0 h-screen w-[80%] max-w-sm bg-white z-50 shadow-xl transform transition-transform duration-300 ${
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-screen w-[85%] max-w-sm bg-white z-[60] transform transition-transform duration-300 ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
-        <div className="flex flex-col h-full p-8 pt-24 space-y-8">
+        <div className="flex flex-col h-full">
 
-          <NavLink onClick={() => setMobileMenuOpen(false)} to="/about" className={navLinkClass}>
-            About
-          </NavLink>
+          {/* 🔥 TOP BAR (THIS FIXES YOUR CLOSE BUTTON ISSUE) */}
+          <div className="flex items-center justify-between px-6 h-20 border-b border-gray-100">
+            <span className="font-bold tracking-widest text-secondary">
+              SHOOVA INITIATIVE
+            </span>
 
-          <NavLink onClick={() => setMobileMenuOpen(false)} to="/programs" className={navLinkClass}>
-            Programs
-          </NavLink>
-
-          <NavLink onClick={() => setMobileMenuOpen(false)} to="/blog" className={navLinkClass}>
-            Our Story
-          </NavLink>
-
-          <NavLink onClick={() => setMobileMenuOpen(false)} to="/contact" className={navLinkClass}>
-            Contact
-          </NavLink>
-
-          <div className="mt-10">
-            <Link
+            <button
               onClick={() => setMobileMenuOpen(false)}
-              to="/donate"
-              className="block text-center bg-secondary text-white py-3 rounded-full font-medium"
+              className="text-gray-800 hover:text-secondary transition z-[70]"
             >
-              Donate
-            </Link>
+              <X className="w-7 h-7" />
+            </button>
           </div>
 
+          {/* 🔥 CONTENT */}
+          <div className="flex flex-col h-full px-6 py-8">
+
+            {/* NAV LINKS */}
+            <div className="space-y-6">
+
+              <Link
+                to="/about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-lg font-semibold text-gray-900"
+              >
+                About
+              </Link>
+
+              <Link
+                to="/programs"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-lg font-semibold text-gray-900"
+              >
+                Programs
+              </Link>
+
+              {/* SHOOVA PATHWAYS */}
+              <div className="border-t border-gray-200 pt-6">
+
+                <button
+                  onClick={() => setPathwaysOpen(!pathwaysOpen)}
+                  className="flex items-center justify-between w-full text-lg font-semibold text-gray-900"
+                >
+                  Shoova Pathways
+                  <ChevronDown
+                    className={`transition duration-300 ${pathwaysOpen ? "rotate-180 text-secondary" : ""
+                      }`}
+                  />
+                </button>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${pathwaysOpen ? "max-h-40 mt-4" : "max-h-0"
+                    }`}
+                >
+                  <div className="flex flex-col space-y-4 pl-3 border-l border-gray-200">
+
+                    <Link
+                      to="/our-story"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-gray-600 hover:text-secondary transition"
+                    >
+                      Our Story
+                    </Link>
+
+                    <Link
+                      to="/why-it-matters"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-gray-600 hover:text-secondary transition"
+                    >
+                      Why It Matters
+                    </Link>
+
+                    <Link
+                      to="/restoration-updates"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-gray-600 hover:text-secondary transition"
+                    >
+                      Restoration Updates
+                    </Link>
+
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                to="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-lg font-semibold text-gray-900"
+              >
+                Contact
+              </Link>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-auto pt-8">
+              <Link
+                to="/donate"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full text-center bg-secondary text-white py-4 rounded-full font-semibold text-lg shadow-md hover:bg-[#B85D2F] transition"
+              >
+                Donate Now
+              </Link>
+            </div>
+
+          </div>
         </div>
       </div>
     </header>

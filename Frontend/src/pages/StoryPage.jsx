@@ -7,82 +7,82 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function StoryPage() {
   const ref = useRef(null);
-const { scrollY } = useScroll();
+  const { scrollY } = useScroll();
 
-const y = useTransform(scrollY, [0, 800], [0, 200]);
-const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
+  const y = useTransform(scrollY, [0, 800], [0, 200]);
+  const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
 
 
 
-  const [birthday, setBirthday] = useState(null);
-  const [subscribed, setSubscribed] = useState(false);
+  // const [birthday, setBirthday] = useState(null);
+  // const [subscribed, setSubscribed] = useState(false);
 
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    birthdayMonth: "",
-    birthdayDay: "",
-    birthdayYear: "",
-    birthdayReminder: false
-  });
+  // const [formData, setFormData] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   birthdayMonth: "",
+  //   birthdayDay: "",
+  //   birthdayYear: "",
+  //   birthdayReminder: false
+  // });
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  // const handleChange = (e) => {
+  //   const { name, value, type, checked } = e.target;
 
-    setFormData({
-      ...formData,
-      [name]: type === "checkbox" ? checked : value
-    });
-  };
+  //   setFormData({
+  //     ...formData,
+  //     [name]: type === "checkbox" ? checked : value
+  //   });
+  // };
 
-  const handleSubscribe = async (e) => {
+  // const handleSubscribe = async (e) => {
 
-    e.preventDefault();
+  //   e.preventDefault();
 
-    try {
+  //   try {
 
-      const res = await fetch("http://localhost:5000/newsletter/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          ...formData,
-          birthday: birthday ? birthday.toISOString() : null
-        })
-      });
+  //     const res = await fetch("http://localhost:5000/newsletter/subscribe", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify({
+  //         ...formData,
+  //         birthday: birthday ? birthday.toISOString() : null
+  //       })
+  //     });
 
-      const data = await res.json();
+  //     const data = await res.json();
 
-      console.log("SERVER RESPONSE:", data);
+  //     console.log("SERVER RESPONSE:", data);
 
-      if (data.success) {
-        setSubscribed(true);
+  //     if (data.success) {
+  //       setSubscribed(true);
 
-        // clear form
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          birthdayMonth: "",
-          birthdayDay: "",
-          birthdayYear: "",
-          birthdayReminder: false
-        });
+  //       // clear form
+  //       setFormData({
+  //         firstName: "",
+  //         lastName: "",
+  //         email: "",
+  //         birthdayMonth: "",
+  //         birthdayDay: "",
+  //         birthdayYear: "",
+  //         birthdayReminder: false
+  //       });
 
-        setBirthday(null);
+  //       setBirthday(null);
 
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+  //       window.scrollTo({ top: 0, behavior: "smooth" });
+  //     }
 
-    } catch (error) {
+  //   } catch (error) {
 
-      console.error("Subscription failed:", error);
+  //     console.error("Subscription failed:", error);
 
-    }
+  //   }
 
-  };
+  // };
   return (
     <div className="font-body antialiased bg-white text-gray-900">
 
@@ -148,37 +148,47 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
           </h2>
 
           {/* BODY */}
-          <div className="text-gray-700 text-lg md:text-xl leading-relaxed space-y-3 text-left md:text-center">
+          <div className="text-gray-700 text-lg md:text-xl leading-relaxed space-y-4 text-justify max-w-none">
             <p>
-              For years, our professional journey has been defined by building systems and providing high-level consulting through a "Follow-the-Sun" model. But as we looked at the landscapes of our home in Ghana, we saw a different kind of "sun" rising—one that revealed a land "plundered and looted" by the scars of illegal mining—galamsey.
+              We are grateful for all the blessings, the gift of life, loving family, great friends, amazing profession, and
+              much more. But as we looked at the landscapes of our home in Ghana, we saw a different kind of
+              environment rising, one that revealed a land &quot;plundered and looted&quot; by the scars of illegal mining(galamsey). Very different from the environment we grew up in, and the fast pace of the devastation is
+              disturbing.
             </p>
             <p>
-              We realized that professional success is only the beginning; the true goal is significance.
+              We realized that the true goal is to be significant in the lives of the people negatively affected by illegal
+              mining.
+            </p>
+            <p className=' font-bold italic'>
+              This is a people stripped of everything trapped, forgotten, and left with no one to help them. No one to step in. No one to say: ‘Let it be restored.’
+              <span className=" mt-2 text-sm text-gray-500">— Isaiah 42:22</span>
+            </p>
+            <p>
+              The Shoova Initiative is our response to that call. We are not just building a charity; we are building a
+              <span className='font-bold'>Restoration Engine.</span>
+            </p>
+            <p>
+              Our 8-acre campus in Ghana is designed with a specific purpose: to provide the &quot;Brain&quot; (Academic
+              training), the &quot;Heart&quot; (Technical production), and the &quot;Soul&quot; (Dignified community) for youth who are
+              ready to pivot from the hazards of the mines to the dignity of a career. Through our School of
+              Engineering &amp; Fabrication, School of Sustainable Futures, and the School of Ethical Leadership, we are
+              giving a new generation the tools—and the 0%–2% interest startup loans—to rebuild their lives and
+              their land.
+            </p>
+            <p>
+              We move forward with the highest level of integrity, backed by our official 501(c)(3) status in the U.S.
+              and our legal registration in Ghana.
+            </p>
+            <p>
+              We invite you to be the &quot;nurturing hands&quot; in our story. Whether you are a technical partner, a financial
+              donor, or a friend sharing the vision, you are helping us say &quot;Restore!&quot; to a land that has waited far too
+              long for a new dawn.
+            </p>
+            <p>
+              We invite you to be the “nurturing hands” in our story. Whether you are a technical partner, a financial donor, or a friend sharing the vision, you are helping us say <span className='font-bold'>“Restore!”</span>  to a land that has waited far too long for a new dawn.
             </p>
 
-            {/* SCRIPTURE HIGHLIGHT */}
-            <p className="italic text-gray-900 font-medium border-l-4 border-[#D4AF37] pl-6 md:pl-0 md:border-0 md:text-center">
-              “But this is a people plundered and looted; they are all of them snared in holes and hidden in prisons; they have become plunder with none to rescue, spoil with none to say, ‘Restore!’”
-              <br />
-              <span className="block mt-2 text-sm text-gray-500">— Isaiah 42:22</span>
-            </p>
-            <p>
-              The Shoova Initiative is our response to that call. We are not just building a charity; we are building a Restoration Engine.
-            </p>
-            <p>
-              Our 8-acre campus in Ghana is designed with a specific purpose: to provide the “Brain” (Academic training), the “Heart” (Technical production), and the “Soul” (Dignified community) for youth who are ready to pivot from the hazards of the mines to the dignity of a career.
-            </p>
-            <p>
-              Through our School of Engineering & Fabrication, School of Sustainable Futures, and the School of Ethical Leadership, we are giving a new generation the tools and the 0%–2% interest startup loans to rebuild their lives and their land.
-            </p>
-            <p>
-              We move forward with the highest level of integrity, backed by our official 501(c)(3) status in the U.S. and our legal registration in Ghana.
-            </p>
-            <p>
-              We invite you to be the “nurturing hands” in our story. Whether you are a technical partner, a financial donor, or a friend sharing the vision, you are helping us say “Restore!” to a land that has waited far too long for a new dawn.
-            </p>
-
-            <p className="font-semibold text-gray-900 text-xl">
+            <p className="font-bold text-gray-900 text-xl">
               We are not just doing good. We are building a sustainable infrastructure for hope.
             </p>
 
@@ -310,9 +320,7 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
 
 
       {/* ================= OUR PROCESS ================= */}
-      <section className="relative bg-white pt-24 pb-10">
-
-        {/* HEADER */}
+      {/* <section className="relative bg-white pt-24 pb-10">
         <div className="text-center mb-12 md:mb-16 px-6">
 
           <p className="text-sm uppercase tracking-[0.25em] text-secondary/80 mb-4">
@@ -326,15 +334,11 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
           <div className="w-16 h-[2px] bg-secondary mx-auto mb-32"></div>
 
         </div>
-
-        {/* PROCESS CARD */}
         <div className="relative -mt-16 md:-mt-20 mb-20 md:mb-28 px-6 md:px-10 z-20">
 
           <div className="max-w-7xl mx-auto rounded-xl overflow-hidden shadow-2xl">
 
             <div className="grid grid-cols-1 md:grid-cols-3">
-
-              {/* STEP 1 */}
               <div className="bg-[#0f2f44] text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
 
                 <p className="text-md uppercase tracking-widest text-white/60 mb-3">
@@ -351,9 +355,6 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
                 </p>
 
               </div>
-
-
-              {/* STEP 2 */}
               <div className="bg-[#c9a96a] text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
 
                 <p className="text-md uppercase tracking-widest text-white/70 mb-3">
@@ -370,9 +371,6 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
                 </p>
 
               </div>
-
-
-              {/* STEP 3 */}
               <div className="bg-[#d94a34] text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
 
                 <p className="text-md uppercase tracking-widest text-white/70 mb-3">
@@ -395,7 +393,7 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
           </div>
         </div>
 
-      </section>
+      </section> */}
       {/* ================= HOW YOU CAN BE PART OF RESTORATION ================= */}
       <section className="py-28 bg-[#f4f7f8]">
 
@@ -485,7 +483,7 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
       <CampusExperienceSection />
 
       {/* Restoration Report */}
-      <section
+      {/* <section
         id="restoration_report"
         className="py-24 bg-white border-t border-gray-100"
       >
@@ -493,7 +491,7 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            {/* LEFT SIDE — EMOTIONAL IMAGE */}
+          
             <div className="relative">
 
               <img
@@ -501,23 +499,16 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
                 alt="Youth restoring degraded land in Ghana"
                 className="w-full h-[520px] object-cover rounded-2xl shadow-xl"
               />
-
-              {/* Caption Overlay */}
               <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-6 py-4 rounded-xl shadow-lg max-w-xs">
                 <p className="text-sm text-gray-700 font-medium">
                   Receive real-time updates on land restoration,
-                   student progress, and the impact your support is making.
+                  student progress, and the impact your support is making.
                 </p>
               </div>
 
             </div>
-
-
-            {/* RIGHT SIDE — FORM */}
             <form onSubmit={handleSubscribe}
               className="bg-[#f7f7f7] p-10 rounded-2xl shadow-sm space-y-6">
-
-              {/* Heading */}
               <div>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-textDark mb-3">
                   Subscribe to the Shoova Restoration Report
@@ -527,9 +518,6 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
                   Receive updates on land restoration, youth training, and the progress of the Shoova Restoration Campus.
                 </p>
               </div>
-
-
-              {/* Name Fields */}
               <div className="grid grid-cols-2 gap-4">
 
                 <div>
@@ -565,9 +553,6 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
                 </div>
 
               </div>
-
-
-              {/* Email */}
               <div>
 
                 <label className="block text-xs font-semibold tracking-wide mb-2">
@@ -585,9 +570,6 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
                 />
 
               </div>
-
-
-              {/* Birthday */}
               <div>
 
                 <label className="block text-xs font-semibold tracking-wide mb-2">
@@ -607,9 +589,6 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
                 />
 
               </div>
-
-
-              {/* Birthday Reminder Checkbox */}
               <div className="flex items-start gap-3">
 
                 <input
@@ -631,18 +610,12 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
                 </p>
 
               </div>
-
-
-              {/* Subscribe Button */}
               <button
                 type="submit"
                 className="w-full bg-secondary hover:bg-secondaryHover text-white font-semibold py-4 rounded-md transition shadow-md"
               >
                 Keep Me Informed
               </button>
-
-
-              {/* Privacy / reCAPTCHA */}
               <p className="text-xs text-gray-500 leading-relaxed">
 
                 By clicking “Subscribe”, you agree to receive updates from the
@@ -660,7 +633,7 @@ const opacity = useTransform(scrollY, [0, 500], [1, 0.7]);
           </div>
 
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

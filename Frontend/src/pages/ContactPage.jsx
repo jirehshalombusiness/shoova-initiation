@@ -128,9 +128,9 @@ export const ContactPage = ({ className, children, variant, contentKey, ...props
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4"><MapPin className="w-6 h-6" /></div>
                     <h3 className="font-bold text-textDark mb-2"> Visit Us </h3>
                     <p className="text-text text-sm">
-                      St. Michael, Minnesota
+                      5775 Wayzata Boulevard,Suite 700
                       <br />
-
+                      St. Louis Park, MN 55416, USA
                     </p>
                   </div>
                   <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
@@ -163,8 +163,8 @@ export const ContactPage = ({ className, children, variant, contentKey, ...props
                 <div className="rounded-2xl overflow-hidden shadow-lg h-64 w-full">
 
                   <iframe
-                    title="Shoova Location - St Michael Minnesota"
-                    src="https://www.google.com/maps?q=St%20Michael%20Minnesota&output=embed"
+                    title="Shoova Location - St Louis Park"
+                    src="https://www.google.com/maps?q=5775+Wayzata+Boulevard+Suite+700+St+Louis+Park+MN+55416&output=embed"
                     className="w-full h-full border-0"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"

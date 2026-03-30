@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^2.2.9",
     "framer-motion": "^12.35.1",
     "lucide-react": "^0.344.0",
     "node-cron": "^4.2.1",
