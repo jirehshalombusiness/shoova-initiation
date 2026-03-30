@@ -246,7 +246,7 @@ const Navbar = () => {
                   <div className="flex flex-col space-y-4 pl-3 border-l border-gray-200">
 
                     <Link
-                      to="/our-story"
+                      to="/story"
                       onClick={() => setMobileMenuOpen(false)}
                       className="text-gray-600 hover:text-secondary transition"
                     >
