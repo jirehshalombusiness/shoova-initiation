@@ -60,7 +60,8 @@ const Footer = () => {
 
               <div>
                 <p className="font-semibold text-white mb-1">Ghana Office</p>
-                <p className="text-white/70">Eastern Region, Ghana</p>
+                <p className="text-white/70">GM-113-3441 Pistachio ST. near ICGC Shekina Temple</p>
+                <p className="text-white/70">Pantang Village Junction, Greater Accra Region, Ghana.</p>
               </div>
 
               <div>

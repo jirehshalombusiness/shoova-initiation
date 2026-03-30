@@ -44,8 +44,8 @@ const Navbar = () => {
     <header>
       <nav
         className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${scrolled
-            ? "bg-white shadow-sm border-b border-gray-100"
-            : "bg-transparent"
+          ? "bg-white shadow-sm border-b border-gray-100"
+          : "bg-transparent"
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10">
@@ -54,9 +54,16 @@ const Navbar = () => {
             {/* LOGO */}
             <Link to="/" className="flex items-center gap-3">
               <img src="/favicon.png" alt="logo" className="h-16" />
-              <span className="font-bold tracking-widest text-secondary">
-                SHOOVA INITIATIVE
-              </span>
+
+              <div className="flex flex-col leading-tight">
+                <span className="font-bold tracking-widest text-secondary">
+                  SHOOVA INITIATIVE
+                </span>
+
+                <span className="text-xs uppercase italic text-secondary tracking-wide">
+                  restoring lives and lands
+                </span>
+              </div>
             </Link>
 
             {/* DESKTOP NAV */}
@@ -101,8 +108,8 @@ const Navbar = () => {
                 {/* DROPDOWN */}
                 <div
                   className={`absolute left-0 top-full pt-4 transition-all duration-300 ${pathwaysOpen
-                      ? "opacity-100 translate-y-0 visible"
-                      : "opacity-0 translate-y-2 invisible"
+                    ? "opacity-100 translate-y-0 visible"
+                    : "opacity-0 translate-y-2 invisible"
                     }`}
                 >
                   <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-3 w-56">
@@ -174,9 +181,19 @@ const Navbar = () => {
 
           {/* 🔥 TOP BAR (THIS FIXES YOUR CLOSE BUTTON ISSUE) */}
           <div className="flex items-center justify-between px-6 h-20 border-b border-gray-100">
-            <span className="font-bold tracking-widest text-secondary">
-              SHOOVA INITIATIVE
-            </span>
+            <Link to="/" className="flex items-center gap-3">
+              <img src="/favicon.png" alt="logo" className="h-16" />
+
+              <div className="flex flex-col leading-tight">
+                <span className="font-bold text-secondary">
+                  SHOOVA INITIATIVE
+                </span>
+
+                <span className="text-xs uppercase italic text-secondary tracking-wide">
+                  restoring lives and lands
+                </span>
+              </div>
+            </Link>
 
             <button
               onClick={() => setMobileMenuOpen(false)}

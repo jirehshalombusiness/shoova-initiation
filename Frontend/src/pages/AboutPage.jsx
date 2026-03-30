@@ -90,12 +90,12 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
       detail: "Administration — USA",
       image: "/img/keneh.jpg",
     },
-    {
-      name: "Sandra Agyekum",
-      role: "Director",
-      detail: "Community Relations — USA",
-      image: "/img/sandra.jpg",
-    }
+    // {
+    //   name: "Sandra Agyekum",
+    //   role: "Director",
+    //   detail: "Community Relations — USA",
+    //   image: "/img/sandra.jpg",
+    // }
   ];
   const [years, setYears] = useState(0);
   const [communities, setCommunities] = useState(0);

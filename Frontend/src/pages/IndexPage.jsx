@@ -309,9 +309,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               <div className="relative">
 
                 <motion.img
-                  src="/img/couples2.png"
+                  src="/img/founders.png"
                   alt="Shoova Founder"
-                  className=" w-[340px] md:w-[520px] object-contain drop-shadow-2xl"
+                  className="w-[420px] md:w-[850px] lg:w-[820px] object-contain  -mt-16 md:-mt-52"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1 }}
