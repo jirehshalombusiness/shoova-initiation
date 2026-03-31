@@ -95,7 +95,7 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
     try {
       setLoading(true); // start loading
       const res = await fetch(
-        "https://shoova-initiation.onrender.com/create-checkout-session",
+        "https://shoova-initiation-yjg3.onrender.com/create-checkout-session",
         {
           method: "POST",
           headers: {
