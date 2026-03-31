@@ -5,7 +5,7 @@ export default function RecentDonations() {
   const [donations, setDonations] = useState([]);
 
   useEffect(() => {
-    fetch("https://shoova-initiation.onrender.com/admin/recent-donations")
+    fetch("https://shoova-initiation-yjg3.onrender.com/admin/recent-donations")
       .then(res => res.json())
       .then(data => setDonations(data));
   }, []);
