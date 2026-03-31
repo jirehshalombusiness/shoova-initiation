@@ -28,6 +28,7 @@ import * as CookieConsent from "vanilla-cookieconsent";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import ".././src/styles/globals.css";
 
+
 function loadAnalytics() {
   const GA_ID = "";
 
@@ -48,8 +49,11 @@ function loadAnalytics() {
 
 const App = () => {
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    console.log("Window undefined ❌");
+    if (typeof window !== "undefined") {
+      console.log("Window exists ✅");
+    } else {
+      console.log("Window undefined ❌");
+    }
 
     if (window.cookieConsentInitialized) return;
     window.cookieConsentInitialized = true;
@@ -136,8 +140,35 @@ const App = () => {
       },
     });
   }, []);
+
+  useEffect(() => {
+  if (window.googleTranslateLoaded) return;
+  window.googleTranslateLoaded = true;
+
+  const script = document.createElement("script");
+  script.src =
+    "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+  script.async = true;
+
+  window.googleTranslateElementInit = () => {
+    try {
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,es,fr",
+        },
+        "google_translate_element"
+      );
+    } catch (e) {
+      console.warn("Translate init failed", e);
+    }
+  };
+
+  document.body.appendChild(script);
+}, []);
   return (
     <>
+      <div id="google_translate_element" style={{ display: "none" }}></div>
       <Toaster
         position="top-right"
         toastOptions={{

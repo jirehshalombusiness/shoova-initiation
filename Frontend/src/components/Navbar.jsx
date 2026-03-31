@@ -2,7 +2,25 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
+
+
 const Navbar = () => {
+  const [currentLang, setCurrentLang] = useState("en");
+
+  const changeLanguage = (lang) => {
+    setCurrentLang(lang);
+
+    const interval = setInterval(() => {
+      const select = document.querySelector(".goog-te-combo");
+
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+        clearInterval(interval);
+      }
+    }, 300);
+  };
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [pathwaysOpen, setPathwaysOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -48,6 +66,7 @@ const Navbar = () => {
           : "bg-transparent"
           }`}
       >
+
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="flex items-center justify-between h-20">
 
@@ -162,15 +181,35 @@ const Navbar = () => {
             >
               {mobileMenuOpen ? <X /> : <Menu />}
             </button>
+
+            <div className="hidden sm:flex items-center gap-1 text-[11px]">
+              {["en", "es", "fr"].map((lang, i) => (
+                <span key={lang} className="flex items-center gap-1">
+                  <button
+                    onClick={() => changeLanguage(lang)}
+                    className={
+                      currentLang === lang
+                        ? "text-secondary font-medium"
+                        : "text-gray-400"
+                    }
+                  >
+                    {lang.toUpperCase()}
+                  </button>
+                  {i < 2 && <span className="text-gray-300">/</span>}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </nav>
+
       {/* OVERLAY */}
       <div
         onClick={() => setMobileMenuOpen(false)}
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all duration-300 ${mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
       />
+
 
       {/* MOBILE MENU */}
       <div
@@ -182,7 +221,7 @@ const Navbar = () => {
           {/* 🔥 TOP BAR (THIS FIXES YOUR CLOSE BUTTON ISSUE) */}
           <div className="flex items-center justify-between px-6 h-20 border-b border-gray-100">
             <Link to="/" className="flex items-center gap-3">
-              <img src="/favicon.png" alt="logo" className="h-16" />
+              {/* <img src="/favicon.png" alt="logo" className="h-16" /> */}
 
               <div className="flex flex-col leading-tight">
                 <span className="font-bold text-secondary">
@@ -204,8 +243,24 @@ const Navbar = () => {
           </div>
 
           {/* 🔥 CONTENT */}
-          <div className="flex flex-col h-full px-6 py-8">
-
+          <div className="flex flex-col h-full px-6 py-2">
+            <div className="flex items-center gap-1 text-[11px] mt-2 mb-3">
+              {["en", "es", "fr"].map((lang, i) => (
+                <span key={lang} className="flex items-center gap-1">
+                  <button
+                    onClick={() => changeLanguage(lang)}
+                    className={
+                      currentLang === lang
+                        ? "text-secondary font-medium"
+                        : "text-gray-400"
+                    }
+                  >
+                    {lang.toUpperCase()}
+                  </button>
+                  {i < 2 && <span className="text-gray-300">/</span>}
+                </span>
+              ))}
+            </div>
             {/* NAV LINKS */}
             <div className="space-y-6">
 

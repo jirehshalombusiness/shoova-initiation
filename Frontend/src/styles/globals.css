@@ -5,7 +5,9 @@
 html {
   scroll-behavior: smooth;
 }
-
+html, body {
+  margin-top: 0px !important;
+}
 body {
   background-color: #F8FAFC;
   color: #334155;
@@ -36,44 +38,63 @@ body {
   }
 }
 
-#cc-main {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  background: #f9fafb;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 10px 20px;
-}
-
-#cc-main .cc__modal {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-/* TEXT */
-#cc-main .cc__text {
-  font-size: 14px;
-  color: #374151;
-}
-
-/* BUTTONS */
-#cc-main .cc__btns {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* ACCEPT BUTTON */
-#cc-main .cc__btn--primary {
-  background-color: #166534;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 13px;
-}
-
 /* REMOVE BULKY BUTTON STYLE */
 #cc-main .cc__btn {
   min-width: auto;
+}
+
+/* Hide Google Translate default UI */
+#google_translate_element {
+  display: none;
+}
+
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* Remove Google top banner completely */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* Hide Google dropdown UI */
+#google_translate_element {
+  display: none;
+}
+
+/* 🔥 Hide Google Translate top banner */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* Hide Google translate dropdown UI */
+#google_translate_element {
+  display: none;
+}
+
+/* Prevent layout shift */
+.skiptranslate {
+  display: none !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
 }

@@ -148,7 +148,7 @@ export default function StoryPage() {
           </h2>
 
           {/* BODY */}
-          <div className="text-gray-700 text-lg md:text-xl leading-relaxed space-y-4 text-justify max-w-none">
+          <div  className="text-gray-700 text-base md:text-lg leading-7 md:leading-relaxed space-y-5 text-left md:text-justify max-w-none">
             <p>
               We are grateful for all the blessings, the gift of life, loving family, great friends, amazing profession, and
               much more. But as we looked at the landscapes of our home in Ghana, we saw a different kind of
@@ -172,7 +172,7 @@ export default function StoryPage() {
               training), the &quot;Heart&quot; (Technical production), and the &quot;Soul&quot; (Dignified community) for youth who are
               ready to pivot from the hazards of the mines to the dignity of a career. Through our School of
               Engineering &amp; Fabrication, School of Sustainable Futures, and the School of Ethical Leadership, we are
-              giving a new generation the tools—and the 0%–2% interest startup loans—to rebuild their lives and
+              giving a new generation the tools and the 0%–2% interest startup loans to rebuild their lives and
               their land.
             </p>
             <p>
@@ -291,7 +291,7 @@ export default function StoryPage() {
             </p>
 
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              This is where Shoova begins — turning damaged land into opportunity,
+              This is where Shoova begins turning damaged land into opportunity,
               and lost potential into purpose.
             </p>
 
