@@ -15,7 +15,7 @@ export default function SuccessPage() {
     const verify = async () => {
       try {
         const res = await fetch(
-          `https://shoova-initiation.onrender.com/api/verify-session/${sessionId}`
+          `https://shoova-initiation-yjg3.onrender.com/api/verify-session/${sessionId}`
         );
 
         const data = await res.json();
