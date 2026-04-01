@@ -11,12 +11,12 @@ import { Link } from '../components/Link';
 import { MapPin } from 'lucide-react';
 import { Menu } from 'lucide-react';
 import { Text } from '../components/Text';
-import { Facebook, Twitter, Instagram, Youtube, Share2 } from "lucide-react";
 import { motion } from "framer-motion"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import CountUp from "../components/CountUp"
-
+import { FaXTwitter } from "react-icons/fa6";
+import { FaInstagram, FaFacebookF, FaYoutube, FaShareAlt } from "react-icons/fa";
 
 export const IndexPage = ({ className, children, variant, contentKey, ...props }) => {
 
@@ -316,7 +316,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1 }}
                 />
-                
+
 
                 {/* glow */}
                 <motion.div
@@ -1473,26 +1473,46 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                         {/* Main Share Icon */}
                         <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
-                          <Share2 className="w-4 h-4 text-white" />
+                          <FaShareAlt className="w-4 h-4 text-white" />
                         </div>
 
                         {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Facebook className="w-4 h-4 text-white" />
+                          <a
+                            href="https://facebook.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaFacebookF className="w-4 h-4 text-white" />
                           </a>
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Twitter className="w-4 h-4 text-white" />
+                          <a
+                            href="https://x.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaXTwitter size={30} color="white" className="w-4 h-4 text-white" />
                           </a>
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Instagram className="w-4 h-4 text-white" />
+                          <a
+                            href="https://instagram.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaInstagram className="w-4 h-4 text-white" />
                           </a>
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Youtube className="w-4 h-4 text-white" />
+                          <a
+                            href="https://youtube.com/yourchannel"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaYoutube className="w-4 h-4 text-white" />
                           </a>
 
                         </div>
@@ -1502,7 +1522,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">William Agyekum</h3>
+                    <h3 className="text-xl font-heading font-bold">Mr. William Agyekum</h3>
                     <p className="text-sm text-teal-100 mt-1">President &amp; Executive Director</p>
                     <p className="text-xs text-white/70 mt-1">USA</p>
                   </div>
@@ -1523,26 +1543,43 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                         {/* Main Share Icon */}
                         <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
-                          <Share2 className="w-4 h-4 text-white" />
+                          <FaShareAlt className="w-4 h-4 text-white" />
                         </div>
-
                         {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Facebook className="w-4 h-4 text-white" />
+                          <a
+                            href="https://facebook.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaFacebookF className="w-4 h-4 text-white" />
                           </a>
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Twitter className="w-4 h-4 text-white" />
+                          <a
+                            href="https://x.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaXTwitter size={30} color="white" className="w-4 h-4 text-white" />
                           </a>
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Instagram className="w-4 h-4 text-white" />
+                          <a
+                            href="https://instagram.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaInstagram className="w-4 h-4 text-white" />
                           </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Youtube className="w-4 h-4 text-white" />
+                          <a
+                            href="https://youtube.com/yourchannel"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaYoutube className="w-4 h-4 text-white" />
                           </a>
 
                         </div>
@@ -1552,7 +1589,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">Salome Agyekum, CA</h3>
+                    <h3 className="text-xl font-heading font-bold">Mrs. Salome Agyekum, CA</h3>
                     <p className="text-sm text-teal-100 mt-1">Treasurer</p>
                     <p className="text-xs text-white/70 mt-1">USA</p>
                   </div>
@@ -1573,26 +1610,45 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                         {/* Main Share Icon */}
                         <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
-                          <Share2 className="w-4 h-4 text-white" />
+                          <FaShareAlt className="w-4 h-4 text-white" />
                         </div>
 
                         {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Facebook className="w-4 h-4 text-white" />
+                          <a
+                            href="https://facebook.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaFacebookF className="w-4 h-4 text-white" />
                           </a>
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Twitter className="w-4 h-4 text-white" />
+                          <a
+                            href="https://x.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaXTwitter size={30} color="white" className="w-4 h-4 text-white" />
+                          </a>
+                          <a
+                            href="https://instagram.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaInstagram className="w-4 h-4 text-white" />
                           </a>
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Instagram className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Youtube className="w-4 h-4 text-white" />
+                          <a
+                            href="https://youtube.com/yourchannel"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaYoutube className="w-4 h-4 text-white" />
                           </a>
 
                         </div>
@@ -1602,7 +1658,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">Kwame Opon-Yeboah</h3>
+                    <h3 className="text-xl font-heading font-bold">Mr. Kwame Opon-Yeboah</h3>
                     <p className="text-sm text-teal-100 mt-1">Head of Ghana Operations</p>
                     <p className="text-xs text-white/70 mt-1">Ghana</p>
                   </div>
@@ -1613,7 +1669,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   <div className="relative overflow-hidden rounded-xl">
                     <img
                       src="/img/juliuss.jpg"
-                      alt="Julius Botchchway"
+                      alt="Julius Botchway "
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
 
@@ -1623,26 +1679,47 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                         {/* Main Share Icon */}
                         <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
-                          <Share2 className="w-4 h-4 text-white" />
+                          <FaShareAlt className="w-4 h-4 text-white" />
                         </div>
 
                         {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Facebook className="w-4 h-4 text-white" />
+                          <a
+                            href="https://web.facebook.com/roland.glin"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaFacebookF className="w-4 h-4 text-white" />
                           </a>
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Twitter className="w-4 h-4 text-white" />
+
+                          <a
+                            href="https://x.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaXTwitter size={30} color="white" className="w-4 h-4 text-white" />
                           </a>
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Instagram className="w-4 h-4 text-white" />
+                          <a
+                            href="https://instagram.com/yourusername"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaInstagram className="w-4 h-4 text-white" />
                           </a>
 
-                          <a href="#" className="w-12 h-12 flex items-center justify-center hover:bg-black/20">
-                            <Youtube className="w-4 h-4 text-white" />
+                          <a
+                            href="https://youtube.com/yourchannel"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
+                          >
+                            <FaYoutube className="w-4 h-4 text-white" />
                           </a>
 
                         </div>
@@ -1652,7 +1729,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">Julius Botchchway</h3>
+                    <h3 className="text-xl font-heading font-bold">Mr. Julius Botchway</h3>
                     <p className="text-sm text-teal-100 mt-1">Director of Ghana Operations</p>
                     <p className="text-xs text-white/70 mt-1">Ghana</p>
                   </div>

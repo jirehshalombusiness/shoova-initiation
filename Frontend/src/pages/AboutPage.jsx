@@ -55,37 +55,37 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
   const leadership = [
     {
-      name: "William Agyekum",
+      name: "Mr. William Agyekum",
       role: "President & Executive Director",
       detail: "Project Management — USA",
       image: "/img/portriat.jpg",
     },
     {
-      name: "Salome Agyekum, CA",
+      name: "Mrs. Salome Agyekum, CA",
       role: "Treasurer",
       detail: "Data Analytics & Finance — USA",
       image: "/img/salome.jpg",
     },
     {
-      name: "Kwame Opon-Yeboah",
+      name: "Mr. Kwame Opon-Yeboah",
       role: "Director & Head of Ghana Operations",
       detail: "Legal & Community Relations — Ghana",
       image: "/img/opon.jpg",
     },
     {
-      name: "Julius Botchchway",
+      name: "Mr. Julius Botchway",
       role: "Director of Ghana Operations",
       detail: "IT Infrastructure — Ghana",
       image: "/img/juliuss.jpg",
     },
     {
-      name: "Isaac Waddy Adjei-Ampofo",
+      name: "Mr. Isaac Waddy Adjei-Ampofo",
       role: "Director of Ghana Operations",
       detail: "Education — Ghana",
       image: "/img/isaac.jpg",
     },
     {
-      name: "Keneh Wemba",
+      name: "Mr. Keneh Wemba",
       role: "Secretary",
       detail: "Administration — USA",
       image: "/img/keneh.jpg",
