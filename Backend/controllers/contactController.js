@@ -1,24 +1,32 @@
 import { Resend } from "resend";
-
+import sanitizeHtml from "sanitize-html";
 
 export const sendContactEmail = async (req, res) => {
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const { firstName, lastName, email, subject, message } = req.body;
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
-    if (!firstName || !email || !message) {
-        return res.status(400).json({ success: false, message: "Missing fields" });
-    }
+  const { firstName, lastName, email, subject, message } = req.body;
 
-    try {
-        await resend.emails.send({
-            from: "Shoova Website <onboarding@resend.dev>",
-            to: "stanleyokyemanarthur@gmail.com",
+  if (!firstName || !email || !message) {
+    return res.status(400).json({ success: false, message: "Missing fields" });
+  }
 
-            reply_to: email,
+  // ✅ SANITIZE INPUTS
+  const safeFirstName = sanitizeHtml(firstName, { allowedTags: [], allowedAttributes: {} });
+  const safeLastName = sanitizeHtml(lastName || "", { allowedTags: [], allowedAttributes: {} });
+  const safeEmail = sanitizeHtml(email, { allowedTags: [], allowedAttributes: {} });
+  const safeSubject = sanitizeHtml(subject || "", { allowedTags: [], allowedAttributes: {} });
+  const safeMessage = sanitizeHtml(message, { allowedTags: [], allowedAttributes: {} });
 
-            subject: `Shoova Contact: ${subject || "New Inquiry"}`,
+  try {
+    await resend.emails.send({
+      from: "Shoova Initiative <noreply@shoovainitiative.org>", // ✅ better sender
+      to: process.env.CONTACT_RECEIVER_EMAIL || "info@shoovainitiative.org", 
 
-            html: `
+      reply_to: safeEmail || "info@shoovainitiative.org",
+
+      subject: `Shoova Contact: ${safeSubject || "New Inquiry"}`,
+
+      html: `
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background-color: #f4f6f8; padding: 50px 20px;">
 
   <div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
@@ -41,15 +49,15 @@ export const sendContactEmail = async (req, res) => {
         <tr>
           <td style="padding: 10px 0; color: #999; width: 130px;">Full Name</td>
           <td style="padding: 10px 0; color: #111; font-weight: 500;">
-            ${firstName} ${lastName}
+            ${safeFirstName} ${safeLastName}
           </td>
         </tr>
 
         <tr>
           <td style="padding: 10px 0; color: #999;">Email Address</td>
           <td style="padding: 10px 0;">
-            <a href="mailto:${email}" style="color: #999; text-decoration: none; font-weight: 500;">
-              ${email}
+            <a href="mailto:${safeEmail}" style="color: #999; text-decoration: none; font-weight: 500;">
+              ${safeEmail}
             </a>
           </td>
         </tr>
@@ -57,7 +65,7 @@ export const sendContactEmail = async (req, res) => {
         <tr>
           <td style="padding: 10px 0; color: #999;">Subject</td>
           <td style="padding: 10px 0; color: #111;">
-            ${subject || "—"}
+            ${safeSubject || "—"}
           </td>
         </tr>
 
@@ -77,7 +85,7 @@ export const sendContactEmail = async (req, res) => {
           line-height: 1.7;
           border: 1px solid #eee;
         ">
-          ${message.replace(/\n/g, "<br/>")}
+          ${safeMessage.replace(/\n/g, "<br/>")}
         </div>
       </div>
 
@@ -97,12 +105,12 @@ export const sendContactEmail = async (req, res) => {
 
 </div>
 `
-        });
+    });
 
-        res.json({ success: true });
+    res.json({ success: true });
 
-    } catch (error) {
-        console.error("❌ Contact email error:", error);
-        res.status(500).json({ success: false });
-    }
+  } catch (error) {
+    console.error("❌ Contact email error:", error);
+    res.status(500).json({ success: false });
+  }
 };

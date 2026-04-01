@@ -44,7 +44,7 @@ export const sendReceipt = async ({
        SEND EMAIL (RESEND)
     ========================= */
     await resend.emails.send({
-      from: "Shoova Initiative <onboarding@resend.dev>",
+      from: "Shoova Initiative <info@shoovainitiative.org>",
       to: email,
       subject: "Your Official Donation Receipt – Shoova Initiative",
 
