@@ -1480,7 +1480,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
 
                           <a
-                            href="https://facebook.com/yourusername"
+                            href="https://web.facebook.com/william.o.agyekum.7"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
