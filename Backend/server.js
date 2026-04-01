@@ -38,7 +38,8 @@ app.use(cors({
   origin: (origin, callback) => {
     const allowed = [
       "http://localhost:3000",
-      "https://shoova-initiation.vercel.app"
+      "https://shoova-initiation.vercel.app",
+      "https://www.shoovainitiative.org"
     ];
     if (!origin || allowed.includes(origin)) {
       callback(null, true);
@@ -215,8 +216,8 @@ app.post("/create-checkout-session", async (req, res) => {
         },
       ],
 
-      success_url: "https://shoova-initiation.vercel.app/success?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: "https://shoova-initiation.vercel.app/donate",
+      success_url: "https://www.shoovainitiative.org/success?session_id={CHECKOUT_SESSION_ID}",
+      cancel_url: "https://www.shoovainitiative.org/donate",
     });
 
     res.json({ url: session.url });

@@ -63,7 +63,7 @@ export default function NewsletterPage() {
 
   const loadDraft = async () => {
     try {
-      const res = await fetch("https://shoova-initiation.onrender.com/draft/get");
+      const res = await fetch("https://shoova-initiation-yjg3.onrender.com/draft/get");
       const data = await res.json();
 
       if (data.draft) {
@@ -83,7 +83,7 @@ export default function NewsletterPage() {
   /* ================= SAVE ================= */
   const saveDraft = async (silent = false) => {
     try {
-      const res = await fetch("https://shoova-initiation.onrender.com/draft/save", {
+      const res = await fetch("https://shoova-initiation-yjg3.onrender.com/draft/save", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -153,7 +153,7 @@ export default function NewsletterPage() {
 
           <p style="font-size:12px;color:#888;text-align:center;margin-top:20px;">
         If you no longer wish to receive these emails,
-        <a href="http://localhost:5000/newsletter/unsubscribe?email={{EMAIL}}" style="color:#888;text-decoration:underline;">
+        <a href="https://shoova-initiation-yjg3.onrender.com/newsletter/unsubscribe?email={{EMAIL}}" style="color:#888;text-decoration:underline;">
           unsubscribe here
         </a>.
       </p>
@@ -178,7 +178,7 @@ export default function NewsletterPage() {
 
       toast.loading("Sending newsletter...", { id: "send" });
 
-      const res = await fetch("https://shoova-initiation.onrender.com/newsletter-send/send", {
+      const res = await fetch("https://shoova-initiation-yjg3.onrender.com/newsletter-send/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -196,7 +196,7 @@ export default function NewsletterPage() {
         toast.success("Newsletter sent successfully 🚀", { id: "send" });
 
         // ✅ CLEAR DRAFT FROM DB
-        await fetch("https://shoova-initiation.onrender.com/draft/clear", {
+        await fetch("https://shoova-initiation-yjg3.onrender.com/draft/clear", {
           method: "DELETE"
         });
 
