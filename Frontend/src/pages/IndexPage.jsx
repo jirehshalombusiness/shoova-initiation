@@ -240,16 +240,19 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
               {/* 🔥 HEADLINE (TIGHT STACKED BLOCKS) */}
               <div className="flex flex-col items-start leading-none  mb-4">
-
                 <div className="bg-white text-black px-4 py-2 rounded-sm shadow">
                   <span className="text-2xl md:text-4xl lg:text-5xl font-bold">
                     Halt illegal mining,
                   </span>
                 </div>
                 <div className="bg-white px-4 ml-10 py-2 rounded-sm shadow">
-
                   <span className="text-2xl md:text-4xl lg:text-5xl font-bold text-secondary">
                     Heal the Land.
+                  </span>
+                </div>
+                <div className="bg-secondary px-4 mr-16 py-2 rounded-sm shadow">
+                  <span className="text-2xl md:text-3xl lg:text-3xl font-bold text-white uppercase">
+                    Stop Galamsey!
                   </span>
                 </div>
 
