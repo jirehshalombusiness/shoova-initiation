@@ -1,7 +1,11 @@
 import mongoose from "mongoose";
 
 const adminSchema = new mongoose.Schema({
-  email: String,
+  email: {
+  type: String,
+  unique: true,
+  required: true
+},
   password: String
 });
 
