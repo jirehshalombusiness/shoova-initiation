@@ -12,7 +12,7 @@ async function createAdmin() {
   const password = await bcrypt.hash("admin123", 10);
 
   await Admin.create({
-    email: "admin@shoova.org",
+    email: "admin@shoovainitiative.org",
     password
   });
 
