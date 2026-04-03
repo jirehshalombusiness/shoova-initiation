@@ -456,18 +456,21 @@ app.post("/admin/settings", async (req, res) => {
 
 
 app.post("/admin/login", async (req, res) => {
-
   try {
-
     const { email, password } = req.body;
 
-    const admin = await Admin.findOne({ email });
+    const normalizedEmail = email.toLowerCase().trim();
+
+    const admin = await Admin.findOne({ email: normalizedEmail });
 
     if (!admin) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const validPassword = await bcrypt.compare(password, admin.password);
+    const validPassword = await bcrypt.compare(
+      password.trim(), // also trim password just in case
+      admin.password
+    );
 
     if (!validPassword) {
       return res.status(401).json({ message: "Invalid credentials" });
@@ -482,13 +485,9 @@ app.post("/admin/login", async (req, res) => {
     res.json({ token, email: admin.email });
 
   } catch (error) {
-
     console.error("Login error:", error);
-
     res.status(500).json({ error: "Server error" });
-
   }
-
 });
 
 
