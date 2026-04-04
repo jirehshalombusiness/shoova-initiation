@@ -27,6 +27,7 @@ import { useEffect } from "react";
 import * as CookieConsent from "vanilla-cookieconsent";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import ".././src/styles/globals.css";
+import ShoovaCampus from "./pages/ShoovaCampus";
 
 
 function loadAnalytics() {
@@ -197,6 +198,7 @@ const App = () => {
             <Route path="/success" element={<SuccessPage />} />
             <Route path="/why-it-matters" element={<WhyItMatters />} />
             <Route path="/restoration-updates" element={<RestorationUpdates />} />
+            <Route path="/shoova-campus" element={<ShoovaCampus />} />
 
           </Route>
 

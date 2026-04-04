@@ -141,6 +141,13 @@ const Navbar = () => {
                     </Link>
 
                     <Link
+                      to="/shoova-campus"
+                      className="block px-5 py-3 text-gray-700 hover:text-secondary hover:bg-gray-50 transition"
+                    >
+                      The Shoova Campus
+                    </Link>
+
+                    <Link
                       to="/why-it-matters"
                       className="block px-5 py-3 text-gray-700 hover:text-secondary hover:bg-gray-50 transition"
                     >

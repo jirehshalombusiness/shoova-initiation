@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import DatePicker from "react-datepicker";
-import CampusExperienceSection from '../components/campusExperienceSection';
+// import CampusExperienceSection from '../components/campusExperienceSection';
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function StoryPage() {
@@ -480,7 +480,7 @@ export default function StoryPage() {
 
       </section>
 
-      <CampusExperienceSection />
+      {/* <CampusExperienceSection /> */}
 
       {/* Restoration Report */}
       {/* <section
