@@ -314,7 +314,12 @@ const Navbar = () => {
                     >
                       Our Story
                     </Link>
-
+                    <Link
+                      to="/shoova-campus"
+                      className="text-gray-600 hover:text-secondary transition"
+                    >
+                      The Shoova Campus
+                    </Link>
                     <Link
                       to="/why-it-matters"
                       onClick={() => setMobileMenuOpen(false)}
