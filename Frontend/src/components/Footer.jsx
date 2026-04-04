@@ -62,17 +62,20 @@ const Footer = () => {
                 <p className="font-semibold text-white mb-1">Ghana Office</p>
                 <p className="text-white/70">GM-113-3441 Pistachio ST. near ICGC Shekina Temple</p>
                 <p className="text-white/70">Pantang Village Junction, Greater Accra Region, Ghana.</p>
+                 <p>+233 54 168 1920</p>
               </div>
 
               <div>
                 <p className="font-semibold text-white mb-1">United States Office</p>
                 <p className="text-white/70">5775 Wayzata Boulevard, Suite 700 </p>
+                <p className="text-white/70">PMB 2004 </p>
                 <p className="text-white/70">St. Louis Park, MN 55416, USA</p>
+                 <p>+1(612)422-8230</p>
               </div>
 
               <div className="pt-2 space-y-1 text-white/70">
-                <p>+1(612)422-8230</p>
-                <p>+233 54 168 1920</p>
+               
+               
                 <p>info@shoovainitiative.org</p>
               </div>
 
