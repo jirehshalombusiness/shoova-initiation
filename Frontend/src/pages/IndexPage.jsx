@@ -1593,7 +1593,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                   <div className="mt-4">
                     <h3 className="text-xl font-heading font-bold">Salome Agyekum, CA</h3>
-                    <p className="text-sm text-teal-100 mt-1">Co-Founder &amp;Treasurer</p>
+                    <p className="text-sm text-teal-100 mt-1">Co-Founder &amp; Treasurer</p>
                     <p className="text-xs text-white/70 mt-1">USA</p>
                   </div>
                 </div>
@@ -1662,7 +1662,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                   <div className="mt-4">
                     <h3 className="text-xl font-heading font-bold">Kwame Opon-Yeboah</h3>
-                    <p className="text-sm text-teal-100 mt-1">Head of Ghana Operations</p>
+                    <p className="text-sm text-teal-100 mt-1">Executive Director &amp; Head of Ghana Operations</p>
                     <p className="text-xs text-white/70 mt-1">Ghana</p>
                   </div>
                 </div>
