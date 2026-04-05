@@ -1525,7 +1525,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">Mr. William Agyekum</h3>
+                    <h3 className="text-xl font-heading font-bold">William Agyekum</h3>
                     <p className="text-sm text-teal-100 mt-1">Co-Founder &amp; President</p>
                     <p className="text-xs text-white/70 mt-1">USA</p>
                   </div>
@@ -1592,7 +1592,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">Mrs. Salome Agyekum, CA</h3>
+                    <h3 className="text-xl font-heading font-bold">Salome Agyekum, CA</h3>
                     <p className="text-sm text-teal-100 mt-1">Co-Founder &amp;Treasurer</p>
                     <p className="text-xs text-white/70 mt-1">USA</p>
                   </div>
@@ -1661,7 +1661,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">Mr. Kwame Opon-Yeboah</h3>
+                    <h3 className="text-xl font-heading font-bold">Kwame Opon-Yeboah</h3>
                     <p className="text-sm text-teal-100 mt-1">Head of Ghana Operations</p>
                     <p className="text-xs text-white/70 mt-1">Ghana</p>
                   </div>
@@ -1732,7 +1732,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <div className="mt-4">
-                    <h3 className="text-xl font-heading font-bold">Mr. Julius Botchway</h3>
+                    <h3 className="text-xl font-heading font-bold">Julius Botchway</h3>
                     <p className="text-sm text-teal-100 mt-1">Director of Ghana Operations</p>
                     <p className="text-xs text-white/70 mt-1">Ghana</p>
                   </div>
