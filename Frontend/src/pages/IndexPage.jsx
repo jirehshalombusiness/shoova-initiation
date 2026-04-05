@@ -245,14 +245,14 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     Halt illegal mining,
                   </span>
                 </div>
-                <div className="bg-white px-4 ml-10 py-2 rounded-sm shadow">
-                  <span className="text-2xl md:text-4xl lg:text-5xl font-bold text-secondary">
-                    Heal the Land.
-                  </span>
-                </div>
                 <div className="bg-secondary px-4 mr-16 py-2 rounded-sm shadow">
                   <span className="text-2xl md:text-3xl lg:text-3xl font-bold text-white uppercase">
                     Stop Galamsey!
+                  </span>
+                </div>
+                <div className="bg-white px-4 ml-10 py-2 rounded-sm shadow">
+                  <span className="text-2xl md:text-4xl lg:text-5xl font-bold text-secondary">
+                    Heal the Land.
                   </span>
                 </div>
 
@@ -1526,7 +1526,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                   <div className="mt-4">
                     <h3 className="text-xl font-heading font-bold">Mr. William Agyekum</h3>
-                    <p className="text-sm text-teal-100 mt-1">President &amp; Executive Director</p>
+                    <p className="text-sm text-teal-100 mt-1">Co-Founder &amp; President</p>
                     <p className="text-xs text-white/70 mt-1">USA</p>
                   </div>
                 </div>
@@ -1593,7 +1593,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                   <div className="mt-4">
                     <h3 className="text-xl font-heading font-bold">Mrs. Salome Agyekum, CA</h3>
-                    <p className="text-sm text-teal-100 mt-1">Treasurer</p>
+                    <p className="text-sm text-teal-100 mt-1">Co-Founder &amp;Treasurer</p>
                     <p className="text-xs text-white/70 mt-1">USA</p>
                   </div>
                 </div>
