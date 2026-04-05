@@ -72,9 +72,7 @@ const Footer = () => {
                 <p className="text-white/70">Pantang Village Junction, Greater Accra Region, Ghana.</p>
                 <p>+233 24 726 4516</p>
               </div>
-              <div className="pt-2 space-y-1 text-white/70">
-
-
+              <div className=" text-white/70">
                 <p>info@shoovainitiative.org</p>
               </div>
 
