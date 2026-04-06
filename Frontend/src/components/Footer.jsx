@@ -16,10 +16,10 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-5">
               <img
                 src="/favicon.png"
-                alt="Shoova Initiative"
+                alt="Shoova Initiative Logo"
                 className="h-16"
               />
-              <h3 className="text-lg font-semibold tracking-tight">
+              <h3 className="text-lg uppercase font-semibold tracking-tight">
                 Shoova Initiative
               </h3>
             </div>
