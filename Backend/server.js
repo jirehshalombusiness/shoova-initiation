@@ -23,12 +23,12 @@ import newsletterSendRoutes from "./routes/newsletterSend.js";
 import draftRoutes from "./routes/draftRoutes.js";
 import engagementRoutes from "./routes/engagementRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
+import crypto from "crypto";
+import { sendEmail } from "./utils/sendEmail.js"
+import { verifyAdmin } from "./middleware/verifyAdmin.js";
 
 
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.log(err));
 
 const PORT= process.env.PORT || 5000
 const app = express();
@@ -50,6 +50,56 @@ app.use(cors({
   credentials: true
 }));
 
+
+
+const seedAdmin = async () => {
+  try {
+    const email = process.env.ADMIN_EMAIL?.trim().toLowerCase();
+    const passwordRaw = process.env.ADMIN_PASSWORD?.trim();
+
+    if (!email || !passwordRaw) {
+      console.log("⚠️ Admin env variables missing");
+      return;
+    }
+
+    const existingAdmin = await Admin.findOne({ email });
+
+    if (!existingAdmin) {
+      const hashedPassword = await bcrypt.hash(passwordRaw, 10);
+
+      await Admin.create({
+        email,
+        password: hashedPassword
+      });
+
+      console.log("✅ Admin auto-created");
+    } else {
+      console.log("ℹ️ Admin already exists");
+    }
+
+  } catch (error) {
+    console.error("❌ Error seeding admin:", error.message);
+  }
+};
+
+
+const startServer = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("MongoDB connected");
+
+    await seedAdmin(); // ✅ now safe
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+
+  } catch (err) {
+    console.error("❌ Startup error:", err);
+  }
+};
+
+startServer();
 /* ==============================
    STRIPE WEBHOOK
 ============================== */
@@ -245,7 +295,7 @@ app.get("/api/verify-session/:id", async (req, res) => {
   }
 });
 
-app.get("/admin/dashboard", async (req, res) => {
+app.get("/admin/dashboard", verifyAdmin, async (req, res) => {
   try {
 
     const totalRaised = await Donation.aggregate([
@@ -297,7 +347,7 @@ app.get("/admin/dashboard", async (req, res) => {
   }
 });
 
-app.get("/admin/donations", async (req, res) => {
+app.get("/admin/donations",verifyAdmin, async (req, res) => {
 
   const donations = await Donation.find()
     .sort({ createdAt: -1 });
@@ -306,7 +356,7 @@ app.get("/admin/donations", async (req, res) => {
 
 });
 
-app.get("/admin/donors", async (req, res) => {
+app.get("/admin/donors",verifyAdmin, async (req, res) => {
   try {
 
     const donors = await Donation.aggregate([
@@ -338,7 +388,7 @@ app.get("/admin/donors", async (req, res) => {
   }
 });
 
-app.get("/admin/recent-donations", async (req, res) => {
+app.get("/admin/recent-donations",verifyAdmin, async (req, res) => {
   try {
     const recent = await Donation.find()
       .sort({ createdAt: -1 })
@@ -352,7 +402,7 @@ app.get("/admin/recent-donations", async (req, res) => {
   }
 });
 
-app.get("/admin/analytics", async (req, res) => {
+app.get("/admin/analytics",verifyAdmin, async (req, res) => {
   try {
 
     /* =============================
@@ -414,7 +464,7 @@ app.get("/admin/analytics", async (req, res) => {
   }
 });
 
-app.get("/admin/settings", async (req, res) => {
+app.get("/admin/settings",verifyAdmin, async (req, res) => {
 
   let settings = await Settings.findOne();
 
@@ -433,7 +483,7 @@ app.get("/admin/settings", async (req, res) => {
 
 });
 
-app.post("/admin/settings", async (req, res) => {
+app.post("/admin/settings",verifyAdmin, async (req, res) => {
 
   try {
 
@@ -461,6 +511,11 @@ app.post("/admin/login", async (req, res) => {
 
     const normalizedEmail = email.toLowerCase().trim();
 
+    // 🔥 restrict to ONLY your admin email
+    if (normalizedEmail !== process.env.ADMIN_EMAIL.toLowerCase()) {
+      return res.status(403).json({ message: "Not authorized" });
+    }
+
     const admin = await Admin.findOne({ email: normalizedEmail });
 
     if (!admin) {
@@ -468,7 +523,7 @@ app.post("/admin/login", async (req, res) => {
     }
 
     const validPassword = await bcrypt.compare(
-      password.trim(), // also trim password just in case
+      password.trim(),
       admin.password
     );
 
@@ -477,7 +532,7 @@ app.post("/admin/login", async (req, res) => {
     }
 
     const token = jwt.sign(
-      { adminId: admin._id, email: admin.email },
+      { adminId: admin._id },
       process.env.JWT_SECRET,
       { expiresIn: "7d" }
     );
@@ -485,14 +540,91 @@ app.post("/admin/login", async (req, res) => {
     res.json({ token, email: admin.email });
 
   } catch (error) {
-    console.error("Login error:", error);
     res.status(500).json({ error: "Server error" });
   }
 });
 
 
 
-app.get("/admin/receipt/:id", async (req, res) => {
+app.post("/admin/forgot-password", async (req, res) => {
+  try {
+    const email = req.body.email.toLowerCase().trim();
+
+    const admin = await Admin.findOne({ email });
+
+    // 🔐 Always return same response (prevents email guessing)
+    if (!admin) {
+      return res.json({ message: "If email exists, reset link sent" });
+    }
+
+    // 🔥 Invalidate previous tokens
+    admin.resetToken = undefined;
+    admin.resetTokenExpire = undefined;
+
+    // 🔥 Generate new token
+    const token = crypto.randomBytes(32).toString("hex");
+
+    admin.resetToken = token;
+    admin.resetTokenExpire = Date.now() + 1000 * 60 * 15; // 15 mins
+
+    await admin.save();
+
+    const resetLink = `${process.env.FRONTEND_URL}/reset-password/${token}`;
+
+    // ✅ Send email using your existing setup
+    await sendEmail(
+      admin.email,
+      "Reset your admin password",
+      `
+        <div style="font-family: Arial; padding: 20px;">
+          <h2>Password Reset</h2>
+          <p>You requested to reset your admin password.</p>
+
+          <a href="${resetLink}" 
+             style="display:inline-block;padding:10px 20px;background:#16a34a;color:white;text-decoration:none;border-radius:5px;">
+             Reset Password
+          </a>
+
+          <p>This link expires in 15 minutes.</p>
+        </div>
+      `
+    );
+
+    res.json({ message: "Reset link sent" });
+
+  } catch (err) {
+    console.error("Forgot password error:", err);
+    res.status(500).json({ message: "Error sending reset email" });
+  }
+});
+
+app.post("/admin/reset-password/:token", async (req, res) => {
+  try {
+    const { password } = req.body;
+
+    const admin = await Admin.findOne({
+      resetToken: req.params.token,
+      resetTokenExpire: { $gt: Date.now() }
+    });
+
+    if (!admin) {
+      return res.status(400).json({ message: "Invalid or expired token" });
+    }
+
+    admin.password = await bcrypt.hash(password.trim(), 10);
+    admin.resetToken = undefined;
+    admin.resetTokenExpire = undefined;
+
+    await admin.save();
+
+    res.json({ message: "Password updated successfully" });
+
+  } catch (err) {
+    res.status(500).json({ message: "Error resetting password" });
+  }
+});
+
+app.get("/admin/receipt/:id",verifyAdmin, async (req, res) => {
   try {
     const id = req.params.id;
 
@@ -523,10 +655,7 @@ app.get("/admin/receipt/:id", async (req, res) => {
   }
 });
 
-
-
-
-app.post("/admin/resend-receipt/:id", async (req, res) => {
+app.post("/admin/resend-receipt/:id",verifyAdmin, async (req, res) => {
   try {
     const id = req.params.id;
 
@@ -553,7 +682,7 @@ app.post("/admin/resend-receipt/:id", async (req, res) => {
     res.status(500).json({ error: "Resend failed" });
   }
 });
-app.get("/admin/donor/:email", async (req, res) => {
+app.get("/admin/donor/:email",verifyAdmin, async (req, res) => {
 
   try {
 

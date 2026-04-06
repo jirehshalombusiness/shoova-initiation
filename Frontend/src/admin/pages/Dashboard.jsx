@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import StatCard from "../components/StatCard";
 import { DollarSign, Users, Repeat, BarChart3 } from "lucide-react";
 import RecentDonations from "../components/RecentDonations";
-
 import {
   BarChart,
   Bar,
@@ -11,6 +10,7 @@ import {
   Tooltip,
   ResponsiveContainer
 } from "recharts";
+import { fetchWithAuth } from "../../utils/api";
 
 export default function Dashboard() {
 
@@ -36,7 +36,10 @@ export default function Dashboard() {
 
     const fetchDashboard = async () => {
       try {
-        const res = await fetch("https://shoova-initiation-yjg3.onrender.com/admin/dashboard");
+        const res = await fetchWithAuth(
+          "https://shoova-initiation-yjg3.onrender.com/admin/dashboard"
+        );
+
         const result = await res.json();
 
         setData({
@@ -65,25 +68,25 @@ export default function Dashboard() {
   }, []);
 
   // 📊 Monthly grouped + sorted data
-const grouped = {};
+  const grouped = {};
 
-(data.recentDonations || []).forEach(d => {
-  const day = new Date(d.createdAt).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric"
+  (data.recentDonations || []).forEach(d => {
+    const day = new Date(d.createdAt).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric"
+    });
+
+    if (!grouped[day]) {
+      grouped[day] = 0;
+    }
+
+    grouped[day] += d.amount;
   });
 
-  if (!grouped[day]) {
-    grouped[day] = 0;
-  }
-
-  grouped[day] += d.amount;
-});
-
-const chartData = Object.keys(grouped).map(day => ({
-  day,
-  total: grouped[day]
-}));
+  const chartData = Object.keys(grouped).map(day => ({
+    day,
+    total: grouped[day]
+  }));
 
   if (loading) {
     return (
@@ -161,11 +164,10 @@ const chartData = Object.keys(grouped).map(day => ({
               </span>
 
               <span
-                className={`font-semibold ${
-                  donation.amount >= 1000
-                    ? "text-yellow-600"
-                    : "text-green-600"
-                }`}
+                className={`font-semibold ${donation.amount >= 1000
+                  ? "text-yellow-600"
+                  : "text-green-600"
+                  }`}
               >
                 {formatCurrency(donation.amount)}
               </span>
@@ -185,15 +187,15 @@ const chartData = Object.keys(grouped).map(day => ({
 
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={chartData}>
-  <XAxis dataKey="day" />
-  <YAxis />
-  <Tooltip formatter={(value) => formatCurrency(value)} />
-  <Bar
-    dataKey="total"
-    fill="#16a34a"
-    radius={[6, 6, 0, 0]}
-  />
-</BarChart>
+            <XAxis dataKey="day" />
+            <YAxis />
+            <Tooltip formatter={(value) => formatCurrency(value)} />
+            <Bar
+              dataKey="total"
+              fill="#16a34a"
+              radius={[6, 6, 0, 0]}
+            />
+          </BarChart>
         </ResponsiveContainer>
 
       </div>

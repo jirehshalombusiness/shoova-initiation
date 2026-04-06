@@ -165,7 +165,7 @@ export default function StoryPage() {
             </p>
             <p>
               The Shoova Initiative is our response to that call. We are not just building a charity; we are building a
-              <span className='font-bold'>Restoration Engine.</span>
+              <span className='font-bold'> Restoration Engine.</span>
             </p>
             <p>
               Our 8-acre campus in Ghana is designed with a specific purpose: to provide the &quot;Brain&quot; (Academic

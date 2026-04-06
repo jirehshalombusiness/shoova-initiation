@@ -6,6 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 html, body {
+  cursor:default;
   margin-top: 0px !important;
 }
 body {

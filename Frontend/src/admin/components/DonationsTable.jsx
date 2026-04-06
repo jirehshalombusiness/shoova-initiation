@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { fetchWithAuth } from "../../utils/api";
 
 export default function DonationsTable() {
 
@@ -7,7 +8,7 @@ export default function DonationsTable() {
   useEffect(() => {
 
     const fetchDonations = () => {
-      fetch("https://shoova-initiation-yjg3.onrender.com/admin/donations")
+      fetchWithAuth("https://shoova-initiation-yjg3.onrender.com/admin/donations")
         .then(res => res.json())
         .then(data => setDonations(data));
     };

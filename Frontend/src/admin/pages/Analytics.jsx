@@ -11,13 +11,14 @@ import {
   Cell,
   ResponsiveContainer
 } from "recharts";
+import { fetchWithAuth } from "../../utils/api";
 
 export default function Analytics() {
 
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("https://shoova-initiation-yjg3.onrender.com/admin/analytics")
+    fetchWithAuth("https://shoova-initiation-yjg3.onrender.com/admin/analytics")
       .then(res => res.json())
       .then(data => setData(data))
       .catch(err => console.error(err));
@@ -36,8 +37,8 @@ export default function Analytics() {
   ============================= */
 
   const monthNames = [
-    "Jan","Feb","Mar","Apr","May","Jun",
-    "Jul","Aug","Sep","Oct","Nov","Dec"
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
 
   const monthData = (data.donationsByMonth || []).map(m => ({

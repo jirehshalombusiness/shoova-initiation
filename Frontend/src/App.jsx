@@ -28,7 +28,7 @@ import * as CookieConsent from "vanilla-cookieconsent";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import ".././src/styles/globals.css";
 import ShoovaCampus from "./pages/ShoovaCampus";
-
+import ResetPassword from "./admin/pages/ResetPassword";
 
 function loadAnalytics() {
   const GA_ID = "";
@@ -199,6 +199,7 @@ const App = () => {
             <Route path="/why-it-matters" element={<WhyItMatters />} />
             <Route path="/restoration-updates" element={<RestorationUpdates />} />
             <Route path="/shoova-campus" element={<ShoovaCampus />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
 
           </Route>
 

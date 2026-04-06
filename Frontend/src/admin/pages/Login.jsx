@@ -101,6 +101,12 @@ export default function Login() {
                         )}
 
                     </button>
+                    <p
+                        className="text-sm text-blue-600 cursor-pointer mt-3"
+                        onClick={() => navigate("/forgot-password")}
+                    >
+                        Forgot Password?
+                    </p>
 
                 </form>
             </div>

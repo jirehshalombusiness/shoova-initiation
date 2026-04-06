@@ -4,9 +4,21 @@ import { Image } from '../components/Image';
 import { Link } from '../components/Link';
 import { Text } from '../components/Text';
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 
 export const AboutPage = ({ className, children, variant, contentKey, ...props }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.substring(1));
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -44,7 +56,8 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
     {
       question: "Is Shoova Initiative a registered nonprofit?",
       answer:
-        "Shoova Initiative is progressing through nonprofit registration processes while establishing governance and operational structures in both the United States and Ghana."
+        `Yes, Shoova Initiative Corporation is a 501(c)(3) public charity dedicated to restoring lands and lives in Ghana. We have established governance and operational structures in both the United States and Ghana.
+Public Charity Status: 170(b)(1)(A)(vi)`
     }
   ];
   const [openIndex, setOpenIndex] = useState(null);
@@ -56,21 +69,21 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
   const leadership = [
     {
       name: "William Agyekum",
-      role: "Co-Founder &amp; President",
+      role: "Co-Founder & President",
       detail: "Project Management — USA",
-      image: "/img/portriat.jpg",
+      image: "/img/WillieOA.jpg",
     },
     {
       name: "Salome Agyekum, CA",
-      role: "Co-Founder &amp; Treasurer",
+      role: "Co-Founder,Vice President & Treasurer",
       detail: "Data Analytics & Finance — USA",
-      image: "/img/salome.jpg",
+      image: "/img/salomeyy.jpg",
     },
     {
       name: "Kwame Opon-Yeboah",
       role: "Executive Director & Head of Ghana Operations",
       detail: "Legal & Community Relations — Ghana",
-      image: "/img/opon.jpg",
+      image: "/img/pastor.jpg",
     },
     {
       name: "Julius Botchway",
@@ -289,10 +302,10 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
               </h2>
 
               <p className="text-xl md:text-2xl italic text-primary max-w-4xl mx-auto leading-relaxed">
-                “To ignite a restoration movement in Ghana’s Eastern Region by empowering
+                To ignite a restoration movement in Ghana by empowering
                 the next generation of technical leaders with the world-class skills,
                 ethical grounding, and environmental stewardship necessary to heal our
-                lands and reclaim our future.”
+                lands and reclaim our future.
               </p>
 
             </div>
@@ -307,7 +320,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
               </h2>
 
               <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                Restoration is not a dream—it is a trade. We envision a Ghana where
+                Restoration is not a dream it is a trade. We envision a Ghana where
                 communities once scarred by illegal mining become centers of
                 environmental renewal, technical excellence, and dignified opportunity
                 for the next generation.

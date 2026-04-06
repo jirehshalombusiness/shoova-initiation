@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { fetchWithAuth } from "../../utils/api";
 
 export default function Settings() {
 
@@ -12,7 +13,7 @@ export default function Settings() {
 
   useEffect(() => {
 
-    fetch("https://shoova-initiation-yjg3.onrender.com/admin/settings")
+    fetchWithAuth("https://shoova-initiation-yjg3.onrender.com/admin/settings")
       .then(res => res.json())
       .then(data => setSettings(data));
 

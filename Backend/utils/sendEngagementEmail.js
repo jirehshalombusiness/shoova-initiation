@@ -70,9 +70,12 @@ export const sendEngagementEmail = async (name, email) => {
 
       <!-- FOOTER -->
       <div style="background:#111;color:#aaa;padding:20px;text-align:center;font-size:12px;">
-        Shoova Restoration Initiative<br/>
-        Restoring land. Rebuilding lives.
-      </div>
+  Shoova Restoration Initiative<br/>
+  Restoring land. Rebuilding lives.<br/><br/>
+
+  Shoova Initiative Corporation is a 501(c)(3) public charity dedicated to restoring lands and lives in Ghana.<br/>
+  Public Charity Status: 170(b)(1)(A)(vi)
+</div>
 
     </div>
   </div>

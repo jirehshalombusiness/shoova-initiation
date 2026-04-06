@@ -13,6 +13,8 @@ export const sendEmail = async (to, subject, html) => {
 
     console.log("📨 Email sent:", res.id);
 
+    return res;
+
   } catch (error) {
     console.error("❌ Email send failed:", error);
     throw error;

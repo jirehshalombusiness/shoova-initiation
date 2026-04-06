@@ -95,7 +95,8 @@ export const ContactPage = ({ className, children, variant, contentKey, ...props
     {
       question: "Is Shoova Initiative a registered nonprofit?",
       answer:
-        "Shoova Initiative is progressing through nonprofit registration processes while establishing governance and operational structures in both the United States and Ghana."
+        `Yes, Shoova Initiative Corporation is a 501(c)(3) public charity dedicated to restoring lands and lives in Ghana. We have established governance and operational structures in both the United States and Ghana.
+         Public Charity Status: 170(b)(1)(A)(vi)`
     }
   ];
   const [openIndex, setOpenIndex] = useState(null);
@@ -128,7 +129,9 @@ export const ContactPage = ({ className, children, variant, contentKey, ...props
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4"><MapPin className="w-6 h-6" /></div>
                     <h3 className="font-bold text-textDark mb-2"> Visit Us </h3>
                     <p className="text-text text-sm">
-                      5775 Wayzata Boulevard,Suite 700
+                      5775 Wayzata Boulevard
+                      <br />
+                      Suite 700, PMB 2004
                       <br />
                       St. Louis Park, MN 55416, USA
                     </p>
@@ -144,7 +147,9 @@ export const ContactPage = ({ className, children, variant, contentKey, ...props
                     <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-yellow-600 mb-4"><Phone className="w-6 h-6" /></div>
                     <h3 className="font-bold text-textDark mb-2"> Call Us </h3>
                     <p className="text-text text-sm">
-                      +1(612)422-8230
+                      CST: +1(612)422-8230
+                      <br />
+                      GMT: +233 24 726 4516
                       <br />
                       Mon-Fri, 9am - 5pm
                     </p>

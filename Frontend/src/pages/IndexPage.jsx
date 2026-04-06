@@ -1450,7 +1450,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 </ul>
 
                 <Link
-                  to="/about"
+                  to="/about#meet_our_leadership"
                   className="inline-block mt-8 px-7 py-3 border border-white/40 rounded-full font-semibold hover:bg-white hover:text-primary transition"
                 >
                   Meet the Full Team
@@ -1464,12 +1464,10 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 <div className="group relative transform translate-y-8">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
-                      src="/img/portriat.jpg"
+                      src="/img/WillieOA.jpg"
                       alt="William Agyekum"
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-
-                    {/* Expanding Social Rail */}
                     {/* Expanding Social Rail */}
                     <div className="absolute left-0 bottom-0 group/social">
                       <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
@@ -1535,7 +1533,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 <div className="group relative">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
-                      src="/img/salome.jpg"
+                      src="/img/salomeyy.jpg"
                       alt="Salome Agyekum"
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -1602,7 +1600,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 <div className="group relative transform translate-y-8">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
-                      src="/img/opon.jpg"
+                      src="/img/pastor.jpg"
                       alt="Kwame Opon-Yeboah"
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
