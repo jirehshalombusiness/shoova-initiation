@@ -15,9 +15,9 @@ const Footer = () => {
 
             <div className="flex items-center gap-3 mb-5">
               <img
-                src="/img/shoova_logo.png"
+                src="/favicon.png"
                 alt="Shoova Initiative"
-                className="h-12"
+                className="h-16"
               />
               <h3 className="text-lg font-semibold tracking-tight">
                 Shoova Initiative
