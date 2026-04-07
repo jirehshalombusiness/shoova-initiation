@@ -21,19 +21,39 @@ export default function generateReceipt(donation) {
     doc.pipe(stream);
 
     /* =========================
-       HEADER
-    ========================= */
-    doc
-      .fontSize(16)
-      .text("OFFICIAL DONATION RECEIPT", { align: "left" });
+   HEADER WITH LOGO
+========================= */
 
-    doc.moveDown(0.5);
+const logoPath = path.join(process.cwd(), "assets", "logotrans.png");
 
-    doc
-      .fontSize(12)
-      .text("Shoova Initiative Corporation")
-      .text("A 501(c)(3) Public Charity")
-      .text("EIN: 41-4001369");
+// Logo
+if (fs.existsSync(logoPath)) {
+  doc.image(logoPath, 50, 45, { width: 110 });
+}
+
+// Title
+doc
+  .fontSize(16)
+  .text("OFFICIAL DONATION RECEIPT", 180, 50);
+
+// Space below header
+doc.moveDown(2);
+
+// Organization info
+doc
+  .fontSize(12)
+  .text("Shoova Initiative Corporation")
+  .text("A 501(c)(3) Public Charity")
+  .text("EIN: 41-4001369")
+  .moveDown(0.5)
+  .fontSize(10)
+  .fillColor("gray")
+  .text("5775 Wayzata Boulevard")
+  .text("Suite 700, PMB 2004")
+  .text("St. Louis Park, MN 55416, USA")
+  .text("+1 (612) 422-8230")
+  .text("info@shoovainitiative.org")
+  .fillColor("black");
 
     doc.moveDown();
 
@@ -49,7 +69,8 @@ export default function generateReceipt(donation) {
     doc.moveDown(0.5);
 
     doc.text(`Name: ${donation.name || "________________"}`);
-    doc.text(`Address: ${donation.address || "________________"}`);
+    doc.text(`Address: ${donation.address || "Not provided"}`);
+    doc.text(`Receipt #: ${donation.donationNumber || donation._id}`);
     doc.text(
       `Date of Contribution: ${new Date(
         donation.createdAt
