@@ -354,10 +354,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 variants={fadeUp}
                 className="relative pl-6 mb-8"
               >
-                <span className="absolute left-0 top-0 text-4xl text-secondary leading-none">
-                  “
-                </span>
-
+  
                 <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug">
                   The desolation caused by illegal mining (galamsey) isn&#39;t just an environmental crisis; it is a human one.
                   We saw a generation of youth trapped in extractive labor and a landscape that had become prey to
@@ -373,10 +370,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   We are here to say, &#39;Restore.&#39; We invite you to join us as we turn the &#39;cracked earth&#39; of the past into
                   the &#39;Rising Sun&#39; of a sustainable future for Ghana.
                 </p>
-
-
-
-                <span className="text-secondary text-3xl ml-1">”</span>
               </motion.div>
 
               {/* NAME */}
@@ -1464,7 +1457,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 <div className="group relative transform translate-y-8">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
-                      src="/img/Williey.png"
+                      src="/img/williey.png"
                       alt="William Agyekum"
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                     />

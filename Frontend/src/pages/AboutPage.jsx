@@ -71,7 +71,7 @@ Public Charity Status: 170(b)(1)(A)(vi)`
       name: "William Agyekum",
       role: "Co-Founder & President",
       detail: "Project Management — USA",
-      image: "/img/Will.png",
+      image: "/img/will.png",
     },
     {
       name: "Salome Agyekum, CA",
