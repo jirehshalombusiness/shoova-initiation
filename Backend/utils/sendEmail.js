@@ -5,7 +5,7 @@ export const sendEmail = async (to, subject, html) => {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const res = await resend.emails.send({
-      from: "Shoova Initiative <info@shoovainitiative.org>",
+      from: "Shoova Initiative <noreply@email.shoovainitiative.org>",
       to,
       subject,
       html

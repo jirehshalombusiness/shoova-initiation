@@ -19,7 +19,7 @@ export const sendContactEmail = async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: "Shoova Initiative <noreply@shoovainitiative.org>", // ✅ better sender
+      from: "Shoova Initiative <noreply@email.shoovainitiative.org>", // ✅ better sender
       to: process.env.CONTACT_RECEIVER_EMAIL || "info@shoovainitiative.org", 
 
       reply_to: safeEmail || "info@shoovainitiative.org",
