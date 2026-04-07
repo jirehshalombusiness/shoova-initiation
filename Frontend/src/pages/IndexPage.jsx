@@ -291,7 +291,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="py-28 bg-gray-50 relative overflow-hidden"
+          className="py-28 bg-gray-100 relative overflow-hidden"
         >
 
           {/* BACKGROUND */}
@@ -312,7 +312,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               <div className="relative">
 
                 <motion.img
-                  src="/img/founders.png"
+                  src="/img/founderss.png"
                   alt="Shoova Founder"
                   className="w-[420px] md:w-[850px] lg:w-[820px] object-contain  -mt-16 md:-mt-52"
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -554,7 +554,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               <div className="grid grid-cols-1 md:grid-cols-3">
 
                 {/* STEP 1 */}
-                <div className="bg-[#0f2f44] text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
+                <div className="bg-secondary text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
 
                   <p className="text-md uppercase tracking-widest text-white/60 mb-3">
                     Step 01
@@ -573,7 +573,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
 
                 {/* STEP 2 */}
-                <div className="bg-[#c9a96a] text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
+                <div className="bg-[#D4AF37] text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
 
                   <p className="text-md uppercase tracking-widest text-white/70 mb-3">
                     Step 02
@@ -592,7 +592,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
 
                 {/* STEP 3 */}
-                <div className="bg-[#d94a34] text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
+                <div className="bg-[#1B5E20] text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
 
                   <p className="text-md uppercase tracking-widest text-white/70 mb-3">
                     Step 03
@@ -1464,7 +1464,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 <div className="group relative transform translate-y-8">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
-                      src="/img/WillieOA.jpg"
+                      src="/img/Williey.png"
                       alt="William Agyekum"
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -1533,7 +1533,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 <div className="group relative">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
-                      src="/img/salomeyy.jpg"
+                      src="/img/sal.png"
                       alt="Salome Agyekum"
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -1591,7 +1591,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                   <div className="mt-4">
                     <h3 className="text-xl font-heading font-bold">Salome Agyekum, CA</h3>
-                    <p className="text-sm text-teal-100 mt-1">Co-Founder &amp; Treasurer</p>
+                    <p className="text-sm text-teal-100 mt-1">Co-Founder, Vice President &amp; Treasurer</p>
                     <p className="text-xs text-white/70 mt-1">USA</p>
                   </div>
                 </div>

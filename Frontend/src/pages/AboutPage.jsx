@@ -71,13 +71,13 @@ Public Charity Status: 170(b)(1)(A)(vi)`
       name: "William Agyekum",
       role: "Co-Founder & President",
       detail: "Project Management — USA",
-      image: "/img/WillieOA.jpg",
+      image: "/img/Will.png",
     },
     {
       name: "Salome Agyekum, CA",
       role: "Co-Founder,Vice President & Treasurer",
       detail: "Data Analytics & Finance — USA",
-      image: "/img/salomeyy.jpg",
+      image: "/img/salom.png",
     },
     {
       name: "Kwame Opon-Yeboah",
@@ -101,7 +101,7 @@ Public Charity Status: 170(b)(1)(A)(vi)`
       name: "Keneh Wemba",
       role: "Secretary",
       detail: "Administration — USA",
-      image: "/img/keneh.jpg",
+      image: "/img/wamba.png",
     },
     // {
     //   name: "Sandra Agyekum",

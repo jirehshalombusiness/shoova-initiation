@@ -132,7 +132,7 @@ export default function StoryPage() {
           ↓
         </div>
       </section>
-
+    
       <section className="bg-[#F9FAFB] py-32 px-6">
 
         <div className="max-w-4xl mx-auto text-center">
@@ -148,7 +148,7 @@ export default function StoryPage() {
           </h2>
 
           {/* BODY */}
-          <div  className="text-gray-700 text-base md:text-lg leading-7 md:leading-relaxed space-y-5 text-left md:text-justify max-w-none">
+          <div className="text-gray-700 text-base md:text-lg leading-7 md:leading-relaxed space-y-5 text-left md:text-justify max-w-none">
             <p>
               We are grateful for all the blessings, the gift of life, loving family, great friends, amazing profession, and
               much more. But as we looked at the landscapes of our home in Ghana, we saw a different kind of
@@ -210,6 +210,39 @@ export default function StoryPage() {
           </div>
 
         </div>
+      </section>
+      <section className="py-24 bg-black/90 text-white">
+
+        <div className="max-w-5xl mx-auto px-6 text-center">
+
+          <p className="text-sm uppercase tracking-widest text-secondary mb-4">
+            The Reality
+          </p>
+
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            The Cost of Illegal Mining
+          </h2>
+
+          <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+            Across Ghana, illegal mining has left behind devastated land,
+            polluted rivers, and communities with limited alternatives.
+            This is the reality we are responding to.
+          </p>
+
+          {/* VIDEO */}
+          <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/R_C9PyH6pCA"
+              title="Galamsey Documentary"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+
+        </div>
+
       </section>
       {/* ================= PARTNERSHIP CTA ================= */}
       <section className="py-32 bg-white text-center">
