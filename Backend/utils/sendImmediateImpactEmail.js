@@ -70,7 +70,7 @@ export const sendImmediateImpactEmail = async (name, email, amount, city, countr
 
         <!-- CTA BUTTON -->
         <div style="text-align:center;margin:30px 0;">
-          <a href="https://shoova.org"
+          <a href="https://www.shoovainitiative.org"
              style="background:#D4AF37;color:#000;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:bold;">
              See the Impact You're Creating
           </a>
