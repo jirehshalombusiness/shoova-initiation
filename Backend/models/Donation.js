@@ -38,7 +38,7 @@ const donationSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-
+  // donorboxDonationId: String,
   stripeCustomerId: String,
   stripeSubscriptionId: String,
   paymentStatus: String,
@@ -66,6 +66,7 @@ const donationSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  
 
   // Timestamp
   createdAt: {

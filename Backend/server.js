@@ -101,6 +101,87 @@ const startServer = async () => {
 
 startServer();
 /* ==============================
+ DONORBOX WEBHOOK
+============================== */
+// app.post("/webhook/donorbox", express.json(), async (req, res) => {
+//   try {
+//     const data = req.body;
+
+//     console.log("Donorbox webhook:", data);
+
+//     // Donorbox structure (simplified)
+//     const donationData = data?.data?.object;
+
+//     if (!donationData) {
+//       return res.status(400).json({ error: "Invalid payload" });
+//     }
+
+//     // Prevent duplicates
+//     const existingDonation = await Donation.findOne({
+//       donorboxDonationId: donationData.id
+//     });
+
+//     if (existingDonation) {
+//       console.log("⚠️ Duplicate Donorbox webhook ignored");
+//       return res.json({ received: true });
+//     }
+
+//     const donationNumber = await generateDonationNumber();
+
+//     const donation = new Donation({
+//       donationNumber,
+
+//       name: donationData.donor_name || "Friend",
+//       email: donationData.donor_email?.toLowerCase().trim(),
+
+//       amount: donationData.amount,
+//       currency: donationData.currency,
+
+//       donationType: donationData.interval === "monthly"
+//         ? "subscription"
+//         : "payment",
+
+//       paymentStatus: "paid",
+
+//       donorboxDonationId: donationData.id,
+
+//       source: "donorbox",
+
+//       emailSequenceStage: 1
+//     });
+
+//     const savedDonation = await donation.save();
+
+//     // 🔥 KEEP YOUR EMAIL SYSTEM (important)
+//     try {
+//       const previousDonations = await Donation.countDocuments({
+//         email: savedDonation.email
+//       });
+
+//       if (savedDonation.email && previousDonations === 1) {
+//         await sendImmediateImpactEmail(
+//           savedDonation.name,
+//           savedDonation.email,
+//           savedDonation.amount
+//         );
+//       }
+//     } catch (err) {
+//       console.log("Email failed but donation saved", err);
+//     }
+
+//     // ❌ DO NOT send receipt here (Donorbox already does)
+//     // await sendReceipt(...)
+
+//     console.log("🎉 Donorbox donation saved!");
+
+//     res.json({ received: true });
+
+//   } catch (error) {
+//     console.error("❌ Donorbox webhook error:", error);
+//     res.status(500).json({ error: "Webhook failed" });
+//   }
+// });
+/* ==============================
    STRIPE WEBHOOK
 ============================== */
 

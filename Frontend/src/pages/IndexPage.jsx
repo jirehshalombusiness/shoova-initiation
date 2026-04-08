@@ -17,7 +17,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import CountUp from "../components/CountUp"
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaFacebookF, FaYoutube, FaShareAlt } from "react-icons/fa";
-
+import { FaLinkedin } from "react-icons/fa";
 export const IndexPage = ({ className, children, variant, contentKey, ...props }) => {
 
   // const [birthday, setBirthday] = useState(null);
@@ -1476,33 +1476,18 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                         {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
 
+
+                        
+
+                      
                           <a
-                            href="https://web.facebook.com/william.o.agyekum.7"
+                            href="https://youtube.com/yourchannel"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
                           >
-                            <FaFacebookF className="w-4 h-4 text-white" />
+                            <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-
-                          <a
-                            href="https://x.com/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaXTwitter size={30} color="white" className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a
-                            href="https://instagram.com/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaInstagram className="w-4 h-4 text-white" />
-                          </a>
-
                           <a
                             href="https://youtube.com/yourchannel"
                             target="_blank"
@@ -1544,31 +1529,15 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                         </div>
                         {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
-                          <a
-                            href="https://facebook.com/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaFacebookF className="w-4 h-4 text-white" />
-                          </a>
+                   
 
-                          <a
-                            href="https://x.com/yourusername"
+                         <a
+                            href="https://youtube.com/yourchannel"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
                           >
-                            <FaXTwitter size={30} color="white" className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a
-                            href="https://instagram.com/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaInstagram className="w-4 h-4 text-white" />
+                            <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
                           <a
                             href="https://youtube.com/yourchannel"
@@ -1614,31 +1583,13 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
 
                           <a
-                            href="https://facebook.com/yourusername"
+                            href="https://youtube.com/yourchannel"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
                           >
-                            <FaFacebookF className="w-4 h-4 text-white" />
+                            <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-
-                          <a
-                            href="https://x.com/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaXTwitter size={30} color="white" className="w-4 h-4 text-white" />
-                          </a>
-                          <a
-                            href="https://instagram.com/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaInstagram className="w-4 h-4 text-white" />
-                          </a>
-
                           <a
                             href="https://youtube.com/yourchannel"
                             target="_blank"
@@ -1682,34 +1633,17 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                         {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
 
+
+
+                        
                           <a
-                            href="https://web.facebook.com/roland.glin"
+                            href="https://youtube.com/yourchannel"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
                           >
-                            <FaFacebookF className="w-4 h-4 text-white" />
+                            <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-
-
-                          <a
-                            href="https://x.com/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaXTwitter size={30} color="white" className="w-4 h-4 text-white" />
-                          </a>
-
-                          <a
-                            href="https://instagram.com/yourusername"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaInstagram className="w-4 h-4 text-white" />
-                          </a>
-
                           <a
                             href="https://youtube.com/yourchannel"
                             target="_blank"
