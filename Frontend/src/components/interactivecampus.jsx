@@ -10,10 +10,10 @@ export default function InteractiveCampusSection() {
 
       {/* 🔥 DRAGGABLE + ZOOMABLE IMAGE */}
       <motion.img
-        src="/img/arrial-view1.jpg"
+        src="/img/caampus.jpg"
         className="absolute inset-0 w-full h-full object-cover cursor-grab active:cursor-grabbing"
         drag
-        dragConstraints={{ left: -200, right: 200, top: -100, bottom: 100 }}
+        dragConstraints={{ left: -40, right: 40, top: -60, bottom: 60 }}
         style={{ scale }}
         whileTap={{ cursor: "grabbing" }}
       />

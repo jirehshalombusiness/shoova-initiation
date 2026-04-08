@@ -81,7 +81,7 @@ export default function ShoovaCampus() {
 
                         {/* 🔥 IMAGE WITH SUBTLE PAN */}
                         <motion.img
-                            src="/img/arrial-view1.jpg"
+                            src="/img/brain.jpg"
                             alt="Shoova Academic Core"
                             className="w-full h-full object-cover scale-110"
                             initial={{ scale: 1.15 }}

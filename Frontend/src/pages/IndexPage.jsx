@@ -354,7 +354,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 variants={fadeUp}
                 className="relative pl-6 mb-8"
               >
-  
+
                 <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug">
                   The desolation caused by illegal mining (galamsey) isn&#39;t just an environmental crisis; it is a human one.
                   We saw a generation of youth trapped in extractive labor and a landscape that had become prey to
@@ -420,9 +420,12 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </p>
 
               {/* CTA */}
-              <button className="bg-secondary hover:bg-secondaryHover text-white px-8 py-3.5 font-bold text-sm tracking-wide uppercase rounded-md transition shadow-lg">
+              <Link
+                to="/donate"
+                className="bg-secondary hover:bg-secondaryHover text-white px-8 py-3.5 font-bold text-sm tracking-wide uppercase rounded-md transition shadow-lg"
+              >
                 Donate
-              </button>
+              </Link>
 
             </div>
           </div>
