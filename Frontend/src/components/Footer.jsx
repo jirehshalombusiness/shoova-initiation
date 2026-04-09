@@ -100,6 +100,9 @@ const Footer = () => {
               <p className="text-white text-md font-medium">
                 Shoova Initiative is a 501(c)(3) nonprofit public charity.
               </p>
+              <p className="text-white text-md font-medium">
+                Public Charity Status: 170(b)(1)(A)(vi)
+              </p>
 
               <p className="text-white/50 text-md mt-1 leading-relaxed">
                 Your donations are tax-deductible as permitted by law.
