@@ -30,7 +30,7 @@ import { verifyAdmin } from "./middleware/verifyAdmin.js";
 
 
 
-const PORT= process.env.PORT || 5000
+const PORT = process.env.PORT || 5000
 const app = express();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -185,12 +185,149 @@ startServer();
    STRIPE WEBHOOK
 ============================== */
 
+// app.post(
+//   "/webhook",
+//   express.raw({ type: "application/json" }),
+//   async (req, res) => {
+//     const sig = req.headers["stripe-signature"];
+
+//     let event;
+
+//     try {
+//       event = stripe.webhooks.constructEvent(
+//         req.body,
+//         sig,
+//         process.env.STRIPE_WEBHOOK_SECRET
+//       );
+//     } catch (err) {
+//       console.log("⚠️ Webhook signature verification failed.", err.message);
+//       return res.status(400).send(`Webhook Error: ${err.message}`);
+//     }
+
+//     if (event.type === "checkout.session.completed") {
+
+//       const session = event.data.object;
+
+//       try {
+
+//         // Prevent duplicate webhook saves
+//         const existingDonation = await Donation.findOne({
+//           stripeSessionId: session.id
+//         });
+
+//         if (existingDonation) {
+//           console.log("⚠️ Duplicate webhook ignored");
+//           return res.json({ received: true });
+//         }
+
+//         const addressObj = session.customer_details?.address;
+
+//         const fullAddress = addressObj
+//           ? [
+//             addressObj.line1,
+//             addressObj.line2,
+//             addressObj.city,
+//             addressObj.state,
+//             addressObj.postal_code,
+//             addressObj.country
+//           ]
+//             .filter(Boolean)
+//             .join(", ")
+//           : "N/A";
+
+
+//         const donationNumber = await generateDonationNumber();
+
+//         const donation = new Donation({
+
+//           donationNumber,
+
+//           name: session.customer_details?.name || "Friend",
+//           email: session.customer_details?.email
+//             ? session.customer_details.email.toLowerCase().trim()
+//             : null,
+
+//           amount: session.amount_total / 100,
+//           donationType: session.mode,
+//           currency: session.currency,
+
+//           stripeSessionId: session.id,
+//           stripeCustomerId: session.customer,
+//           stripeSubscriptionId: session.subscription,
+
+//           paymentStatus: session.payment_status,
+
+//           address: fullAddress, // ✅ ADD THIS
+
+//           country: addressObj?.country,
+//           city: addressObj?.city,
+
+//           source: "website",
+
+//           emailSequenceStage: 1
+//         });
+
+//         const savedDonation = await donation.save();
+//         try {
+
+//           const alreadySent = await Donation.exists({
+//             email: savedDonation.email,
+//             immediateEmailSent: true
+//           });
+
+//           if (savedDonation.email && !alreadySent) {
+
+//             console.log("🔥 First-time donor email:", savedDonation.email);
+
+//             await sendImmediateImpactEmail(
+//               savedDonation.name,
+//               savedDonation.email,
+//               savedDonation.amount,
+//               savedDonation.city,
+//               savedDonation.country
+//             );
+
+//             savedDonation.immediateEmailSent = true;
+//             await savedDonation.save();
+//           }
+//         } catch (err) {
+//           console.log("Email failed but donation saved", err);
+//         }
+
+//         await sendReceipt({
+//           email: savedDonation.email,
+//           amount: savedDonation.amount,
+//           donationId: savedDonation.donationNumber,
+//           name: savedDonation.name,
+//           address: savedDonation.address // ✅ CRITICAL
+//         });
+
+//         console.log("📧 Receipt email sent");
+
+//         console.log("🎉 Donation saved to database!");
+//         console.log(savedDonation);
+
+//       } catch (error) {
+//         console.error("❌ MongoDB save error:", error);
+//       }
+
+//     }
+
+
+
+//     res.json({ received: true });
+//   }
+// );
+
+
+// current webhook structure in Donation.js (for reference)
+
 app.post(
   "/webhook",
   express.raw({ type: "application/json" }),
   async (req, res) => {
-    const sig = req.headers["stripe-signature"];
 
+    const sig = req.headers["stripe-signature"];
     let event;
 
     try {
@@ -200,117 +337,151 @@ app.post(
         process.env.STRIPE_WEBHOOK_SECRET
       );
     } catch (err) {
-      console.log("⚠️ Webhook signature verification failed.", err.message);
+      console.log("⚠️ Webhook signature verification failed:", err.message);
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
-    if (event.type === "checkout.session.completed") {
+    /* =============================
+       ONLY HANDLE CHECKOUT COMPLETION
+    ============================= */
+    if (event.type !== "checkout.session.completed") {
+      return res.json({ received: true });
+    }
 
-      const session = event.data.object;
+    const session = event.data.object;
 
-      try {
+    try {
 
-        // Prevent duplicate webhook saves
-        const existingDonation = await Donation.findOne({
-          stripeSessionId: session.id
-        });
+      /* =============================
+         PREVENT DUPLICATES
+      ============================= */
+      const existingDonation = await Donation.findOne({
+        stripeSessionId: session.id
+      }).lean();
 
-        if (existingDonation) {
-          console.log("⚠️ Duplicate webhook ignored");
-          return res.json({ received: true });
-        }
+      if (existingDonation) {
+        console.log("⚠️ Duplicate webhook ignored:", session.id);
+        return res.json({ received: true });
+      }
 
-        const addressObj = session.customer_details?.address;
+      /* =============================
+         GET EMAIL (REQUIRED)
+      ============================= */
+      const donorEmailRaw = session.customer_details?.email;
 
-        const fullAddress = addressObj
-          ? [
+      if (!donorEmailRaw) {
+        console.log("❌ No email from Stripe session — skipping");
+        return res.json({ received: true });
+      }
+
+      const donorEmail = donorEmailRaw.toLowerCase().trim();
+
+      /* =============================
+         BUILD ADDRESS
+      ============================= */
+      const addressObj = session.customer_details?.address;
+
+      const fullAddress = addressObj
+        ? [
             addressObj.line1,
             addressObj.line2,
             addressObj.city,
             addressObj.state,
             addressObj.postal_code,
             addressObj.country
-          ]
-            .filter(Boolean)
-            .join(", ")
-          : "N/A";
+          ].filter(Boolean).join(", ")
+        : "N/A";
 
+      /* =============================
+         CREATE DONATION
+      ============================= */
+      const donationNumber = await generateDonationNumber();
 
-        const donationNumber = await generateDonationNumber();
+      const savedDonation = await Donation.create({
+        donationNumber,
+        name: session.customer_details?.name || "Friend",
+        email: donorEmail,
+        amount: (session.amount_total || 0) / 100,
+        donationType: session.mode,
+        currency: session.currency,
+        stripeSessionId: session.id,
+        stripeCustomerId: session.customer,
+        stripeSubscriptionId: session.subscription,
+        paymentStatus: session.payment_status,
+        address: fullAddress,
+        country: addressObj?.country,
+        city: addressObj?.city,
+        source: "website",
+        emailSequenceStage: 1
+      });
 
-        const donation = new Donation({
+      console.log("💾 Donation saved:", donorEmail);
 
-          donationNumber,
+      /* =============================
+         IMMEDIATE EMAIL (FIRST-TIME ONLY)
+      ============================= */
+      try {
 
-          name: session.customer_details?.name || "Friend",
-          email: session.customer_details?.email
-            ? session.customer_details.email.toLowerCase().trim()
-            : null,
-
-          amount: session.amount_total / 100,
-          donationType: session.mode,
-          currency: session.currency,
-
-          stripeSessionId: session.id,
-          stripeCustomerId: session.customer,
-          stripeSubscriptionId: session.subscription,
-
-          paymentStatus: session.payment_status,
-
-          address: fullAddress, // ✅ ADD THIS
-
-          country: addressObj?.country,
-          city: addressObj?.city,
-
-          source: "website",
-
-          emailSequenceStage: 1
+        const alreadySent = await Donation.exists({
+          email: donorEmail,
+          immediateEmailSent: true
         });
 
-        const savedDonation = await donation.save();
-        try {
-          const previousDonations = await Donation.countDocuments({
-            email: savedDonation.email
-          });
+        if (!alreadySent) {
 
-          if (savedDonation.email && previousDonations === 1) {
-            await sendImmediateImpactEmail(
-              savedDonation.name,
-              savedDonation.email,
-              savedDonation.amount,
-              savedDonation.city,
-              savedDonation.country
-            );
-          }
-        } catch (err) {
-          console.log("Email failed but donation saved", err);
+          console.log("🔥 Sending first-time donor email:", donorEmail);
+
+          await sendImmediateImpactEmail(
+            savedDonation.name,
+            donorEmail,
+            savedDonation.amount,
+            savedDonation.city,
+            savedDonation.country
+          );
+
+          await Donation.updateMany(
+            { email: donorEmail },
+            { immediateEmailSent: true }
+          );
+
+          console.log("✅ Immediate email marked for donor");
+
+        } else {
+          console.log("ℹ️ Already sent immediate email before");
         }
 
+      } catch (err) {
+        console.error("❌ Immediate email error:", err);
+      }
+
+      /* =============================
+         RECEIPT EMAIL (ALWAYS)
+      ============================= */
+      try {
+
         await sendReceipt({
-          email: savedDonation.email,
+          email: donorEmail,
           amount: savedDonation.amount,
           donationId: savedDonation.donationNumber,
           name: savedDonation.name,
-          address: savedDonation.address // ✅ CRITICAL
+          address: savedDonation.address
         });
 
         console.log("📧 Receipt email sent");
 
-        console.log("🎉 Donation saved to database!");
-        console.log(savedDonation);
-
-      } catch (error) {
-        console.error("❌ MongoDB save error:", error);
+      } catch (err) {
+        console.error("❌ Receipt email failed:", err);
       }
 
+      console.log("🎉 Donation processing complete");
+
+    } catch (error) {
+      console.error("❌ MongoDB or processing error:", error);
     }
 
-
-
-    res.json({ received: true });
+    return res.json({ received: true });
   }
 );
-
 /* ==============================
    NORMAL JSON ROUTES
 ============================== */
@@ -327,7 +498,7 @@ app.post("/create-checkout-session", async (req, res) => {
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
-      billing_address_collection: "required", 
+      billing_address_collection: "required",
       mode: donationType === "monthly" ? "subscription" : "payment",
 
       line_items: [
@@ -428,7 +599,7 @@ app.get("/admin/dashboard", verifyAdmin, async (req, res) => {
   }
 });
 
-app.get("/admin/donations",verifyAdmin, async (req, res) => {
+app.get("/admin/donations", verifyAdmin, async (req, res) => {
 
   const donations = await Donation.find()
     .sort({ createdAt: -1 });
@@ -437,7 +608,7 @@ app.get("/admin/donations",verifyAdmin, async (req, res) => {
 
 });
 
-app.get("/admin/donors",verifyAdmin, async (req, res) => {
+app.get("/admin/donors", verifyAdmin, async (req, res) => {
   try {
 
     const donors = await Donation.aggregate([
@@ -469,7 +640,7 @@ app.get("/admin/donors",verifyAdmin, async (req, res) => {
   }
 });
 
-app.get("/admin/recent-donations",verifyAdmin, async (req, res) => {
+app.get("/admin/recent-donations", verifyAdmin, async (req, res) => {
   try {
     const recent = await Donation.find()
       .sort({ createdAt: -1 })
@@ -483,7 +654,7 @@ app.get("/admin/recent-donations",verifyAdmin, async (req, res) => {
   }
 });
 
-app.get("/admin/analytics",verifyAdmin, async (req, res) => {
+app.get("/admin/analytics", verifyAdmin, async (req, res) => {
   try {
 
     /* =============================
@@ -545,7 +716,7 @@ app.get("/admin/analytics",verifyAdmin, async (req, res) => {
   }
 });
 
-app.get("/admin/settings",verifyAdmin, async (req, res) => {
+app.get("/admin/settings", verifyAdmin, async (req, res) => {
 
   let settings = await Settings.findOne();
 
@@ -564,7 +735,7 @@ app.get("/admin/settings",verifyAdmin, async (req, res) => {
 
 });
 
-app.post("/admin/settings",verifyAdmin, async (req, res) => {
+app.post("/admin/settings", verifyAdmin, async (req, res) => {
 
   try {
 
@@ -705,7 +876,7 @@ app.post("/admin/reset-password/:token", async (req, res) => {
   }
 });
 
-app.get("/admin/receipt/:id",verifyAdmin, async (req, res) => {
+app.get("/admin/receipt/:id", verifyAdmin, async (req, res) => {
   try {
     const id = req.params.id;
 
@@ -736,7 +907,7 @@ app.get("/admin/receipt/:id",verifyAdmin, async (req, res) => {
   }
 });
 
-app.post("/admin/resend-receipt/:id",verifyAdmin, async (req, res) => {
+app.post("/admin/resend-receipt/:id", verifyAdmin, async (req, res) => {
   try {
     const id = req.params.id;
 
@@ -763,7 +934,7 @@ app.post("/admin/resend-receipt/:id",verifyAdmin, async (req, res) => {
     res.status(500).json({ error: "Resend failed" });
   }
 });
-app.get("/admin/donor/:email",verifyAdmin, async (req, res) => {
+app.get("/admin/donor/:email", verifyAdmin, async (req, res) => {
 
   try {
 
@@ -805,6 +976,6 @@ app.use("/engagement", engagementRoutes);
 app.use("/api", contactRoutes);
 
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });

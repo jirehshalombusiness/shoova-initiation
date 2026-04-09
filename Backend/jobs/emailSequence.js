@@ -9,33 +9,40 @@ cron.schedule("0 9 * * *", async () => {
 
   const donations = await Donation.find({
     emailSequenceStage: { $in: [1, 2] }
-  });
+  }).lean();
 
   for (const donation of donations) {
 
     if (!donation.email) continue;
 
-    const daysSinceDonation =
-      (Date.now() - new Date(donation.createdAt)) / (1000 * 60 * 60 * 24);
+    const daysSinceDonation = Math.floor(
+      (Date.now() - new Date(donation.createdAt)) / (1000 * 60 * 60 * 24)
+    );
 
     try {
 
+      // ✅ DAY 3 EMAIL
       if (donation.emailSequenceStage === 1 && daysSinceDonation >= 3) {
 
         await sendHumanConnectionEmail(donation.name, donation.email);
 
-        donation.emailSequenceStage = 2;
-        await donation.save();
+        await Donation.updateOne(
+          { _id: donation._id },
+          { emailSequenceStage: 2 }
+        );
 
         console.log("📧 Day 3 email sent:", donation.email);
       }
 
+      // ✅ DAY 7 EMAIL
       else if (donation.emailSequenceStage === 2 && daysSinceDonation >= 7) {
 
         await sendEngagementEmail(donation.name, donation.email);
 
-        donation.emailSequenceStage = 3;
-        await donation.save();
+        await Donation.updateOne(
+          { _id: donation._id },
+          { emailSequenceStage: 3 }
+        );
 
         console.log("📧 Day 7 email sent:", donation.email);
       }
@@ -46,4 +53,6 @@ cron.schedule("0 9 * * *", async () => {
 
   }
 
+}, {
+  timezone: "America/Chicago"
 });

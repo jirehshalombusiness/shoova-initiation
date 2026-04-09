@@ -61,6 +61,10 @@ const donationSchema = new mongoose.Schema({
     type: Number,
     default: 1
   },
+  immediateEmailSent: {
+  type: Boolean,
+  default: false
+},
 
   donationDate: {
     type: Date,

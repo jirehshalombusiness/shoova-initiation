@@ -2,7 +2,7 @@ export const sendEngagementEmail = async (name, email) => {
 
   const firstName = name?.split(" ")[0] || "Friend";
 
-  const subject = "A small ask, ${firstName}";
+  const subject = `A small ask, ${firstName}`;
 
   const html = `
   <div style="font-family: Arial, sans-serif; background:#f5f5f5; padding:40px 0;">
