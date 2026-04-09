@@ -316,6 +316,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       to="/shoova-campus"
+                       onClick={() => setMobileMenuOpen(false)}
                       className="text-gray-600 hover:text-secondary transition"
                     >
                       The Shoova Campus

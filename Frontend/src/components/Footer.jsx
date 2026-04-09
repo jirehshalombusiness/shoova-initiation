@@ -61,7 +61,7 @@ const Footer = () => {
               <div>
                 <p className="font-semibold text-white mb-1">United States Office</p>
                 <p className="text-white/70">5775 Wayzata Boulevard </p>
-                <p className="text-white/70">Suite 700, PMB 2004 </p>
+                <p className="text-white/70">Suite 700 </p>
                 <p className="text-white/70">St. Louis Park, MN 55416, USA</p>
                 <p>+1(612)422-8230</p>
                 <div className=" text-white/70">

@@ -131,7 +131,7 @@ export const ContactPage = ({ className, children, variant, contentKey, ...props
                     <p className="text-text text-sm">
                       5775 Wayzata Boulevard
                       <br />
-                      Suite 700, PMB 2004
+                      Suite 700
                       <br />
                       St. Louis Park, MN 55416, USA
                     </p>
