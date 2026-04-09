@@ -82,7 +82,7 @@ Public Charity Status: 170(b)(1)(A)(vi)`
     {
       name: "Kwame Opon-Yeboah",
       role: "Executive Director & Head of Ghana Operations",
-      detail: "Legal & Community Relations — Ghana",
+      detail: "Project Management & Communication Relations — Ghana",
       image: "/img/pastor.jpg",
     },
     {
