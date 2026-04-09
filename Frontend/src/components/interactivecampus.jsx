@@ -12,10 +12,8 @@ export default function InteractiveCampusSection() {
       <motion.img
         src="/img/caampus.jpg"
         className="absolute inset-0 w-full h-full object-cover cursor-grab active:cursor-grabbing"
-        drag
-        dragConstraints={{ left: -40, right: 40, top: -60, bottom: 60 }}
         style={{ scale }}
-        whileTap={{ cursor: "grabbing" }}
+        
       />
 
       {/* 🌫️ OVERLAY */}
