@@ -10,7 +10,7 @@ export default function PayPalButton({ amount }) {
       fundingSource="paypal"
 
       createOrder={async () => {
-        const res = await fetch("http://localhost:5000/create-paypal-order", {
+        const res = await fetch("https://shoova-initiation-yjg3.onrender.com/create-paypal-order", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ amount })
@@ -22,7 +22,7 @@ export default function PayPalButton({ amount }) {
 
       onApprove={async (data, actions) => {
         try {
-          const res = await fetch("http://localhost:5000/capture-paypal-order", {
+          const res = await fetch("https://shoova-initiation-yjg3.onrender.com/capture-paypal-order", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
