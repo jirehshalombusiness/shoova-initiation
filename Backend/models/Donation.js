@@ -31,12 +31,17 @@ const donationSchema = new mongoose.Schema({
     type: String,
     default: "usd"
   },
+  paypalOrderId: {
+    type: String,
+    unique: true,
+    sparse: true
+  },
 
   // Stripe References
   stripeSessionId: {
     type: String,
-    required: true,
-    unique: true
+    unique: true,
+    sparse: true
   },
   // donorboxDonationId: String,
   stripeCustomerId: String,
@@ -45,32 +50,38 @@ const donationSchema = new mongoose.Schema({
 
   // Donor Location
   address: {
-  type: String,
-  default: "N/A"
-},
+    type: String,
+    default: "N/A"
+  },
 
   // Optional donor note
   message: String,
+  
+  paymentProvider: {
+    type: String,
+    enum: ["stripe", "paypal"],
+    required: true
+  },
 
-  // Metadata for analytics
   source: {
     type: String,
     default: "website"
   },
+
   emailSequenceStage: {
     type: Number,
     default: 1
   },
   immediateEmailSent: {
-  type: Boolean,
-  default: false
-},
+    type: Boolean,
+    default: false
+  },
 
   donationDate: {
     type: Date,
     default: Date.now
   },
-  
+
 
   // Timestamp
   createdAt: {

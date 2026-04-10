@@ -15,6 +15,8 @@ import { Text } from '../components/Text';
 import { Twitter } from 'lucide-react';
 import { Youtube } from 'lucide-react';
 import { useLocation } from "react-router-dom";
+import PayPalButton from "../components/PayPalButton";
+
 
 export const DonatePage = ({ className, children, variant, contentKey, ...props }) => {
   const location = useLocation();
@@ -351,8 +353,16 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                       ? "Processing..."
                       : `DONATE $${Number(finalAmount).toLocaleString()}`}
                   </button>
-
-
+                  <div className="flex items-center my-6">
+                    <div className="flex-grow h-px bg-gray-200"></div>
+                    <span className="px-4 text-gray-400 text-sm font-medium">OR</span>
+                    <div className="flex-grow h-px bg-gray-200"></div>
+                  </div>
+                  <div className="mt-4">
+                    <PayPalButton amount={finalAmount}
+                      style={{ layout: "vertical" }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

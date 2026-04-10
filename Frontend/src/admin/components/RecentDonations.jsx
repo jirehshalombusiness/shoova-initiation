@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from "react";
-
+import { fetchWithAuth } from "../../utils/api";
 export default function RecentDonations() {
 
   const [donations, setDonations] = useState([]);
 
   useEffect(() => {
-    fetch("https://shoova-initiation-yjg3.onrender.com/admin/recent-donations")
+    fetchWithAuth("https://shoova-initiation-yjg3.onrender.com/admin/recent-donations")
       .then(res => res.json())
-      .then(data => setDonations(data));
+      .then(data => {
+        console.log("Recent donations data:", data);
+
+        // ✅ ensure it's always an array
+        if (Array.isArray(data)) {
+          setDonations(data);
+        } else {
+          setDonations([]); // fallback
+        }
+      })
+      .catch(err => {
+        console.error("Fetch error:", err);
+        setDonations([]);
+      });
   }, []);
 
   return (

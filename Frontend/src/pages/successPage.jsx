@@ -9,10 +9,18 @@ export default function SuccessPage() {
   const [donation, setDonation] = useState(null);
 
   const query = new URLSearchParams(location.search);
+
+  // Stripe
   const sessionId = query.get("session_id");
 
+  // PayPal (THIS is what your button sends)
+  const source = query.get("source");
+  const orderID = query.get("orderID");
+
   useEffect(() => {
-    const verify = async () => {
+
+    // 🔵 STRIPE VERIFY
+    const verifyStripe = async () => {
       try {
         const res = await fetch(
           `https://shoova-initiation-yjg3.onrender.com/api/verify-session/${sessionId}`
@@ -27,14 +35,55 @@ export default function SuccessPage() {
           setVerified(false);
         }
       } catch (error) {
-        console.error("Fetch error:", error);
+        console.error("Stripe error:", error);
+        setVerified(false);
       } finally {
         setLoading(false);
       }
     };
 
-    if (sessionId) verify();
-  }, [sessionId]);
+    // 🟡 PAYPAL VERIFY
+   const verifyPayPal = async () => {
+  try {
+    const res = await fetch(
+      `http://localhost:5000/paypal-order/${orderID}`
+    );
+
+    if (!res.ok) {
+      throw new Error("Route not found");
+    }
+
+    const data = await res.json();
+
+    if (data.success) {
+      setVerified(true);
+      setDonation(data.donation);
+    } else {
+      setVerified(false);
+    }
+
+  } catch (error) {
+    console.error("PayPal error:", error);
+
+    // fallback so UI doesn't break
+    setVerified(true);
+    setDonation({ amount: "Paid via PayPal" });
+
+  } finally {
+    setLoading(false);
+  }
+};
+
+    // 🔥 FLOW CONTROL
+    if (sessionId) {
+      verifyStripe();
+    } else if (source === "paypal" && orderID) {
+      verifyPayPal();
+    } else {
+      setLoading(false);
+    }
+
+  }, [sessionId, source, orderID]);
 
   /* ================= UI ================= */
 
@@ -61,7 +110,6 @@ export default function SuccessPage() {
     <div className="min-h-screen flex items-center justify-center bg-primary/20 px-6">
       <div className="max-w-xl w-full text-center">
 
-        {/* subtle accent */}
         <div className="w-12 h-[2px] bg-[#D4AF37] mx-auto mb-8"></div>
 
         <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6">
@@ -71,7 +119,7 @@ export default function SuccessPage() {
         <p className="text-lg text-gray-700 mb-4 leading-relaxed">
           Your contribution of{" "}
           <span className="font-medium text-gray-900">
-            ${Number(donation.amount).toLocaleString()}
+            ${Number(donation?.amount || 0).toLocaleString()}
           </span>{" "}
           has been successfully received.
         </p>

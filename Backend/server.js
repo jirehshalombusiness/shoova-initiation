@@ -26,7 +26,8 @@ import contactRoutes from "./routes/contactRoutes.js";
 import crypto from "crypto";
 import { sendEmail } from "./utils/sendEmail.js"
 import { verifyAdmin } from "./middleware/verifyAdmin.js";
-
+import paypal from "@paypal/checkout-server-sdk";
+import client from "./paypalClient.js";
 
 
 
@@ -100,87 +101,7 @@ const startServer = async () => {
 };
 
 startServer();
-/* ==============================
- DONORBOX WEBHOOK
-============================== */
-// app.post("/webhook/donorbox", express.json(), async (req, res) => {
-//   try {
-//     const data = req.body;
 
-//     console.log("Donorbox webhook:", data);
-
-//     // Donorbox structure (simplified)
-//     const donationData = data?.data?.object;
-
-//     if (!donationData) {
-//       return res.status(400).json({ error: "Invalid payload" });
-//     }
-
-//     // Prevent duplicates
-//     const existingDonation = await Donation.findOne({
-//       donorboxDonationId: donationData.id
-//     });
-
-//     if (existingDonation) {
-//       console.log("⚠️ Duplicate Donorbox webhook ignored");
-//       return res.json({ received: true });
-//     }
-
-//     const donationNumber = await generateDonationNumber();
-
-//     const donation = new Donation({
-//       donationNumber,
-
-//       name: donationData.donor_name || "Friend",
-//       email: donationData.donor_email?.toLowerCase().trim(),
-
-//       amount: donationData.amount,
-//       currency: donationData.currency,
-
-//       donationType: donationData.interval === "monthly"
-//         ? "subscription"
-//         : "payment",
-
-//       paymentStatus: "paid",
-
-//       donorboxDonationId: donationData.id,
-
-//       source: "donorbox",
-
-//       emailSequenceStage: 1
-//     });
-
-//     const savedDonation = await donation.save();
-
-//     // 🔥 KEEP YOUR EMAIL SYSTEM (important)
-//     try {
-//       const previousDonations = await Donation.countDocuments({
-//         email: savedDonation.email
-//       });
-
-//       if (savedDonation.email && previousDonations === 1) {
-//         await sendImmediateImpactEmail(
-//           savedDonation.name,
-//           savedDonation.email,
-//           savedDonation.amount
-//         );
-//       }
-//     } catch (err) {
-//       console.log("Email failed but donation saved", err);
-//     }
-
-//     // ❌ DO NOT send receipt here (Donorbox already does)
-//     // await sendReceipt(...)
-
-//     console.log("🎉 Donorbox donation saved!");
-
-//     res.json({ received: true });
-
-//   } catch (error) {
-//     console.error("❌ Donorbox webhook error:", error);
-//     res.status(500).json({ error: "Webhook failed" });
-//   }
-// });
 /* ==============================
    STRIPE WEBHOOK
 ============================== */
@@ -383,13 +304,13 @@ app.post(
 
       const fullAddress = addressObj
         ? [
-            addressObj.line1,
-            addressObj.line2,
-            addressObj.city,
-            addressObj.state,
-            addressObj.postal_code,
-            addressObj.country
-          ].filter(Boolean).join(", ")
+          addressObj.line1,
+          addressObj.line2,
+          addressObj.city,
+          addressObj.state,
+          addressObj.postal_code,
+          addressObj.country
+        ].filter(Boolean).join(", ")
         : "N/A";
 
       /* =============================
@@ -412,7 +333,9 @@ app.post(
         country: addressObj?.country,
         city: addressObj?.city,
         source: "website",
+        paymentProvider: "stripe",
         emailSequenceStage: 1
+
       });
 
       console.log("💾 Donation saved:", donorEmail);
@@ -479,6 +402,7 @@ app.post(
       console.error("❌ MongoDB or processing error:", error);
     }
 
+
     return res.json({ received: true });
   }
 );
@@ -487,6 +411,179 @@ app.post(
 ============================== */
 
 app.use(express.json());
+
+
+app.post("/create-paypal-order", async (req, res) => {
+  try {
+    const { amount } = req.body;
+
+    if (!amount || isNaN(amount) || amount < 1) {
+      return res.status(400).json({ error: "Invalid amount" });
+    }
+    console.log("💰 PayPal amount:", amount);
+
+    const request = new paypal.orders.OrdersCreateRequest();
+
+    request.requestBody({
+      intent: "CAPTURE",
+      purchase_units: [
+        {
+          amount: {
+            currency_code: "USD",
+            value: amount.toString()
+          }
+        }
+      ],
+    });
+
+    const order = await client.execute(request);
+
+    res.json({
+      id: order.result.id,
+      links: order.result.links
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "PayPal order creation failed" });
+  }
+});
+
+app.post("/capture-paypal-order", async (req, res) => {
+  try {
+    const { orderID } = req.body;
+
+    const request = new paypal.orders.OrdersCaptureRequest(orderID);
+    request.requestBody({});
+
+    const capture = await client.execute(request);
+
+    const payer = capture.result.payer;
+    const purchaseUnit = capture.result.purchase_units?.[0];
+    const paymentCapture = purchaseUnit?.payments?.captures?.[0];
+
+    if (!purchaseUnit || !paymentCapture) {
+      console.error("❌ Invalid PayPal response:", capture.result);
+      return res.status(500).json({ error: "Invalid PayPal response" });
+    }
+
+    const amount = Number(paymentCapture.amount.value);
+
+    const email = payer.email_address?.toLowerCase().trim();
+
+    if (!email) {
+      return res.status(400).json({ error: "No email from PayPal" });
+    }
+
+    // ✅ Prevent duplicates
+    const existing = await Donation.findOne({
+      paypalOrderId: orderID
+    });
+
+    if (existing) {
+      console.log("⚠️ Duplicate PayPal capture ignored");
+      return res.json({ success: true });
+    }
+
+    // ✅ Save donation
+    const savedDonation = await Donation.create({
+      donationNumber: await generateDonationNumber(),
+
+      name: `${payer.name?.given_name || ""} ${payer.name?.surname || ""}`.trim() || "Friend",
+      email,
+
+      amount: Number(amount),
+      donationType: "payment",
+      currency: "usd",
+
+      paypalOrderId: orderID,
+
+      paymentStatus: "paid",
+      source: "paypal",
+      paymentProvider: "paypal",
+
+      emailSequenceStage: 1
+    });
+
+    console.log("💾 PayPal donation saved:", email);
+
+    /* =============================
+       IMMEDIATE EMAIL
+    ============================= */
+    try {
+      const alreadySent = await Donation.exists({
+        email,
+        immediateEmailSent: true
+      });
+
+      if (!alreadySent) {
+
+        await sendImmediateImpactEmail(
+          savedDonation.name,
+          email,
+          savedDonation.amount
+        );
+
+        await Donation.updateMany(
+          { email },
+          { immediateEmailSent: true }
+        );
+
+        console.log("🔥 Immediate email sent (PayPal)");
+      }
+
+    } catch (err) {
+      console.error("❌ Immediate email error:", err);
+    }
+
+    /* =============================
+       RECEIPT
+    ============================= */
+    try {
+      await sendReceipt({
+        email,
+        amount: savedDonation.amount,
+        donationId: savedDonation.donationNumber,
+        name: savedDonation.name,
+        address: "N/A"
+      });
+
+      console.log("📧 Receipt sent (PayPal)");
+    } catch (err) {
+      console.error("❌ Receipt error:", err);
+    }
+
+    res.json({ success: true });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Capture failed" });
+  }
+});
+
+app.get("/paypal-order/:orderID", async (req, res) => {
+  try {
+    const { orderID } = req.params;
+
+    const donation = await Donation.findOne({
+      paypalOrderId: orderID,
+      paymentStatus: "paid"
+    });
+
+    if (!donation) {
+      return res.status(404).json({ success: false });
+    }
+
+    res.json({
+      success: true,
+      donation
+    });
+
+  } catch (err) {
+    console.error("PayPal fetch error:", err);
+    res.status(500).json({ success: false });
+  }
+});
 
 /* ==============================
    CREATE CHECKOUT SESSION
@@ -875,6 +972,7 @@ app.post("/admin/reset-password/:token", async (req, res) => {
     res.status(500).json({ message: "Error resetting password" });
   }
 });
+
 
 app.get("/admin/receipt/:id", verifyAdmin, async (req, res) => {
   try {
