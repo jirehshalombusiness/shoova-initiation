@@ -46,7 +46,7 @@ export default function SuccessPage() {
    const verifyPayPal = async () => {
   try {
     const res = await fetch(
-      `http://localhost:5000/paypal-order/${orderID}`
+      `https://shoova-initiation-yjg3.onrender.com/paypal-order/${orderID}`
     );
 
     if (!res.ok) {
