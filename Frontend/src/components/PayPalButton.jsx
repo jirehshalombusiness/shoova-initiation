@@ -6,7 +6,8 @@ export default function PayPalButton({ amount }) {
 
   return (
     <PayPalButtons
-      style={{ layout: "vertical" }}
+      style={{ layout: "vertical" ,label: "paypal" }}
+      fundingSource="paypal"
 
       createOrder={async () => {
         const res = await fetch("http://localhost:5000/create-paypal-order", {
