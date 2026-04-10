@@ -510,9 +510,8 @@ Public Charity Status: 170(b)(1)(A)(vi)`
                     School of Ethical Leadership
                   </h3>
                   <p className="text-gray-600">
-                    Data-driven management, bookkeeping, and cooperative business
-                    ethics. We are not only training workers — we are preparing
-                    the next generation of employers and community leaders.
+                    Data-driven management, bookkeeping, agribusiness, and ethics.
+                     We are not only training workers — we are preparing the next generation of employers and community leaders.
                   </p>
                 </div>
 

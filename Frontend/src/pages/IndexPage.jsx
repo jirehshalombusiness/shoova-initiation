@@ -516,7 +516,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 </h3>
 
                 <p className="text-text text-base leading-relaxed">
-                  Training in business, data-driven management, and cooperative ethics so graduates
+                  Training in business, data-driven management, and agribusiness and ethics so graduates
                   don’t just find jobs, but create opportunities for others.
                 </p>
               </motion.div>
