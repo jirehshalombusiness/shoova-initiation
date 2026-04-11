@@ -152,7 +152,7 @@ export default function StoryPage() {
             <p>
               We are grateful for all the blessings, the gift of life, loving family, great friends, amazing profession, and
               much more. But as we looked at the landscapes of our home, Ghana, we saw a different kind of
-              environment rising, one that revealed a land &quot;plundered and looted&quot; by the scars of illegal mining(galamsey). Very different from the environment we grew up in, and the fast pace of the devastation is
+              environment rising, one that revealed a land &quot;plundered and looted&quot; by the scars of illegal mining (galamsey). Very different from the environment we grew up in, and the fast pace of the devastation is
               disturbing.
             </p>
             <p>
