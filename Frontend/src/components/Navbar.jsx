@@ -6,6 +6,13 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [currentLang, setCurrentLang] = useState("en");
+  const languages = [
+    { code: "en", label: "EN" },
+    { code: "es", label: "ES" },
+    { code: "fr", label: "FR" },
+    { code: "zh-CN", label: "中文" },
+    { code: "ja", label: "日本語" }
+  ];
 
   const changeLanguage = (lang) => {
     setCurrentLang(lang);
@@ -190,19 +197,21 @@ const Navbar = () => {
             </button>
 
             <div className="hidden sm:flex items-center gap-1 text-[11px]">
-              {["en", "es", "fr"].map((lang, i) => (
-                <span key={lang} className="flex items-center gap-1">
+              {languages.map((lang, i) => (
+                <span key={lang.code} className="flex items-center gap-1">
                   <button
-                    onClick={() => changeLanguage(lang)}
+                    onClick={() => changeLanguage(lang.code)}
                     className={
-                      currentLang === lang
+                      currentLang === lang.code
                         ? "text-secondary font-medium"
                         : "text-gray-400"
                     }
                   >
-                    {lang.toUpperCase()}
+                    {lang.label}
                   </button>
-                  {i < 2 && <span className="text-gray-300">/</span>}
+                  {i < languages.length - 1 && (
+                    <span className="text-gray-300">/</span>
+                  )}
                 </span>
               ))}
             </div>
@@ -224,8 +233,6 @@ const Navbar = () => {
           }`}
       >
         <div className="flex flex-col h-full">
-
-          {/* 🔥 TOP BAR (THIS FIXES YOUR CLOSE BUTTON ISSUE) */}
           <div className="flex items-center justify-between px-6 h-20 border-b border-gray-100">
             <Link to="/" className="flex items-center gap-3">
               {/* <img src="/favicon.png" alt="logo" className="h-16" /> */}
@@ -249,22 +256,24 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* 🔥 CONTENT */}
+        
           <div className="flex flex-col h-full px-6 py-2">
             <div className="flex items-center gap-1 text-[11px] mt-2 mb-3">
-              {["en", "es", "fr"].map((lang, i) => (
-                <span key={lang} className="flex items-center gap-1">
+             {languages.map((lang, i) => (
+                <span key={lang.code} className="flex items-center gap-1">
                   <button
-                    onClick={() => changeLanguage(lang)}
+                    onClick={() => changeLanguage(lang.code)}
                     className={
-                      currentLang === lang
+                      currentLang === lang.code
                         ? "text-secondary font-medium"
                         : "text-gray-400"
                     }
                   >
-                    {lang.toUpperCase()}
+                    {lang.label}
                   </button>
-                  {i < 2 && <span className="text-gray-300">/</span>}
+                  {i < languages.length - 1 && (
+                    <span className="text-gray-300">/</span>
+                  )}
                 </span>
               ))}
             </div>
@@ -316,7 +325,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       to="/shoova-campus"
-                       onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => setMobileMenuOpen(false)}
                       className="text-gray-600 hover:text-secondary transition"
                     >
                       The Shoova Campus

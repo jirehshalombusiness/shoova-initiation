@@ -38,26 +38,44 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
   };
 
   const faqs = [
-    {
-      question: "What is the Shoova Restoration Campus?",
-      answer:
-        "The Shoova Restoration Campus is an upcoming 8-acre vocational training institute in Ghana’s Eastern Region designed to equip youth with world-class engineering, environmental restoration, and leadership skills that help transition communities away from illegal mining."
-    },
-    {
-      question: "Why focus on youth involved in galamsey?",
-      answer:
-        "Many young people turn to illegal mining due to limited economic opportunities. Shoova believes these youth are not the problem—they are the untapped solution. Through training and mentorship we help them become the architects of Ghana’s environmental restoration."
-    },
-    {
-      question: "How can I support the Shoova Initiative?",
-      answer:
-        "You can support Shoova by sponsoring student training, funding land restoration programs, partnering as an institution, or helping spread the mission of restoring Ghana’s land and empowering the next generation of technical leaders."
-    },
-    {
+     {
       question: "Is Shoova Initiative a registered nonprofit?",
       answer:
         `Yes, Shoova Initiative Corporation is a 501(c)(3) public charity dedicated to restoring lands and lives in Ghana. We have established governance and operational structures in both the United States and Ghana.
-Public Charity Status: 170(b)(1)(A)(vi)`
+       Public Charity Status: 170(b)(1)(A)(vi)`
+    }
+    ,
+    {
+      question: "Is my donation tax-deductible? ",
+      answer:
+        "Yes. The Shoova Initiative Corporation is a recognized 501(c)(3) public charity. Contributions are tax-deductible under Section 170 of the Internal Revenue Code."
+    },
+    {
+      question: "What is your specific IRS classification?",
+      answer:
+        "We are classified as a Publicly Supported Organization under Section 170(b)(1)(A)(vi). This is a premium status that allows for the maximum tax benefits allowed by law for our donors."
+    },
+    {
+      question: "What information do I need for my tax records?",
+      answer: `To claim a deduction, you will need our official organization details:<br/>
+• Organization Name: Shoova Initiative Corporation.<br/>
+• EIN (Tax ID): 41-400XXXX.<br/>
+• Registered Office: 5775 Wayzata Boulevard, Suite 700, St. Louis Park, MN 55416.`
+    },
+    {
+      question: "Are there limits to how much I can deduct? ",
+      answer:
+        `As a public charity, individuals can generally deduct cash contributions up to 60% of their Adjusted Gross Income (AGI). We recommend consulting with a tax professional for your specific situation.`
+    },
+    {
+      question: "Will I receive a receipt for my donation?  ",
+      answer:
+        `Absolutely. Our "Culture of Excellence" ensures that every donor receives an automated receipt for their records. We provide a formal acknowledgment letter that meets all IRS requirements.`
+    },
+    {
+      question: "How is my donation used? ",
+      answer:
+        ` Our mission is the restoration of lands and lives in Ghana. Your funds directly support our 8-acre campus, including the School of Engineering & Fabrication, the Meditation Garden, and our technical training programs for scholars transitioning from informal mining.`
     }
   ];
   const [openIndex, setOpenIndex] = useState(null);
@@ -275,7 +293,7 @@ Public Charity Status: 170(b)(1)(A)(vi)`
               {/* Restoration Image */}
               <div className="absolute bottom-0 right-0 w-[75%] z-20">
                 <img
-                  src="/img/rstores.jpg"
+                  src="/img/community.jpg"
                   alt="Vocational training and restoration"
                   className="rounded-xl shadow-2xl rotate-[2deg] object-cover w-full h-[240px]"
                 />
@@ -511,7 +529,7 @@ Public Charity Status: 170(b)(1)(A)(vi)`
                   </h3>
                   <p className="text-gray-600">
                     Data-driven management, bookkeeping, agribusiness, and ethics.
-                     We are not only training workers — we are preparing the next generation of employers and community leaders.
+                    We are not only training workers — we are preparing the next generation of employers and community leaders.
                   </p>
                 </div>
 
@@ -592,7 +610,7 @@ Public Charity Status: 170(b)(1)(A)(vi)`
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <h2 className="text-3xl font-heading font-bold text-textDark text-center mb-12">
-              Frequently Asked Questions
+              Donor Tax-Deductibility FAQ
             </h2>
 
             <div className="space-y-4">
@@ -626,9 +644,7 @@ Public Charity Status: 170(b)(1)(A)(vi)`
                     className={`transition-all duration-300 overflow-hidden ${openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}
                   >
-                    <p className="px-6 pb-6 text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </p>
+                    <p className="px-6 pb-6 text-gray-600 leading-relaxed"  dangerouslySetInnerHTML={{ __html: faq.answer }}/>
                   </div>
 
                 </div>

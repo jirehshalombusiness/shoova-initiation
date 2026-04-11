@@ -352,7 +352,7 @@ export const RestorationUpdates = () => {
                                     });
 
                                     // force open in new tab
-                                    window.open("/docs/galamsey-to-growth.pdf", "_blank");
+                                    window.open("/docs/fact-sheet.pdf", "_blank");
                                 }}
                                 className="inline-flex items-center justify-center px-8 py-4 bg-secondary hover:bg-secondaryHover text-white font-semibold rounded-full transition shadow-lg"
                             >

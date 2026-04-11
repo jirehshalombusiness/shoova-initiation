@@ -156,7 +156,7 @@ const App = () => {
       new window.google.translate.TranslateElement(
         {
           pageLanguage: "en",
-          includedLanguages: "en,es,fr",
+          includedLanguages: "en,es,fr,zh-CN,ja",
         },
         "google_translate_element"
       );

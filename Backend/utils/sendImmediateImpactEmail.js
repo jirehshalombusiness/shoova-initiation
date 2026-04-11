@@ -36,7 +36,7 @@ export const sendImmediateImpactEmail = async (name, email, amount, city, countr
     <div style="max-width:600px;margin:auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08);">
 
       <!-- HERO IMAGE -->
-      <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d"
+      <img src="https://images.unsplash.com/photo-1664707629442-19266d1c01f3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
            style="width:100%;height:220px;object-fit:cover;" />
 
       <!-- CONTENT -->

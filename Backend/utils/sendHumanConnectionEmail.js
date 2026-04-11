@@ -12,7 +12,7 @@ export const sendHumanConnectionEmail = async (name, email) => {
     <div style="max-width:600px;margin:auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08);">
 
       <!-- IMAGE -->
-      <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d"
+      <img src="https://images.unsplash.com/photo-1583026411217-9d05a70d5230?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
            style="width:100%;height:220px;object-fit:cover;" />
 
       <!-- CONTENT -->
@@ -27,7 +27,7 @@ export const sendHumanConnectionEmail = async (name, email) => {
         </p>
 
         <p style="color:#333;line-height:1.6;">
-          I wanted to personally introduce myself — I’m <strong>Salome</strong>, the Treasurer at Shoova.
+          I wanted to personally introduce myself — I’m <strong>Salome</strong>, the Treasurer at Shoova Initiative.
         </p>
 
         <p style="color:#555;line-height:1.6;">

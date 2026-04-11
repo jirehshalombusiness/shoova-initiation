@@ -314,7 +314,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 <motion.img
                   src="/img/founderss.png"
                   alt="Shoova Founder"
-                  className="w-[420px] md:w-[420px] lg:w-[420px] object-contain  -mt-16 md:-mt-52"
+                  className="w-[320px] md:w-[420px] lg:w-[420px] object-contain  -mt-16 md:-mt-52"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1 }}
