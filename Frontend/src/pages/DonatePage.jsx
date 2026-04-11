@@ -394,7 +394,7 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <h2 className="text-3xl font-heading font-bold text-textDark text-center mb-12">
-              Frequently Asked Questions
+              Donor Tax-Deductibility FAQ
             </h2>
 
             <div className="space-y-4">
