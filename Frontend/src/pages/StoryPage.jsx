@@ -151,7 +151,7 @@ export default function StoryPage() {
           <div className="text-gray-700 text-base md:text-lg leading-7 md:leading-relaxed space-y-5 text-left md:text-justify max-w-none">
             <p>
               We are grateful for all the blessings, the gift of life, loving family, great friends, amazing profession, and
-              much more. But as we looked at the landscapes of our home in Ghana, we saw a different kind of
+              much more. But as we looked at the landscapes of our home, Ghana, we saw a different kind of
               environment rising, one that revealed a land &quot;plundered and looted&quot; by the scars of illegal mining(galamsey). Very different from the environment we grew up in, and the fast pace of the devastation is
               disturbing.
             </p>
@@ -179,13 +179,10 @@ export default function StoryPage() {
               We move forward with the highest level of integrity, backed by our official 501(c)(3) status in the U.S.
               and our legal registration in Ghana.
             </p>
+      
             <p>
-              We invite you to be the &quot;nurturing hands&quot; in our story. Whether you are a technical partner, a financial
-              donor, or a friend sharing the vision, you are helping us say &quot;Restore!&quot; to a land that has waited far too
-              long for a new dawn.
-            </p>
-            <p>
-              We invite you to be the “nurturing hands” in our story. Whether you are a technical partner, a financial donor, or a friend sharing the vision, you are helping us say <span className='font-bold'>“Restore!”</span>  to a land that has waited far too long for a new dawn.
+              We invite you to be the “nurturing hands” in our story. Whether you are a technical partner, a financial donor, 
+              or a friend sharing the vision, you are helping us say <span className='font-bold'>“Restore!”</span>  to a land that has waited far too long for a new dawn.
             </p>
 
             <p className="font-bold text-gray-900 text-xl">

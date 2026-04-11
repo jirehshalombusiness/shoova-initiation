@@ -339,7 +339,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 variants={fadeUp}
                 className="text-sm uppercase tracking-widest text-secondary font-semibold mb-4"
               >
-                Founder’s Message
+                Founders’ Message
               </motion.p>
               <motion.p
                 variants={fadeUp}
@@ -356,10 +356,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               >
 
                 <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug">
-                  The desolation caused by illegal mining (galamsey) isn&#39;t just an environmental crisis; it is a human one.
-                  We saw a generation of youth trapped in extractive labor and a landscape that had become prey to
-                  destruction. It was then that we realized our skills weren&#39;t just to help the boardroom, they were also
-                  meant to help the people and the land.
+                 The desolation caused by illegal mining (galamsey) isn't just an environmental crisis; it is a human one.
+                  We saw a generation of youth trapped in extractive labor and a landscape that had become prey to destruction. We are called to be 
+                 faithful stewards of what is committed to us. For us, this is a mandate to help the people and the land.
                 </p>
                 <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug ">
                   Our motivation and love sacrifice are anchored in Isaiah 42:22: &#39;But this is a people plundered and
