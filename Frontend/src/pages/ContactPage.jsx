@@ -100,11 +100,6 @@ const faqs = [
 • Registered Office: 5775 Wayzata Boulevard, Suite 700, St. Louis Park, MN 55416.`
     },
     {
-      question: "Are there limits to how much I can deduct? ",
-      answer:
-        `As a public charity, individuals can generally deduct cash contributions up to 60% of their Adjusted Gross Income (AGI). We recommend consulting with a tax professional for your specific situation.`
-    },
-    {
       question: "Will I receive a receipt for my donation?  ",
       answer:
         `Absolutely. Our "Culture of Excellence" ensures that every donor receives an automated receipt for their records. We provide a formal acknowledgment letter that meets all IRS requirements.`
