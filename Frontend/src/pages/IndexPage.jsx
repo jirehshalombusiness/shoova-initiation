@@ -1475,13 +1475,8 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                         {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
-
-
-                        
-
-                      
                           <a
-                            href="https://youtube.com/yourchannel"
+                            href="https://www.linkedin.com/in/william-agyekum-00681b2a1"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
@@ -1637,7 +1632,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                         
                           <a
-                            href="https://youtube.com/yourchannel"
+                            href="https://www.linkedin.com/in/julius-botchway-mba-a6b739207/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
@@ -1645,7 +1640,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                             <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
                           <a
-                            href="https://youtube.com/yourchannel"
+                          href="https://youtube.com/yourchannel"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
