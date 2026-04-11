@@ -100,7 +100,7 @@ Public Charity Status: 170(b)(1)(A)(vi)`
     {
       name: "Keneh Wemba",
       role: "Secretary",
-      detail: "Administration — USA",
+      detail: "Administration/Community Leader — USA",
       image: "/img/wamba.png",
     },
     // {
