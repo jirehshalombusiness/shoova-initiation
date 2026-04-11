@@ -96,7 +96,7 @@ const faqs = [
       question: "What information do I need for my tax records?",
       answer: `To claim a deduction, you will need our official organization details:<br/>
 • Organization Name: Shoova Initiative Corporation.<br/>
-• EIN (Tax ID): 41-400XXXX.<br/>
+• EIN (Tax ID): 41-4001369.<br/>
 • Registered Office: 5775 Wayzata Boulevard, Suite 700, St. Louis Park, MN 55416.`
     },
     {
@@ -303,9 +303,9 @@ const faqs = [
                     className={`transition-all duration-300 overflow-hidden ${openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}
                   >
-                    <p className="px-6 pb-6 text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </p>
+                    <p className="px-6 pb-6 text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }}/>
+                    
+                  
                   </div>
 
                 </div>
