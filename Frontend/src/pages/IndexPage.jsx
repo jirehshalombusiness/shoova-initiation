@@ -358,12 +358,12 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug">
                  The desolation caused by illegal mining (galamsey) isn't just an environmental crisis; it is a human one.
                   We saw a generation of youth trapped in extractive labor and a landscape that had become prey to destruction. We are called to be 
-                 faithful stewards of what is committed to us. For us, this is a mandate to help the people and the land.
+                 faithful stewards of what is committed to us. For us, this is a <span className="font-bold text-secondary">mandate</span>  to help the people and the land.
                 </p>
                 <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug ">
-                  Our motivation and love sacrifice are anchored in Isaiah 42:22: &#39;But this is a people plundered and
+                  Our motivation and love sacrifice are anchored in <span className="font-italic">Isaiah 42:22: &#39;But this is a people plundered and
                   looted; all of them are trapped in holes and hidden in prisons. They have become prey with no one to
-                  rescue them, spoil with no one to say, Restore!&#39;
+                  rescue them, spoil with no one to say, Restore!&#39;</span>
                 </p>
                 <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug mb-4">
                   We are here to say, &#39;Restore.&#39; We invite you to join us as we turn the &#39;cracked earth&#39; of the past into
