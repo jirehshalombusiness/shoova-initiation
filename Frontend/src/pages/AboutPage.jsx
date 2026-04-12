@@ -391,14 +391,14 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 {/* Animated Stats */}
                 <div className="flex gap-10 mt-10">
 
-                  <div>
+                  {/* <div>
                     <div className="text-5xl font-heading font-bold text-primary mb-1">
                       {years}+
                     </div>
                     <p className="text-sm text-gray-500">
                       Years of vision and planning
                     </p>
-                  </div>
+                  </div> */}
 
                   <div>
                     <div className="text-5xl font-heading font-bold text-primary mb-1">
