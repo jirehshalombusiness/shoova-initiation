@@ -173,8 +173,6 @@ const faqs = [
                     <p className="text-text text-sm">
                       Join our team
                       <br />
-                      Public Charity Status:170(b)(1)(A)(vi)
-                      <br />
                       info@shoovainitiative.org
                     </p>
                   </div>
