@@ -312,7 +312,7 @@ export const RestorationUpdates = () => {
 
 
             {/* Share the Story */}
-            <section id="share_the_story" className="py-24 bg-background border-t border-gray-100">
+            {/* <section id="share_the_story" className="py-24 bg-background border-t border-gray-100">
                 <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
                     <div className="relative">
                         <img
@@ -323,7 +323,7 @@ export const RestorationUpdates = () => {
 
                     </div>
 
-                    {/* Content */}
+                    
                     <div>
 
                         <p className="text-secondary font-bold tracking-wider uppercase text-sm mb-4">
@@ -343,15 +343,15 @@ export const RestorationUpdates = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4">
 
-                            {/* 📄 FACT SHEET */}
+                            
                             <button
                                 onClick={() => {
-                                    // track download
+                                   
                                     fetch("https://shoova-initiation-yjg3.onrender.com/engagement/track-download", {
                                         method: "POST"
                                     });
 
-                                    // force open in new tab
+                                    
                                     window.open("/docs/fact-sheet.pdf", "_blank");
                                 }}
                                 className="inline-flex items-center justify-center px-8 py-4 bg-secondary hover:bg-secondaryHover text-white font-semibold rounded-full transition shadow-lg"
@@ -359,7 +359,7 @@ export const RestorationUpdates = () => {
                                 Download Fact Sheet
                             </button>
 
-                            {/* 🔁 SHARE */}
+                          
                             <button
 
                                 onClick={async () => {
@@ -383,7 +383,7 @@ export const RestorationUpdates = () => {
                                         }
                                     } catch (err) {
                                         console.warn("Share cancelled or failed:", err);
-                                        // optional fallback
+                                      
                                         const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
                                         window.open(whatsappUrl, "_blank");
                                     }
@@ -402,7 +402,7 @@ export const RestorationUpdates = () => {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
 
         </div>
     );
