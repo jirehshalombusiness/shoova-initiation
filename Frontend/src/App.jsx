@@ -5,7 +5,7 @@ import Layout from "./components/Layout";
 import { IndexPage } from "./pages/IndexPage";
 import { AboutPage } from "./pages/AboutPage";
 import StoryPage from "./pages/StoryPage";
-import { ProgramsPage } from "./pages/ProgramsPage";
+import { InitiativesPage } from "./pages/InitiativesPage";
 import { ContactPage } from "./pages/ContactPage";
 import { DonatePage } from "./pages/DonatePage";
 
@@ -191,7 +191,7 @@ const App = () => {
 
             <Route path="/" element={<IndexPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/programs" element={<ProgramsPage />} />
+            <Route path="/shoovainitiatives" element={<InitiativesPage />} />
             <Route path="/story" element={<StoryPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/donate" element={<DonatePage />} />

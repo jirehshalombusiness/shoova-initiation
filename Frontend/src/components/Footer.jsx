@@ -65,8 +65,8 @@ const Footer = () => {
                 <p className="text-white/70">St. Louis Park, MN 55416, USA</p>
                 <p>+1(612)422-8230</p>
                 <div className=" text-white/70">
-                <p>info@shoovainitiative.org</p>
-              </div>
+                  <p>info@shoovainitiative.org</p>
+                </div>
               </div>
 
               <div>
@@ -75,7 +75,7 @@ const Footer = () => {
                 <p className="text-white/70">Pantang Village Junction, Greater Accra Region, Ghana.</p>
                 <p>+233 24 726 4516</p>
               </div>
-              
+
 
             </div>
 
@@ -84,19 +84,11 @@ const Footer = () => {
 
           {/* ================= TRUST ================= */}
           <div className="max-w-xs">
+            {/* LEGAL BLOCK */}
 
             <h4 className="text-md font-semibold uppercase tracking-[0.2em] text-white mb-5">
               Trust & Transparency
             </h4>
-
-            <p className="text-white/80 text-md leading-relaxed mb-6">
-              Your support funds training, land restoration, and the Shoova
-              Restoration Campus—creating sustainable pathways beyond illegal mining.
-            </p>
-
-            {/* LEGAL BLOCK */}
-            <div className="border-t border-white/10 pt-4">
-
               <p className="text-white text-md font-medium">
                 Shoova Initiative is a 501(c)(3) nonprofit public charity.
               </p>
@@ -108,7 +100,13 @@ const Footer = () => {
                 Your donations are tax-deductible as permitted by law.
               </p>
 
+            <div className="border-t border-white/10 pt-4">
             </div>
+
+            <p className="text-white/80 text-md leading-relaxed mb-6">
+              Your support funds training, land restoration, and the Shoova
+              Restoration Campus—creating sustainable pathways beyond illegal mining.
+            </p>
 
           </div>
 

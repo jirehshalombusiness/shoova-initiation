@@ -226,7 +226,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               playsInline
               className="w-full h-full object-cover scale-110"
             >
-              <source src="/img/planting.mp4" type="video/mp4" />
+              <source src="/img/shoova-vision.mp4" type="video/mp4" />
             </video>
           </div>
 
@@ -291,106 +291,63 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="py-28 bg-gray-100 relative overflow-hidden"
+          className="py-32 bg-gray-100 relative overflow-hidden"
         >
 
-          {/* BACKGROUND */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.2 }}
-            className="absolute left-0 top-0 w-1/2 h-full -skew-x-12 origin-top-left"
-          />
+          {/* 🌅 DIVINE LIGHT BACKGROUND */}
+          <div className="absolute inset-0 flex justify-center items-start pointer-events-none">
 
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-16 relative z-10">
+            {/* main beam */}
+            <div className="w-[600px] h-[600px] bg-gradient-to-b from-yellow-200/40 via-yellow-100/20 to-transparent blur-3xl opacity-70" />
 
-            {/* IMAGE */}
-            <motion.div
-              variants={fadeLeft}
-              className="relative flex justify-center md:justify-start"
+            {/* soft glow */}
+            <div className="absolute w-[800px] h-[800px] bg-yellow-100/30 rounded-full blur-[120px] top-[-200px]" />
+
+          </div>
+
+          {/* CONTENT */}
+          <div className="max-w-3xl mx-auto px-6 relative z-10">
+
+            {/* TITLE */}
+            <motion.h2
+              variants={fadeUp}
+              className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10"
             >
-              <div className="relative">
-
-                <motion.img
-                  src="/img/founderss.png"
-                  alt="Shoova Founder"
-                  className="w-[320px] md:w-[420px] lg:w-[420px] object-contain  -mt-16 md:-mt-52"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1 }}
-                />
-
-
-                {/* glow */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 1 }}
-                  className="absolute inset-0 bg-secondary/10 blur-3xl -z-10"
-                />
-              </div>
-            </motion.div>
+              The Restoration Mandate
+            </motion.h2>
 
             {/* TEXT */}
-            <motion.div variants={fadeRight} className="max-w-xl">
+            <motion.div
+              variants={fadeUp}
+              className="space-y-6 text-gray-800 leading-relaxed text-justify"
+            >
 
-              {/* label */}
-              <motion.p
-                variants={fadeUp}
-                className="text-sm uppercase tracking-widest text-secondary font-semibold mb-4"
-              >
-                Founders’ Message
-              </motion.p>
-              <motion.p
-                variants={fadeUp}
-                className="text-sm uppercase tracking-widest text-primary font-semibold mb-4"
-              >
-                THE RESTORATION MANDATE
-              </motion.p>
+              <p className="text-lg md:text-xl">
+                The desolation caused by illegal mining (galamsey) isn't just an environmental crisis;
+                it is a human one. We saw a generation of youth trapped in extractive labor and a landscape
+                that had become prey to destruction.
+              </p>
 
+              <p className="text-lg md:text-xl">
+                We are called to be faithful stewards of what is committed to us. For us, this is a mandate
+                to help the people and the land. Our motivation and sacrificial love are anchored in the Word.
+              </p>
 
-              {/* quote */}
-              <motion.div
-                variants={fadeUp}
-                className="relative pl-6 mb-8"
-              >
+              <p className="text-lg md:text-xl font-semibold">
+                We are here to say,
+                <span className="text-primary font-bold"> “Restore.”</span>
+              </p>
 
-                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug">
-                 The desolation caused by illegal mining (galamsey) isn't just an environmental crisis; 
-                 it is a human one. We saw a generation of youth trapped in extractive labor and a landscape
-                  that had become prey to destruction.
-                </p>
-                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug ">
-                  We are called to be faithful stewards of what is committed to us. For us, this is a mandate to help the people and the land.
-                   Our motivation and sacrificial love are anchored in the Word:
+              <p className="text-base md:text-lg italic text-gray-600">
+                "But this is a people plundered and looted; all of them are trapped in holes and hidden
+                in prisons. They have become prey with no one to rescue them, spoil with no one to say, Restore!"
+                — Isaiah 42:22
+              </p>
 
-                </p>
-                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug mb-4">
-                  We are here to say, &#39;Restore.&#39; We invite you to join us as we turn the &#39;cracked earth&#39; of the past into
-                  the &#39;Rising Sun&#39; of a sustainable future for Ghana.
-                </p>
-                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug mb-4">
-                  "But this is a people plundered and looted; all of them are trapped in holes and hidden
-                   in prisons. They have become prey with no one to rescue them, spoil with no one to say, Restore!"  Isaiah 42:22
-                </p>
-                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug mb-4">
-                  We are here to say, "RESTORE."
-                </p>
-                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug mb-4">
-                  We invite you to join us as we turn the "cracked earth" of the past into the "Rising Sun" of a sustainable future for Ghana.
-                </p>
-                  
-              </motion.div>
-
-              {/* NAME */}
-              <motion.h2
-                variants={fadeUp}
-                transition={{ delay: 0.2 }}
-                className="text-gray-800 font-medium"
-              >
-                <span className="font-semibold">William Agyekum &amp; Salome Agyekum</span>
-                <span className="text-gray-500">, Co-Founders, Shoova Initiative</span>
-              </motion.h2>
+              <p className="text-lg md:text-xl">
+                We invite you to join us as we turn the "cracked earth" of the past into the
+                <span className="text-primary font-semibold"> "Rising Sun"</span> of a sustainable future for Ghana.
+              </p>
 
             </motion.div>
 
@@ -430,12 +387,12 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </p>
 
               {/* CTA */}
-              <Link
+              {/* <Link
                 to="/donate"
                 className="bg-secondary hover:bg-secondaryHover text-white px-8 py-3.5 font-bold text-sm tracking-wide uppercase rounded-md transition shadow-lg"
               >
                 Donate
-              </Link>
+              </Link> */}
 
             </div>
           </div>
@@ -1534,9 +1491,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                         </div>
                         {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
-                   
 
-                         <a
+
+                          <a
                             href="https://youtube.com/yourchannel"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -1640,7 +1597,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
 
 
-                        
+
                           <a
                             href="https://www.linkedin.com/in/julius-botchway-mba-a6b739207/"
                             target="_blank"
@@ -1650,7 +1607,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                             <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
                           <a
-                          href="https://youtube.com/yourchannel"
+                            href="https://youtube.com/yourchannel"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 flex items-center justify-center hover:bg-black/20"

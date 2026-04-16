@@ -94,15 +94,6 @@ const Navbar = () => {
 
             {/* DESKTOP NAV */}
             <div className="hidden md:flex items-center gap-10 relative">
-
-              <NavLink to="/about" className={navLinkClass}>
-                About
-              </NavLink>
-
-              <NavLink to="/programs" className={navLinkClass}>
-                Programs
-              </NavLink>
-
               {/* 🔥 SHOOVA PATHWAYS */}
               <div
                 className="relative group"
@@ -171,6 +162,15 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
+              <NavLink to="/about" className={navLinkClass}>
+                About
+              </NavLink>
+
+              <NavLink to="/shoovainitiatives" className={navLinkClass}>
+                Initiatives
+              </NavLink>
+
+
 
               <NavLink to="/contact" className={navLinkClass}>
                 Contact
@@ -256,10 +256,10 @@ const Navbar = () => {
             </button>
           </div>
 
-        
+
           <div className="flex flex-col h-full px-6 py-2">
             <div className="flex items-center gap-1 text-[11px] mt-2 mb-3">
-             {languages.map((lang, i) => (
+              {languages.map((lang, i) => (
                 <span key={lang.code} className="flex items-center gap-1">
                   <button
                     onClick={() => changeLanguage(lang.code)}
@@ -279,24 +279,7 @@ const Navbar = () => {
             </div>
             {/* NAV LINKS */}
             <div className="space-y-6">
-
-              <Link
-                to="/about"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-lg font-semibold text-gray-900"
-              >
-                About
-              </Link>
-
-              <Link
-                to="/programs"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block text-lg font-semibold text-gray-900"
-              >
-                Programs
-              </Link>
-
-              {/* SHOOVA PATHWAYS */}
+                {/* SHOOVA PATHWAYS */}
               <div className="border-t border-gray-200 pt-6">
 
                 <button
@@ -349,6 +332,22 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
+
+              <Link
+                to="/about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-lg font-semibold text-gray-900"
+              >
+                About
+              </Link>
+
+              <Link
+                to="/shoovainitiatives"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-lg font-semibold text-gray-900"
+              >
+                Initiatives
+              </Link>
 
               <Link
                 to="/contact"
