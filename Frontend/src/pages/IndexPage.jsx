@@ -345,7 +345,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 variants={fadeUp}
                 className="text-sm uppercase tracking-widest text-primary font-semibold mb-4"
               >
-                Rooted in a Higher Vision
+                THE RESTORATION MANDATE
               </motion.p>
 
 
@@ -356,19 +356,30 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               >
 
                 <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug">
-                 The desolation caused by illegal mining (galamsey) isn't just an environmental crisis; it is a human one.
-                  We saw a generation of youth trapped in extractive labor and a landscape that had become prey to destruction. We are called to be 
-                 faithful stewards of what is committed to us. For us, this is a <span className="font-bold text-secondary">mandate</span>  to help the people and the land.
+                 The desolation caused by illegal mining (galamsey) isn't just an environmental crisis; 
+                 it is a human one. We saw a generation of youth trapped in extractive labor and a landscape
+                  that had become prey to destruction.
                 </p>
                 <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug ">
-                  Our motivation and love sacrifice are anchored in <span className="font-italic">Isaiah 42:22: &#39;But this is a people plundered and
-                  looted; all of them are trapped in holes and hidden in prisons. They have become prey with no one to
-                  rescue them, spoil with no one to say, Restore!&#39;</span>
+                  We are called to be faithful stewards of what is committed to us. For us, this is a mandate to help the people and the land.
+                   Our motivation and sacrificial love are anchored in the Word:
+
                 </p>
                 <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug mb-4">
                   We are here to say, &#39;Restore.&#39; We invite you to join us as we turn the &#39;cracked earth&#39; of the past into
                   the &#39;Rising Sun&#39; of a sustainable future for Ghana.
                 </p>
+                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug mb-4">
+                  "But this is a people plundered and looted; all of them are trapped in holes and hidden
+                   in prisons. They have become prey with no one to rescue them, spoil with no one to say, Restore!"  Isaiah 42:22
+                </p>
+                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug mb-4">
+                  We are here to say, "RESTORE."
+                </p>
+                <p className="text-2xl md:text-xl font-semibold text-gray-900 leading-snug mb-4">
+                  We invite you to join us as we turn the "cracked earth" of the past into the "Rising Sun" of a sustainable future for Ghana.
+                </p>
+                  
               </motion.div>
 
               {/* NAME */}
