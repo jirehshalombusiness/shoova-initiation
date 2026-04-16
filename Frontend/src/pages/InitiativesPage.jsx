@@ -265,8 +265,9 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
         </p>
 
         <p className="text-text text-sm leading-relaxed">
-          Restoring land damaged by illegal mining into thriving ecosystems
-          capable of supporting communities and agriculture.
+          By 2030, we aim to transform land 
+          damaged by illegal mining into thriving ecosystems 
+          that sustain communities and support agriculture.
         </p>
 
       </div>
@@ -288,8 +289,7 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
         </p>
 
         <p className="text-text text-sm leading-relaxed">
-          Improving river systems through the reduction of mercury, silt,
-          and harmful contaminants caused by illegal mining.
+          Clean and restored river systems by 2030, free from mercury, silt, and the harmful contaminants of illegal mining.
         </p>
 
       </div>
@@ -311,8 +311,7 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
         </p>
 
         <p className="text-text text-sm leading-relaxed">
-          Transitioning young people from dangerous mining into skilled,
-          dignified, and sustainable livelihoods.
+          A generation of young people transitioned by 2030 from dangerous mining into skilled, dignified, and sustainable livelihoods.
         </p>
 
       </div>

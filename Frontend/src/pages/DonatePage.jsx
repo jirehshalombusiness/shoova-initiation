@@ -16,7 +16,7 @@ import { Twitter } from 'lucide-react';
 import { Youtube } from 'lucide-react';
 import { useLocation } from "react-router-dom";
 import PayPalButton from "../components/PayPalButton";
-
+import { GraduationCap ,Rocket,Building} from "lucide-react";
 
 export const DonatePage = ({ className, children, variant, contentKey, ...props }) => {
   const location = useLocation();
@@ -122,7 +122,7 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
     }
   };
   const faqs = [
-     {
+    {
       question: "Is Shoova Initiative a registered nonprofit?",
       answer:
         `Yes, Shoova Initiative Corporation is a 501(c)(3) public charity dedicated to restoring lands and lives in Ghana. We have established governance and operational structures in both the United States and Ghana.
@@ -236,7 +236,7 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                     </div>
 
                     <div className="flex gap-4">
-                      <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                         <HeartPulse className="w-5 h-5 text-yellow-700" />
                       </div>
                       <div>
@@ -244,6 +244,39 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                         <p className="text-sm text-text">
                           Supports vocational training for young restoration leaders
                           at the Shoova Restoration Campus.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                        <GraduationCap className="w-5 h-5 text-yellow-700" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-textDark">$1000 – Restoration Fellow </p>
+                        <p className="text-sm text-text">
+                          Supports a Restoration Fellow's advanced training
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="w-10 h-10 bg-accent/70 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Building className="w-5 h-5 text-yellow-700" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-textDark">$2500 – Lab Anchor</p>
+                        <p className="text-sm text-text">
+                          Helps equip restoration labs and technical training spaces.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Rocket className="w-5 h-5 text-yellow-700" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-textDark">$5000 – Campus Catalyst</p>
+                        <p className="text-sm text-text">
+                          Helps build critical infrastructure for the Shoova Restoration Campus.
                         </p>
                       </div>
                     </div>
@@ -424,7 +457,7 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                       }`}
                   >
                     <p className="px-6 pb-6 text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
-                      
+
                   </div>
 
                 </div>
