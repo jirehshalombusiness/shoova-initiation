@@ -377,8 +377,8 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
               {/* HEADLINE */}
               <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.05] mb-6 tracking-tight">
-                Become a part of the solution <br />
-                the restoration movement! <span className="text-secondary">Let’s restore lives beyond galamsey through education and innovation.</span>
+                Become a part of the solution.<br />
+                 <span className="text-secondary">Let’s restore lives beyond galamsey.</span>
               </h2>
 
               <p className="text-base md:text-lg text-white/85 leading-relaxed mb-10 space-y-4">
