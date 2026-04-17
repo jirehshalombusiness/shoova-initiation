@@ -16,7 +16,7 @@ import { Twitter } from 'lucide-react';
 import { Youtube } from 'lucide-react';
 import { useLocation } from "react-router-dom";
 import PayPalButton from "../components/PayPalButton";
-import { GraduationCap ,Rocket,Building} from "lucide-react";
+import { GraduationCap, Rocket, Building } from "lucide-react";
 
 export const DonatePage = ({ className, children, variant, contentKey, ...props }) => {
   const location = useLocation();
@@ -379,12 +379,12 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
 
                   {/* Donate */}
                   {/* Impact Message */}
-                  <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-6 text-center">
-                    <p className="text-xs uppercase tracking-wide text-primary/70 mb-1">
+                  <div className="bg-primary text-white rounded-xl p-5 mb-6 text-center shadow-lg">
+                    <p className="text-xs uppercase tracking-wide text-white/80 mb-2">
                       Your Impact
                     </p>
 
-                    <p className="text-sm text-primary font-medium">
+                    <p className="text-base font-semibold leading-relaxed">
                       {getImpactMessage(finalAmount)}
                     </p>
                   </div>

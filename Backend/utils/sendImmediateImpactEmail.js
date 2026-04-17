@@ -64,10 +64,6 @@ export const sendImmediateImpactEmail = async (name, email, amount, city, countr
           <span style="font-size:15px;color:#333;">You are a Co-Restorer.</span>
         </div>
 
-        <p style="color:#555;font-size:15px;line-height:1.6;">
-          We are currently preparing the foundation for our 8-acre Restoration Campus, and your support is now part of that story.
-        </p>
-
         <!-- CTA BUTTON -->
         <div style="text-align:center;margin:30px 0;">
           <a href="https://www.shoovainitiative.org"

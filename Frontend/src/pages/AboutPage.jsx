@@ -75,7 +75,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
     },
     {
       name: "Salome Agyekum, CA",
-      role: "Co-Founder,Vice President & Treasurer",
+      role: "Co-Founder & Treasurer",
       detail: "Data Analytics & Finance — USA",
       image: "/img/salom.png",
     },
@@ -92,15 +92,9 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
       image: "/img/juliuss.jpg",
     },
     {
-      name: "Isaac Waddy Adjei-Ampofo",
-      role: "Director of Ghana Operations",
-      detail: "Education — Ghana",
-      image: "/img/isaac.jpg",
-    },
-    {
-      name: "Keneh Wemba",
+      name: "Wemba Keneh KWEJI ",
       role: "Secretary",
-      detail: "Administration/Community Leader — USA",
+      detail: "PSM Managing Admin— USA",
       image: "/img/wamba.png",
     },
     // {
@@ -558,7 +552,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
                     <Image
                       variant="cover"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full  object-cover object-top"
                       src={member.image}
                       alt={member.name}
                     />

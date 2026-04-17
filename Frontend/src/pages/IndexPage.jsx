@@ -378,7 +378,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               {/* HEADLINE */}
               <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.05] mb-6 tracking-tight">
                 Become a part of the solution.<br />
-                 <span className="text-secondary">Let’s restore lives beyond galamsey.</span>
+                <span className="text-secondary">Let’s restore lives beyond galamsey.</span>
               </h2>
 
               <p className="text-base md:text-lg text-white/85 leading-relaxed mb-10 space-y-4">
@@ -1518,7 +1518,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                   <div className="mt-4">
                     <h3 className="text-xl font-heading font-bold">Salome Agyekum, CA</h3>
-                    <p className="text-sm text-teal-100 mt-1">Co-Founder, Vice President &amp; Treasurer</p>
+                    <p className="text-sm text-teal-100 mt-1">Co-Founder &amp; Treasurer</p>
                     <p className="text-xs text-white/70 mt-1">USA</p>
                   </div>
                 </div>
@@ -1529,7 +1529,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     <img
                       src="/img/pastor.jpg"
                       alt="Kwame Opon-Yeboah"
-                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
 
                     {/* Expanding Social Rail */}
@@ -1580,7 +1580,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     <img
                       src="/img/juliuss.jpg"
                       alt="Julius Botchway "
-                      className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
 
                     {/* Expanding Social Rail */}
