@@ -294,14 +294,19 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           className="py-32 bg-gray-100 relative overflow-hidden"
         >
 
-          {/* 🌅 DIVINE LIGHT BACKGROUND */}
-          <div className="absolute inset-0 flex justify-center items-start pointer-events-none">
+          <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
 
-            {/* main beam */}
-            <div className="w-[600px] h-[600px] bg-gradient-to-b from-yellow-200/40 via-yellow-100/20 to-transparent blur-3xl opacity-70" />
-
-            {/* soft glow */}
-            <div className="absolute w-[800px] h-[800px] bg-yellow-100/30 rounded-full blur-[120px] top-[-200px]" />
+            <img
+              src="/img/emblem.jpeg" // 👉 your uploaded emblem
+              alt="Shoova Emblem"
+              className="
+  w-[500px] md:w-[520px] lg:w-[1800px]
+  max-h-[80%]
+  opacity-10
+  object-contain
+  pointer-events-none
+    "
+            />
 
           </div>
 
