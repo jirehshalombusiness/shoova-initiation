@@ -1,3 +1,5 @@
+import { sendEmail } from "./sendEmail.js";
+
 export const sendEngagementEmail = async (name, email) => {
 
   const firstName = name?.split(" ")[0] || "Friend";
