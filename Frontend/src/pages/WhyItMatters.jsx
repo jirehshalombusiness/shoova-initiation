@@ -176,123 +176,123 @@ const WhyItMatters = () => {
                    </div>
                  </section>
 
-            <section id="impact" className="py-28 bg-white">
-
-                <div className="max-w-7xl mx-auto px-6 md:px-10">
-
-                    {/* HEADER */}
-                    <div className="text-center mb-20">
-
-                        <p className="text-sm uppercase tracking-[0.25em] text-secondary/80 mb-4">
-                            Projected Impact
+           <section id="impact" className="py-28 bg-white">
+          
+                    <div className="max-w-7xl mx-auto px-6 md:px-10">
+          
+                      {/* HEADER */}
+                      <div className="text-center mb-20">
+          
+                        <p className="text-md uppercase tracking-[0.25em] text-secondary/80 font-semibold mb-4">
+                          Projected Impact
                         </p>
-
+          
                         <h2 className="text-4xl md:text-5xl font-heading font-bold text-textDark mb-6">
-                            The Impact We Are Building
+                          The Impact We Are Building
                         </h2>
-
+          
                         <p className="text-text text-lg max-w-2xl mx-auto">
-                            With the establishment of the Shoova Restoration Campus, this is the
-                            measurable transformation we are working toward across land, water, and livelihoods.
+Galamsey occurs in more than 120 of Ghana’s 261 districts, impacting millions of people and thousands of acres of land.
+                With the establishment of the Shoova Restoration Campus, this is the
+                measurable transformation we are working toward across land, water, and livelihoods.
                         </p>
-
-                    </div>
-
-
-                    {/* IMPACT GRID */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
+          
+                      </div>
+          
+          
+                      {/* IMPACT GRID */}
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          
                         {/* LAND */}
                         <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
-
-                            <p className="text-xs uppercase tracking-widest text-primary mb-4">
-                                Land
-                            </p>
-
-                            <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
-                                <CountUp end={500} suffix="+" />
-                            </h3>
-
-                            <p className="text-lg font-semibold text-textDark mb-2">
-                                Acres Restored
-                            </p>
-
-                            <p className="text-text text-sm leading-relaxed">
-                                Restoring land damaged by illegal mining into thriving ecosystems
-                                capable of supporting communities and agriculture.
-                            </p>
-
+          
+                          <p className="text-xs uppercase tracking-widest text-primary mb-4">
+                            Land
+                          </p>
+          
+                          <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
+                            <CountUp end={1500} suffix="+" />
+                          </h3>
+          
+                          <p className="text-lg font-semibold text-textDark mb-2">
+                            Acres Targeted for Restoration
+                          </p>
+          
+                          <p className="text-text text-sm leading-relaxed">
+                            By 2040, we aim to restore land by illegal mining into thriving ecosystems that support communities and agriculture.
+                            Long-term ecological recovery is proected through 2040.
+                          </p>
+          
                         </div>
-
-
+          
+          
                         {/* WATER */}
                         <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
-
-                            <p className="text-xs uppercase tracking-widest text-secondary mb-4">
-                                Water
-                            </p>
-
-                            <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
-                                <CountUp end={65} suffix="%" />
-                            </h3>
-
-                            <p className="text-lg font-semibold text-textDark mb-2">
-                                Pollution Reduction
-                            </p>
-
-                            <p className="text-text text-sm leading-relaxed">
-                                Improving river systems through the reduction of mercury, silt,
-                                and harmful contaminants caused by illegal mining.
-                            </p>
-
+          
+                          <p className="text-xs uppercase tracking-widest text-secondary mb-4">
+                            Water
+                          </p>
+          
+                          <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
+                            <CountUp end={45} suffix="%" />
+                          </h3>
+          
+                          <p className="text-lg font-semibold text-textDark mb-2">
+                            Water Bodies Targeted for Restoration
+                          </p>
+          
+                          <p className="text-text text-sm leading-relaxed">
+                            By 2040, we aim to rehabilitate water bodies degraded by illegal mining, restoring water quality, 
+                            aquatic ecosystems, and and improving access to safe water for affected communities.
+                          </p>
+          
                         </div>
-
-
+          
+          
                         {/* PEOPLE */}
                         <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
-
-                            <p className="text-xs uppercase tracking-widest text-primary mb-4">
-                                People
-                            </p>
-
-                            <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
-                                <CountUp end={1200} suffix="+" />
-                            </h3>
-
-                            <p className="text-lg font-semibold text-textDark mb-2">
-                                Youth Empowered
-                            </p>
-
-                            <p className="text-text text-sm leading-relaxed">
-                                Transitioning young people from dangerous mining into skilled,
-                                dignified, and sustainable livelihoods.
-                            </p>
-
+          
+                          <p className="text-xs uppercase tracking-widest text-primary mb-4">
+                            Leaders
+                          </p>
+          
+                          <h3 className="text-5xl md:text-6xl font-bold text-textDark mb-4">
+                            <CountUp end={8500} suffix="+" />
+                          </h3>
+          
+                          <p className="text-lg font-semibold text-textDark mb-2">
+                            Youth Targeted for Empowerment
+                          </p>
+          
+                          <p className="text-text text-sm leading-relaxed">
+                            By 2040, we aim to transition young people from illegal mining into skilled, dignified, and sustainable livelihoods through our Restoration Campus training programs and community initiatives.
+                          </p>
+          
                         </div>
-
-                    </div>
-
-
-                    {/* SMALL DISCLAIMER (VERY IMPORTANT) */}
-                    <p className="text-center text-xs text-gray-500 mt-10 max-w-xl mx-auto">
+          
+                      </div>
+          
+          
+                      {/* SMALL DISCLAIMER (VERY IMPORTANT) */}
+                      <p className="text-center text-sm text-gray-500 mt-10 max-w-xl mx-auto">
                         Projected impact based on full implementation of the Shoova Restoration Campus.
-                    </p>
-
-
-                    {/* CTA */}
-                    <div className="text-center mt-12">
+                      </p>
+          
+          
+                      {/* CTA */}
+                      <div className="text-center mt-12">
                         <Link
-                            to="/donate"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold rounded-full hover:bg-secondaryHover transition"
+                          to="/donate"
+                          className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-white font-semibold rounded-full hover:bg-secondaryHover transition"
                         >
-                            Support This Impact
-                            <span>→</span>
+                          Support This Impact
+                          <span>→</span>
                         </Link>
+                      </div>
+          
                     </div>
-
-                </div>
-
-            </section>
+          
+                  </section>
         </div>
     );
 };
