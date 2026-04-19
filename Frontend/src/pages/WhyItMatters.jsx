@@ -20,7 +20,7 @@ const WhyItMatters = () => {
       label: "Youth",
       eyebrow: "WHY YOUTH?",
       title: "Because opportunity changes destinies",
-      image: "/img/youth.jpg",
+      image: "/img/young.jpeg",
       text: "When young people gain technical and environmental skills, they can build dignified livelihoods that replace destructive mining practices.",
     },
     {

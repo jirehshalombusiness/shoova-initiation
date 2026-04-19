@@ -98,7 +98,7 @@ export default function StoryPage() {
           className="absolute inset-0"
         >
           <img
-            src="/img/repair.jpg"
+            src="/img/solarinit.jpeg"
             alt="Galamsey destruction"
             className="w-full h-[120%] object-cover"
           />
@@ -434,7 +434,7 @@ export default function StoryPage() {
 
             <div>
               <img
-                src="/img/program.jpg"
+                src="/img/degrad.jpeg"
                 className="w-full h-[260px] object-cover rounded-xl shadow-md"
                 alt="Youth training"
               />
@@ -445,7 +445,7 @@ export default function StoryPage() {
 
             <div>
               <img
-                src="/img/community.jpg"
+                src="/img/commun.jpeg"
                 className="w-full h-[260px] object-cover rounded-xl shadow-md"
                 alt="Land restoration"
               />

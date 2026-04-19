@@ -226,7 +226,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               playsInline
               className="w-full h-full object-cover scale-110"
             >
-              <source src="/img/shoova-vision.mp4" type="video/mp4" />
+              <source src="/img/Shoova.mp4" type="video/mp4" />
             </video>
           </div>
 
@@ -297,13 +297,13 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
 
             <img
-              src="/img/emblem.jpeg" // 👉 your uploaded emblem
+              src="/img/sunburst.jpeg" // 👉 your uploaded emblem
               alt="Shoova Emblem"
               className="
   w-[500px] md:w-[520px] lg:w-[1800px]
-  max-h-[80%]
+  max-h-[100%]
   opacity-10
-  object-contain
+  object-cover
   pointer-events-none
     "
             />
