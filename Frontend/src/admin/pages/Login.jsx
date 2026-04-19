@@ -30,18 +30,15 @@ export default function Login() {
                 headers: {
                     "Content-Type": "application/json"
                 },
+                credentials: "include",
                 body: JSON.stringify({ email, password })
             });
 
             const data = await res.json();
 
-            if (data.token) {
-
-                localStorage.setItem("adminToken", data.token);
+            if (data.message === "OTP sent") {
                 localStorage.setItem("adminEmail", data.email);
-
-                navigate("/admin");
-
+                navigate("/admin/verify-otp");
             } else {
                 alert("Invalid login");
             }

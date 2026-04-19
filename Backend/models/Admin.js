@@ -13,6 +13,8 @@ const adminSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+    otp: String,
+    otpExpire: Date,
 
     
     resetToken: String,
