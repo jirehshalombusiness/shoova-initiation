@@ -200,6 +200,7 @@ const App = () => {
             <Route path="/restoration-updates" element={<RestorationUpdates />} />
             <Route path="/shoova-campus" element={<ShoovaCampus />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route path="/admin/verify-otp" element={<VerifyOTP />} />
 
           </Route>
 
@@ -222,7 +223,7 @@ const App = () => {
             <Route path="/admin/settings" element={<Settings />} />
             <Route path="donor/:email" element={<DonorProfile />} />
             <Route path="/admin/newsletter" element={<Newsletter />} />
-            <Route path="/admin/verify-otp" element={<VerifyOTP />} />
+            
 
           </Route>
 
