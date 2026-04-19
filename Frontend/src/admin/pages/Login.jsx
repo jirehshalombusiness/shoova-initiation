@@ -20,6 +20,8 @@ export default function Login() {
     }, [navigate]);
 
     const handleLogin = async () => {
+        console.log("EMAIL:", email);
+        console.log("PASSWORD:", password);
 
         setLoading(true);
 
@@ -70,12 +72,14 @@ export default function Login() {
                 >
 
                     <input
+                        value={email}
                         placeholder="Email"
                         className="border p-3 w-full mb-4 rounded"
                         onChange={(e) => setEmail(e.target.value)}
                     />
 
                     <input
+                        value={password}
                         placeholder="Password"
                         type="password"
                         className="border p-3 w-full mb-6 rounded"
