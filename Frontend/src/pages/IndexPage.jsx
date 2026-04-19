@@ -1455,15 +1455,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                           >
                             <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-                          <a
-                            href="https://youtube.com/yourchannel"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaYoutube className="w-4 h-4 text-white" />
-                          </a>
-
+                      
                         </div>
 
                       </div>
@@ -1499,21 +1491,14 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
 
                           <a
-                            href="https://youtube.com/yourchannel"
+                            href="https://www.linkedin.com/in/salome-agyekum-741a79233?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
                           >
                             <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-                          <a
-                            href="https://youtube.com/yourchannel"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaYoutube className="w-4 h-4 text-white" />
-                          </a>
+                        
 
                         </div>
 
@@ -1557,14 +1542,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                           >
                             <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-                          <a
-                            href="https://youtube.com/yourchannel"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaYoutube className="w-4 h-4 text-white" />
-                          </a>
+                       
 
                         </div>
 
@@ -1611,14 +1589,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                           >
                             <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-                          <a
-                            href="https://youtube.com/yourchannel"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 flex items-center justify-center hover:bg-black/20"
-                          >
-                            <FaYoutube className="w-4 h-4 text-white" />
-                          </a>
+                        
 
                         </div>
 
