@@ -29,7 +29,7 @@ import "vanilla-cookieconsent/dist/cookieconsent.css";
 import ".././src/styles/globals.css";
 import ShoovaCampus from "./pages/ShoovaCampus";
 import ResetPassword from "./admin/pages/ResetPassword";
-
+import VerifyOTP from "./admin/pages/OtpPage";
 function loadAnalytics() {
   const GA_ID = "";
 
@@ -222,6 +222,7 @@ const App = () => {
             <Route path="/admin/settings" element={<Settings />} />
             <Route path="donor/:email" element={<DonorProfile />} />
             <Route path="/admin/newsletter" element={<Newsletter />} />
+            <Route path="/admin/verify-otp" element={<VerifyOTP />} />
 
           </Route>
 
