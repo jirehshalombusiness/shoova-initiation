@@ -97,10 +97,16 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
       detail: "PSM Managing Admin— USA",
       image: "/img/wamba.png",
     },
+    {
+      name: "Isaac Waddy Adjei-Ampofo",
+      role: "Director of Education ",
+      detail: "Education & Training— USA",
+      image: "/img/waddy.jpeg",
+    },
     // {
-    //   name: "Sandra Agyekum",
-    //   role: "Director",
-    //   detail: "Community Relations — USA",
+    //   name: "Stanley Arthur Essuman",
+    //   role: "Developer",
+    //   detail: "Technical Lead — Ghana",
     //   image: "/img/sandra.jpg",
     // }
   ];
