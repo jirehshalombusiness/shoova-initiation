@@ -65,7 +65,7 @@ export default function GalamseySection() {
                 {/* VIDEO SIDE */}
                 <div className="relative">
                     <video
-                        src="/img/ShoovaVision.mp4"
+                        src="/img/shoovavid.mp4"
                         className="w-full rounded-xl shadow-xl"
                         controls
                         autoPlay={!playWithSound}

@@ -295,19 +295,17 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           className="py-32 bg-gray-100 relative overflow-hidden"
         >
 
-          <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-
-            <img
-              src="/img/sunburst.jpeg" // 👉 your uploaded emblem
-              alt="Shoova Emblem"
-              className="
-  w-[500px] md:w-[520px] lg:w-[1800px]
-  max-h-[100%]
-  opacity-10
-  object-cover
-  pointer-events-none
+     <div className="absolute inset-0 pointer-events-none">
+  <img
+    src="/img/sunburst.jpeg"
+    alt="Shoova Emblem"
+    className="
+      w-full h-full
+      object-cover
+      opacity-10
     "
-            />
+  />
+
 
           </div>
 
