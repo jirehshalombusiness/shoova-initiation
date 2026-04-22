@@ -1,5 +1,29 @@
 import React from "react";
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { FaTiktok, FaThreads } from "react-icons/fa6";
+
+const socials = [
+  {
+    icon: Facebook,
+    url: "https://facebook.com/yourpage",
+  },
+  {
+    icon: Twitter,
+    url: "https://x.com/ShoovaI67372",
+  },
+  {
+    icon: Instagram,
+    url: "https://www.instagram.com/shoovainitiative/",
+  },
+  {
+    icon: Youtube,
+    url: " https://www.youtube.com/@ShoovaInitiative",
+  },
+    { icon: FaTiktok, url: "https://www.tiktok.com/@shoovainitiative?is_from_webapp=1&sender_device=pc" },
+  { icon: FaThreads, url: "https://www.threads.com/@shoovainitiative?hl=en" },
+
+];
+
 
 const Footer = () => {
   return (
@@ -35,17 +59,21 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex gap-2">
-              {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="bg-white/10 p-2 rounded-md hover:bg-secondary transition"
-                >
-                  <Icon size={15} />
-                </a>
-              ))}
+              {socials.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <a
+                    key={i}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/10 p-2 rounded-md hover:bg-secondary transition"
+                  >
+                    <Icon size={15} />
+                  </a>
+                );
+              })}
             </div>
-
           </div>
 
 
@@ -89,16 +117,16 @@ const Footer = () => {
             <h4 className="text-md font-semibold uppercase tracking-[0.2em] text-white mb-5">
               Trust & Transparency
             </h4>
-              <p className="text-white text-md font-medium">
-                Shoova Initiative is a 501(c)(3) nonprofit public charity.
-              </p>
-              <p className="text-white text-md font-medium">
-                Public Charity Status: 170(b)(1)(A)(vi)
-              </p>
+            <p className="text-white text-md font-medium">
+              Shoova Initiative is a 501(c)(3) nonprofit public charity.
+            </p>
+            <p className="text-white text-md font-medium">
+              Public Charity Status: 170(b)(1)(A)(vi)
+            </p>
 
-              <p className="text-white/50 text-md mt-1 leading-relaxed">
-                Your donations are tax-deductible as permitted by law.
-              </p>
+            <p className="text-white/50 text-md mt-1 leading-relaxed">
+              Your donations are tax-deductible as permitted by law.
+            </p>
 
             <div className="border-t border-white/10 pt-4">
             </div>
