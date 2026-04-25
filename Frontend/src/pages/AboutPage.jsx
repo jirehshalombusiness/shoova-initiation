@@ -38,28 +38,28 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
   };
 
   const faqs = [
-      {
-        question: "What is the Shoova Restoration Campus?",
-        answer:
-          "The Shoova Restoration Campus is an upcoming 8-acre vocational training institute in Ghana’s Eastern Region designed to equip youth with world-class engineering, environmental restoration, and leadership skills that help transition communities away from illegal mining."
-      },
-      {
-        question: "Why focus on youth involved in galamsey?",
-        answer:
-          "Many young people turn to illegal mining due to limited economic opportunities. Shoova believes these youth are not the problem—they are the untapped solution. Through training and mentorship we help them become the architects of Ghana’s environmental restoration."
-      },
-      {
-        question: "How can I support the Shoova Initiative?",
-        answer:
-          "You can support Shoova by sponsoring student training, funding land restoration programs, partnering as an institution, or helping spread the mission of restoring Ghana’s land and empowering the next generation of technical leaders."
-      },
-      {
-        question: "Is Shoova Initiative a registered nonprofit?",
-        answer:
-          `Yes, Shoova Initiative Corporation is a 501(c)(3) public charity dedicated to restoring lands and lives in Ghana. We have established governance and operational structures in both the United States and Ghana.
+    {
+      question: "What is the Shoova Restoration Campus?",
+      answer:
+        "The Shoova Restoration Campus is an upcoming 8-acre vocational training institute in Ghana’s Eastern Region designed to equip youth with world-class engineering, environmental restoration, and leadership skills that help transition communities away from illegal mining."
+    },
+    {
+      question: "Why focus on youth involved in galamsey?",
+      answer:
+        "Many young people turn to illegal mining due to limited economic opportunities. Shoova believes these youth are not the problem—they are the untapped solution. Through training and mentorship we help them become the architects of Ghana’s environmental restoration."
+    },
+    {
+      question: "How can I support the Shoova Initiative?",
+      answer:
+        "You can support Shoova by sponsoring student training, funding land restoration programs, partnering as an institution, or helping spread the mission of restoring Ghana’s land and empowering the next generation of technical leaders."
+    },
+    {
+      question: "Is Shoova Initiative a registered nonprofit?",
+      answer:
+        `Yes, Shoova Initiative Corporation is a 501(c)(3) public charity dedicated to restoring lands and lives in Ghana. We have established governance and operational structures in both the United States and Ghana.
            Public Charity Status: 170(b)(1)(A)(vi)`
-      }
-    ];
+    }
+  ];
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -110,9 +110,8 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
     //   image: "/img/sandra.jpg",
     // }
   ];
-  const [years, setYears] = useState(0);
-  const [communities, setCommunities] = useState(0);
-
+  const [districts, setDistricts] = useState(0);
+  const districtsTotal = 261;
   const statsRef = useRef(null);
   const [startCount, setStartCount] = useState(false);
 
@@ -120,7 +119,10 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setStartCount(true);
+        if (entry.isIntersecting) {
+          setStartCount(true);
+          observer.disconnect();
+        }
       },
       { threshold: 0.5 }
     );
@@ -133,27 +135,20 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
   useEffect(() => {
     if (!startCount) return;
 
-    let y = 0;
-    let c = 0;
+    let current = 0;
+    const target = 120;
 
     const interval = setInterval(() => {
+      current += Math.ceil((target - current) / 6); // smooth easing
+      setDistricts(current);
 
-      if (y < 15) {
-        y += 1;
-        setYears(y);
+      if (current >= target) {
+        setDistricts(target);
+        clearInterval(interval);
       }
-
-      if (c < 30) {
-        c += 1;
-        setCommunities(c);
-      }
-
-      if (y >= 15 && c >= 30) clearInterval(interval);
-
-    }, 70);
+    }, 40);
 
     return () => clearInterval(interval);
-
   }, [startCount]);
   return (
     <div className="font-body antialiased">
@@ -402,10 +397,11 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
                   <div>
                     <div className="text-5xl font-heading font-bold text-primary mb-1">
-                      {communities}+
+                      {districts}+
                     </div>
+
                     <p className="text-sm text-gray-500">
-                      Communities impacted by galamsey
+                      of Ghana’s {districtsTotal} districts affected by illegal mining
                     </p>
                   </div>
 
@@ -626,7 +622,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                     className={`transition-all duration-300 overflow-hidden ${openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}
                   >
-                    <p className="px-6 pb-6 text-gray-600 leading-relaxed"  dangerouslySetInnerHTML={{ __html: faq.answer }}/>
+                    <p className="px-6 pb-6 text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                   </div>
 
                 </div>
