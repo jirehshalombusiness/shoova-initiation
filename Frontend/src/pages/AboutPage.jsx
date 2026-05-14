@@ -103,12 +103,12 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
       detail: "Education & Training— USA",
       image: "/img/waddy.jpeg",
     },
-    // {
-    //   name: "Stanley Arthur Essuman",
-    //   role: "Developer",
-    //   detail: "Technical Lead — Ghana",
-    //   image: "/img/sandra.jpg",
-    // }
+    {
+      name: "Nana Kwasi Appiah",
+      role: "Corporate Affairs",
+      detail: "Director of Corporate Affairs  — USA",
+      image: "/img/nana.jpeg",
+    }
   ];
   const [districts, setDistricts] = useState(0);
   const districtsTotal = 261;
