@@ -106,7 +106,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
     {
       name: "Nana Kwasi Appiah",
       role: "Corporate Affairs",
-      detail: "Director of Corporate Affairs  — USA",
+      detail: `Banking and Entrepreneurship - Ghana`,
       image: "/img/nana.jpeg",
     }
   ];
