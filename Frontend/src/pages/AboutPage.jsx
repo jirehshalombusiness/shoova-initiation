@@ -110,7 +110,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
       image: "/img/nana.jpeg",
     },
     {
-      name: "Freda Kwarteng",
+      name: "Freda Kwarteng-Amaniampong",
       role: "Project Management and Communication",
       detail: `Communication and Public Relations -USA`,
       image: "/img/freda.jpeg",
