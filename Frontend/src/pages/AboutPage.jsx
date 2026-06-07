@@ -570,7 +570,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
                     <Image
                       variant="cover"
-                      className="w-full h-full  object-cover object-top"
+                      className="w-full h-full  object-cover object-[center_20%]"
                       src={member.image}
                       alt={member.name}
                     />
