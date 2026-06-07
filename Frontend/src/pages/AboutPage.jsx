@@ -108,7 +108,19 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
       role: "Corporate Affairs",
       detail: `Banking and Entrepreneurship - Ghana`,
       image: "/img/nana.jpeg",
-    }
+    },
+    {
+      name: "Freda Kwarteng",
+      role: "Project Management and Communication",
+      detail: `Communication and Public Relations`,
+      image: "/img/freda.jpeg",
+    },
+    {
+      name: "Solomon Appiah",
+      role: "Analytics and Insights",
+      detail: `Director Admin and Operations`,
+      image: "/img/solo.jpeg",
+    },
   ];
   const [districts, setDistricts] = useState(0);
   const districtsTotal = 261;
