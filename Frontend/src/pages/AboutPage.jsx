@@ -522,7 +522,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                     School of Ethical Leadership
                   </h3>
                   <p className="text-gray-600">
-                    Data-driven management, bookkeeping, agribusiness, and ethics.
+                    Data-driven management,entrepreneurship, bookkeeping, agribusiness, and ethics.
                     We are not only training workers — we are preparing the next generation of employers and community leaders.
                   </p>
                 </div>
