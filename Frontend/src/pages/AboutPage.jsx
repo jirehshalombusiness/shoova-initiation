@@ -105,20 +105,20 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
     },
     {
       name: "Nana Kwasi Appiah",
-      role: "Corporate Affairs",
+      role: "Director of Corporate Affairs",
       detail: `Banking and Entrepreneurship - Ghana`,
       image: "/img/nana.jpeg",
     },
     {
       name: "Freda Kwarteng",
       role: "Project Management and Communication",
-      detail: `Communication and Public Relations`,
+      detail: `Communication and Public Relations -USA`,
       image: "/img/freda.jpeg",
     },
     {
       name: "Solomon Appiah",
-      role: "Analytics and Insights",
-      detail: `Director Admin and Operations`,
+      role: " Director Admin and Operations",
+      detail: `Analytics and Insights - Ghana`,
       image: "/img/solo.jpeg",
     },
   ];
