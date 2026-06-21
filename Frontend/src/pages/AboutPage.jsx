@@ -377,8 +377,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 <p className="text-lg text-text mb-6 leading-relaxed">
 
                   The Shoova Initiative was born from a realization shared by its
-                  founders: the devastation caused by illegal mining in Ghana’s
-                  Eastern Region is not only an environmental crisis — it is a
+                  founders: the devastation caused by illegal mining in Ghana is not only an environmental crisis — it is a
                   human one. Rivers have been poisoned, forests destroyed, and
                   thousands of young people pushed into dangerous extractive labor
                   with little opportunity for a different future.
@@ -451,7 +450,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 Ghana is facing an ecological and humanitarian crisis. Illegal
                 small-scale mining — known locally as galamsey — has poisoned
                 rivers, devastated forests, and scarred once fertile land across
-                the Eastern Region.
+                the country.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
