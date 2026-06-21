@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, GraduationCapIcon } from 'lucide-react';
 import { Badge } from '../components/Badge';
 import { Heart } from 'lucide-react';
 import { Image } from '../components/Image';
@@ -19,6 +19,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaFacebookF, FaYoutube, FaShareAlt } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import GalamseySection from '../components/GalamseySection';
+import { GraduationCap, Leaf, Briefcase, Shield } from "lucide-react";
 export const IndexPage = ({ className, children, variant, contentKey, ...props }) => {
 
   // const [birthday, setBirthday] = useState(null);
@@ -295,16 +296,16 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           className="py-32 bg-gray-100 relative overflow-hidden"
         >
 
-     <div className="absolute inset-0 pointer-events-none">
-  <img
-    src="/img/sunburst.jpeg"
-    alt="Shoova Emblem"
-    className="
+          <div className="absolute inset-0 pointer-events-none">
+            <img
+              src="/img/sunburst.jpeg"
+              alt="Shoova Emblem"
+              className="
       w-full h-full
       object-cover
       opacity-10
     "
-  />
+            />
 
 
           </div>
@@ -395,97 +396,468 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
         </section>
         <GalamseySection />
+        {/* ================= WHY SHOOVA ================= */}
+        <motion.section
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="py-24 bg-white"
+        >
+          <div className="max-w-7xl mx-auto px-6 md:px-10">
 
+            <div className="grid lg:grid-cols-5 gap-12 items-center">
+
+              {/* LEFT IMAGE */}
+              <motion.div
+                variants={fadeLeft}
+                className="lg:col-span-3 relative"
+              >
+                <div className="overflow-hidden rounded-2xl shadow-2xl">
+                  <img
+                    src="/img/community.jpg"
+                    alt="Shoova Community Restoration"
+                    className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                  />
+                </div>
+
+                {/* Floating Badge */}
+                <div className="absolute bottom-6 left-6 bg-white px-6 py-4 rounded-xl shadow-xl">
+
+                  <p className="text-secondary text-sm font-bold uppercase tracking-wider">
+                    Shoova Impact
+                  </p>
+
+                  <h4 className="text-xl font-bold text-textDark">
+                    Turning Destroyers Into Restorers
+                  </h4>
+
+                </div>
+              </motion.div>
+
+              {/* RIGHT CONTENT */}
+              <motion.div
+                variants={fadeRight}
+                className="lg:col-span-2"
+              >
+
+                {/* Eyebrow */}
+                <p className="text-secondary font-bold uppercase tracking-[0.25em] text-sm mb-4">
+                  Say Yes To Responsible Mining
+                </p>
+
+                {/* Heading */}
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-textDark leading-tight mb-6">
+                  Why Shoova Institute Is Key To Ending Illegal Mining
+                </h2>
+
+                {/* Intro */}
+                <p className="text-lg text-text leading-relaxed mb-8">
+                  Illegal mining thrives where poverty, educational exclusion,
+                  and unemployment intersect. Shoova creates a direct pathway
+                  from vulnerability to opportunity.
+                </p>
+
+                {/* CARD 1 */}
+                <div className="bg-primary text-white p-6 rounded-xl shadow-lg mb-5">
+                  <h3 className="text-xl font-bold mb-3">
+                    The Fuel of Galamsey
+                  </h3>
+                  <p className="text-white/90 leading-relaxed">
+                    Our findings reveal that many young people in mining-affected communities drop out of school early or lack the specific WASSCE qualifications required for university admission.
+                    Because traditional higher education builds a rigid academic wall, these youth are left ineligible for traditional advancement.
+                    With no formal skills and an urgent need to survive, they become highly vulnerable to exploitative mining syndicates.
+                  </p>
+                </div>
+                {/* CARD 2 */}
+                <div className="bg-secondary text-white p-6 rounded-xl shadow-lg mb-8">
+                  <h3 className="text-xl font-bold mb-3">
+                    The Interruption
+                  </h3>
+
+                  <p className="text-white/95 leading-relaxed">
+                    The Shoova Initiative intentionally builds a bridge where traditional academic systems have built a wall.
+                    By lowering artificial entry barriers, emphasizing flexible, hands-on learning,
+                    and providing a direct economic exit ramp,
+                    we target the exact demographic most vulnerable to galamsey.
+                  </p>
+                </div>
+
+                {/* STATS */}
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="text-center border border-gray-200 rounded-xl p-4">
+                    <h4 className="text-3xl font-bold text-primary">
+                      6–12
+                    </h4>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Months Training
+                    </p>
+                  </div>
+
+                  <div className="text-center border border-gray-200 rounded-xl p-4">
+                    <h4 className="text-3xl font-bold text-primary">
+                      4
+                    </h4>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Specialized Schools
+                    </p>
+                  </div>
+
+                  <div className="text-center border border-gray-200 rounded-xl p-4">
+                    <h4 className="text-3xl font-bold text-primary">
+                      100%
+                    </h4>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Restoration Focus
+                    </p>
+                  </div>
+
+                </div>
+
+              </motion.div>
+
+            </div>
+
+          </div>
+        </motion.section>
+        <section className="relative min-h-screen py-32 bg-white overflow-hidden">
+
+          {/* 🌫 Atmospheric background (depth layer) */}
+          <div className="absolute inset-0">
+            <div className="absolute top-[-20%] left-1/2 w-[700px] h-[700px] bg-red-200/20 blur-3xl rounded-full -translate-x-1/2" />
+            <div className="absolute bottom-[-25%] right-1/2 w-[700px] h-[700px] bg-green-200/20 blur-3xl rounded-full translate-x-1/2" />
+          </div>
+
+          {/* Header */}
+          <div className="relative max-w-5xl mx-auto text-center px-6 mb-24">
+            <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-gray-900">
+              From Extraction to Regeneration
+            </h2>
+            <p className="mt-6 text-gray-500 text-lg md:text-xl">
+              Two systems. One defines decline. The other defines possibility.
+            </p>
+          </div>
+
+          {/* ⚡ Transformation Axis */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-red-200 via-gray-200 to-green-300 opacity-60 hidden md:block" />
+
+          {/* GRID */}
+          <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 px-6">
+
+            {/* 🔴 LEFT — SYSTEM A */}
+            <motion.div
+              initial={{ opacity: 0, x: -90 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.4 }}
+              className="relative"
+            >
+              {/* glow layer */}
+              <div className="absolute inset-0 bg-red-50/40 rounded-3xl blur-xl" />
+
+              <div className="relative p-10 rounded-3xl bg-white/70 backdrop-blur-xl border border-red-100 shadow-[0_20px_80px_-30px_rgba(0,0,0,0.35)]">
+
+                <div className="mb-10">
+                  <p className="text-xs tracking-[0.3em] text-red-400">
+                    SYSTEM A — ENTRENCHED REALITY
+                  </p>
+                  <h3 className="text-2xl font-semibold text-red-700 mt-3">
+                    The Galamsey Trap (Extractive)
+                  </h3>
+                </div>
+
+                <div className="space-y-10 text-gray-800">
+
+                  <div>
+                    <p className="text-lg font-medium">Academic exclusion</p>
+                    <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                      Out of school, missing WASSCE credentials, and locked out of formal career advancement.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-lg font-medium">Exploitative Daily Wage </p>
+                    <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                      Dangerous and toxic labor that leaves youth dependent on mining syndicates.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-lg font-medium">Environmental Destruction</p>
+                    <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                      Paid to poison local water bodies and crack open fertile ancestral farming land.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+            </motion.div>
+
+            {/* 🟢 RIGHT — SYSTEM B */}
+            <motion.div
+              initial={{ opacity: 0, x: 90 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.1, delay: 0.15, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.4 }}
+              className="relative"
+            >
+              {/* glow layer */}
+              <div className="absolute inset-0 bg-green-50/40 rounded-3xl blur-xl" />
+
+              <div className="relative p-10 rounded-3xl bg-gradient-to-br from-white/60 to-green-50/40 backdrop-blur-xl border border-green-100 shadow-[0_25px_90px_-35px_rgba(0,0,0,0.3)]">
+
+                <div className="mb-10">
+                  <p className="text-xs tracking-[0.3em] text-green-500">
+                    SYSTEM B — EMERGING PIPELINE
+                  </p>
+                  <h3 className="text-2xl font-semibold text-green-700 mt-3">
+                    The Shoova Pipeline(Regenerative)
+                  </h3>
+                </div>
+
+                <div className="space-y-10 text-gray-800">
+
+                  <div>
+                    <p className="text-lg font-medium">Radical Accessibility</p>
+                    <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                      Flexible entry requirements that prioritize determination
+                      and hands-on capability over standardized test scores.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-lg font-medium">High-value technical Skill</p>
+                    <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                      Mastery in structural welding, precision mechanics, solar engineering, and ICT.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-lg font-medium">Ecosystem Restoration</p>
+                    <p className="text-sm text-gray-500 mt-1 leading-relaxed">
+                      Direct, specialized training in soil biology, heavy metal neutralization, and advanced land reclamation.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
+
+          {/* 🧠 Transformation Statement */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="relative text-center mt-28 px-6"
+          >
+            <div className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-black text-white shadow-2xl">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              We replace extraction with regeneration
+            </div>
+          </motion.div>
+
+        </section>
         <motion.section
           id="solution"
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="py-28 bg-gray-50"
+          className="relative py-32 bg-gray-50 overflow-hidden"
         >
-          <div className="max-w-7xl mx-auto px-6 md:px-10">
 
-            {/* HEADER */}
-            <motion.div
-              variants={fadeUp}
-              className="max-w-3xl mx-auto text-center"
-            >
-              <h2 className="text-4xl md:text-5xl lg:text-5xl font-heading font-bold text-textDark mb-6 leading-tight">
+          {/* 🌫 Background Atmosphere */}
+          <div className="absolute inset-0">
+            <div className="absolute top-[-15%] left-1/2 w-[700px] h-[700px] bg-green-100/30 blur-3xl rounded-full -translate-x-1/2" />
+          </div>
+
+          <div className="max-w-7xl mx-auto px-6 md:px-10 relative">
+
+            {/* 🧠 HEADER */}
+            <motion.div variants={fadeUp} className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
                 Shoova Restoration Campus
               </h2>
 
-              <p className="text-text text-lg md:text-xl leading-relaxed">
-                We are building an 8-acre vocational institute dedicated to hands-on,
-                high-impact training that dignifies labor, equips youth with real skills,
-                and restores the environment.
+              <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed">
+                We are not just teaching trades — We are empowering our youth to reclaim their economic self-reliance, transforming the very people who were once paid to destroy the land into the technical experts who will heal it.
+              </p>
+
+              <p className="mt-4 text-base text-gray-500">
+                Four specialized academies producing builders, creators, and ethical leaders who restore land, economy, and communities.
               </p>
             </motion.div>
 
             {/* GRID */}
             <motion.div
               variants={container}
-              className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16"
+              className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-16"
             >
 
-              {/* CARD 1 */}
+              {/* 🔧 CARD TEMPLATE 1 */}
               <motion.div
                 variants={fadeUp}
-                className="flex flex-col items-center text-center max-w-sm mx-auto transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative p-9 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-20 h-20 flex items-center justify-center rounded-full bg-primary mb-6">
-                  <img src="/img/school.png" alt="" className="w-8 h-8" />
+
+                {/* glow */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gray-50 to-white opacity-0 group-hover:opacity-100 transition" />
+
+                <div className="relative">
+
+                  {/* 🧭 ICON BADGE */}
+                  <div className="mb-6">
+                    <div className="relative w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center overflow-hidden">
+
+                      <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-50 blur-xl transition" />
+
+                    <Shield className="w-7 h-7 relative z-10 text-gray-600" />
+                    </div>
+                  </div>
+
+                  {/* LABEL */}
+                  <p className="text-xs tracking-[0.3em] text-gray-400 mb-3">
+                    ACADEMY 01
+                  </p>
+
+                  {/* TITLE */}
+                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
+                    Engineering & Technical Trades
+                  </h3>
+
+                  {/* DESCRIPTION */}
+                  <p className="mt-4 text-gray-600 leading-relaxed">
+                    Structural welding, solar technology, heavy machinery repair, and precision fabrication that power national infrastructure.
+                  </p>
+
+                  {/* OUTCOME */}
+                  <div className="mt-6 pt-5 border-t border-gray-100">
+                    <p className="text-sm text-gray-900 font-medium">
+                      Outcome: Infrastructure builders & energy technicians
+                    </p>
+                  </div>
+
                 </div>
-
-                <h3 className="text-2xl font-heading font-bold text-textDark mb-4">
-                  School of Engineering & Fabrication
-                </h3>
-
-                <p className="text-text text-base leading-relaxed">
-                  Mastering the trades that build nations precision welding, heavy machinery repair,
-                  and metal fabrication. We turn raw talent into industrial expertise.
-                </p>
               </motion.div>
 
-              {/* CARD 2 */}
+              {/* 🌿 CARD 2 */}
               <motion.div
                 variants={fadeUp}
-                className="flex flex-col items-center text-center max-w-sm mx-auto transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative p-9 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-20 h-20 flex items-center justify-center rounded-full bg-primary mb-6">
-                  <img src="/img/school.png" alt="" className="w-8 h-8" />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-green-50 to-white opacity-0 group-hover:opacity-100 transition" />
+
+                <div className="relative">
+
+                  <div className="mb-6">
+                    <div className="relative w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center overflow-hidden">
+                      <div className="absolute inset-0 bg-green-100 opacity-0 group-hover:opacity-50 blur-xl transition" />
+
+                      <Leaf className="w-7 h-7 relative z-10 text-green-600" />
+                    </div>
+                  </div>
+
+                  <p className="text-xs tracking-[0.3em] text-gray-400 mb-3">
+                    ACADEMY 02
+                  </p>
+
+                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
+                    Agribusiness & Environmental Sustainability
+                  </h3>
+
+                  <p className="mt-4 text-gray-600 leading-relaxed">
+                    Organic farming, land reclamation, and regenerative systems that convert degraded land into productive ecosystems.
+                  </p>
+
+                  <div className="mt-6 pt-5 border-t border-gray-100">
+                    <p className="text-sm text-gray-900 font-medium">
+                      Outcome: Ecosystem restorers & agripreneurs
+                    </p>
+                  </div>
+
                 </div>
-
-                <h3 className="text-2xl font-heading font-bold text-textDark mb-4">
-                  School of Sustainable Futures
-                </h3>
-
-                <p className="text-text text-base leading-relaxed">
-                  Leading the green transition through solar installation, land reclamation,
-                  and sustainable agriculture equipping youth to restore and protect ecosystems.
-                </p>
               </motion.div>
 
-              {/* CARD 3 */}
+              {/* 💼 CARD 3 */}
               <motion.div
                 variants={fadeUp}
-                className="flex flex-col items-center text-center max-w-sm mx-auto transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative p-9 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-20 h-20 flex items-center justify-center rounded-full bg-primary mb-6">
-                  <img src="/img/school.png" alt="" className="w-8 h-8" />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition" />
+
+                <div className="relative">
+
+                  <div className="mb-6">
+                    <div className="relative w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center overflow-hidden">
+                      <div className="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-50 blur-xl transition" />
+
+                      <Briefcase className="w-7 h-7 relative z-10 text-blue-600" />
+                    </div>
+                  </div>
+
+                  <p className="text-xs tracking-[0.3em] text-gray-400 mb-3">
+                    ACADEMY 03
+                  </p>
+
+                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
+                    Business & Entrepreneurship
+                  </h3>
+
+                  <p className="mt-4 text-gray-600 leading-relaxed">
+                    Enterprise development, logistics, financial literacy, and data-driven decision systems for job creation.
+                  </p>
+
+                  <div className="mt-6 pt-5 border-t border-gray-100">
+                    <p className="text-sm text-gray-900 font-medium">
+                      Outcome: Job creators & economic builders
+                    </p>
+                  </div>
+
                 </div>
+              </motion.div>
 
-                <h3 className="text-2xl font-heading font-bold text-textDark mb-4">
-                  School of Ethical Leadership
-                </h3>
+              {/* 🧭 CARD 4 */}
+              <motion.div
+                variants={fadeUp}
+                className="group relative p-9 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-50 to-white opacity-0 group-hover:opacity-100 transition" />
 
-                <p className="text-text text-base leading-relaxed">
-                  Training in business, data-driven management, agribusiness and ethics so graduates
-                  don’t just find jobs, but create opportunities for others.
-                </p>
+                <div className="relative">
+
+                  <div className="mb-6">
+                    <div className="relative w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center overflow-hidden">
+                      <div className="absolute inset-0 bg-purple-100 opacity-0 group-hover:opacity-50 blur-xl transition" />
+
+           <GraduationCap className="w-7 h-7 relative z-10 text-purple-600" />
+                    </div>
+                  </div>
+
+                  <p className="text-xs tracking-[0.3em] text-gray-400 mb-3">
+                    ACADEMY 04
+                  </p>
+
+                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
+                    Ethical Leadership & Community Development
+                  </h3>
+
+                  <p className="mt-4 text-gray-600 leading-relaxed">
+                    Governance, ethics, and civic responsibility training that builds principled leaders and reformers.
+                  </p>
+
+                  <div className="mt-6 pt-5 border-t border-gray-100">
+                    <p className="text-sm text-gray-900 font-medium">
+                      Outcome: Ethical leaders & institutional reformers
+                    </p>
+                  </div>
+
+                </div>
               </motion.div>
 
             </motion.div>
+
           </div>
         </motion.section>
         {/* ================= OUR PROCESS ================= */}
@@ -575,7 +947,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           </div>
 
         </section>
-    
+
         {/* Ready to Restore the Land */}
         <section id="ready_to_restore" className="py-24 bg-[#f7f3ea]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -869,7 +1241,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
           </div>
         </section>
-        
+
         <section className="py-16 bg-[#F9FAFB] relative overflow-hidden">
 
           {/* SUBTLE BACKGROUND ACCENT */}
@@ -927,7 +1299,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
         </section>
 
-       
+
 
         {/* Meet the People Behind the Restoration */}
         <section id="meet_the_team" className="py-24 bg-primary text-white relative overflow-hidden">
@@ -1029,7 +1401,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                           >
                             <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-                      
+
                         </div>
 
                       </div>
@@ -1072,7 +1444,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                           >
                             <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-                        
+
 
                         </div>
 
@@ -1116,7 +1488,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                           >
                             <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-                       
+
 
                         </div>
 
@@ -1163,7 +1535,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                           >
                             <FaLinkedin className="w-4 h-4 text-white" />
                           </a>
-                        
+
 
                         </div>
 

@@ -185,7 +185,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-              Illegal mining has scarred the land of Ghana’s Eastern Region.
+              Illegal mining has scarred the land of Ghana.
               Shoova Initiative is equipping young people with the tools
               to restore the soil, rebuild communities, and reclaim the future.
             </p>

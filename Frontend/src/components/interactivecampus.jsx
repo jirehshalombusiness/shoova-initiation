@@ -1,60 +1,118 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const images = [
+  "/img/campus12.jpeg",
+  "/img/campus11.jpeg",
+  "/img/campus10.jpeg",
+  "/img/campus7.jpeg",
+  "/img/campus5.jpeg",
+  "/img/campus9.jpeg",
+  "/img/campus6.jpeg",
+];
 
 export default function InteractiveCampusSection() {
-
   const [scale, setScale] = useState(1);
+  const [index, setIndex] = useState(0);
+
+  // 🔥 AUTO SLIDE ENGINE
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 5000); // 5s per slide (premium pacing)
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="relative min-h-[95vh] flex items-center justify-center text-center overflow-hidden bg-black">
+    <section className="bg-white py-28">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-      {/* 🔥 DRAGGABLE + ZOOMABLE IMAGE */}
-      <motion.img
-        src="/img/caampus.jpg"
-        className="absolute inset-0 w-full h-full object-cover cursor-grab active:cursor-grabbing"
-        style={{ scale }}
-        
-      />
-
-      {/* 🌫️ OVERLAY */}
-      <div className="absolute inset-0 bg-black/60 pointer-events-none" />
-
-      {/* 🔥 TEXT CONTENT */}
-      <div className="relative z-10 max-w-xl px-6 text-white pointer-events-none">
-        <p className="text-[#D4AF37] uppercase tracking-[0.25em] mb-3 text-sm">
-          Production Core
-        </p>
-
-        <h3 className="text-4xl md:text-5xl font-bold mb-6">
-          The Heart
-        </h3>
-
-        <p className="text-white/80 text-lg leading-relaxed">
-          Where knowledge becomes action. Through fabrication labs,
-          restoration plots, and hands-on training, individuals gain
-          the tools to build, create, and sustain themselves.
-        </p>
-      </div>
-
-      {/* 🔥 ZOOM CONTROLS */}
-      <div className="absolute bottom-6 right-6 z-20 flex flex-col gap-2">
-
-        <button
-          onClick={() => setScale((prev) => Math.min(prev + 0.2, 2))}
-          className="bg-white/10 backdrop-blur px-4 py-2 rounded text-white"
+        {/* 🧠 LEFT CONTENT */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 1 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-6"
         >
-          +
-        </button>
+          <p className="text-[#D4AF37] uppercase tracking-[0.35em] text-sm">
+            Production Core
+          </p>
 
-        <button
-          onClick={() => setScale((prev) => Math.max(prev - 0.2, 1))}
-          className="bg-white/10 backdrop-blur px-4 py-2 rounded text-white"
+          <h2 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">
+            The Heart
+          </h2>
+
+          <div className="w-16 h-[2px] bg-[#D4AF37]" />
+
+          <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
+            The production core is where theory transitions into practice —
+            a living ecosystem of fabrication, restoration, and applied learning.
+          </p>
+
+          <p className="text-gray-500 leading-relaxed max-w-xl">
+            Here, individuals work directly with materials and systems,
+            transforming knowledge into real-world capability and output.
+          </p>
+
+          <p className="text-gray-400 text-sm leading-relaxed max-w-xl">
+            A space built for making, repairing, and sustaining long-term human progress.
+          </p>
+        </motion.div>
+
+        {/* 🏗️ RIGHT: AUTO SLIDING CAROUSEL */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9 }}
+          className="relative h-[520px] rounded-[28px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.15)]"
         >
-          −
-        </button>
 
+          {/* 🔥 SLIDES */}
+          <AnimatePresence mode="wait">
+            <div className="relative w-full h-full">
+  {images.map((img, i) => (
+    <motion.img
+      key={img}
+      src={img}
+      className="absolute inset-0 w-full h-full object-cover"
+      initial={false}
+      animate={{
+        opacity: i === index ? 1 : 0,
+        scale: i === index ? 1.02 : 1.08,
+      }}
+      transition={{
+        duration: 1.2,
+        ease: "easeInOut",
+      }}
+      style={{ scale }}
+    />
+  ))}
+</div>
+          </AnimatePresence>
+
+          {/* 🌫️ OVERLAY */}
+          <div className="absolute inset-0 bg-black/30" />
+
+          {/* LABEL */}
+          <div className="absolute bottom-6 left-6 backdrop-blur-xl bg-white/10 border border-white/20 px-4 py-2 rounded-xl text-white text-sm">
+            Production Zone
+          </div>
+
+          {/* 🔥 PROGRESS DOTS */}
+          <div className="absolute top-6 right-6 flex gap-2">
+            {images.map((_, i) => (
+              <div
+                key={i}
+                className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                  i === index ? "bg-white w-6" : "bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+
+        </motion.div>
       </div>
-
     </section>
   );
 }

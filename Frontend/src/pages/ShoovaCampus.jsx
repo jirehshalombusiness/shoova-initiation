@@ -4,12 +4,26 @@ import { Link } from '../components/Link';
 import InteractiveCampusSection from "../components/interactivecampus";
 
 export default function ShoovaCampus() {
+    const campusImages = [
+        "/img/campus1.jpeg",
+        "/img/campus2.jpeg",
+        "/img/campus3.jpeg",
+        "/img/campus4.jpeg",
+        "/img/campus5.jpeg",
+        "/img/campus6.jpeg",
+        "/img/campus7.jpeg",
+        "/img/campus8.jpeg",
+        "/img/campus9.jpeg",
+        "/img/campus10.jpeg",
+        "/img/campus11.jpeg",
+        "/img/campus12.jpeg",
+    ];
     return (
         <div className="text-black bg-[#F9FAFB]">
             <section className="relative h-[95vh] overflow-hidden">
 
                 <motion.img
-                    src="/img/engine.jpg"
+                    src="/img/campus9.jpeg"
                     className="absolute inset-0 w-full h-full object-cover scale-110"
                     initial={{ scale: 1.2 }}
                     animate={{ scale: 1.08 }}
@@ -31,6 +45,44 @@ export default function ShoovaCampus() {
                     </div>
                 </div>
             </section>
+            
+            <section className="bg-[#F9FAFB] py-28">
+                <div className="max-w-7xl mx-auto px-6 text-center mb-16">
+                    <p className="text-[#D4AF37] uppercase tracking-[0.3em] text-sm mb-3">
+                        Campus Gallery
+                    </p>
+
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                        Life Inside Shoova Campus
+                    </h2>
+
+                    <p className="text-gray-600 max-w-2xl mx-auto">
+                        A living ecosystem of learning, restoration, innovation, and community —
+                        captured across every corner of the campus.
+                    </p>
+                </div>
+
+                {/* 🧱 Masonry Grid */}
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 max-w-7xl mx-auto px-6 space-y-4">
+                    {campusImages.map((img, i) => (
+                        <motion.div
+                            key={i}
+                            whileHover={{ scale: 1.02 }}
+                            transition={{ duration: 0.3 }}
+                            className="break-inside-avoid overflow-hidden rounded-2xl shadow-md group relative"
+                        >
+                            <img
+                                src={img}
+                                alt={`Shoova Campus ${i + 1}`}
+                                className="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500"
+                            />
+
+                            {/* subtle overlay */}
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition" />
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
 
             <div className="max-w-6xl mx-auto px-6 py-24 text-center">
                 <h2 className="text-4xl md:text-5xl font-bold mb-8">
@@ -46,61 +98,72 @@ export default function ShoovaCampus() {
 
             {/* 🔥 CAMPUS EXPERIENCE */}
 
-            <section className="bg-white">
-                <div className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+            
+            <section className="bg-white py-28">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
 
-                    {/* 🧠 TEXT */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -60 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <p className="text-[#D4AF37] uppercase tracking-[0.3em] mb-4 text-sm">
-                            Academic & Strategic Core
-                        </p>
+    {/* 🧠 TEXT SIDE (Premium Narrative Block) */}
+    <motion.div
+      initial={{ opacity: 0, x: -60 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.9 }}
+      className="space-y-6"
+    >
+      <div className="space-y-4">
+        <p className="text-[#D4AF37] uppercase tracking-[0.35em] text-xs font-medium">
+          Academic & Strategic Core
+        </p>
 
-                        <h3 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                            The Brain
-                        </h3>
+        <h2 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">
+          The Brain
+        </h2>
 
-                        <p className="text-gray-600 text-lg leading-relaxed">
-                            Designed as the intellectual engine of the campus, this space houses
-                            the School of Engineering & Fabrication, the School of Sustainable
-                            Futures, and the School of Ethical Leadership — alongside the Data
-                            Command Center powering insight and decision-making.
-                        </p>
-                    </motion.div>
+        <div className="w-16 h-[2px] bg-[#D4AF37]" />
+      </div>
 
-                    {/* 🎥 INTERACTIVE IMAGE */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.96 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1 }}
-                        className="relative h-[420px] md:h-[520px] overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] group"
-                    >
+      <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
+        Designed as the intellectual engine of the campus, this space houses
+        the School of Engineering & Fabrication, the School of Sustainable
+        Futures, and the School of Ethical Leadership — alongside the Data
+        Command Center powering insight and decision-making.
+      </p>
 
-                        {/* 🔥 IMAGE WITH SUBTLE PAN */}
-                        <motion.img
-                            src="/img/brain.jpg"
-                            alt="Shoova Academic Core"
-                            className="w-full h-full object-cover scale-110"
-                            initial={{ scale: 1.15 }}
-                            whileHover={{ scale: 1.05, x: -20 }}
-                            transition={{ duration: 0.6 }}
-                        />
+      <p className="text-gray-500 leading-relaxed max-w-xl">
+        Every system here is built for clarity, innovation, and long-term
+        national impact — where ideas are not only formed, but executed.
+      </p>
+    </motion.div>
 
-                        {/* 🌫️ GRADIENT OVERLAY */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-70" />
+    {/* 🏛️ IMAGE SIDE (Premium Visual Frame) */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+      className="relative h-[520px] md:h-[620px] rounded-[28px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.18)] group"
+    >
+      <motion.img
+        src="/img/campus2.jpeg"
+        alt="Shoova Academic Core"
+        className="w-full h-full object-cover"
+        initial={{ scale: 1.1 }}
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.7 }}
+      />
 
-                        {/* 🧠 FLOATING LABEL */}
-                        <div className="absolute bottom-6 left-6 backdrop-blur-lg bg-white/10 border border-white/20 px-4 py-2 rounded-xl text-white text-sm">
-                            Academic Zone
-                        </div>
+      {/* 🌫️ PREMIUM DARK GRADIENT */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
-                    </motion.div>
+      {/* 🧠 LABEL */}
+      <div className="absolute bottom-8 left-8 backdrop-blur-xl bg-white/10 border border-white/20 px-5 py-3 rounded-2xl text-white text-sm tracking-wide">
+        Academic Intelligence Zone
+      </div>
 
-                </div>
-            </section>
+      {/* ✨ SUBTLE GOLD ACCENT LINE */}
+      <div className="absolute top-6 right-6 w-24 h-[2px] bg-[#D4AF37]/70" />
+    </motion.div>
+
+  </div>
+</section>
 
             <InteractiveCampusSection />
 
@@ -117,7 +180,7 @@ export default function ShoovaCampus() {
 
                         {/* 🌿 IMAGE */}
                         <motion.img
-                            src="/img/residential.jpg"
+                            src="/img/campus2.jpeg"
                             alt="Shoova Residential Community"
                             className="w-full h-full object-cover scale-105"
                             initial={{ scale: 1.08 }}
@@ -204,22 +267,23 @@ export default function ShoovaCampus() {
             {/* 🔥 CTA */}
             <section className="py-28 bg-white text-center px-6">
 
-               
+
 
                 <p className="text-gray-600 mb-8 max-w-xl mx-auto">
                     The Shoova Restoration Campus is more than infrastructure —
                     it is a system for long-term transformation.
                 </p>
-                 <Link
+                <Link
                     to="/donate"
                     className="inline-flex items-center justify-center px-8 py-4 bg-secondary hover:bg-secondaryHover text-white font-semibold rounded-full transition shadow-lg"
                 >
                     Build with Us
                 </Link>
 
-               
+
 
             </section>
+
 
         </div>
     );
