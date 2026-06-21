@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
 
             <p className="text-white/80 text-md leading-relaxed mb-5">
-              Building a restoration movement in Ghana’s Eastern Region—
+              Building a restoration movement in Ghana—
               restoring land, equipping youth, and rebuilding communities.
             </p>
 

@@ -23,6 +23,12 @@ export default function ShoovaCampus() {
         "/img/campus9.jpeg",
         "/img/campus10.jpeg",
     ];
+    const soulImages = [
+        "/img/campus2.jpeg",
+        "/img/campus2.jpeg",
+        "/img/court.PNG",
+
+    ];
 
     const [currentImage, setCurrentImage] = useState(0);
 
@@ -122,34 +128,34 @@ export default function ShoovaCampus() {
                         initial={{ opacity: 0, x: 60 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.9 }}
-                      className="relative h-[500px] overflow-hidden rounded-3xl"
+                        className="relative h-[500px] overflow-hidden rounded-3xl"
                     >
-          <motion.div
-  initial={{ opacity: 0, x: -60 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.9 }}
-  className="relative h-[550px]"
->
-  <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#D4AF37]/20 to-transparent blur-2xl" />
+                        <motion.div
+                            initial={{ opacity: 0, x: -60 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.9 }}
+                            className="relative h-[550px]"
+                        >
+                            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#D4AF37]/20 to-transparent blur-2xl" />
 
-  <div className="relative h-full overflow-hidden rounded-[2rem] shadow-2xl">
-    <AnimatePresence mode="sync">
-      <motion.img
-        key={currentImage}
-        src={brainImages[currentImage]}
-        alt="The Brain"
-        className="absolute inset-0 w-full h-full object-cover"
-        initial={{ opacity: 0, scale: 1.05 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.98 }}
-        transition={{ duration: 1.2 }}
-      />
-    </AnimatePresence>
+                            <div className="relative h-full overflow-hidden rounded-[2rem] shadow-2xl">
+                                <AnimatePresence mode="sync">
+                                    <motion.img
+                                        key={currentImage}
+                                        src={brainImages[currentImage]}
+                                        alt="The Brain"
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                        initial={{ opacity: 0, scale: 1.05 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.98 }}
+                                        transition={{ duration: 1.2 }}
+                                    />
+                                </AnimatePresence>
 
-    {/* Dark gradient overlay */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-  </div>
-</motion.div>
+                                {/* Dark gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                            </div>
+                        </motion.div>
 
                         {/* Optional indicators */}
                         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -158,8 +164,8 @@ export default function ShoovaCampus() {
                                     key={index}
                                     onClick={() => setCurrentImage(index)}
                                     className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentImage
-                                            ? "bg-[#D4AF37] w-8"
-                                            : "bg-white/50"
+                                        ? "bg-[#D4AF37] w-8"
+                                        : "bg-white/50"
                                         }`}
                                 />
                             ))}
@@ -209,14 +215,53 @@ export default function ShoovaCampus() {
                     >
 
                         {/* 🌿 IMAGE */}
-                        <motion.img
-                            src="/img/campus2.jpeg"
-                            alt="Shoova Residential Community"
-                            className="w-full h-full object-cover scale-105"
-                            initial={{ scale: 1.08 }}
-                            whileInView={{ scale: 1.02 }}
-                            transition={{ duration: 1.2 }}
-                        />
+                         <motion.div
+                        initial={{ opacity: 0, x: 60 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.9 }}
+                        className="relative h-[500px] overflow-hidden rounded-3xl"
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, x: -60 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.9 }}
+                            className="relative h-[550px]"
+                        >
+                            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#D4AF37]/20 to-transparent blur-2xl" />
+
+                            <div className="relative h-full overflow-hidden rounded-[2rem] shadow-2xl">
+                                <AnimatePresence mode="sync">
+                                    <motion.img
+                                        key={currentImage}
+                                        src={soulImages[currentImage]}
+                                        alt="The Soul"
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                        initial={{ opacity: 0, scale: 1.05 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.98 }}
+                                        transition={{ duration: 1.2 }}
+                                    />
+                                </AnimatePresence>
+
+                                {/* Dark gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                            </div>
+                        </motion.div>
+
+                        {/* Optional indicators */}
+                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                            {soulImages.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setCurrentImage(index)}
+                                    className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentImage
+                                        ? "bg-[#D4AF37] w-8"
+                                        : "bg-white/50"
+                                        }`}
+                                />
+                            ))}
+                        </div>
+                    </motion.div>
 
                         {/* 🌫️ SOFT OVERLAY (lighter than Brain) */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />

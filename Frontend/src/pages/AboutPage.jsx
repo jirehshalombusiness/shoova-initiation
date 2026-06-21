@@ -41,7 +41,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
     {
       question: "What is the Shoova Restoration Campus?",
       answer:
-        "The Shoova Restoration Campus is an upcoming 8-acre vocational training institute in Ghana’s Eastern Region designed to equip youth with world-class engineering, environmental restoration, and leadership skills that help transition communities away from illegal mining."
+        "The Shoova Restoration Campus is an upcoming 8-acre vocational training institute in Ghana, designed to equip youth with world-class engineering, environmental restoration, and leadership skills that help transition communities away from illegal mining."
     },
     {
       question: "Why focus on youth involved in galamsey?",
@@ -497,33 +497,36 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
-                    School of Engineering & Fabrication
+                    School of Engineering & Technical Trades
                   </h3>
                   <p className="text-gray-600">
-                    Mastering the trades that build nations: precision welding,
-                    heavy machinery repair, and advanced metal fabrication.
-                    We transform raw talent into industrial expertise.
+                   Students learn structural welding, precision manufacturing, solar technology, heavy machinery repair, and metal fabrication. Graduates leave ready to construct, power, and maintain Ghana’s growing infrastructure — from renewable energy systems to major industrial projects.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
-                    School of Sustainable Futures
+                    School of Agribusiness & Environmental Sustainability
                   </h3>
                   <p className="text-gray-600">
-                    Leading the green transition through solar energy installation,
-                    land reclamation techniques, and sustainable agricultural
-                    technology.
+                    This school trains youth in organic farming, solar installation, land reclamation, and sustainable resource management. Graduates lead the green transition — restoring ecosystems while building commercially viable agricultural businesses.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
-                    School of Ethical Leadership
+                    School of Business & Entrepreneurship
                   </h3>
                   <p className="text-gray-600">
-                    Data-driven management,entrepreneurship, bookkeeping, agribusiness, and ethics.
-                    We are not only training workers — we are preparing the next generation of employers and community leaders.
+                    Students master micro‑enterprise development, cash‑flow management, supply chain logistics, and data‑driven decision making. Graduates launch local businesses, employ others, and strengthen Ghana’s economy from the ground up.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    School of Ethical Leadership & Community Development
+                  </h3>
+                  <p className="text-gray-600">
+                    Focused on governance, public service, ethical decision‑making, and community mobilization. Graduates emerge as principled leaders who resist corruption, serve the common good, and transform their communities from within.
                   </p>
                 </div>
 

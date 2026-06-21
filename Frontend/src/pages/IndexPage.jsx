@@ -298,7 +298,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
           <div className="absolute inset-0 pointer-events-none">
             <img
-              src="/img/sunburst.jpeg"
+              src="/img/campus12.jpeg"
               alt="Shoova Emblem"
               className="
       w-full h-full
@@ -844,7 +844,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </h3>
 
                   <p className="mt-4 text-gray-600 leading-relaxed">
-                    Governance, ethics, and civic responsibility training that builds principled leaders and reformers.
+                    Building character and integrity to resist corruption and lead community transformation.  
                   </p>
 
                   <div className="mt-6 pt-5 border-t border-gray-100">
@@ -1261,7 +1261,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
             {/* BODY */}
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
-              Our 8-acre campus in Ghana’s Eastern Region is currently in its planning phase.
+              Our 8-acre campus in Ghana is currently in its planning phase.
               This space will soon host academic training, technical production, and a
               residential community designed to restore both land and livelihoods.
             </p>
@@ -1322,7 +1322,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   Shoova Initiative is led by a coalition of project managers, data
                   scientists, engineers, and community leaders united by one mission:
                   to restore land, rebuild livelihoods, and equip the next generation
-                  of technical leaders in Ghana’s Eastern Region.
+                  of technical leaders in Ghana.
                 </p>
 
                 <ul className="space-y-4">
