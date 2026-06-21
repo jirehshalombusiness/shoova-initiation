@@ -4,11 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 const images = [
   "/img/campus12.jpeg",
   "/img/campus11.jpeg",
-  "/img/campus10.jpeg",
   "/img/campus7.jpeg",
   "/img/campus5.jpeg",
-  "/img/campus9.jpeg",
   "/img/campus6.jpeg",
+  "/img/campus8.jpeg",
 ];
 
 export default function InteractiveCampusSection() {

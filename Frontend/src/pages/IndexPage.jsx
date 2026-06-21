@@ -244,7 +244,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               <div className="flex flex-col items-start leading-none  mb-4">
                 <div className="bg-white text-black px-4 py-2 rounded-sm shadow">
                   <span className="text-2xl md:text-4xl lg:text-4xl font-bold">
-                    RESPONSIBLE MINING,
+                    Say Yes To Responsible Mining,
                   </span>
                 </div>
                 <div className="bg-secondary px-4 mr-16 py-2 rounded-sm shadow">
@@ -442,9 +442,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               >
 
                 {/* Eyebrow */}
-                <p className="text-secondary font-bold uppercase tracking-[0.25em] text-sm mb-4">
+                 <p className="text-secondary font-bold uppercase tracking-[0.25em] text-sm mb-4">
                   Say Yes To Responsible Mining
-                </p>
+                </p> 
 
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-textDark leading-tight mb-6">

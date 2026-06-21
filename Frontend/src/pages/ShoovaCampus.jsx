@@ -1,8 +1,7 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
 import { Link } from '../components/Link';
 import InteractiveCampusSection from "../components/interactivecampus";
-
+import { motion, AnimatePresence } from "framer-motion";
 export default function ShoovaCampus() {
     const campusImages = [
         "/img/campus1.jpeg",
@@ -18,12 +17,28 @@ export default function ShoovaCampus() {
         "/img/campus11.jpeg",
         "/img/campus12.jpeg",
     ];
+
+    const brainImages = [
+        "/img/campus8.jpeg",
+        "/img/campus9.jpeg",
+        "/img/campus10.jpeg",
+    ];
+
+    const [currentImage, setCurrentImage] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImage((prev) => (prev + 1) % brainImages.length);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
     return (
         <div className="text-black bg-[#F9FAFB]">
             <section className="relative h-[95vh] overflow-hidden">
 
                 <motion.img
-                    src="/img/campus9.jpeg"
+                    src="/img/campus12.jpeg"
                     className="absolute inset-0 w-full h-full object-cover scale-110"
                     initial={{ scale: 1.2 }}
                     animate={{ scale: 1.08 }}
@@ -45,7 +60,7 @@ export default function ShoovaCampus() {
                     </div>
                 </div>
             </section>
-            
+
             <section className="bg-[#F9FAFB] py-28">
                 <div className="max-w-7xl mx-auto px-6 text-center mb-16">
                     <p className="text-[#D4AF37] uppercase tracking-[0.3em] text-sm mb-3">
@@ -98,72 +113,87 @@ export default function ShoovaCampus() {
 
             {/* 🔥 CAMPUS EXPERIENCE */}
 
-            
+
             <section className="bg-white py-28">
-  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+                <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
 
-    {/* 🧠 TEXT SIDE (Premium Narrative Block) */}
-    <motion.div
-      initial={{ opacity: 0, x: -60 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.9 }}
-      className="space-y-6"
-    >
-      <div className="space-y-4">
-        <p className="text-[#D4AF37] uppercase tracking-[0.35em] text-xs font-medium">
-          Academic & Strategic Core
-        </p>
+                    {/* 🧠 TEXT SIDE (Premium Narrative Block) */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 60 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.9 }}
+                      className="relative h-[500px] overflow-hidden rounded-3xl"
+                    >
+          <motion.div
+  initial={{ opacity: 0, x: -60 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.9 }}
+  className="relative h-[550px]"
+>
+  <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#D4AF37]/20 to-transparent blur-2xl" />
 
-        <h2 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">
-          The Brain
-        </h2>
-
-        <div className="w-16 h-[2px] bg-[#D4AF37]" />
-      </div>
-
-      <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
-        Designed as the intellectual engine of the campus, this space houses
-        the School of Engineering & Fabrication, the School of Sustainable
-        Futures, and the School of Ethical Leadership — alongside the Data
-        Command Center powering insight and decision-making.
-      </p>
-
-      <p className="text-gray-500 leading-relaxed max-w-xl">
-        Every system here is built for clarity, innovation, and long-term
-        national impact — where ideas are not only formed, but executed.
-      </p>
-    </motion.div>
-
-    {/* 🏛️ IMAGE SIDE (Premium Visual Frame) */}
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1 }}
-      className="relative h-[520px] md:h-[620px] rounded-[28px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.18)] group"
-    >
+  <div className="relative h-full overflow-hidden rounded-[2rem] shadow-2xl">
+    <AnimatePresence mode="sync">
       <motion.img
-        src="/img/campus2.jpeg"
-        alt="Shoova Academic Core"
-        className="w-full h-full object-cover"
-        initial={{ scale: 1.1 }}
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.7 }}
+        key={currentImage}
+        src={brainImages[currentImage]}
+        alt="The Brain"
+        className="absolute inset-0 w-full h-full object-cover"
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.98 }}
+        transition={{ duration: 1.2 }}
       />
+    </AnimatePresence>
 
-      {/* 🌫️ PREMIUM DARK GRADIENT */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-
-      {/* 🧠 LABEL */}
-      <div className="absolute bottom-8 left-8 backdrop-blur-xl bg-white/10 border border-white/20 px-5 py-3 rounded-2xl text-white text-sm tracking-wide">
-        Academic Intelligence Zone
-      </div>
-
-      {/* ✨ SUBTLE GOLD ACCENT LINE */}
-      <div className="absolute top-6 right-6 w-24 h-[2px] bg-[#D4AF37]/70" />
-    </motion.div>
-
+    {/* Dark gradient overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
   </div>
-</section>
+</motion.div>
+
+                        {/* Optional indicators */}
+                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                            {brainImages.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setCurrentImage(index)}
+                                    className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentImage
+                                            ? "bg-[#D4AF37] w-8"
+                                            : "bg-white/50"
+                                        }`}
+                                />
+                            ))}
+                        </div>
+                    </motion.div>
+
+                    {/* 🏛️ IMAGE SIDE (Premium Visual Frame) */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 60 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <p className="text-[#D4AF37] uppercase tracking-[0.3em] mb-4 text-sm">
+                            Academic & Strategic Core
+                        </p>
+
+                        <h2 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">
+                            The Brain
+                        </h2>
+
+                        <div className="w-16 h-[2px] bg-[#D4AF37]" />
+
+                        <p className="text-gray-600 text-lg leading-relaxed">
+                            Designed as the intellectual engine of the campus, this space houses the School of Engineering & Fabrication,
+                            the School of Sustainable Futures, and the School of Ethical Leadership — alongside the Data Command Center powering insight and decision-making.
+                        </p>
+
+                        <p className="text-gray-400 mt-6 leading-relaxed">
+                            Every system here is built for clarity, innovation, and long-term national impact — where ideas are not only formed, but executed.
+                        </p>
+                    </motion.div>
+
+                </div>
+            </section>
 
             <InteractiveCampusSection />
 
