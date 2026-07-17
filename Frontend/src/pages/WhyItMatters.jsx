@@ -13,7 +13,7 @@ const WhyItMatters = () => {
       eyebrow: "WHY RESTORATION?",
       title: "Because healthy land sustains life",
       image: "/img/envi.jpg",
-      text: "Reclaiming land damaged by illegal mining restores soil health, protects water sources, and rebuilds ecosystems that communities depend on.",
+      text: "Reclaiming land damaged by Irresponsible mining restores soil health, protects water sources, and rebuilds ecosystems that communities depend on.",
     },
     {
       id: "youth",
@@ -21,7 +21,7 @@ const WhyItMatters = () => {
       eyebrow: "WHY YOUTH?",
       title: "Because opportunity changes destinies",
       image: "/img/young.jpeg",
-      text: "When young people gain technical and environmental skills, they can build dignified livelihoods that replace destructive mining practices.",
+      text: "When young people gain technical and environmental skills, they can build dignified livelihoods that replace destructive Irresponsible mining practices.",
     },
     {
       id: "communities",
@@ -219,7 +219,7 @@ Galamsey occurs in more than 120 of Ghana’s 261 districts, impacting millions 
                           </p>
           
                           <p className="text-text text-sm leading-relaxed">
-                            By 2040, we aim to restore land by illegal mining into thriving ecosystems that support communities and agriculture.
+                            By 2040, we aim to restore land by Irresponsible mining into thriving ecosystems that support communities and agriculture.
                             Long-term ecological recovery is proected through 2040.
                           </p>
           
@@ -242,7 +242,7 @@ Galamsey occurs in more than 120 of Ghana’s 261 districts, impacting millions 
                           </p>
           
                           <p className="text-text text-sm leading-relaxed">
-                            By 2040, we aim to rehabilitate water bodies degraded by illegal mining, restoring water quality, 
+                            By 2040, we aim to rehabilitate water bodies degraded by Irresponsible mining, restoring water quality, 
                             aquatic ecosystems, and and improving access to safe water for affected communities.
                           </p>
           
@@ -265,7 +265,7 @@ Galamsey occurs in more than 120 of Ghana’s 261 districts, impacting millions 
                           </p>
           
                           <p className="text-text text-sm leading-relaxed">
-                            By 2040, we aim to transition young people from illegal mining into skilled, dignified, and sustainable livelihoods through our Restoration Campus training programs and community initiatives.
+                            By 2040, we aim to transition young people from Irresponsible mining into skilled, dignified, and sustainable livelihoods through our Restoration Campus training programs and community initiatives.
                           </p>
           
                         </div>

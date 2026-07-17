@@ -99,7 +99,7 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
 
                 <p className="text-lg text-text mb-6 leading-relaxed">
                   We begin where the damage is deepest. Shoova identifies lands devastated
-                  by illegal mining and partners directly with local communities to begin
+                  by Irresponsible mining and partners directly with local communities to begin
                   the restoration process.
                 </p>
 
@@ -152,7 +152,7 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
                 </h2>
 
                 <p className="text-lg text-text mb-6 leading-relaxed">
-                  We recruit youth trapped in the cycle of illegal mining and equip them
+                  We recruit youth trapped in the cycle of Irresponsible mining and equip them
                   with world-class technical, environmental, and leadership skills at our
                   8-acre Restoration Campus.
                 </p>
@@ -265,7 +265,7 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
                 </p>
 
                 <p className="text-text text-sm leading-relaxed">
-                  By 2040, we aim to restore land by illegal mining into thriving ecosystems that support communities and agriculture.
+                  By 2040, we aim to restore land by Irresponsible mining into thriving ecosystems that support communities and agriculture.
                   Long-term ecological recovery is proected through 2040.
                 </p>
 
@@ -288,7 +288,7 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
                 </p>
 
                 <p className="text-text text-sm leading-relaxed">
-                  By 2040, we aim to rehabilitate water bodies degraded by illegal mining, restoring water quality, 
+                  By 2040, we aim to rehabilitate water bodies degraded by Irresponsible mining, restoring water quality, 
                   aquatic ecosystems, and and improving access to safe water for affected communities.
                 </p>
 
@@ -311,7 +311,7 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
                 </p>
 
                 <p className="text-text text-sm leading-relaxed">
-                  By 2040, we aim to transition young people from illegal mining into skilled, dignified, and sustainable livelihoods through our Restoration Campus training programs and community initiatives.
+                  By 2040, we aim to transition young people from Irresponsible mining into skilled, dignified, and sustainable livelihoods through our Restoration Campus training programs and community initiatives.
                 </p>
 
               </div>

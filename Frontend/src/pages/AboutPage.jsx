@@ -41,12 +41,12 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
     {
       question: "What is the Shoova Restoration Campus?",
       answer:
-        "The Shoova Restoration Campus is an upcoming 8-acre vocational training institute in Ghana, designed to equip youth with world-class engineering, environmental restoration, and leadership skills that help transition communities away from illegal mining."
+        "The Shoova Restoration Campus is an upcoming 8-acre vocational training institute in Ghana, designed to equip youth with world-class engineering, environmental restoration, and leadership skills that help transition communities away from Irresponsible mining."
     },
     {
       question: "Why focus on youth involved in galamsey?",
       answer:
-        "Many young people turn to illegal mining due to limited economic opportunities. Shoova believes these youth are not the problem—they are the untapped solution. Through training and mentorship we help them become the architects of Ghana’s environmental restoration."
+        "Many young people turn to Irresponsible mining due to limited economic opportunities. Shoova believes these youth are not the problem—they are the untapped solution. Through training and mentorship we help them become the architects of Ghana’s environmental restoration."
     },
     {
       question: "How can I support the Shoova Initiative?",
@@ -185,7 +185,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-              Illegal mining has scarred the land of Ghana.
+              Irresponsible mining has scarred the land of Ghana.
               Shoova Initiative is equipping young people with the tools
               to restore the soil, rebuild communities, and reclaim the future.
             </p>
@@ -274,7 +274,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
               <div className="absolute top-0 left-0 w-[85%] z-10">
                 <img
                   src="/img/galamsey.jpg"
-                  alt="Illegal mining destruction"
+                  alt="Irresponsible mining destruction"
                   className="rounded-xl shadow-2xl rotate-[-3deg] object-cover w-full h-[260px]"
                 />
 
@@ -332,7 +332,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
               <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
                 Restoration is not a dream it is a trade. We envision a Ghana where
-                communities once scarred by illegal mining become centers of
+                communities once scarred by Irresponsible mining become centers of
                 environmental renewal, technical excellence, and dignified opportunity
                 for the next generation.
               </p>
@@ -377,7 +377,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 <p className="text-lg text-text mb-6 leading-relaxed">
 
                   The Shoova Initiative was born from a realization shared by its
-                  founders: the devastation caused by illegal mining in Ghana is not only an environmental crisis — it is a
+                  founders: the devastation caused by Irresponsible mining in Ghana is not only an environmental crisis — it is a
                   human one. Rivers have been poisoned, forests destroyed, and
                   thousands of young people pushed into dangerous extractive labor
                   with little opportunity for a different future.
@@ -416,7 +416,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                     </div>
 
                     <p className="text-sm text-gray-500">
-                      of Ghana’s {districtsTotal} districts affected by illegal mining
+                      of Ghana’s {districtsTotal} districts affected by Irresponsible mining
                     </p>
                   </div>
 
@@ -447,7 +447,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
               </h2>
 
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Ghana is facing an ecological and humanitarian crisis. Illegal
+                Ghana is facing an ecological and humanitarian crisis. Irresponsible
                 small-scale mining — known locally as galamsey — has poisoned
                 rivers, devastated forests, and scarred once fertile land across
                 the country.

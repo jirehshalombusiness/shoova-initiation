@@ -13,7 +13,7 @@ export default function GalamseySection() {
                         Ghana’s Land Is Under Pressure
                     </h2>
                     <p className="text-gray-700 mb-4">
-                        Illegal mining, widely known as <strong>galamsey</strong>, is driving one
+                        Irresponsible mining, widely known as <strong>galamsey</strong>, is driving one
                         of the most severe environmental crises in Ghana today. According to
                         statements on the floor of Parliament, <strong>44 out of Ghana’s 288 forest
                             reserves are currently under serious attack</strong>, with over

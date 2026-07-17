@@ -133,7 +133,7 @@ const Footer = () => {
 
             <p className="text-white/80 text-md leading-relaxed mb-6">
               Your support funds training, land restoration, and the Shoova
-              Restoration Campus—creating sustainable pathways beyond illegal mining.
+              Restoration Campus—creating sustainable pathways beyond Irresponsible mining.
             </p>
 
           </div>

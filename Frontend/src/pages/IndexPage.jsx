@@ -98,7 +98,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
   //     eyebrow: "WHY RESTORATION?",
   //     title: "Because healthy land sustains life",
   //     image: "/img/envi.jpg",
-  //     text: "Reclaiming land damaged by illegal mining restores soil health, protects water sources, and rebuilds ecosystems that communities depend on.",
+  //     text: "Reclaiming land damaged by Irresponsible mining restores soil health, protects water sources, and rebuilds ecosystems that communities depend on.",
   //   },
   //   {
   //     id: "youth",
@@ -328,7 +328,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
             >
 
               <p className="text-lg md:text-xl">
-                The desolation caused by illegal mining (galamsey) isn't just an environmental crisis;
+                The desolation caused by Irresponsible mining (galamsey) isn't just an environmental crisis;
                 it is a human one. We saw a generation of youth trapped in extractive labor and a landscape
                 that had become prey to destruction.
               </p>
@@ -388,7 +388,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
               <p className="text-base md:text-lg text-white/85 leading-relaxed mb-10 space-y-4">
                 Ghana is facing an ecological and humanitarian crisis.
-                Illegal mining has poisoned water sources, destroyed forests, and trapped thousands of young people in dangerous, low-paying work.
+                Irresponsible mining has poisoned water sources, destroyed forests, and trapped thousands of young people in dangerous, low-paying work.
               </p>
 
             </div>
@@ -448,12 +448,12 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                 {/* Heading */}
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-textDark leading-tight mb-6">
-                  Why Shoova Institute Is Key To Ending Illegal Mining
+                  Why Shoova Institute Is Key To Ending Irresponsible Mining
                 </h2>
 
                 {/* Intro */}
                 <p className="text-lg text-text leading-relaxed mb-8">
-                  Illegal mining thrives where poverty, educational exclusion,
+                  Irresponsible mining thrives where poverty, educational exclusion,
                   and unemployment intersect. Shoova creates a direct pathway
                   from vulnerability to opportunity.
                 </p>
@@ -897,7 +897,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </h3>
 
                   <p className="text-white/80 text-md leading-relaxed">
-                    We identify lands devastated by illegal mining and engage local
+                    We identify lands devastated by Irresponsible mining and engage local
                     communities to begin environmental recovery.
                   </p>
 
@@ -917,7 +917,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                   <p className="text-white/90 text-md leading-relaxed">
                     We equip youth with engineering, environmental, and vocational
-                    skills that create real alternatives to galamsey.
+                    skills that create real alternatives to Irresponsible mining (galamsey).
                   </p>
 
                 </div>

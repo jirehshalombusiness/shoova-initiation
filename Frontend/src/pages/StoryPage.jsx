@@ -120,7 +120,7 @@ export default function StoryPage() {
             </h1>
 
             <p className="text-2xl md:text-2xl text-white mb-6 leading-relaxed">
-              From the impact of illegal mining to the vision of rebuilding through
+              From the impact of Irresponsible mining to the vision of rebuilding through
               education and innovation, this is where restoration begins.
             </p>
 
@@ -152,11 +152,11 @@ export default function StoryPage() {
             <p>
               We are grateful for all the blessings, the gift of life, loving family, great friends, amazing profession, and
               much more. But as we looked at the landscapes of our home, Ghana, we saw a different kind of
-              environment rising, one that revealed a land &quot;plundered and looted&quot; by the scars of illegal mining (galamsey). Very different from the environment we grew up in, and the fast pace of the devastation is
+              environment rising, one that revealed a land &quot;plundered and looted&quot; by the scars of Irresponsible mining (galamsey). Very different from the environment we grew up in, and the fast pace of the devastation is
               disturbing.
             </p>
             <p>
-              We realized that the true goal is to be significant in the lives of the people negatively affected by illegal
+              We realized that the true goal is to be significant in the lives of the people negatively affected by Irresponsible
               mining.
             </p>
             <p className=' font-bold italic'>
@@ -217,11 +217,11 @@ export default function StoryPage() {
           </p>
 
           <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            The Cost of Illegal Mining
+            The Cost of Irresponsible Mining
           </h2>
 
           <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-            Across Ghana, illegal mining has left behind devastated land,
+            Across Ghana, Irresponsible mining has left behind devastated land,
             polluted rivers, and communities with limited alternatives.
             This is the reality we are responding to.
           </p>
@@ -380,7 +380,7 @@ export default function StoryPage() {
                 </h3>
 
                 <p className="text-white/80 text-md leading-relaxed">
-                  We identify lands devastated by illegal mining and engage local
+                  We identify lands devastated by Irresponsible mining and engage local
                   communities to begin environmental recovery.
                 </p>
 
@@ -468,13 +468,11 @@ export default function StoryPage() {
               </h3>
 
               <ul className="space-y-3 text-gray-700 leading-relaxed">
-                <li>• Support the transition from illegal mining to sustainable livelihoods</li>
+                <li>• Support the transition from Irresponsible mining to sustainable livelihoods</li>
                 <li>• Help fund vocational training for youth in affected communities</li>
               </ul>
 
             </div>
-
-
             {/* BLOCK 2 */}
             <div className="mb-10">
 

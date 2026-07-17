@@ -317,7 +317,7 @@ export const RestorationUpdates = () => {
                     <div className="relative">
                         <img
                             src="/img/share.jpg"
-                            alt="Illegal mining destruction in Ghana"
+                            alt="Irresponsible mining destruction in Ghana"
                             className="rounded-2xl shadow-xl w-full h-[420px] object-cover"
                         />
 
@@ -335,7 +335,7 @@ export const RestorationUpdates = () => {
                         </h2>
 
                         <p className="text-lg text-text leading-relaxed mb-8">
-                            The destruction caused by illegal mining is one of the most urgent
+                            The destruction caused by Irresponsible mining is one of the most urgent
                             environmental crises facing Ghana today. But restoration is possible.
                             Help more people understand the challenge — and the solution — by
                             sharing the Shoova restoration story.
