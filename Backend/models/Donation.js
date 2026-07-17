@@ -37,24 +37,19 @@ const donationSchema = new mongoose.Schema({
     sparse: true
   },
 
-  // Stripe References
   stripeSessionId: {
     type: String,
     unique: true,
     sparse: true
   },
-  // donorboxDonationId: String,
   stripeCustomerId: String,
   stripeSubscriptionId: String,
   paymentStatus: String,
-
-  // Donor Location
   address: {
     type: String,
     default: "N/A"
   },
 
-  // Optional donor note
   message: String,
   
   paymentProvider: {
@@ -81,9 +76,6 @@ const donationSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-
-
-  // Timestamp
   createdAt: {
     type: Date,
     default: Date.now

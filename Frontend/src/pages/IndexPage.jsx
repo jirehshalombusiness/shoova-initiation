@@ -134,8 +134,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
       if (!videoRef.current) return;
 
       const scrollY = window.scrollY;
-
-      // Move video slower than scroll → parallax effect
       videoRef.current.style.transform = `translateY(${scrollY * 0.3}px) scale(1.1)`;
     };
 
@@ -191,24 +189,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
   return (
 
     <div className="font-body cursor-default antialiased">
-      {/* {subscribed && (
-        <div className="fixed -top-2 left-0 w-full bg-primary text-white py-4 px-6 flex justify-between items-center z-[9999] shadow-lg">
-
-          <p className="text-sm md:text-base">
-            You're signed up! You'll now receive Shoova restoration updates.
-          </p>
-
-          <button
-            onClick={() => setSubscribed(false)}
-            className="text-white text-xl font-bold"
-          >
-            ×
-          </button>
-
-        </div>
-      )} */}
       <>
-        {/* Hero Section */}
         <motion.section
           variants={container}
           initial="hidden"
@@ -306,22 +287,14 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
       opacity-10
     "
             />
-
-
           </div>
-
-          {/* CONTENT */}
           <div className="max-w-3xl mx-auto px-6 relative z-10">
-
-            {/* TITLE */}
             <motion.h2
               variants={fadeUp}
               className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10"
             >
               The Restoration Mandate
             </motion.h2>
-
-            {/* TEXT */}
             <motion.div
               variants={fadeUp}
               className="space-y-6 text-gray-800 leading-relaxed text-justify"
@@ -360,32 +333,21 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
         </motion.section>
 
         <section className="relative w-full h-screen flex items-center overflow-hidden">
-
-          {/* PARALLAX BACKGROUND */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
             style={{ backgroundImage: "url('/img/galamsey.jpg')" }}
           ></div>
-
-          {/* OVERLAYS */}
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent"></div>
-
-          {/* CONTENT */}
           <div className="relative z-10 px-6 md:px-16 lg:px-24 w-full">
             <div className="max-w-md text-white">
-
-              {/* OPTIONAL LABEL */}
               <p className="text-secondary font-semibold uppercase tracking-widest text-sm mb-4">
                 The Problem of Galamsey
               </p>
-
-              {/* HEADLINE */}
               <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.05] mb-6 tracking-tight">
                 Become a part of the solution.<br />
                 <span className="text-secondary">Let’s restore lives beyond galamsey.</span>
               </h2>
-
               <p className="text-base md:text-lg text-white/85 leading-relaxed mb-10 space-y-4">
                 Ghana is facing an ecological and humanitarian crisis.
                 Irresponsible mining has poisoned water sources, destroyed forests, and trapped thousands of young people in dangerous, low-paying work.
@@ -396,7 +358,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
         </section>
         <GalamseySection />
-        {/* ================= WHY SHOOVA ================= */}
         <motion.section
           variants={container}
           initial="hidden"
@@ -407,8 +368,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           <div className="max-w-7xl mx-auto px-6 md:px-10">
 
             <div className="grid lg:grid-cols-5 gap-12 items-center">
-
-              {/* LEFT IMAGE */}
               <motion.div
                 variants={fadeLeft}
                 className="lg:col-span-3 relative"
@@ -420,8 +379,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     className="w-full h-full object-cover hover:scale-105 transition duration-700"
                   />
                 </div>
-
-                {/* Floating Badge */}
                 <div className="absolute bottom-6 left-6 bg-white px-6 py-4 rounded-xl shadow-xl">
 
                   <p className="text-secondary text-sm font-bold uppercase tracking-wider">
@@ -434,31 +391,21 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                 </div>
               </motion.div>
-
-              {/* RIGHT CONTENT */}
               <motion.div
                 variants={fadeRight}
                 className="lg:col-span-2"
               >
-
-                {/* Eyebrow */}
                  <p className="text-secondary font-bold uppercase tracking-[0.25em] text-sm mb-4">
                   Say Yes To Responsible Mining
                 </p> 
-
-                {/* Heading */}
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-textDark leading-tight mb-6">
                   Why Shoova Institute Is Key To Ending Irresponsible Mining
                 </h2>
-
-                {/* Intro */}
                 <p className="text-lg text-text leading-relaxed mb-8">
                   Irresponsible mining thrives where poverty, educational exclusion,
                   and unemployment intersect. Shoova creates a direct pathway
                   from vulnerability to opportunity.
                 </p>
-
-                {/* CARD 1 */}
                 <div className="bg-primary text-white p-6 rounded-xl shadow-lg mb-5">
                   <h3 className="text-xl font-bold mb-3">
                     The Fuel of Galamsey
@@ -469,7 +416,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     With no formal skills and an urgent need to survive, they become highly vulnerable to exploitative mining syndicates.
                   </p>
                 </div>
-                {/* CARD 2 */}
                 <div className="bg-secondary text-white p-6 rounded-xl shadow-lg mb-8">
                   <h3 className="text-xl font-bold mb-3">
                     The Interruption
@@ -482,8 +428,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     we target the exact demographic most vulnerable to galamsey.
                   </p>
                 </div>
-
-                {/* STATS */}
                 <div className="grid grid-cols-3 gap-4">
                   <div className="text-center border border-gray-200 rounded-xl p-4">
                     <h4 className="text-3xl font-bold text-primary">
@@ -521,14 +465,10 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           </div>
         </motion.section>
         <section className="relative min-h-screen py-32 bg-white overflow-hidden">
-
-          {/* 🌫 Atmospheric background (depth layer) */}
           <div className="absolute inset-0">
             <div className="absolute top-[-20%] left-1/2 w-[700px] h-[700px] bg-red-200/20 blur-3xl rounded-full -translate-x-1/2" />
             <div className="absolute bottom-[-25%] right-1/2 w-[700px] h-[700px] bg-green-200/20 blur-3xl rounded-full translate-x-1/2" />
           </div>
-
-          {/* Header */}
           <div className="relative max-w-5xl mx-auto text-center px-6 mb-24">
             <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-gray-900">
               From Extraction to Regeneration
@@ -537,14 +477,10 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               Two systems. One defines decline. The other defines possibility.
             </p>
           </div>
-
-          {/* ⚡ Transformation Axis */}
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-red-200 via-gray-200 to-green-300 opacity-60 hidden md:block" />
 
-          {/* GRID */}
-          <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 px-6">
 
-            {/* 🔴 LEFT — SYSTEM A */}
+          <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-16 px-6">
             <motion.div
               initial={{ opacity: 0, x: -90 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -592,8 +528,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 </div>
               </div>
             </motion.div>
-
-            {/* 🟢 RIGHT — SYSTEM B */}
             <motion.div
               initial={{ opacity: 0, x: 90 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -601,7 +535,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               viewport={{ once: true, amount: 0.4 }}
               className="relative"
             >
-              {/* glow layer */}
               <div className="absolute inset-0 bg-green-50/40 rounded-3xl blur-xl" />
 
               <div className="relative p-10 rounded-3xl bg-gradient-to-br from-white/60 to-green-50/40 backdrop-blur-xl border border-green-100 shadow-[0_25px_90px_-35px_rgba(0,0,0,0.3)]">
@@ -644,8 +577,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
             </motion.div>
 
           </div>
-
-          {/* 🧠 Transformation Statement */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -860,10 +791,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
           </div>
         </motion.section>
-        {/* ================= OUR PROCESS ================= */}
         <section className="relative bg-white pt-24 pb-10">
-
-          {/* HEADER */}
           <div className="text-center mb-12 md:mb-16 px-6">
 
             <p className="text-sm uppercase tracking-[0.25em] text-secondary/80 mb-4">
@@ -877,15 +805,11 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
             <div className="w-16 h-[2px] bg-secondary mx-auto mb-32"></div>
 
           </div>
-
-          {/* PROCESS CARD */}
           <div className="relative -mt-16 md:-mt-20 mb-20 md:mb-28 px-6 md:px-10 z-20">
 
             <div className="max-w-7xl mx-auto rounded-xl overflow-hidden shadow-2xl">
 
               <div className="grid grid-cols-1 md:grid-cols-3">
-
-                {/* STEP 1 */}
                 <div className="bg-secondary text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
 
                   <p className="text-md uppercase tracking-widest text-white/60 mb-3">
@@ -902,9 +826,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </p>
 
                 </div>
-
-
-                {/* STEP 2 */}
                 <div className="bg-[#D4AF37] text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
 
                   <p className="text-md uppercase tracking-widest text-white/70 mb-3">
@@ -921,15 +842,11 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </p>
 
                 </div>
-
-
-                {/* STEP 3 */}
                 <div className="bg-[#1B5E20] text-white px-8 py-28 flex flex-col justify-center hover:-translate-y-1 transition">
 
                   <p className="text-md uppercase tracking-widest text-white/70 mb-3">
                     Step 03
                   </p>
-
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">
                     Restore
                   </h3>
@@ -947,8 +864,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           </div>
 
         </section>
-
-        {/* Ready to Restore the Land */}
         <section id="ready_to_restore" className="py-24 bg-[#f7f3ea]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -1243,30 +1158,20 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
         </section>
 
         <section className="py-16 bg-[#F9FAFB] relative overflow-hidden">
-
-          {/* SUBTLE BACKGROUND ACCENT */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,175,55,0.08),transparent_60%)]"></div>
 
           <div className="relative max-w-5xl mx-auto px-6 text-center">
-
-            {/* LABEL */}
             <p className="text-sm uppercase font-bold tracking-[0.3em] text-[#D4AF37] mb-4">
               Campus Development
             </p>
-
-            {/* TITLE */}
             <h2 className="text-3xl md:text-3xl font-bold text-gray-900 mb-3 leading-tight">
               The Shoova Restoration Campus is Under Development
             </h2>
-
-            {/* BODY */}
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
               Our 8-acre campus in Ghana is currently in its planning phase.
               This space will soon host academic training, technical production, and a
               residential community designed to restore both land and livelihoods.
             </p>
-
-            {/* STATUS BADGE */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -1275,10 +1180,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
             >
               🚧 Coming Soon
             </motion.div>
-
-            {/* OPTIONAL CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
               <Link
                 to="/contact"
                 className="px-8 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondaryHover transition"
@@ -1298,17 +1200,11 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           </div>
 
         </section>
-
-
-
-        {/* Meet the People Behind the Restoration */}
         <section id="meet_the_team" className="py-24 bg-primary text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-              {/* Left Content */}
               <div>
                 <p className="text-secondary font-bold tracking-wider uppercase text-sm mb-4">
                   Leadership & Trust
@@ -1370,11 +1266,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   Meet the Full Team
                 </Link>
               </div>
-
-              {/* Right Portrait Grid */}
               <div className="grid grid-cols-2 gap-6">
-
-                {/* Member 1 */}
                 <div className="group relative transform translate-y-8">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
@@ -1382,16 +1274,11 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                       alt="William Agyekum"
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    {/* Expanding Social Rail */}
                     <div className="absolute left-0 bottom-0 group/social">
                       <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
-
-                        {/* Main Share Icon */}
                         <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
                           <FaShareAlt className="w-4 h-4 text-white" />
                         </div>
-
-                        {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
                           <a
                             href="https://www.linkedin.com/in/william-agyekum-00681b2a1"
@@ -1415,7 +1302,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
                 </div>
 
-                {/* Member 2 */}
+             
                 <div className="group relative">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
@@ -1423,16 +1310,12 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                       alt="Salome Agyekum"
                       className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-
-                    {/* Expanding Social Rail */}
                     <div className="absolute left-0 bottom-0 group/social">
                       <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
-
-                        {/* Main Share Icon */}
                         <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
                           <FaShareAlt className="w-4 h-4 text-white" />
                         </div>
-                        {/* Hidden Icons */}
+                   
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
 
 
@@ -1458,8 +1341,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     <p className="text-xs text-white/70 mt-1">USA</p>
                   </div>
                 </div>
-
-                {/* Member 3 */}
                 <div className="group relative transform translate-y-8">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
@@ -1467,17 +1348,11 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                       alt="Kwame Opon-Yeboah"
                       className="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
-
-                    {/* Expanding Social Rail */}
                     <div className="absolute left-0 bottom-0 group/social">
                       <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
-
-                        {/* Main Share Icon */}
                         <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
                           <FaShareAlt className="w-4 h-4 text-white" />
                         </div>
-
-                        {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
 
                           <a
@@ -1502,8 +1377,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     <p className="text-xs text-white/70 mt-1">Ghana</p>
                   </div>
                 </div>
-
-                {/* Member 4 */}
                 <div className="group relative">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
@@ -1511,22 +1384,12 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                       alt="Julius Botchway "
                       className="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
-
-                    {/* Expanding Social Rail */}
                     <div className="absolute left-0 bottom-0 group/social">
                       <div className="bg-secondary w-12 h-12 group-hover:h-48 transition-all duration-500 overflow-hidden flex flex-col items-center">
-
-                        {/* Main Share Icon */}
                         <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
                           <FaShareAlt className="w-4 h-4 text-white" />
                         </div>
-
-                        {/* Hidden Icons */}
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
-
-
-
-
                           <a
                             href="https://www.linkedin.com/in/julius-botchway-mba-a6b739207/"
                             target="_blank"
@@ -1554,50 +1417,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
             </div>
           </div>
         </section>
-
-
-        {/* Final CTA */}
-        {/* <section id="join_the_restoration" className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-primary">
-            <Image
-              variant="cover"
-              className="w-full h-full object-cover opacity-20 mix-blend-overlay"
-              src="/img/community.jpg"
-              alt="Shoova restoration movement"
-            />
-          </div>
-
-          <div className="absolute inset-0 bg-black/30"></div>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
-
-            <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
-              Help Turn Scars Back Into Strength
-            </h2>
-
-            <p className="text-xl text-teal-100 mb-10">
-              Restore land. Equip youth. Rebuild communities.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
-              <Link
-                className="px-10 py-5 bg-secondary hover:bg-secondaryHover text-white font-bold text-xl rounded-full transition-all shadow-xl transform hover:scale-105"
-                to="/donate"
-              >
-                Join the Restoration
-              </Link>
-
-              <Link
-                className="px-10 py-5 bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white font-bold text-xl rounded-full transition-all"
-                to="/contact"
-              >
-                Partner With Us
-              </Link>
-
-            </div>
-
-          </div>
-        </section> */}
       </>
     </div>
   );

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
-
-
 const Navbar = () => {
   const [currentLang, setCurrentLang] = useState("en");
   const languages = [
@@ -64,7 +62,6 @@ const Navbar = () => {
 
     ${isActive ? "" : "after:w-0 hover:after:w-full"}
   `;
-
   return (
     <header>
       <nav
@@ -73,11 +70,8 @@ const Navbar = () => {
           : "bg-transparent"
           }`}
       >
-
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="flex items-center justify-between h-20">
-
-            {/* LOGO */}
             <Link to="/" className="flex items-center gap-3">
               <img src="/favicon.png" alt="logo" className="h-16" />
 
@@ -91,10 +85,7 @@ const Navbar = () => {
                 </span>
               </div>
             </Link>
-
-            {/* DESKTOP NAV */}
             <div className="hidden md:flex items-center gap-10 relative">
-              {/* 🔥 SHOOVA PATHWAYS */}
               <div
                 className="relative group"
                 onMouseEnter={() => setPathwaysOpen(true)}
@@ -121,8 +112,6 @@ const Navbar = () => {
                   Shoova Pathways
                   <ChevronDown className="w-4 h-4 mt-[2px]" />
                 </div>
-
-                {/* DROPDOWN */}
                 <div
                   className={`absolute left-0 top-full pt-4 transition-all duration-300 ${pathwaysOpen
                     ? "opacity-100 translate-y-0 visible"
@@ -169,15 +158,10 @@ const Navbar = () => {
               <NavLink to="/shoovainitiatives" className={navLinkClass}>
                 Initiatives
               </NavLink>
-
-
-
               <NavLink to="/contact" className={navLinkClass}>
                 Contact
               </NavLink>
             </div>
-
-            {/* CTA */}
             <div className="hidden md:block">
               <Link
                 to="/donate"
@@ -186,8 +170,6 @@ const Navbar = () => {
                 Donate
               </Link>
             </div>
-
-            {/* MOBILE BUTTON */}
             <button
               className={`md:hidden ${scrolled ? "text-gray-800" : "text-white"
                 }`}
@@ -218,16 +200,11 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
-      {/* OVERLAY */}
       <div
         onClick={() => setMobileMenuOpen(false)}
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all duration-300 ${mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
       />
-
-
-      {/* MOBILE MENU */}
       <div
         className={`fixed top-0 right-0 h-screen w-[85%] max-w-sm bg-white z-[60] transform transition-transform duration-300 ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
@@ -235,8 +212,6 @@ const Navbar = () => {
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between px-6 h-20 border-b border-gray-100">
             <Link to="/" className="flex items-center gap-3">
-              {/* <img src="/favicon.png" alt="logo" className="h-16" /> */}
-
               <div className="flex flex-col leading-tight">
                 <span className="font-bold text-secondary">
                   SHOOVA INITIATIVE
@@ -255,8 +230,6 @@ const Navbar = () => {
               <X className="w-7 h-7" />
             </button>
           </div>
-
-
           <div className="flex flex-col h-full px-6 py-2">
             <div className="flex items-center gap-1 text-[11px] mt-2 mb-3">
               {languages.map((lang, i) => (
@@ -277,9 +250,7 @@ const Navbar = () => {
                 </span>
               ))}
             </div>
-            {/* NAV LINKS */}
             <div className="space-y-6">
-                {/* SHOOVA PATHWAYS */}
               <div className="border-t border-gray-200 pt-6">
 
                 <button
@@ -357,8 +328,6 @@ const Navbar = () => {
                 Contact
               </Link>
             </div>
-
-            {/* CTA */}
             <div className="mt-auto pt-8">
               <Link
                 to="/donate"

@@ -4,10 +4,6 @@ import { motion } from "framer-motion";
 export default function CampusExperienceSection() {
   return (
     <section className="bg-[#F9FAFB] ">
-
-      {/* =========================
-          SECTION HEADER
-      ========================= */}
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
        <h2 className="text-4xl md:text-5xl font-bold mb-8">
             The Shoova Restoration Campus
@@ -19,10 +15,6 @@ export default function CampusExperienceSection() {
           to transform lives and restore land.
         </p>
       </div>
-
-      {/* =========================
-    LOCATION MAP
-========================= */}
       <div className="max-w-6xl mx-auto px-6 pb-16">
 
         <motion.div
@@ -31,8 +23,6 @@ export default function CampusExperienceSection() {
           transition={{ duration: 0.8 }}
           className="bg-white rounded-2xl shadow-lg overflow-hidden"
         >
-
-          {/* HEADER */}
           <div className="p-6 md:p-8 border-b border-gray-100 text-center">
 
             <p className="text-sm uppercase tracking-widest text-[#D4AF37] mb-2">
@@ -48,8 +38,6 @@ export default function CampusExperienceSection() {
             </p>
 
           </div>
-
-          {/* MAP */}
           <div className="w-full h-[350px] md:h-[400px]">
             <iframe
               title="Shoova Campus Location"
@@ -62,13 +50,7 @@ export default function CampusExperienceSection() {
         </motion.div>
 
       </div>
-
-      {/* =========================
-          THE BRAIN (SPLIT - LEFT TEXT / RIGHT IMAGE)
-      ========================= */}
       <div className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
-
-        {/* TEXT */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -89,8 +71,6 @@ export default function CampusExperienceSection() {
             alongside the Data Command Center powering insight and decision-making.
           </p>
         </motion.div>
-
-        {/* IMAGE */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -104,23 +84,13 @@ export default function CampusExperienceSection() {
           />
         </motion.div>
       </div>
-
-      {/* =========================
-          THE HEART (CINEMATIC)
-      ========================= */}
       <div className="relative min-h-[90vh] flex items-center justify-center text-center">
-
-        {/* Background */}
         <img
           src="/img/engine.jpg"
           alt="Production Workshop"
           className="absolute inset-0 w-full h-full object-cover"
         />
-
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/70"></div>
-
-        {/* Content */}
         <motion.div
           className="relative max-w-3xl px-6"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -143,13 +113,7 @@ export default function CampusExperienceSection() {
           </p>
         </motion.div>
       </div>
-
-      {/* =========================
-          THE SOUL (SPLIT - RIGHT TEXT / LEFT IMAGE)
-      ========================= */}
       <div className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
-
-        {/* IMAGE (LEFT) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -162,8 +126,6 @@ export default function CampusExperienceSection() {
             className="w-full h-full object-cover"
           />
         </motion.div>
-
-        {/* TEXT (RIGHT) */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -185,10 +147,6 @@ export default function CampusExperienceSection() {
           </p>
         </motion.div>
       </div>
-
-      {/* =========================
-          DISCLAIMER
-      ========================= */}
       <div className="text-center text-sm text-white/40 px-6 pb-16">
         Images are representative of the vision for the Shoova Restoration Campus.
       </div>

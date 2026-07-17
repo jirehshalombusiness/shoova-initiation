@@ -84,8 +84,6 @@ const WhyItMatters = () => {
                 </div>
 
             </section>
-
-            {/* HERO HEADER (important addition) */}
             <section className="pt-32  bg-primary/10 text-center px-6">
                 <p className="text-md  font-serif uppercase tracking-[0.8em] text-secondary/80 mb-6">
                     WHY RESTORATION?
@@ -94,8 +92,6 @@ const WhyItMatters = () => {
                          Because restoring land restores lives
                        </h2>
             </section>
-
-           {/* Why This Movement Matters */}
                  <section id="why_this_movement_matters" className="py-24 bg-primary/20">
                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                      {/* Heading */}
@@ -177,10 +173,7 @@ const WhyItMatters = () => {
                  </section>
 
            <section id="impact" className="py-28 bg-white">
-          
                     <div className="max-w-7xl mx-auto px-6 md:px-10">
-          
-                      {/* HEADER */}
                       <div className="text-center mb-20">
           
                         <p className="text-md uppercase tracking-[0.25em] text-secondary/80 font-semibold mb-4">
@@ -198,12 +191,7 @@ Galamsey occurs in more than 120 of Ghana’s 261 districts, impacting millions 
                         </p>
           
                       </div>
-          
-          
-                      {/* IMPACT GRID */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          
-                        {/* LAND */}
                         <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
           
                           <p className="text-xs uppercase tracking-widest text-primary mb-4">
@@ -224,9 +212,6 @@ Galamsey occurs in more than 120 of Ghana’s 261 districts, impacting millions 
                           </p>
           
                         </div>
-          
-          
-                        {/* WATER */}
                         <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
           
                           <p className="text-xs uppercase tracking-widest text-secondary mb-4">
@@ -247,9 +232,6 @@ Galamsey occurs in more than 120 of Ghana’s 261 districts, impacting millions 
                           </p>
           
                         </div>
-          
-          
-                        {/* PEOPLE */}
                         <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
           
                           <p className="text-xs uppercase tracking-widest text-primary mb-4">
@@ -271,15 +253,9 @@ Galamsey occurs in more than 120 of Ghana’s 261 districts, impacting millions 
                         </div>
           
                       </div>
-          
-          
-                      {/* SMALL DISCLAIMER (VERY IMPORTANT) */}
                       <p className="text-center text-sm text-gray-500 mt-10 max-w-xl mx-auto">
                         Projected impact based on full implementation of the Shoova Restoration Campus.
                       </p>
-          
-          
-                      {/* CTA */}
                       <div className="text-center mt-12">
                         <Link
                           to="/donate"

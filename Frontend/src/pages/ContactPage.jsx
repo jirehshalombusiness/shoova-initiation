@@ -121,7 +121,6 @@ const faqs = [
   return (
     <div className="font-body antialiased">
       <>
-        {/* Get In Touch */}
         <section id="get_in_touch" className="pt-32 pb-12 bg-primary/20 text-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-textDark mb-4"> Get in Touch </h1>
@@ -130,13 +129,10 @@ const faqs = [
             </p>
           </div>
         </section>
-        {/* Visit Us */}
         <section id="visit_us" className="py-16 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              {/* Contact Info & Map */}
               <div className="space-y-12">
-                {/* Info Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4"><MapPin className="w-6 h-6" /></div>
@@ -177,7 +173,6 @@ const faqs = [
                     </p>
                   </div>
                 </div>
-                {/* Map Placeholder */}
                 <div className="rounded-2xl overflow-hidden shadow-lg h-64 w-full">
 
                   <iframe
@@ -256,7 +251,6 @@ const faqs = [
             </div>
           </div>
         </section>
-        {/* Frequently Asked Questions */}
         <section id="frequently_asked_questions" className="py-24 bg-white">
 
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -273,8 +267,6 @@ const faqs = [
                   key={index}
                   className="border border-gray-200 rounded-xl overflow-hidden"
                 >
-
-                  {/* Question */}
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="w-full flex justify-between items-center text-left p-6 hover:bg-gray-50 transition"
@@ -290,15 +282,11 @@ const faqs = [
                     />
 
                   </button>
-
-                  {/* Answer */}
                   <div
                     className={`transition-all duration-300 overflow-hidden ${openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}
                   >
-                    <p className="px-6 pb-6 text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }}/>
-                    
-                  
+                    <p className="px-6 pb-6 text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.answer }}/>   
                   </div>
 
                 </div>

@@ -95,7 +95,7 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
     }
 
     try {
-      setLoading(true); // start loading
+      setLoading(true);
       const res = await fetch(
         "https://shoova-initiation-yjg3.onrender.com/create-checkout-session",
         {
@@ -111,8 +111,6 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
       );
 
       const data = await res.json();
-
-      // Redirect user to Stripe checkout
       window.location.href = data.url;
 
     } catch (error) {
@@ -166,8 +164,6 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
   return (
     <div className="font-body antialiased">
       <>
-
-        {/* Make A Difference Today */}
         <section
           id="make_a_difference_today"
           className="relative pt-40 pb-40 text-white"
@@ -190,7 +186,6 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
             </p>
           </div>
         </section>
-        {/* Your Impact */}
         <section id="your_impact" className="-mt-32 pb-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 cursor-default">
             <div
@@ -200,8 +195,6 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                 }`}
             >
               <div className="grid grid-cols-1 md:grid-cols-5">
-
-                {/* Left: Impact Info */}
                 <div className="md:col-span-2 bg-gray-50 p-8 border-r border-gray-100">
                   <h3 className="text-xl font-bold text-textDark mb-6">
                     Your Impact
@@ -282,8 +275,6 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                     </div>
 
                   </div>
-
-                  {/* Secure Notice */}
                   <div className="mt-10 p-4 bg-blue-50 rounded-xl border border-blue-100">
                     <div className="flex items-center gap-2 mb-2">
                       <ShieldCheck className="w-5 h-5 text-blue-600" />
@@ -296,13 +287,8 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                     </p>
                   </div>
                 </div>
-
-                {/* Right: Donation Form */}
                 <div className="md:col-span-3 p-10">
-
-                  {/* Frequency Toggle */}
                   <div className="grid grid-cols-2 gap-3 mb-6">
-
                     <button
                       onClick={() => setDonationType("one-time")}
                       className={`py-3 rounded-md font-bold tracking-wide transition ${donationType === "one-time"
@@ -324,9 +310,6 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                     </button>
 
                   </div>
-
-
-                  {/* Amount Buttons */}
                   <div className="grid grid-cols-3 gap-3 mb-8">
 
                     {[
@@ -351,9 +334,6 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                     ))}
 
                   </div>
-
-
-                  {/* Custom Amount */}
                   <div className="flex items-center border-b-2 border-primary mb-6">
 
                     <span className="text-xl font-bold text-primary pr-2">$</span>
@@ -371,14 +351,6 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                     <span className="text-sm text-primary pl-2">USD</span>
 
                   </div>
-                  {/* Dedicate */}
-                  {/* <button className="w-full py-3 border-2 border-primary rounded-md text-primary font-bold tracking-wide mb-4 hover:bg-primary hover:text-white transition">
-                    DEDICATE THIS GIFT
-                  </button> */}
-
-
-                  {/* Donate */}
-                  {/* Impact Message */}
                   <div className="bg-primary text-white rounded-xl p-5 mb-6 text-center shadow-lg">
                     <p className="text-xs uppercase tracking-wide text-white/80 mb-2">
                       Your Impact
@@ -416,7 +388,6 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
             </div>
           </div>
         </section>
-        {/* Frequently Asked Questions */}
         <section id="frequently_asked_questions" className="py-24 bg-white">
 
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -433,25 +404,18 @@ export const DonatePage = ({ className, children, variant, contentKey, ...props 
                   key={index}
                   className="border border-gray-200 rounded-xl overflow-hidden"
                 >
-
-                  {/* Question */}
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="w-full flex justify-between items-center text-left p-6 hover:bg-gray-50 transition"
                   >
-
                     <span className="font-bold text-lg text-textDark">
                       {faq.question}
                     </span>
-
                     <ChevronDown
                       className={`w-5 h-5 transition-transform duration-300 ${openIndex === index ? "rotate-180 text-primary" : "text-gray-400"
                         }`}
                     />
-
                   </button>
-
-                  {/* Answer */}
                   <div
                     className={`transition-all duration-300 overflow-hidden ${openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}

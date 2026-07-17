@@ -49,9 +49,6 @@ export default function Settings() {
       <h1 className="text-3xl font-bold">
         Shoova Settings
       </h1>
-
-      {/* Organization */}
-
       <div>
 
         <label className="block text-sm font-medium mb-2">
@@ -66,9 +63,6 @@ export default function Settings() {
         />
 
       </div>
-
-      {/* Email */}
-
       <div>
 
         <label className="block text-sm font-medium mb-2">
@@ -83,9 +77,6 @@ export default function Settings() {
         />
 
       </div>
-
-      {/* Phone */}
-
       <div>
 
         <label className="block text-sm font-medium mb-2">
@@ -100,9 +91,6 @@ export default function Settings() {
         />
 
       </div>
-
-      {/* Currency */}
-
       <div>
 
         <label className="block text-sm font-medium mb-2">

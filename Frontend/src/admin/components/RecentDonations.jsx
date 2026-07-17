@@ -9,12 +9,10 @@ export default function RecentDonations() {
       .then(res => res.json())
       .then(data => {
         console.log("Recent donations data:", data);
-
-        // ✅ ensure it's always an array
         if (Array.isArray(data)) {
           setDonations(data);
         } else {
-          setDonations([]); // fallback
+          setDonations([]); 
         }
       })
       .catch(err => {

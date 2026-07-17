@@ -9,7 +9,6 @@ export default function NewsletterPage() {
   const [sending, setSending] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
 
-  /* ================= IMAGE UPLOAD ================= */
   const handleImageUpload = async (file) => {
 
     if (!file) return;
@@ -79,8 +78,6 @@ export default function NewsletterPage() {
       toast.error("Failed to load draft");
     }
   };
-
-  /* ================= SAVE ================= */
   const saveDraft = async (silent = false) => {
     try {
       const res = await fetch("https://shoova-initiation-yjg3.onrender.com/draft/save", {
@@ -107,7 +104,6 @@ export default function NewsletterPage() {
     }
   };
 
-  /* ================= EMAIL TEMPLATE ================= */
   const buildHTML = () => {
     return `
   <div style="margin:0;padding:0;background:#f4f4f4;">
@@ -164,8 +160,6 @@ export default function NewsletterPage() {
   </div>
   `;
   };
-
-  /* ================= SEND ================= */
   const sendNewsletter = async () => {
 
     if (!subject || !message) {
@@ -194,13 +188,9 @@ export default function NewsletterPage() {
       if (data.success) {
 
         toast.success("Newsletter sent successfully 🚀", { id: "send" });
-
-        // ✅ CLEAR DRAFT FROM DB
         await fetch("https://shoova-initiation-yjg3.onrender.com/draft/clear", {
           method: "DELETE"
         });
-
-        // ✅ RESET UI
         setSubject("");
         setMessage("");
         setImageUrl("");
@@ -226,8 +216,6 @@ export default function NewsletterPage() {
       <h1 className="text-3xl font-bold text-gray-800">
         Send Newsletter
       </h1>
-
-      {/* SUBJECT */}
       <div>
         <label className="block text-sm font-medium mb-2">
           Subject
@@ -240,8 +228,6 @@ export default function NewsletterPage() {
           className="w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500"
         />
       </div>
-
-      {/* IMAGE */}
       <div>
         <label className="block text-sm font-medium mb-2">
           Upload Image
@@ -252,7 +238,7 @@ export default function NewsletterPage() {
           accept="image/*"
           onChange={(e) => {
             handleImageUpload(e.target.files[0]);
-            e.target.value = null; // 🔥 reset input
+            e.target.value = null; 
           }}
         />
 
@@ -266,8 +252,6 @@ export default function NewsletterPage() {
           </>
         )}
       </div>
-
-      {/* MESSAGE */}
       <div>
         <label className="block text-sm font-medium mb-2">
           Message
@@ -280,8 +264,6 @@ export default function NewsletterPage() {
           className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-green-500"
         />
       </div>
-
-      {/* BUTTONS */}
       <div className="flex gap-4">
 
         <button
@@ -313,8 +295,6 @@ export default function NewsletterPage() {
         </button>
 
       </div>
-
-      {/* PREVIEW */}
       {showPreview && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
 

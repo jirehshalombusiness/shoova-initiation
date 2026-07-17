@@ -32,10 +32,6 @@ export default function Analytics() {
     );
   }
 
-  /* =============================
-     MONTH CHART DATA
-  ============================= */
-
   const monthNames = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
@@ -45,19 +41,11 @@ export default function Analytics() {
     month: `${monthNames[m._id?.month - 1] || ""} ${m._id?.year || ""}`,
     total: m.total
   }));
-
-  /* =============================
-     DONATION TYPE DATA
-  ============================= */
-
   const donationTypeData = (data.donationTypes || []).map(t => ({
     name: t._id === "subscription" ? "Monthly" : "One-Time",
     value: t.total
   }));
 
-  /* =============================
-     TOP DONORS
-  ============================= */
 
   const topDonors = data.topDonors || [];
 
@@ -65,16 +53,9 @@ export default function Analytics() {
 
   return (
     <div className="space-y-12">
-
-      {/* PAGE TITLE */}
       <h1 className="text-3xl font-bold text-gray-800">
         Fundraising Analytics
       </h1>
-
-      {/* =============================
-          FUNDRAISING GROWTH
-      ============================= */}
-
       <div className="bg-white p-6 rounded-xl shadow border">
 
         <h2 className="text-xl font-semibold mb-6">
@@ -104,10 +85,6 @@ export default function Analytics() {
         )}
 
       </div>
-
-      {/* =============================
-          DONATION TYPES
-      ============================= */}
 
       <div className="bg-white p-6 rounded-xl shadow border">
 
@@ -148,10 +125,6 @@ export default function Analytics() {
         )}
 
       </div>
-
-      {/* =============================
-          TOP DONORS
-      ============================= */}
 
       <div className="bg-white p-6 rounded-xl shadow border">
 

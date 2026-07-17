@@ -10,7 +10,6 @@ export const sendContactEmail = async (req, res) => {
     return res.status(400).json({ success: false, message: "Missing fields" });
   }
 
-  // ✅ SANITIZE INPUTS
   const safeFirstName = sanitizeHtml(firstName, { allowedTags: [], allowedAttributes: {} });
   const safeLastName = sanitizeHtml(lastName || "", { allowedTags: [], allowedAttributes: {} });
   const safeEmail = sanitizeHtml(email, { allowedTags: [], allowedAttributes: {} });
@@ -19,7 +18,7 @@ export const sendContactEmail = async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: "Shoova Initiative <noreply@email.shoovainitiative.org>", // ✅ better sender
+      from: "Shoova Initiative <noreply@email.shoovainitiative.org>",
       to: process.env.CONTACT_RECEIVER_EMAIL || "info@shoovainitiative.org", 
 
       reply_to: safeEmail || "info@shoovainitiative.org",

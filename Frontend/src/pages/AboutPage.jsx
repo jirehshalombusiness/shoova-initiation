@@ -169,13 +169,10 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
   return (
     <div className="font-body antialiased">
       <>
-        {/* About Hero */}
         <section
           className="relative h-screen bg-fixed bg-center bg-cover flex items-center justify-center text-center"
           style={{ backgroundImage: "url('/img/dryland.jpg')" }}
         >
-
-          {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/50"></div>
 
           <div className="relative z-10 max-w-4xl px-6 text-white">
@@ -223,8 +220,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
           viewport={{ once: true, amount: 0.2 }}
         >
           <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-
-            {/* LEFT STORY */}
             <div>
               <motion.h2
                 variants={fadeUp}
@@ -245,8 +240,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 <li>Solar and sustainable technology</li>
                 <li>Ethical leadership training</li>
               </ul>
-
-              {/* CTA Buttons */}
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
                 <Link
@@ -265,12 +258,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
               </div>
             </div>
-
-
-            {/* RIGHT VISUAL STORY */}
             <div className="relative w-full max-w-lg mx-auto h-[420px]">
-
-              {/* Crisis Image */}
               <div className="absolute top-0 left-0 w-[85%] z-10">
                 <img
                   src="/img/galamsey.jpg"
@@ -282,8 +270,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                   CRISIS
                 </span>
               </div>
-
-              {/* Restoration Image */}
               <div className="absolute bottom-0 right-0 w-[75%] z-20">
                 <img
                   src="/img/community.jpg"
@@ -304,8 +290,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
         <section id="mission_vision" className="pt-40 pb-24 bg-white">
 
           <div className="max-w-6xl mx-auto px-6 text-center">
-
-            {/* Mission */}
             <div className="mb-20">
 
               <h2 className="text-5xl md:text-6xl font-heading font-bold mb-8 text-textDark">
@@ -320,10 +304,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
               </p>
 
             </div>
-
-
-            {/* Vision */}
-
             <div>
 
               <h2 className="text-5xl md:text-6xl font-heading font-bold mb-8 text-textDark">
@@ -342,18 +322,13 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
           </div>
 
         </section>
-        {/* How It Started */}
         <section
           id="how_it_started"
           ref={statsRef}
           className="py-24 bg-background"
         >
-
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-              {/* Image */}
               <div className="relative">
 
                 <div className="absolute bg-primary/10 rounded-3xl transform -rotate-2 -z-10 w-full h-full"></div>
@@ -365,9 +340,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 />
 
               </div>
-
-
-              {/* Story */}
               <div>
 
                 <h2 className="text-4xl font-heading font-bold text-textDark mb-6">
@@ -396,20 +368,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
 
                 </p>
-
-
-                {/* Animated Stats */}
                 <div className="flex gap-10 mt-10">
-
-                  {/* <div>
-                    <div className="text-5xl font-heading font-bold text-primary mb-1">
-                      {years}+
-                    </div>
-                    <p className="text-sm text-gray-500">
-                      Years of vision and planning
-                    </p>
-                  </div> */}
-
                   <div>
                     <div className="text-5xl font-heading font-bold text-primary mb-1">
                       {districts}+
@@ -429,13 +388,9 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
           </div>
 
         </section>
-
-        {/* Crisis & Solution */}
         <section id="crisis_solution" className="py-28 bg-white">
 
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-start">
-
-            {/* PROBLEM */}
             <div>
 
               <p className="text-red-600 font-bold tracking-widest uppercase text-sm mb-4">
@@ -460,8 +415,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 the youth forced into these mines are not the problem — they are
                 the untapped solution waiting for the right opportunity.
               </p>
-
-              {/* Image */}
               <div className="mt-10">
                 <img
                   src="/img/galamsey.jpg"
@@ -471,9 +424,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
               </div>
 
             </div>
-
-
-            {/* SOLUTION */}
             <div>
 
               <p className="text-green-600 font-bold tracking-widest uppercase text-sm mb-4">
@@ -490,8 +440,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 while healing the environment. Instead of extracting wealth
                 from the land, we train the next generation to restore it.
               </p>
-
-              {/* Tracks */}
               <div className="space-y-8">
 
                 <div>
@@ -530,8 +478,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 </div>
 
               </div>
-
-              {/* Image */}
               <div className="mt-10">
                 <img
                   src="/img/solar.jpg"
@@ -545,9 +491,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
           </div>
 
         </section>
-
-
-        {/* Meet Our Leadership */}
         <section id="meet_our_leadership" className="py-24 bg-white">
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -600,7 +543,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
           </div>
 
         </section>
-        {/* Frequently Asked Questions */}
         <section id="frequently_asked_questions" className="py-24 bg-white">
 
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -617,8 +559,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                   key={index}
                   className="border border-gray-200 rounded-xl overflow-hidden"
                 >
-
-                  {/* Question */}
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="w-full flex justify-between items-center text-left p-6 hover:bg-gray-50 transition"
@@ -634,8 +574,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                     />
 
                   </button>
-
-                  {/* Answer */}
                   <div
                     className={`transition-all duration-300 overflow-hidden ${openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}
@@ -652,7 +590,6 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
           </div>
 
         </section>
-        {/* Join the Restoration */}
         <section className="py-24 bg-primary text-white text-center">
 
           <div className="max-w-3xl mx-auto px-6">

@@ -22,8 +22,6 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
       if (!videoRef.current) return;
 
       const scrollY = window.scrollY;
-
-      // Move video slower than scroll → parallax effect
       videoRef.current.style.transform = `translateY(${scrollY * 0.3}px) scale(1.1)`;
     };
 
@@ -33,13 +31,10 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
   return (
     <div className="font-body antialiased">
       <>
-        {/* Our Programs */}
         <section
           id="our_programs"
           className="relative pt-40 pb-24 text-white overflow-hidden"
         >
-
-          {/* 🔥 BACKGROUND IMAGE */}
           <div className="absolute inset-0">
             <img
               src="/img/lands.jpg"
@@ -47,34 +42,21 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
               className="w-full h-full object-cover scale-105"
             />
           </div>
-
-          {/* 🌑 DARK OVERLAY (DEPTH) */}
           <div className="absolute inset-0 bg-black/70"></div>
-
-          {/* 🎨 GRADIENT OVERLAY (PREMIUM LOOK) */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-primaryDark/90"></div>
 
-          {/* ✨ CONTENT */}
           <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-
-            {/* SMALL LABEL */}
             <p className="text-secondary font-semibold tracking-[0.3em] uppercase text-sm mb-6">
               Our Work
             </p>
-
-            {/* MAIN HEADLINE */}
             <h1 className="text-5xl md:text-6xl font-heading font-bold leading-tight mb-6">
               The Restoration Model
             </h1>
-
-            {/* DESCRIPTION */}
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
               We are not running programs. We are building a system that transforms
               exploitation into restoration, equipping a generation to heal the land,
               rebuild communities, and lead Ghana into a sustainable future.
             </p>
-
-            {/* 🔥 TAGLINE */}
             <p className="mt-8 text-secondary font-semibold text-lg">
               From exploitation to restoration.
             </p>
@@ -84,8 +66,6 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
         <section id="restoration_model" className="py-24 bg-white overflow-x-hidden">
 
           <div className="max-w-7xl mx-auto px-6 space-y-28">
-
-            {/* ================= RECLAIM ================= */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
               <div className="order-2 lg:order-1">
@@ -129,8 +109,6 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
               </div>
             </div>
 
-
-            {/* ================= TRAIN ================= */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
               <div className="relative">
@@ -174,8 +152,6 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
               </div>
             </div>
 
-
-            {/* ================= RESTORE ================= */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
               <div className="order-2 lg:order-1">
@@ -226,8 +202,6 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
         <section id="impact" className="py-28 bg-white">
 
           <div className="max-w-7xl mx-auto px-6 md:px-10">
-
-            {/* HEADER */}
             <div className="text-center mb-20">
 
               <p className="text-md uppercase tracking-[0.25em] text-secondary/80 font-semibold mb-4">
@@ -244,12 +218,7 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
               </p>
 
             </div>
-
-
-            {/* IMPACT GRID */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-              {/* LAND */}
               <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
 
                 <p className="text-xs uppercase tracking-widest text-primary mb-4">
@@ -270,9 +239,6 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
                 </p>
 
               </div>
-
-
-              {/* WATER */}
               <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
 
                 <p className="text-xs uppercase tracking-widest text-secondary mb-4">
@@ -293,9 +259,6 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
                 </p>
 
               </div>
-
-
-              {/* PEOPLE */}
               <div className="bg-gray-50 rounded-2xl p-10 hover:shadow-xl transition">
 
                 <p className="text-xs uppercase tracking-widest text-primary mb-4">
@@ -317,15 +280,9 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
               </div>
 
             </div>
-
-
-            {/* SMALL DISCLAIMER (VERY IMPORTANT) */}
             <p className="text-center text-sm text-gray-500 mt-10 max-w-xl mx-auto">
               Projected impact based on full implementation of the Shoova Restoration Campus.
             </p>
-
-
-            {/* CTA */}
             <div className="text-center mt-12">
               <Link
                 to="/donate"
@@ -339,12 +296,9 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
           </div>
 
         </section>
-        {/* ================= CAMPUS ================= */}
         <section className="py-24 bg-gray-50">
 
           <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-
-            {/* IMAGE */}
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/10 rounded-3xl transform -rotate-3 -z-10"></div>
               <img
@@ -353,8 +307,6 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
                 className="rounded-2xl shadow-xl w-full h-[420px] object-cover"
               />
             </div>
-
-            {/* CONTENT */}
             <div>
 
               <p className="text-secondary font-semibold tracking-wider uppercase text-sm mb-4">
@@ -392,8 +344,6 @@ export const InitiativesPage = ({ className, children, variant, contentKey, ...p
                   Student housing & community infrastructure
                 </li>
               </ul>
-
-              {/* CTA */}
               <button className="px-8 py-4 bg-secondary text-white rounded-full font-semibold hover:bg-secondaryHover transition shadow-lg">
                 Build the Campus With Us
               </button>

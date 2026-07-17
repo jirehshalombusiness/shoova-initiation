@@ -28,7 +28,7 @@ router.post("/send", async (req, res) => {
 
         } catch (err) {
           console.error("❌ Failed for:", sub.email, err.message);
-          throw err; // IMPORTANT
+          throw err; 
         }
       })
     );
@@ -36,7 +36,7 @@ router.post("/send", async (req, res) => {
     res.json({ success: true });
 
   } catch (err) {
-    console.error("🔥 NEWSLETTER ERROR:", err);
+    console.error(" NEWSLETTER ERROR:", err);
     res.status(500).json({ success: false, error: "Newsletter failed" });
   }
 });

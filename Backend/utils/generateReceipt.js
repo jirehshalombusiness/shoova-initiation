@@ -20,26 +20,19 @@ export default function generateReceipt(donation) {
 
     doc.pipe(stream);
 
-    /* =========================
-   HEADER WITH LOGO
-========================= */
-
 const logoPath = path.join(process.cwd(), "assets", "logotrans.png");
 
-// Logo
 if (fs.existsSync(logoPath)) {
   doc.image(logoPath, 50, 45, { width: 110 });
 }
 
-// Title
 doc
   .fontSize(16)
   .text("OFFICIAL DONATION RECEIPT", 180, 50);
 
-// Space below header
 doc.moveDown(2);
 
-// Organization info
+
 doc
   .fontSize(12)
   .text("Shoova Initiative Corporation")
@@ -61,9 +54,6 @@ doc
 
     doc.moveDown();
 
-    /* =========================
-       DONOR INFO
-    ========================= */
     doc.fontSize(12).text("DONOR INFORMATION", { underline: true });
 
     doc.moveDown(0.5);
@@ -79,9 +69,7 @@ doc
 
     doc.moveDown();
 
-    /* =========================
-       CONTRIBUTION DETAILS
-    ========================= */
+
     doc.fontSize(12).text("CONTRIBUTION DETAILS", { underline: true });
 
     doc.moveDown(0.5);
@@ -96,9 +84,6 @@ doc
 
     doc.moveDown();
 
-    /* =========================
-       TAX STATUS
-    ========================= */
     doc.fontSize(12).text("TAX-EXEMPT STATUS", { underline: true });
 
     doc.moveDown(0.5);
@@ -109,9 +94,7 @@ doc
 
     doc.moveDown();
 
-    /* =========================
-       IRS DISCLOSURE
-    ========================= */
+
     doc.fontSize(12).text("IRS DISCLOSURE", { underline: true });
 
     doc.moveDown(0.5);
@@ -122,9 +105,6 @@ doc
 
     doc.moveDown();
 
-    /* =========================
-       MESSAGE
-    ========================= */
     doc.fontSize(12).text("THANK YOU FOR SAYING 'RESTORE!'", {
       underline: true,
     });
@@ -137,9 +117,6 @@ doc
 
     doc.moveDown(2);
 
-    /* =========================
-       SIGNATURE
-    ========================= */
     const signaturePath = path.join(process.cwd(), "assets", "signature.png");
 
     doc.text("Authorized Signature:");
@@ -162,7 +139,6 @@ doc
 
     doc.end();
 
-    // 🔥 CRITICAL: wait for file to finish writing
     stream.on("finish", () => resolve(filePath));
     stream.on("error", reject);
   });

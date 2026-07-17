@@ -19,11 +19,8 @@ export default function AdminLayout() {
   };
   return (
     <div className="min-h-screen flex bg-gray-100">
-
-      {/* ================= SIDEBAR ================= */}
       <aside className="w-72 bg-[#0f172a] text-white flex flex-col">
 
-        {/* Logo */}
         <div className="px-8 py-6 border-b border-white/10">
           <h1 className="text-2xl font-bold tracking-wide">
             Shoova-Initiative
@@ -32,8 +29,6 @@ export default function AdminLayout() {
             Admin Dashboard
           </p>
         </div>
-
-        {/* Navigation */}
         <nav className="flex-1 px-6 py-8 space-y-2">
 
           <Link
@@ -82,8 +77,6 @@ export default function AdminLayout() {
           </Link>
 
         </nav>
-
-        {/* Logout */}
         <div className="p-6 border-t border-white/10">
           <button
             onClick={handleLogout}
@@ -94,19 +87,13 @@ export default function AdminLayout() {
         </div>
 
       </aside>
-
-      {/* ================= MAIN AREA ================= */}
       <div className="flex-1 flex flex-col">
-
-        {/* TOP BAR */}
         <header className="bg-white border-b px-10 py-4 flex justify-between items-center">
 
           <h2 className="text-xl font-semibold text-gray-800">
             Shoova Restoration Initiative
             Admin Console
           </h2>
-
-          {/* Admin Info */}
           <div className="flex cursor-default items-center gap-4">
 
             <div className="text-right">
@@ -127,8 +114,6 @@ export default function AdminLayout() {
           </div>
 
         </header>
-
-        {/* PAGE CONTENT */}
         <main className="flex-1 p-10 overflow-y-auto">
           <Outlet />
         </main>

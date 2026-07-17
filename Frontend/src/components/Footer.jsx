@@ -30,11 +30,7 @@ const Footer = () => {
     <footer className="bg-gradient-to-r from-[#123a5a] to-[#0b2a45] text-white pt-2">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
-        {/* ================= GRID ================= */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 pb-20 items-start">
-
-          {/* ================= ABOUT ================= */}
           <div className="max-w-xs">
 
             <div className="flex items-center gap-3 mb-5">
@@ -56,8 +52,6 @@ const Footer = () => {
             <p className="text-white/50 text-sm italic mb-6">
               From scars to strength.
             </p>
-
-            {/* Social Icons */}
             <div className="flex gap-2">
               {socials.map((item, i) => {
                 const Icon = item.icon;
@@ -75,9 +69,6 @@ const Footer = () => {
               })}
             </div>
           </div>
-
-
-          {/* ================= CONTACT ================= */}
           <div className="max-w-xs">
 
             <h4 className="text-md font-semibold uppercase tracking-[0.2em] text-white mb-5">
@@ -103,17 +94,10 @@ const Footer = () => {
                 <p className="text-white/70">Pantang Village Junction, Greater Accra Region, Ghana.</p>
                 <p>+233 24 726 4516</p>
               </div>
-
-
             </div>
 
           </div>
-
-
-          {/* ================= TRUST ================= */}
           <div className="max-w-xs">
-            {/* LEGAL BLOCK */}
-
             <h4 className="text-md font-semibold uppercase tracking-[0.2em] text-white mb-5">
               Trust & Transparency
             </h4>
@@ -140,9 +124,6 @@ const Footer = () => {
 
         </div>
       </div>
-
-
-      {/* ================= BOTTOM BAR ================= */}
       <div className="bg-black/30 py-5 border-t border-white/10">
 
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-2 text-white/50 text-sm">

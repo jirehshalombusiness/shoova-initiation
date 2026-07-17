@@ -11,19 +11,13 @@ export const sendReceipt = async ({
   address = "N/A"
 }) => {
   try {
-    /* =========================
-    VALIDATION
-    ========================= */
+
     if (!email || !amount || !donationId) {
       throw new Error("Missing required donation fields");
     }
    
-
     const firstName = name?.split(" ")[0] || "Supporter";
 
-    /* =========================
-       GENERATE RECEIPT PDF (WAIT!)
-    ========================= */
     const receiptPath = await generateReceipt({
       _id: donationId,
       email,
@@ -40,9 +34,6 @@ export const sendReceipt = async ({
 
     const formattedAmount = Number(amount).toLocaleString();
 
-    /* =========================
-       SEND EMAIL (RESEND)
-    ========================= */
     await resend.emails.send({
       from: "Shoova Initiative <noreply@email.shoovainitiative.org>",
       to: email,

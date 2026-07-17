@@ -85,14 +85,10 @@ export default function StoryPage() {
   // };
   return (
     <div className="font-body antialiased bg-white text-gray-900">
-
-      {/* ================= HERO ================= */}
       <section
         ref={ref}
         className="relative h-screen w-full flex items-center overflow-hidden"
       >
-
-        {/* BG IMAGE (PARALLAX) */}
         <motion.div
           style={{ translateY: y }}
           className="absolute inset-0"
@@ -103,12 +99,8 @@ export default function StoryPage() {
             className="w-full h-[120%] object-cover"
           />
         </motion.div>
-
-        {/* OVERLAY */}
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent"></div>
-
-        {/* CONTENT */}
         <motion.div
           style={{ opacity }}
           className="relative z-10 max-w-6xl mx-auto px-6"
@@ -126,8 +118,6 @@ export default function StoryPage() {
 
           </div>
         </motion.div>
-
-        {/* SCROLL INDICATOR */}
         <div className="absolute bottom-8 left-10 text-white/70 animate-bounce">
           ↓
         </div>
@@ -136,18 +126,12 @@ export default function StoryPage() {
       <section className="bg-[#F9FAFB] py-32 px-6">
 
         <div className="max-w-4xl mx-auto text-center">
-
-          {/* LABEL */}
           <p className="text-sm tracking-[0.3em] uppercase text-gray-500 mb-6">
             From the Founders
           </p>
-
-          {/* TITLE */}
           <h2 className="text-2xl md:text-2xl font-bold text-gray-900 mb-12 leading-tight">
             Welcome to the Shoova Initiative.
           </h2>
-
-          {/* BODY */}
           <div className="text-gray-700 text-base md:text-lg leading-7 md:leading-relaxed space-y-5 text-left md:text-justify max-w-none">
             <p>
               We are grateful for all the blessings, the gift of life, loving family, great friends, amazing profession, and
@@ -190,8 +174,6 @@ export default function StoryPage() {
             </p>
 
           </div>
-
-          {/* SIGNATURE */}
           <div className="mt-16 text-center">
 
             <p className="text-gray-500 mb-6">With gratitude and hope,</p>
@@ -225,8 +207,6 @@ export default function StoryPage() {
             polluted rivers, and communities with limited alternatives.
             This is the reality we are responding to.
           </p>
-
-          {/* VIDEO */}
           <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl">
             <iframe
               className="w-full h-full"
@@ -241,34 +221,23 @@ export default function StoryPage() {
         </div>
 
       </section>
-      {/* ================= PARTNERSHIP CTA ================= */}
       <section className="py-32 bg-white text-center">
 
         <div className="max-w-4xl mx-auto px-6">
-
-          {/* LABEL */}
           <p className="text-sm uppercase tracking-widest text-secondary font-semibold mb-4">
             Institutional Partnership
           </p>
-
-          {/* HEADLINE */}
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Build the Blueprint With Us
           </h2>
-
-          {/* BODY */}
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
             The Shoova Restoration Campus is a scalable model for vocational excellence
             and environmental repair. We are inviting partners to help build a world-class
             institution that transforms both land and lives.
           </p>
-
-          {/* HIGHLIGHT */}
           <p className="text-lg font-semibold text-gray-900 mb-10">
             Naming-right opportunities are available for labs, workshops, and student facilities.
           </p>
-
-          {/* CTA */}
           <Link to='/contact' className="px-8 py-4 bg-secondary text-white font-semibold rounded-full hover:bg-secondaryHover transition">
             Contact Our Board
           </Link>
@@ -276,16 +245,10 @@ export default function StoryPage() {
         </div>
 
       </section>
-
-      {/* ================= TRANSFORMATION SECTION ================= */}
       <section className="py-32 bg-gray-50 relative overflow-hidden">
-
-        {/* 🔷 BACKGROUND SHAPE */}
         <div className="absolute right-0 top-0 w-1/2 h-full bg-secondary/5 -skew-x-12 origin-top-right"></div>
 
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center relative z-10">
-
-          {/* ================= IMAGE SIDE ================= */}
           <div className="relative">
 
             <img
@@ -293,27 +256,17 @@ export default function StoryPage() {
               alt="Land restoration"
               className="w-full h-[450px] md:h-[600px] object-cover rounded-3xl shadow-2xl"
             />
-
-            {/* subtle overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-3xl"></div>
 
           </div>
-
-
-          {/* ================= TEXT SIDE ================= */}
           <div className="max-w-xl">
-
-            {/* LABEL */}
             <p className="text-sm uppercase tracking-widest text-secondary font-semibold mb-4">
               The Turning Point
             </p>
-
-            {/* HEADING */}
             <h2 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
               The Land Can Heal
             </h2>
 
-            {/* BODY */}
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               What has been destroyed is not beyond repair.
               With the right skills, the right tools, and the right people,
@@ -324,8 +277,6 @@ export default function StoryPage() {
               This is where Shoova begins turning damaged land into opportunity,
               and lost potential into purpose.
             </p>
-
-            {/* EMPHASIS LINE */}
             <p className="text-xl font-semibold text-gray-900">
               From extraction to restoration.
             </p>
@@ -335,8 +286,6 @@ export default function StoryPage() {
         </div>
 
       </section>
-
-      {/* ================= TURN ================= */}
       <section className="py-40">
         <div className="max-w-3xl mx-auto px-6">
 
@@ -424,12 +373,9 @@ export default function StoryPage() {
         </div>
 
       </section> */}
-      {/* ================= HOW YOU CAN BE PART OF RESTORATION ================= */}
       <section className="py-28 bg-[#f4f7f8]">
 
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
-
-          {/* ================= LEFT IMAGES ================= */}
           <div className="space-y-6">
 
             <div>
@@ -455,12 +401,7 @@ export default function StoryPage() {
             </div>
 
           </div>
-
-
-          {/* ================= RIGHT CONTENT ================= */}
           <div className="max-w-xl">
-
-            {/* BLOCK 1 */}
             <div className="mb-10">
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">
@@ -473,7 +414,6 @@ export default function StoryPage() {
               </ul>
 
             </div>
-            {/* BLOCK 2 */}
             <div className="mb-10">
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">

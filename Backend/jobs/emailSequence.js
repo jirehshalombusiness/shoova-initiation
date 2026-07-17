@@ -5,7 +5,7 @@ import { sendEngagementEmail } from "../utils/sendEngagementEmail.js";
 
 cron.schedule("0 9 * * *", async () => {
 
-  console.log("🕘 Running donor email sequence job...");
+  console.log("Running donor email sequence job...");
 
   const donations = await Donation.find({
     emailSequenceStage: { $in: [1, 2] }
@@ -20,8 +20,6 @@ cron.schedule("0 9 * * *", async () => {
     );
 
     try {
-
-      // ✅ DAY 3 EMAIL
       if (donation.emailSequenceStage === 1 && daysSinceDonation >= 3) {
 
         await sendHumanConnectionEmail(donation.name, donation.email);
@@ -33,8 +31,6 @@ cron.schedule("0 9 * * *", async () => {
 
         console.log("📧 Day 3 email sent:", donation.email);
       }
-
-      // ✅ DAY 7 EMAIL
       else if (donation.emailSequenceStage === 2 && daysSinceDonation >= 7) {
 
         await sendEngagementEmail(donation.name, donation.email);

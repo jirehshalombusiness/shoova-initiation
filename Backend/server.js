@@ -104,14 +104,6 @@ const startServer = async () => {
 
 startServer();
 
-
-
-
-
-/* ==============================
-   NORMAL JSON ROUTES
-============================== */
-
 app.post("/create-paypal-order", async (req, res) => {
   try {
     const { amount } = req.body;
@@ -119,7 +111,7 @@ app.post("/create-paypal-order", async (req, res) => {
     if (!amount || isNaN(amount) || amount < 1) {
       return res.status(400).json({ error: "Invalid amount" });
     }
-    console.log("💰 PayPal amount:", amount);
+    console.log(" PayPal amount:", amount);
 
     const request = new paypal.orders.OrdersCreateRequest();
 
@@ -174,7 +166,6 @@ app.post("/capture-paypal-order", async (req, res) => {
       return res.status(400).json({ error: "No email from PayPal" });
     }
 
-    // ✅ Prevent duplicates
     const existing = await Donation.findOne({
       paypalOrderId: orderID
     });
@@ -184,7 +175,6 @@ app.post("/capture-paypal-order", async (req, res) => {
       return res.json({ success: true });
     }
 
-    // ✅ Save donation
     const savedDonation = await Donation.create({
       donationNumber: await generateDonationNumber(),
 
@@ -206,9 +196,6 @@ app.post("/capture-paypal-order", async (req, res) => {
 
     console.log("💾 PayPal donation saved:", email);
 
-    /* =============================
-       IMMEDIATE EMAIL
-    ============================= */
     try {
       const alreadySent = await Donation.exists({
         email,
@@ -228,16 +215,13 @@ app.post("/capture-paypal-order", async (req, res) => {
           { immediateEmailSent: true }
         );
 
-        console.log("🔥 Immediate email sent (PayPal)");
+        console.log(" Immediate email sent (PayPal)");
       }
 
     } catch (err) {
       console.error("❌ Immediate email error:", err);
     }
 
-    /* =============================
-       RECEIPT
-    ============================= */
     try {
       await sendReceipt({
         email,
@@ -284,9 +268,6 @@ app.get("/paypal-order/:orderID", async (req, res) => {
   }
 });
 
-/* ==============================
-   CREATE CHECKOUT SESSION
-============================== */
 
 app.post("/create-checkout-session", async (req, res) => {
   try {
@@ -630,12 +611,10 @@ app.post("/admin/verify-otp", async (req, res) => {
       return res.status(400).json({ message: "Invalid OTP" });
     }
 
-    // 🔥 CLEAR OTP
     admin.otp = undefined;
     admin.otpExpire = undefined;
     await admin.save();
 
-    // 🔥 NOW generate token
     const token = jwt.sign(
       { adminId: admin._id },
       process.env.JWT_SECRET,
@@ -659,12 +638,11 @@ app.post("/admin/resend-otp", async (req, res) => {
       return res.status(404).json({ message: "Admin not found" });
     }
 
-    // 🔥 Optional: prevent spam (wait 30s before resend)
     if (admin.otpExpire && admin.otpExpire > Date.now() + 4.5 * 60 * 1000) {
       return res.status(429).json({ message: "Please wait before requesting another OTP" });
     }
 
-    // 🔥 Generate new OTP
+
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
 
     admin.otp = await bcrypt.hash(otp, 10);
@@ -672,7 +650,6 @@ app.post("/admin/resend-otp", async (req, res) => {
 
     await admin.save();
 
-    // 🔥 Send email
     await sendEmail(
       admin.email,
       "Shoova Admin OTP (Resent)",
@@ -696,26 +673,23 @@ app.post("/admin/forgot-password", async (req, res) => {
 
     const admin = await Admin.findOne({ email });
 
-    // 🔐 Always return same response (prevents email guessing)
     if (!admin) {
       return res.json({ message: "If email exists, reset link sent" });
     }
 
-    // 🔥 Invalidate previous tokens
     admin.resetToken = undefined;
     admin.resetTokenExpire = undefined;
 
-    // 🔥 Generate new token
     const token = crypto.randomBytes(32).toString("hex");
 
     admin.resetToken = token;
-    admin.resetTokenExpire = Date.now() + 1000 * 60 * 15; // 15 mins
+    admin.resetTokenExpire = Date.now() + 1000 * 60 * 15; 
 
     await admin.save();
 
     const resetLink = `${process.env.FRONTEND_URL}/reset-password/${token}`;
 
-    // ✅ Send email using your existing setup
+    
     await sendEmail(
       admin.email,
       "Reset your admin password",
@@ -773,7 +747,6 @@ app.get("/admin/receipt/:id", verifyAdmin, async (req, res) => {
   try {
     const id = req.params.id;
 
-    // 🔥 ALWAYS use donationNumber
     const donation = await Donation.findOne({
       donationNumber: id
     });
@@ -886,10 +859,6 @@ app.post(
       console.log("⚠️ Webhook signature verification failed:", err.message);
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
-
-    /* =============================
-       ONLY HANDLE CHECKOUT COMPLETION
-    ============================= */
     if (event.type !== "checkout.session.completed") {
       return res.json({ received: true });
     }
@@ -897,10 +866,6 @@ app.post(
     const session = event.data.object;
 
     try {
-
-      /* =============================
-         PREVENT DUPLICATES
-      ============================= */
       const existingDonation = await Donation.findOne({
         stripeSessionId: session.id
       }).lean();
@@ -909,10 +874,6 @@ app.post(
         console.log("⚠️ Duplicate webhook ignored:", session.id);
         return res.json({ received: true });
       }
-
-      /* =============================
-         GET EMAIL (REQUIRED)
-      ============================= */
       const donorEmailRaw = session.customer_details?.email;
 
       if (!donorEmailRaw) {
@@ -922,9 +883,7 @@ app.post(
 
       const donorEmail = donorEmailRaw.toLowerCase().trim();
 
-      /* =============================
-         BUILD ADDRESS
-      ============================= */
+  
       const addressObj = session.customer_details?.address;
 
       const fullAddress = addressObj
@@ -937,10 +896,6 @@ app.post(
           addressObj.country
         ].filter(Boolean).join(", ")
         : "N/A";
-
-      /* =============================
-         CREATE DONATION
-      ============================= */
       const donationNumber = await generateDonationNumber();
 
       const savedDonation = await Donation.create({
@@ -965,9 +920,6 @@ app.post(
 
       console.log("💾 Donation saved:", donorEmail);
 
-      /* =============================
-         IMMEDIATE EMAIL (FIRST-TIME ONLY)
-      ============================= */
       try {
 
         const alreadySent = await Donation.exists({
@@ -977,7 +929,7 @@ app.post(
 
         if (!alreadySent) {
 
-          console.log("🔥 Sending first-time donor email:", donorEmail);
+          console.log(" Sending first-time donor email:", donorEmail);
 
           await sendImmediateImpactEmail(
             savedDonation.name,
@@ -992,19 +944,15 @@ app.post(
             { immediateEmailSent: true }
           );
 
-          console.log("✅ Immediate email marked for donor");
+          console.log(" Immediate email marked for donor");
 
         } else {
-          console.log("ℹ️ Already sent immediate email before");
+          console.log("Already sent immediate email before");
         }
 
       } catch (err) {
         console.error("❌ Immediate email error:", err);
       }
-
-      /* =============================
-         RECEIPT EMAIL (ALWAYS)
-      ============================= */
       try {
 
         await sendReceipt({

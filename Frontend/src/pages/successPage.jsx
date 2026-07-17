@@ -18,8 +18,6 @@ export default function SuccessPage() {
   const orderID = query.get("orderID");
 
   useEffect(() => {
-
-    // 🔵 STRIPE VERIFY
     const verifyStripe = async () => {
       try {
         const res = await fetch(
@@ -41,8 +39,6 @@ export default function SuccessPage() {
         setLoading(false);
       }
     };
-
-    // 🟡 PAYPAL VERIFY
    const verifyPayPal = async () => {
   try {
     const res = await fetch(
@@ -64,8 +60,6 @@ export default function SuccessPage() {
 
   } catch (error) {
     console.error("PayPal error:", error);
-
-    // fallback so UI doesn't break
     setVerified(true);
     setDonation({ amount: "Paid via PayPal" });
 
@@ -74,7 +68,6 @@ export default function SuccessPage() {
   }
 };
 
-    // 🔥 FLOW CONTROL
     if (sessionId) {
       verifyStripe();
     } else if (source === "paypal" && orderID) {
@@ -84,8 +77,6 @@ export default function SuccessPage() {
     }
 
   }, [sessionId, source, orderID]);
-
-  /* ================= UI ================= */
 
   if (loading) {
     return (

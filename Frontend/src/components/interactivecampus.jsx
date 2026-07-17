@@ -14,11 +14,10 @@ export default function InteractiveCampusSection() {
   const [scale, setScale] = useState(1);
   const [index, setIndex] = useState(0);
 
-  // 🔥 AUTO SLIDE ENGINE
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 5000); // 5s per slide (premium pacing)
+    }, 5000); 
 
     return () => clearInterval(interval);
   }, []);
@@ -26,8 +25,6 @@ export default function InteractiveCampusSection() {
   return (
     <section className="bg-white py-28">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-
-        {/* 🧠 LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 1 }}
@@ -58,16 +55,12 @@ export default function InteractiveCampusSection() {
             A space built for making, repairing, and sustaining long-term human progress.
           </p>
         </motion.div>
-
-        {/* 🏗️ RIGHT: AUTO SLIDING CAROUSEL */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9 }}
           className="relative h-[520px] rounded-[28px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.15)]"
         >
-
-          {/* 🔥 SLIDES */}
           <AnimatePresence mode="wait">
             <div className="relative w-full h-full">
   {images.map((img, i) => (
@@ -89,16 +82,10 @@ export default function InteractiveCampusSection() {
   ))}
 </div>
           </AnimatePresence>
-
-          {/* 🌫️ OVERLAY */}
           <div className="absolute inset-0 bg-black/30" />
-
-          {/* LABEL */}
           <div className="absolute bottom-6 left-6 backdrop-blur-xl bg-white/10 border border-white/20 px-4 py-2 rounded-xl text-white text-sm">
             Production Zone
           </div>
-
-          {/* 🔥 PROGRESS DOTS */}
           <div className="absolute top-6 right-6 flex gap-2">
             {images.map((_, i) => (
               <div

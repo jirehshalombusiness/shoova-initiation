@@ -30,11 +30,6 @@ export default function DonationsTable() {
 
     fetchDonations();
   }, []);
-
-  /* =============================
-     RESEND RECEIPT
-  ============================= */
-
   const resendReceipt = async (donationNumber) => {
     try {
       const res = await fetchWithAuth(

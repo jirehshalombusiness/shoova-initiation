@@ -6,8 +6,6 @@ export default function GalamseySection() {
     return (
         <section className="py-20 px-6 bg-gray-50">
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
-                {/* TEXT SIDE */}
                 <div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
                         Ghana’s Land Is Under Pressure
@@ -55,14 +53,11 @@ export default function GalamseySection() {
                         equip communities with the tools to rebuild, creating a future where
                         environmental recovery and economic opportunity go hand in hand.
                     </p>
-                    {/* SOURCES */}
                     <p className="text-xs text-gray-500 mt-6">
                         Source: Parliament of Ghana (Statement on the State of Forest Reserves and Water Bodies),
                         Ghana Water Company Limited (GWCL), Ministry of Lands and Natural Resources.
                     </p>
                 </div>
-
-                {/* VIDEO SIDE */}
                 <div className="relative">
                     <video
                         src="/img/shoovavid.mp4"
@@ -72,8 +67,6 @@ export default function GalamseySection() {
                         muted={!playWithSound}
                         playsInline
                     />
-
-                    {/* Play with sound overlay */}
                     {!playWithSound && (
                         <button
                             onClick={() => setPlayWithSound(true)}

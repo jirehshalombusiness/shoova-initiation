@@ -117,13 +117,9 @@ export default function ShoovaCampus() {
                 </p>
             </div>
 
-            {/* 🔥 CAMPUS EXPERIENCE */}
-
-
             <section className="bg-white py-28">
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
 
-                    {/* 🧠 TEXT SIDE (Premium Narrative Block) */}
                     <motion.div
                         initial={{ opacity: 0, x: 60 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -171,8 +167,6 @@ export default function ShoovaCampus() {
                             ))}
                         </div>
                     </motion.div>
-
-                    {/* 🏛️ IMAGE SIDE (Premium Visual Frame) */}
                     <motion.div
                         initial={{ opacity: 0, x: 60 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -205,16 +199,12 @@ export default function ShoovaCampus() {
 
             <section className="bg-white">
                 <div className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
-
-                    {/* 🌿 IMAGE (LEFT) */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.96 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1 }}
                         className="relative h-[420px] md:h-[520px] overflow-hidden rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
                     >
-
-                        {/* 🌿 IMAGE */}
                          <motion.div
                         initial={{ opacity: 0, x: 60 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -242,13 +232,9 @@ export default function ShoovaCampus() {
                                         transition={{ duration: 1.2 }}
                                     />
                                 </AnimatePresence>
-
-                                {/* Dark gradient overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                             </div>
                         </motion.div>
-
-                        {/* Optional indicators */}
                         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                             {soulImages.map((_, index) => (
                                 <button
@@ -262,11 +248,7 @@ export default function ShoovaCampus() {
                             ))}
                         </div>
                     </motion.div>
-
-                        {/* 🌫️ SOFT OVERLAY (lighter than Brain) */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-
-                        {/* 🌿 LABEL */}
                         <div className="absolute bottom-6 left-6 backdrop-blur-md bg-white/10 border border-white/20 px-4 py-2 rounded-xl text-white text-sm">
                             Residential & Community Zone
                         </div>
@@ -308,8 +290,6 @@ export default function ShoovaCampus() {
                     transition={{ duration: 0.8 }}
                     className="bg-white rounded-2xl shadow-lg overflow-hidden"
                 >
-
-                    {/* HEADER */}
                     <div className="p-6 md:p-8 border-b border-gray-100 text-center">
 
                         <p className="text-sm uppercase tracking-widest text-[#D4AF37] mb-2">
@@ -325,8 +305,6 @@ export default function ShoovaCampus() {
                         </p>
 
                     </div>
-
-                    {/* MAP */}
                     <div className="w-full h-[350px] md:h-[400px]">
                         <iframe
                             title="Shoova Campus Location"
@@ -339,11 +317,7 @@ export default function ShoovaCampus() {
                 </motion.div>
 
             </div>
-            {/* 🔥 CTA */}
             <section className="py-28 bg-white text-center px-6">
-
-
-
                 <p className="text-gray-600 mb-8 max-w-xl mx-auto">
                     The Shoova Restoration Campus is more than infrastructure —
                     it is a system for long-term transformation.
@@ -354,12 +328,7 @@ export default function ShoovaCampus() {
                 >
                     Build with Us
                 </Link>
-
-
-
             </section>
-
-
         </div>
     );
 }

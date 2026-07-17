@@ -166,8 +166,6 @@ export const RestorationUpdates = () => {
                     </p>
                 </div>
             </section>
-
-            {/* Restoration Report Section */}
             <motion.section
                 id="restoration_report"
                 variants={container}
@@ -178,7 +176,6 @@ export const RestorationUpdates = () => {
             >
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        {/* IMAGE */}
                         <motion.div variants={fadeLeft} className="relative">
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.97 }}
@@ -201,7 +198,7 @@ export const RestorationUpdates = () => {
                             </motion.div>
                         </motion.div>
 
-                        {/* FORM */}
+            
                         <motion.form
                             onSubmit={handleSubscribe}
                             variants={fadeRight}
@@ -215,8 +212,6 @@ export const RestorationUpdates = () => {
                                     Receive updates on land restoration, youth training, and the progress of the Shoova Restoration Campus.
                                 </p>
                             </motion.div>
-
-                            {/* Name Fields */}
                             <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-xs font-semibold tracking-wide mb-2">
@@ -245,8 +240,6 @@ export const RestorationUpdates = () => {
                                     />
                                 </div>
                             </motion.div>
-
-                            {/* Email */}
                             <motion.div variants={fadeUp}>
                                 <label className="block text-xs font-semibold tracking-wide mb-2">
                                     EMAIL
@@ -260,8 +253,6 @@ export const RestorationUpdates = () => {
                                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none transition"
                                 />
                             </motion.div>
-
-                            {/* Birthday */}
                             <motion.div variants={fadeUp}>
                                 <label className="block text-xs font-semibold tracking-wide mb-2">
                                     BIRTHDAY (OPTIONAL)
@@ -273,8 +264,6 @@ export const RestorationUpdates = () => {
                                     placeholderText="Select your birthday"
                                 />
                             </motion.div>
-
-                            {/* Checkbox */}
                             <motion.div variants={fadeUp} className="flex items-start gap-3">
                                 <input
                                     type="checkbox"
@@ -288,8 +277,6 @@ export const RestorationUpdates = () => {
                                     Set a reminder to pledge my birthday and help restore land and empower communities.
                                 </p>
                             </motion.div>
-
-                            {/* BUTTON */}
                             <motion.button
                                 variants={fadeUp}
                                 whileHover={{ scale: 1.02 }}
@@ -299,8 +286,6 @@ export const RestorationUpdates = () => {
                             >
                                 Keep Me Informed
                             </motion.button>
-
-                            {/* Privacy */}
                             <motion.p variants={fadeUp} className="text-xs text-gray-500 leading-relaxed">
                                 By clicking “Subscribe”, you agree to receive updates from the Shoova Restoration Initiative.
                             </motion.p>
@@ -308,101 +293,6 @@ export const RestorationUpdates = () => {
                     </div>
                 </div>
             </motion.section>
-
-
-
-            {/* Share the Story */}
-            {/* <section id="share_the_story" className="py-24 bg-background border-t border-gray-100">
-                <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-                    <div className="relative">
-                        <img
-                            src="/img/share.jpg"
-                            alt="Irresponsible mining destruction in Ghana"
-                            className="rounded-2xl shadow-xl w-full h-[420px] object-cover"
-                        />
-
-                    </div>
-
-                    
-                    <div>
-
-                        <p className="text-secondary font-bold tracking-wider uppercase text-sm mb-4">
-                            Share the Story
-                        </p>
-
-                        <h2 className="text-4xl md:text-5xl font-heading font-bold text-textDark mb-6">
-                            From Galamsey to Growth
-                        </h2>
-
-                        <p className="text-lg text-text leading-relaxed mb-8">
-                            The destruction caused by Irresponsible mining is one of the most urgent
-                            environmental crises facing Ghana today. But restoration is possible.
-                            Help more people understand the challenge — and the solution — by
-                            sharing the Shoova restoration story.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4">
-
-                            
-                            <button
-                                onClick={() => {
-                                   
-                                    fetch("https://shoova-initiation-yjg3.onrender.com/engagement/track-download", {
-                                        method: "POST"
-                                    });
-
-                                    
-                                    window.open("/docs/fact-sheet.pdf", "_blank");
-                                }}
-                                className="inline-flex items-center justify-center px-8 py-4 bg-secondary hover:bg-secondaryHover text-white font-semibold rounded-full transition shadow-lg"
-                            >
-                                Download Fact Sheet
-                            </button>
-
-                          
-                            <button
-
-                                onClick={async () => {
-                                    const url = window.location.origin + "#share_the_story";
-
-                                    const text =
-                                        "Galamsey is destroying lands across Ghana.\n\n" +
-                                        "Shoova is restoring these ecosystems and communities.\n\n" +
-                                        "Learn more:";
-
-                                    try {
-                                        if (navigator.share) {
-                                            await navigator.share({
-                                                title: "Shoova Restoration Initiative",
-                                                text,
-                                                url,
-                                            });
-                                        } else {
-                                            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
-                                            window.open(whatsappUrl, "_blank");
-                                        }
-                                    } catch (err) {
-                                        console.warn("Share cancelled or failed:", err);
-                                      
-                                        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text + " " + url)}`;
-                                        window.open(whatsappUrl, "_blank");
-                                    }
-                                }}
-                                className="inline-flex items-center justify-center px-8 py-4 border border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition"
-                            >
-                                Share With Your Network
-                            </button>
-
-                        </div>
-
-                        <p className="text-sm text-gray-500 mt-6">
-                            Community awareness is the first step toward environmental restoration.
-                        </p>
-
-                    </div>
-
-                </div>
-            </section> */}
 
         </div>
     );

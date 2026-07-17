@@ -24,8 +24,6 @@ export default function Dashboard() {
   });
 
   const [loading, setLoading] = useState(true);
-
-  // 💰 Currency formatter
   const formatCurrency = (value) =>
     new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -66,8 +64,6 @@ export default function Dashboard() {
     return () => clearInterval(interval);
 
   }, []);
-
-  // 📊 Monthly grouped + sorted data
   const grouped = {};
 
   (data.recentDonations || []).forEach(d => {
@@ -98,8 +94,6 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-10">
-
-      {/* HEADER */}
       <div>
         <h1 className="text-3xl font-bold text-gray-800 flex items-center gap-2">
           Fundraising Overview
@@ -112,8 +106,6 @@ export default function Dashboard() {
           Real-time insights into donations and supporter activity
         </p>
       </div>
-
-      {/* STAT CARDS */}
       <div className="grid md:grid-cols-4 gap-6">
 
         <StatCard
@@ -141,11 +133,7 @@ export default function Dashboard() {
         />
 
       </div>
-
-      {/* RECENT DONATIONS TABLE */}
       <RecentDonations donations={data.recentDonations} />
-
-      {/* LIVE ACTIVITY */}
       <div className="bg-white rounded-xl shadow-sm p-6 border">
 
         <h2 className="text-xl font-semibold mb-4">
@@ -177,14 +165,11 @@ export default function Dashboard() {
         </div>
 
       </div>
-
-      {/* CHART */}
       <div className="bg-white rounded-xl shadow-sm p-6 border">
 
         <h2 className="text-xl font-semibold mb-6">
           Donation Activity
         </h2>
-
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={chartData}>
             <XAxis dataKey="day" />
@@ -199,8 +184,6 @@ export default function Dashboard() {
         </ResponsiveContainer>
 
       </div>
-
-      {/* TOP DONORS */}
       <div className="bg-white rounded-xl shadow-sm p-6 border">
 
         <h2 className="text-xl font-semibold mb-6">

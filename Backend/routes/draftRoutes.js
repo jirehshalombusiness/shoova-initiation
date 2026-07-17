@@ -3,13 +3,12 @@ import Draft from "../models/Draft.js";
 
 const router = express.Router();
 
-// SAVE DRAFT
 router.post("/save", async (req, res) => {
   try {
     const { subject, message, imageUrl } = req.body;
 
     const draft = await Draft.findOneAndUpdate(
-      {}, // only one draft for now
+      {}, 
       { subject, message, imageUrl },
       { upsert: true, returnDocument: "after" }
     );
@@ -22,7 +21,6 @@ router.post("/save", async (req, res) => {
   }
 });
 
-// GET DRAFT
 router.get("/get", async (req, res) => {
   try {
     const draft = await Draft.findOne();
@@ -34,7 +32,7 @@ router.get("/get", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch draft" });
   }
 });
-// CLEAR DRAFT
+
 router.delete("/clear", async (req, res) => {
   try {
     await Draft.deleteMany({});
