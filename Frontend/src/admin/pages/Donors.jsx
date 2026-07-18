@@ -5,7 +5,7 @@ export default function Donors() {
   const [donors, setDonors] = useState([]);
 
   useEffect(() => {
-    fetchWithAuth("https://shoova-initiation-yjg3.onrender.com/admin/donors")
+    fetchWithAuth("https://shoova-initiation-nf6m.onrender.com/admin/donors")
       .then(res => res.json())
       .then(data => setDonors(data))
       .catch(err => console.error(err));

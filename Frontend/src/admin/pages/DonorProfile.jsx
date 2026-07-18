@@ -9,7 +9,7 @@ export default function DonorProfile() {
 
   useEffect(() => {
 
-    fetch(`https://shoova-initiation-yjg3.onrender.com/admin/donor/${email}`)
+    fetch(`https://shoova-initiation-nf6m.onrender.com/admin/donor/${email}`)
       .then(res => res.json())
       .then(data => setData(data));
 

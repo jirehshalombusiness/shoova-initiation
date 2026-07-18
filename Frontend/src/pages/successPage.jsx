@@ -21,7 +21,7 @@ export default function SuccessPage() {
     const verifyStripe = async () => {
       try {
         const res = await fetch(
-          `https://shoova-initiation-yjg3.onrender.com/api/verify-session/${sessionId}`
+          `https://shoova-initiation-nf6m.onrender.com/api/verify-session/${sessionId}`
         );
 
         const data = await res.json();
@@ -42,7 +42,7 @@ export default function SuccessPage() {
    const verifyPayPal = async () => {
   try {
     const res = await fetch(
-      `https://shoova-initiation-yjg3.onrender.com/paypal-order/${orderID}`
+      `https://shoova-initiation-nf6m.onrender.com/paypal-order/${orderID}`
     );
 
     if (!res.ok) {

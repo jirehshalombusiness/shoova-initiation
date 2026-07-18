@@ -13,7 +13,7 @@ export default function ResetPassword() {
 
     try {
       const res = await fetch(
-        `https://shoova-initiation-yjg3.onrender.com/admin/reset-password/${token}`,
+        `https://shoova-initiation-nf6m.onrender.com/admin/reset-password/${token}`,
         {
           method: "POST",
           headers: {

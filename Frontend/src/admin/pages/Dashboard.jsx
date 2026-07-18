@@ -35,7 +35,7 @@ export default function Dashboard() {
     const fetchDashboard = async () => {
       try {
         const res = await fetchWithAuth(
-          "https://shoova-initiation-yjg3.onrender.com/admin/dashboard"
+          "https://shoova-initiation-nf6m.onrender.com/admin/dashboard"
         );
 
         const result = await res.json();

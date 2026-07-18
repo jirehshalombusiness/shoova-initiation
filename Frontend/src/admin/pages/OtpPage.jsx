@@ -27,7 +27,7 @@ export default function VerifyOTP() {
 
     try {
       const res = await fetch(
-        "https://shoova-initiation-yjg3.onrender.com/admin/verify-otp",
+        "https://shoova-initiation-nf6m.onrender.com/admin/verify-otp",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -57,7 +57,7 @@ export default function VerifyOTP() {
 
     try {
       const res = await fetch(
-        "https://shoova-initiation-yjg3.onrender.com/admin/resend-otp",
+        "https://shoova-initiation-nf6m.onrender.com/admin/resend-otp",
         {
           method: "POST",
           headers: {

@@ -18,7 +18,7 @@ export default function Analytics() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetchWithAuth("https://shoova-initiation-yjg3.onrender.com/admin/analytics")
+    fetchWithAuth("https://shoova-initiation-nf6m.onrender.com/admin/analytics")
       .then(res => res.json())
       .then(data => setData(data))
       .catch(err => console.error(err));

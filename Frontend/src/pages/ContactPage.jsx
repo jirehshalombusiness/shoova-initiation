@@ -42,7 +42,7 @@ export const ContactPage = ({ className, children, variant, contentKey, ...props
     const loadingToast = toast.loading("Sending message...");
 
     try {
-      const res = await fetch("https://shoova-initiation-yjg3.onrender.com/api/contact", {
+      const res = await fetch("https://shoova-initiation-nf6m.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

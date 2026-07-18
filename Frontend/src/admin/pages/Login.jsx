@@ -27,7 +27,7 @@ export default function Login() {
 
         try {
 
-            const res = await fetch("https://shoova-initiation-yjg3.onrender.com/admin/login", {
+            const res = await fetch("https://shoova-initiation-nf6m.onrender.com/admin/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

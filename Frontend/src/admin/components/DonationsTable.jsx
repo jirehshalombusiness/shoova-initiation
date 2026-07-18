@@ -9,7 +9,7 @@ export default function DonationsTable() {
     const fetchDonations = async () => {
       try {
         const res = await fetchWithAuth(
-          "https://shoova-initiation-yjg3.onrender.com/admin/donations"
+          "https://shoova-initiation-nf6m.onrender.com/admin/donations"
         );
 
         const data = await res.json();
@@ -33,7 +33,7 @@ export default function DonationsTable() {
   const resendReceipt = async (donationNumber) => {
     try {
       const res = await fetchWithAuth(
-        `https://shoova-initiation-yjg3.onrender.com/admin/resend-receipt/${donationNumber}`,
+        `https://shoova-initiation-nf6m.onrender.com/admin/resend-receipt/${donationNumber}`,
         { method: "POST" }
       );
 
@@ -107,7 +107,7 @@ export default function DonationsTable() {
 
         <td className="flex gap-4">
           <a
-            href={`https://shoova-initiation-yjg3.onrender.com/admin/receipt/${d.donationNumber}`}
+            href={`https://shoova-initiation-nf6m.onrender.com/admin/receipt/${d.donationNumber}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-green-600 font-semibold hover:underline"

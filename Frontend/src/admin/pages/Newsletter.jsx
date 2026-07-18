@@ -62,7 +62,7 @@ export default function NewsletterPage() {
 
   const loadDraft = async () => {
     try {
-      const res = await fetch("https://shoova-initiation-yjg3.onrender.com/draft/get");
+      const res = await fetch("https://shoova-initiation-nf6m.onrender.com/draft/get");
       const data = await res.json();
 
       if (data.draft) {
@@ -80,7 +80,7 @@ export default function NewsletterPage() {
   };
   const saveDraft = async (silent = false) => {
     try {
-      const res = await fetch("https://shoova-initiation-yjg3.onrender.com/draft/save", {
+      const res = await fetch("https://shoova-initiation-nf6m.onrender.com/draft/save", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -149,7 +149,7 @@ export default function NewsletterPage() {
 
           <p style="font-size:12px;color:#888;text-align:center;margin-top:20px;">
         If you no longer wish to receive these emails,
-        <a href="https://shoova-initiation-yjg3.onrender.com/newsletter/unsubscribe?email={{EMAIL}}" style="color:#888;text-decoration:underline;">
+        <a href="https://shoova-initiation-nf6m.onrender.com/newsletter/unsubscribe?email={{EMAIL}}" style="color:#888;text-decoration:underline;">
           unsubscribe here
         </a>.
       </p>
@@ -172,7 +172,7 @@ export default function NewsletterPage() {
 
       toast.loading("Sending newsletter...", { id: "send" });
 
-      const res = await fetch("https://shoova-initiation-yjg3.onrender.com/newsletter-send/send", {
+      const res = await fetch("https://shoova-initiation-nf6m.onrender.com/newsletter-send/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -188,7 +188,7 @@ export default function NewsletterPage() {
       if (data.success) {
 
         toast.success("Newsletter sent successfully 🚀", { id: "send" });
-        await fetch("https://shoova-initiation-yjg3.onrender.com/draft/clear", {
+        await fetch("https://shoova-initiation-nf6m.onrender.com/draft/clear", {
           method: "DELETE"
         });
         setSubject("");

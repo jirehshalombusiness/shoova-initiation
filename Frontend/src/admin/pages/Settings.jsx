@@ -13,7 +13,7 @@ export default function Settings() {
 
   useEffect(() => {
 
-    fetchWithAuth("https://shoova-initiation-yjg3.onrender.com/admin/settings")
+    fetchWithAuth("https://shoova-initiation-nf6m.onrender.com/admin/settings")
       .then(res => res.json())
       .then(data => setSettings(data));
 
@@ -30,7 +30,7 @@ export default function Settings() {
 
   const handleSave = async () => {
 
-    await fetch("https://shoova-initiation-yjg3.onrender.com/admin/settings", {
+    await fetch("https://shoova-initiation-nf6m.onrender.com/admin/settings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
