@@ -53,10 +53,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000
 
 
-// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const stripe = process.env.STRIPE_SECRET_KEY
-  ? new Stripe(process.env.STRIPE_SECRET_KEY)
-  : null;
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const seedAdmin = async () => {
   try {
@@ -272,52 +269,7 @@ app.get("/paypal-order/:orderID", async (req, res) => {
 });
 
 
-// app.post("/create-checkout-session", async (req, res) => {
-//   try {
-//     const { amount, donationType } = req.body;
-
-//     const session = await stripe.checkout.sessions.create({
-//       payment_method_types: ["card"],
-//       billing_address_collection: "required",
-//       mode: donationType === "monthly" ? "subscription" : "payment",
-
-//       line_items: [
-//         {
-//           price_data: {
-//             currency: "usd",
-//             product_data: {
-//               name: "Shoova Donation",
-//             },
-//             unit_amount: amount * 100,
-//             recurring:
-//               donationType === "monthly"
-//                 ? { interval: "month" }
-//                 : undefined,
-//           },
-//           quantity: 1,
-//         },
-//       ],
-
-//       success_url: "https://www.shoovainitiative.org/success?session_id={CHECKOUT_SESSION_ID}",
-//       cancel_url: "https://www.shoovainitiative.org/donate",
-//     });
-
-//     res.json({ url: session.url });
-
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json({ error: "Stripe session error" });
-//   }
-// });
-
 app.post("/create-checkout-session", async (req, res) => {
-
-  if (!stripe) {
-    return res.status(503).json({
-      error: "Stripe payments temporarily unavailable"
-    });
-  }
-
   try {
     const { amount, donationType } = req.body;
 
@@ -343,22 +295,16 @@ app.post("/create-checkout-session", async (req, res) => {
         },
       ],
 
-      success_url:
-        "https://www.shoovainitiative.org/success?session_id={CHECKOUT_SESSION_ID}",
-
-      cancel_url:
-        "https://www.shoovainitiative.org/donate",
+      success_url: "https://www.shoovainitiative.org/success?session_id={CHECKOUT_SESSION_ID}",
+      cancel_url: "https://www.shoovainitiative.org/donate",
     });
 
     res.json({ url: session.url });
 
   } catch (err) {
     console.log(err);
-    res.status(500).json({
-      error: "Stripe session error"
-    });
+    res.status(500).json({ error: "Stripe session error" });
   }
-
 });
 
 app.get("/api/verify-session/:id", async (req, res) => {
