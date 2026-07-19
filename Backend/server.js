@@ -37,7 +37,8 @@ app.use(cors({
     const allowed = [
       "http://localhost:3000",
       "https://shoova-initiation-kdt2.vercel.app",
-      "https://www.shoovainitiative.org"
+      "https://www.shoovainitiative.org",
+      "https://shoovainitiative.org"
     ];
     if (!origin || allowed.includes(origin)) {
       callback(null, true);
@@ -683,13 +684,13 @@ app.post("/admin/forgot-password", async (req, res) => {
     const token = crypto.randomBytes(32).toString("hex");
 
     admin.resetToken = token;
-    admin.resetTokenExpire = Date.now() + 1000 * 60 * 15; 
+    admin.resetTokenExpire = Date.now() + 1000 * 60 * 15;
 
     await admin.save();
 
     const resetLink = `${process.env.FRONTEND_URL}/reset-password/${token}`;
 
-    
+
     await sendEmail(
       admin.email,
       "Reset your admin password",
@@ -883,7 +884,7 @@ app.post(
 
       const donorEmail = donorEmailRaw.toLowerCase().trim();
 
-  
+
       const addressObj = session.customer_details?.address;
 
       const fullAddress = addressObj
