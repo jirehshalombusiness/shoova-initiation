@@ -36,7 +36,7 @@ app.use(cors({
   origin: (origin, callback) => {
     const allowed = [
       "http://localhost:3000",
-      "https://shoova-initiation.vercel.app",
+      "https://shoova-initiation-kdt2.vercel.app",
       "https://www.shoovainitiative.org"
     ];
     if (!origin || allowed.includes(origin)) {
