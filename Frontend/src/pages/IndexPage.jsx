@@ -468,6 +468,85 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
         </section>
         <GalamseySection />
         <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+          className="relative overflow-hidden bg-black text-white py-20 md:py-24"
+        >
+          {/* Gold atmosphere */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-secondary/20 blur-[120px] rounded-full" />
+            <div className="absolute bottom-[-250px] right-[-100px] w-[400px] h-[400px] bg-secondary/10 blur-[100px] rounded-full" />
+          </div>
+
+          <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+
+            <p className="text-secondary uppercase tracking-[0.35em] text-xs md:text-sm font-bold mb-5">
+              The Moment Has Arrived
+            </p>
+
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+              Shoova Ghana Launch
+            </h2>
+
+            <p className="max-w-2xl mx-auto text-white/70 text-base md:text-lg leading-relaxed mb-10">
+              A new chapter in responsible mining, environmental restoration,
+              and opportunity for the next generation begins here.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+
+              <div className="px-6 py-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                <p className="text-xs uppercase tracking-widest text-white/40 mb-1">
+                  Date
+                </p>
+                <p className="font-semibold">
+                  Friday, 28 August 2026
+                </p>
+              </div>
+
+              <div className="px-6 py-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                <p className="text-xs uppercase tracking-widest text-white/40 mb-1">
+                  Time
+                </p>
+                <p className="font-semibold">
+                  10:00 AM
+                </p>
+              </div>
+
+              <div className="px-6 py-4 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm">
+                <p className="text-xs uppercase tracking-widest text-white/40 mb-1">
+                  Venue
+                </p>
+                <p className="font-semibold">
+                  Cedi Conference Centre
+                </p>
+              </div>
+
+            </div>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+
+              <Link
+                to="/about"
+                className="px-7 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondaryHover transition"
+              >
+                Discover Shoova
+              </Link>
+
+              <Link
+                to="/contact"
+                className="px-7 py-3 border border-white/30 text-white rounded-full font-semibold hover:bg-white hover:text-black transition"
+              >
+                Get Involved
+              </Link>
+
+            </div>
+
+          </div>
+        </motion.section>
+        <motion.section
           variants={container}
           initial="hidden"
           whileInView="show"
