@@ -297,7 +297,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </Link> */}
 
               </div>
-             
+
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -320,40 +320,40 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                       Friday, 28 August 2026 · 10:00 AM
                     </p>
 
-                    <div className="grid grid-cols-4 gap-3">
+                    <div className="grid grid-cols-4 gap-2 sm:gap-3">
 
-                      <div className="bg-white/10 border border-white/10 rounded-xl p-4 text-center">
-                        <div className="text-3xl md:text-4xl font-bold text-white">
+                      <div className="bg-white/10 border border-white/10 rounded-xl p-2.5 sm:p-4 text-center min-w-0">
+                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                           {String(timeLeft.days).padStart(2, "0")}
                         </div>
-                        <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/50 mt-2">
+                        <div className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.12em] sm:tracking-widest text-white/50 mt-2 whitespace-nowrap">
                           Days
                         </div>
                       </div>
 
-                      <div className="bg-white/10 border border-white/10 rounded-xl p-4 text-center">
-                        <div className="text-3xl md:text-4xl font-bold text-white">
+                      <div className="bg-white/10 border border-white/10 rounded-xl p-2.5 sm:p-4 text-center min-w-0">
+                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                           {String(timeLeft.hours).padStart(2, "0")}
                         </div>
-                        <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/50 mt-2">
+                        <div className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.12em] sm:tracking-widest text-white/50 mt-2 whitespace-nowrap">
                           Hours
                         </div>
                       </div>
 
-                      <div className="bg-white/10 border border-white/10 rounded-xl p-4 text-center">
-                        <div className="text-3xl md:text-4xl font-bold text-white">
+                      <div className="bg-white/10 border border-white/10 rounded-xl p-2.5 sm:p-4 text-center min-w-0">
+                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                           {String(timeLeft.minutes).padStart(2, "0")}
                         </div>
-                        <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/50 mt-2">
+                        <div className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.12em] sm:tracking-widest text-white/50 mt-2 whitespace-nowrap">
                           Minutes
                         </div>
                       </div>
 
-                      <div className="bg-secondary/90 rounded-xl p-4 text-center">
-                        <div className="text-3xl md:text-4xl font-bold text-white">
+                      <div className="bg-secondary/90 rounded-xl p-2.5 sm:p-4 text-center min-w-0">
+                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                           {String(timeLeft.seconds).padStart(2, "0")}
                         </div>
-                        <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/80 mt-2">
+                        <div className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.12em] sm:tracking-widest text-white/80 mt-2 whitespace-nowrap">
                           Seconds
                         </div>
                       </div>
