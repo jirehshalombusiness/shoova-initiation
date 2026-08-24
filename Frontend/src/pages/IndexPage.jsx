@@ -232,7 +232,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           viewport={{ once: true, amount: 0.2 }}
 
           id="hero"
-          className="relative h-screen w-full flex items-center overflow-hidden"
+          className="relative min-h-[100svh] lg:h-screen w-full flex items-center overflow-hidden"
         >
           {/* Background Video */}
           <div className="absolute inset-0">
@@ -253,14 +253,14 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
 
           {/* CONTENT */}
-          <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-6 md:px-10 py-24 lg:py-0">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
               <div className="max-w-lg text-left text-white">
 
                 {/* 🔥 HEADLINE (TIGHT STACKED BLOCKS) */}
-                <div className="flex flex-col items-start leading-none  mb-4">
+                <div className="flex flex-col items-start leading-none  mb-3">
                   <div className="bg-white text-black px-4 py-2 rounded-sm shadow">
-                    <span className="text-2xl md:text-4xl lg:text-4xl font-bold">
+                    <span className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold">
                       Say Yes To Responsible Mining,
                     </span>
                   </div>
@@ -270,7 +270,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     </span>
                   </div>
                   <div className="bg-white px-4 ml-10 py-2 rounded-sm shadow">
-                    <span className="text-2xl md:text-4xl lg:text-5xl font-bold text-secondary">
+                    <span className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-secondary">
                       Heal the Land.
                     </span>
                   </div>
