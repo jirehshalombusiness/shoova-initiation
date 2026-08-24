@@ -129,6 +129,41 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
   const videoRef = useRef(null);
 
+  const launchDate = new Date("2026-08-28T10:00:00+00:00");
+
+  const calculateTimeLeft = () => {
+    const difference = launchDate.getTime() - new Date().getTime();
+
+    if (difference <= 0) {
+      return {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        expired: true,
+      };
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+      expired: false,
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+
   useEffect(() => {
     const handleScroll = () => {
       if (!videoRef.current) return;
@@ -218,41 +253,42 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
 
           {/* CONTENT */}
-          <div className="relative z-10 max-w-6xl mx-auto w-full px-6 md:px-10">
-            <div className="max-w-lg text-left text-white">
+          <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="max-w-lg text-left text-white">
 
-              {/* 🔥 HEADLINE (TIGHT STACKED BLOCKS) */}
-              <div className="flex flex-col items-start leading-none  mb-4">
-                <div className="bg-white text-black px-4 py-2 rounded-sm shadow">
-                  <span className="text-2xl md:text-4xl lg:text-4xl font-bold">
-                    Say Yes To Responsible Mining,
-                  </span>
+                {/* 🔥 HEADLINE (TIGHT STACKED BLOCKS) */}
+                <div className="flex flex-col items-start leading-none  mb-4">
+                  <div className="bg-white text-black px-4 py-2 rounded-sm shadow">
+                    <span className="text-2xl md:text-4xl lg:text-4xl font-bold">
+                      Say Yes To Responsible Mining,
+                    </span>
+                  </div>
+                  <div className="bg-secondary px-4 mr-16 py-2 rounded-sm shadow">
+                    <span className="text-2xl md:text-3xl lg:text-3xl font-bold text-white uppercase">
+                      Sustainable Future
+                    </span>
+                  </div>
+                  <div className="bg-white px-4 ml-10 py-2 rounded-sm shadow">
+                    <span className="text-2xl md:text-4xl lg:text-5xl font-bold text-secondary">
+                      Heal the Land.
+                    </span>
+                  </div>
+
                 </div>
-                <div className="bg-secondary px-4 mr-16 py-2 rounded-sm shadow">
-                  <span className="text-2xl md:text-3xl lg:text-3xl font-bold text-white uppercase">
-                    Sustainable Future
-                  </span>
+
+                <div className="mb-6">
+                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-wide">
+                    ONE STUDENT <br /> AT A TIME
+                  </h2>
+
+                  <p className="mt-4 text-white/80 text-sm md:text-base max-w-sm">
+                    Building the Shoova Restoration Campus in Ghana.
+                  </p>
                 </div>
-                <div className="bg-white px-4 ml-10 py-2 rounded-sm shadow">
-                  <span className="text-2xl md:text-4xl lg:text-5xl font-bold text-secondary">
-                    Heal the Land.
-                  </span>
-                </div>
 
-              </div>
-
-              <div className="mb-6">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-wide">
-                  ONE STUDENT <br /> AT A TIME
-                </h2>
-
-                <p className="mt-4 text-white/80 text-sm md:text-base max-w-sm">
-                  Building the Shoova Restoration Campus in Ghana.
-                </p>
-              </div>
-
-              {/* 🔥 CTA (MATCHED TO DESIGN SYSTEM) */}
-              {/* <Link
+                {/* 🔥 CTA (MATCHED TO DESIGN SYSTEM) */}
+                {/* <Link
                 to="/donate"
                 className="inline-flex items-center gap-2 bg-secondary hover:bg-secondaryHover text-white px-6 py-3 rounded-sm font-bold text-sm md:text-base tracking-wide transition shadow-md active:scale-[0.97]"
               >
@@ -260,6 +296,79 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 <span className="text-lg">→</span>
               </Link> */}
 
+              </div>
+             
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="flex justify-center lg:justify-end mt-8 lg:mt-0"
+              >
+                <div className="w-full max-w-xl">
+
+                  <div className="bg-black/45 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl">
+
+                    <p className="text-secondary uppercase tracking-[0.35em] text-sm font-bold mb-3">
+                      The Countdown Has Begun
+                    </p>
+
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                      Shoova Ghana Launch
+                    </h2>
+
+                    <p className="text-white/70 mb-8">
+                      Friday, 28 August 2026 · 10:00 AM
+                    </p>
+
+                    <div className="grid grid-cols-4 gap-3">
+
+                      <div className="bg-white/10 border border-white/10 rounded-xl p-4 text-center">
+                        <div className="text-3xl md:text-4xl font-bold text-white">
+                          {String(timeLeft.days).padStart(2, "0")}
+                        </div>
+                        <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/50 mt-2">
+                          Days
+                        </div>
+                      </div>
+
+                      <div className="bg-white/10 border border-white/10 rounded-xl p-4 text-center">
+                        <div className="text-3xl md:text-4xl font-bold text-white">
+                          {String(timeLeft.hours).padStart(2, "0")}
+                        </div>
+                        <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/50 mt-2">
+                          Hours
+                        </div>
+                      </div>
+
+                      <div className="bg-white/10 border border-white/10 rounded-xl p-4 text-center">
+                        <div className="text-3xl md:text-4xl font-bold text-white">
+                          {String(timeLeft.minutes).padStart(2, "0")}
+                        </div>
+                        <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/50 mt-2">
+                          Minutes
+                        </div>
+                      </div>
+
+                      <div className="bg-secondary/90 rounded-xl p-4 text-center">
+                        <div className="text-3xl md:text-4xl font-bold text-white">
+                          {String(timeLeft.seconds).padStart(2, "0")}
+                        </div>
+                        <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/80 mt-2">
+                          Seconds
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div className="mt-6 flex items-center gap-3 text-white/70 text-sm">
+                      <MapPin className="w-4 h-4 text-secondary" />
+                      Cedi Conference Centre · University of Ghana
+                    </div>
+
+                  </div>
+
+                </div>
+              </motion.div>
             </div>
           </div>
 
@@ -395,9 +504,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 variants={fadeRight}
                 className="lg:col-span-2"
               >
-                 <p className="text-secondary font-bold uppercase tracking-[0.25em] text-sm mb-4">
+                <p className="text-secondary font-bold uppercase tracking-[0.25em] text-sm mb-4">
                   Say Yes To Responsible Mining
-                </p> 
+                </p>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-textDark leading-tight mb-6">
                   Why Shoova Institute Is Key To Ending Irresponsible Mining
                 </h2>
@@ -644,7 +753,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                       <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-50 blur-xl transition" />
 
-                    <Shield className="w-7 h-7 relative z-10 text-gray-600" />
+                      <Shield className="w-7 h-7 relative z-10 text-gray-600" />
                     </div>
                   </div>
 
@@ -762,7 +871,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     <div className="relative w-14 h-14 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center overflow-hidden">
                       <div className="absolute inset-0 bg-purple-100 opacity-0 group-hover:opacity-50 blur-xl transition" />
 
-           <GraduationCap className="w-7 h-7 relative z-10 text-purple-600" />
+                      <GraduationCap className="w-7 h-7 relative z-10 text-purple-600" />
                     </div>
                   </div>
 
@@ -775,7 +884,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </h3>
 
                   <p className="mt-4 text-gray-600 leading-relaxed">
-                    Building character and integrity to resist corruption and lead community transformation.  
+                    Building character and integrity to resist corruption and lead community transformation.
                   </p>
 
                   <div className="mt-6 pt-5 border-t border-gray-100">
@@ -1302,7 +1411,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
                 </div>
 
-             
+
                 <div className="group relative">
                   <div className="relative overflow-hidden rounded-xl">
                     <img
@@ -1315,7 +1424,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                         <div className="w-full h-12 flex items-center justify-center border-b border-white/20">
                           <FaShareAlt className="w-4 h-4 text-white" />
                         </div>
-                   
+
                         <div className="flex flex-col opacity-0 group-hover:opacity-100 transition duration-300 delay-200">
 
 
