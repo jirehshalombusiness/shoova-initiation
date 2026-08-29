@@ -248,16 +248,15 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
             </video>
           </div>
 
-          {/* Overlays */}
+         
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
 
-          {/* CONTENT */}
+        
           <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-6 md:px-10 py-24 lg:py-0">
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
               <div className="max-w-lg text-left text-white">
 
-                {/* 🔥 HEADLINE (TIGHT STACKED BLOCKS) */}
                 <div className="flex flex-col items-start leading-none  mb-3">
                   <div className="bg-white text-black px-4 py-2 rounded-sm shadow">
                     <span className="text-xl sm:text-2xl md:text-4xl lg:text-4xl font-bold">
@@ -287,7 +286,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </p>
                 </div>
 
-                {/* 🔥 CTA (MATCHED TO DESIGN SYSTEM) */}
+             
                 {/* <Link
                 to="/donate"
                 className="inline-flex items-center gap-2 bg-secondary hover:bg-secondaryHover text-white px-6 py-3 rounded-sm font-bold text-sm md:text-base tracking-wide transition shadow-md active:scale-[0.97]"
@@ -298,7 +297,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
               </div>
 
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
@@ -368,7 +367,119 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                 </div>
-              </motion.div>
+              </motion.div> */}
+
+              <motion.div
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1, delay: 0.5 }}
+  className="flex justify-center lg:justify-end mt-8 lg:mt-0"
+>
+  <div className="w-full max-w-xl">
+
+    <div className="relative overflow-hidden bg-black/45 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl">
+
+      {/* Subtle gold glow */}
+      <div className="absolute -top-24 -right-24 w-48 h-48 bg-secondary/20 blur-3xl rounded-full pointer-events-none" />
+
+      <div className="relative z-10">
+
+        {/* Eyebrow */}
+        <div className="flex items-center gap-3 mb-5">
+          <span className="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+
+          <p className="text-secondary uppercase tracking-[0.3em] text-xs sm:text-sm font-bold">
+            The Journey Has Begun
+          </p>
+        </div>
+
+        {/* Heading */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          Shoova Ghana
+          <span className="block text-secondary">
+            Is Now Officially Live.
+          </span>
+        </h2>
+
+        {/* Description */}
+        <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg mb-7">
+          On 28 August 2026, the Shoova vision came to life at the
+          Cedi Conference Centre, University of Ghana.
+        </p>
+
+        {/* Launch details */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
+
+          <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-4">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-1">
+              Official Launch
+            </p>
+
+            <p className="text-white font-semibold text-sm sm:text-base">
+              28 August 2026
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-4">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-1">
+              Location
+            </p>
+
+            <p className="text-white font-semibold text-sm sm:text-base">
+              University of Ghana
+            </p>
+          </div>
+
+        </div>
+
+        {/* Mission statement */}
+        <div className="border-l-2 border-secondary pl-4 mb-7">
+          <p className="text-white/80 text-sm sm:text-base italic leading-relaxed">
+            Restoring land. Creating opportunity. Building a sustainable
+            future for the next generation.
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row gap-3">
+
+          <Link
+            to="/about"
+            className="inline-flex items-center justify-center gap-2
+                       bg-secondary hover:bg-secondaryHover
+                       text-white px-6 py-3.5
+                       rounded-full font-semibold
+                       text-sm sm:text-base
+                       transition-all duration-300
+                       shadow-lg hover:shadow-secondary/20
+                       active:scale-[0.97]"
+          >
+            Discover Shoova
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center gap-2
+                       border border-white/25
+                       hover:bg-white hover:text-black
+                       text-white px-6 py-3.5
+                       rounded-full font-semibold
+                       text-sm sm:text-base
+                       transition-all duration-300
+                       active:scale-[0.97]"
+          >
+            Get Involved
+          </Link>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</motion.div>
             </div>
           </div>
 
