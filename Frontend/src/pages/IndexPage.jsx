@@ -234,7 +234,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           id="hero"
           className="relative min-h-[100svh] lg:h-screen w-full flex items-center overflow-hidden"
         >
-          {/* Background Video */}
+
           <div className="absolute inset-0">
             <video
               ref={videoRef}
@@ -248,11 +248,11 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
             </video>
           </div>
 
-         
+
           <div className="absolute inset-0 bg-black/50"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
 
-        
+
           <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-6 md:px-10 py-24 lg:py-0">
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
               <div className="max-w-lg text-left text-white">
@@ -286,7 +286,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </p>
                 </div>
 
-             
+
                 {/* <Link
                 to="/donate"
                 className="inline-flex items-center gap-2 bg-secondary hover:bg-secondaryHover text-white px-6 py-3 rounded-sm font-bold text-sm md:text-base tracking-wide transition shadow-md active:scale-[0.97]"
@@ -370,82 +370,82 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </motion.div> */}
 
               <motion.div
-  initial={{ opacity: 0, x: 50 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 1, delay: 0.5 }}
-  className="flex justify-center lg:justify-end mt-8 lg:mt-0"
->
-  <div className="w-full max-w-xl">
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="flex justify-center lg:justify-end mt-8 lg:mt-0"
+              >
+                <div className="w-full max-w-xl">
 
-    <div className="relative overflow-hidden bg-black/45 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                  <div className="relative overflow-hidden bg-black/45 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 shadow-2xl">
 
-      {/* Subtle gold glow */}
-      <div className="absolute -top-24 -right-24 w-48 h-48 bg-secondary/20 blur-3xl rounded-full pointer-events-none" />
+                    {/* Subtle gold glow */}
+                    <div className="absolute -top-24 -right-24 w-48 h-48 bg-secondary/20 blur-3xl rounded-full pointer-events-none" />
 
-      <div className="relative z-10">
+                    <div className="relative z-10">
 
-        {/* Eyebrow */}
-        <div className="flex items-center gap-3 mb-5">
-          <span className="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+                      {/* Eyebrow */}
+                      <div className="flex items-center gap-3 mb-5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
 
-          <p className="text-secondary uppercase tracking-[0.3em] text-xs sm:text-sm font-bold">
-            The Journey Has Begun
-          </p>
-        </div>
+                        <p className="text-secondary uppercase tracking-[0.3em] text-xs sm:text-sm font-bold">
+                          The Journey Has Begun
+                        </p>
+                      </div>
 
-        {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-          Shoova Ghana
-          <span className="block text-secondary">
-            Is Now Officially Live.
-          </span>
-        </h2>
+                      {/* Heading */}
+                      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+                        Shoova Ghana
+                        <span className="block text-secondary">
+                          Is Now Officially Live.
+                        </span>
+                      </h2>
 
-        {/* Description */}
-        <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg mb-7">
-          On 28 August 2026, the Shoova vision came to life at the
-          Cedi Conference Centre, University of Ghana.
-        </p>
+                      {/* Description */}
+                      <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg mb-7">
+                        On 28 August 2026, the Shoova vision came to life at the
+                        Cedi Conference Centre, University of Ghana.
+                      </p>
 
-        {/* Launch details */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
+                      {/* Launch details */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
 
-          <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-4">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-1">
-              Official Launch
-            </p>
+                        <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-4">
+                          <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-1">
+                            Official Launch
+                          </p>
 
-            <p className="text-white font-semibold text-sm sm:text-base">
-              28 August 2026
-            </p>
-          </div>
+                          <p className="text-white font-semibold text-sm sm:text-base">
+                            28 August 2026
+                          </p>
+                        </div>
 
-          <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-4">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-1">
-              Location
-            </p>
+                        <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-4">
+                          <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-1">
+                            Location
+                          </p>
 
-            <p className="text-white font-semibold text-sm sm:text-base">
-              University of Ghana
-            </p>
-          </div>
+                          <p className="text-white font-semibold text-sm sm:text-base">
+                            University of Ghana
+                          </p>
+                        </div>
 
-        </div>
+                      </div>
 
-        {/* Mission statement */}
-        <div className="border-l-2 border-secondary pl-4 mb-7">
-          <p className="text-white/80 text-sm sm:text-base italic leading-relaxed">
-            Restoring land. Creating opportunity. Building a sustainable
-            future for the next generation.
-          </p>
-        </div>
+                      {/* Mission statement */}
+                      <div className="border-l-2 border-secondary pl-4 mb-7">
+                        <p className="text-white/80 text-sm sm:text-base italic leading-relaxed">
+                          Restoring land. Creating opportunity. Building a sustainable
+                          future for the next generation.
+                        </p>
+                      </div>
 
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-3">
+                      {/* CTA */}
+                      <div className="flex flex-col sm:flex-row gap-3">
 
-          <Link
-            to="/about"
-            className="inline-flex items-center justify-center gap-2
+                        <Link
+                          to="/about"
+                          className="inline-flex items-center justify-center gap-2
                        bg-secondary hover:bg-secondaryHover
                        text-white px-6 py-3.5
                        rounded-full font-semibold
@@ -453,14 +453,14 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                        transition-all duration-300
                        shadow-lg hover:shadow-secondary/20
                        active:scale-[0.97]"
-          >
-            Discover Shoova
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+                        >
+                          Discover Shoova
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
 
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center gap-2
+                        <Link
+                          to="/contact"
+                          className="inline-flex items-center justify-center gap-2
                        border border-white/25
                        hover:bg-white hover:text-black
                        text-white px-6 py-3.5
@@ -468,18 +468,18 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                        text-sm sm:text-base
                        transition-all duration-300
                        active:scale-[0.97]"
-          >
-            Get Involved
-          </Link>
+                        >
+                          Get Involved
+                        </Link>
 
-        </div>
+                      </div>
 
-      </div>
+                    </div>
 
-    </div>
+                  </div>
 
-  </div>
-</motion.div>
+                </div>
+              </motion.div>
             </div>
           </div>
 
@@ -578,14 +578,15 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
         </section>
         <GalamseySection />
-        <motion.section
+        {/* LAUNCH SECTION */}
+        {/* <motion.section
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
           className="relative overflow-hidden bg-black text-white py-20 md:py-24"
         >
-          {/* Gold atmosphere */}
+       
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-secondary/20 blur-[120px] rounded-full" />
             <div className="absolute bottom-[-250px] right-[-100px] w-[400px] h-[400px] bg-secondary/10 blur-[100px] rounded-full" />
@@ -652,6 +653,261 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               >
                 Get Involved
               </Link>
+
+            </div>
+
+          </div>
+        </motion.section> */}
+
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.9 }}
+          className="relative overflow-hidden bg-black text-white py-24 md:py-32"
+        >
+          {/* Background atmosphere */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[-180px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-secondary/15 blur-[140px] rounded-full" />
+            <div className="absolute bottom-[-250px] left-[-150px] w-[450px] h-[450px] bg-secondary/10 blur-[120px] rounded-full" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.35)_100%)]" />
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+
+            {/* SECTION INTRO */}
+            <div className="max-w-4xl mx-auto text-center mb-16 md:mb-20">
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="text-secondary uppercase tracking-[0.35em] text-xs md:text-sm font-bold mb-5"
+              >
+                The Beginning
+              </motion.p>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
+              >
+                The Journey
+                <span className="block text-secondary">
+                  Has Begun.
+                </span>
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mt-7 max-w-2xl mx-auto text-white/65 text-base md:text-lg leading-relaxed"
+              >
+                On 28 August 2026, the Shoova Initiative officially launched its
+                vision to restore degraded land, create pathways to opportunity,
+                and equip the next generation to build a sustainable future.
+              </motion.p>
+
+            </div>
+
+
+            {/* LAUNCH DATE / LOCATION */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8 mb-16"
+            >
+
+              <div className="flex items-center gap-3 text-white/70 text-sm">
+                <span className="w-2 h-2 rounded-full bg-secondary" />
+                <span className="uppercase tracking-widest">
+                  28 August 2026
+                </span>
+              </div>
+
+              <div className="hidden md:block w-px h-5 bg-white/20" />
+
+              <div className="flex items-center gap-3 text-white/70 text-sm">
+                <MapPin className="w-4 h-4 text-secondary" />
+                <span>
+                  Cedi Conference Centre · University of Ghana
+                </span>
+              </div>
+
+            </motion.div>
+
+
+            {/* ========================================================= */}
+            {/*                     IMAGE STORY                            */}
+            {/* ========================================================= */}
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+
+              {/* MAIN IMAGE */}
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.9 }}
+                className="lg:col-span-7 relative group"
+              >
+
+                <div className="relative h-[420px] md:h-[560px] overflow-hidden rounded-2xl border border-white/10">
+
+                  {/* INSERT MAIN GROUP IMAGE HERE */}
+                  <img
+                    src="/img/IMG_shoova.jpg"
+                    alt="Shoova Ghana launch"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  {/* Image overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+
+                  {/* Image label */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+
+                    <p className="text-secondary text-xs uppercase tracking-[0.3em] font-bold mb-2">
+                      Shoova Ghana
+                    </p>
+
+                    <h3 className="text-2xl md:text-3xl font-bold">
+                      A Vision Becomes a Movement
+                    </h3>
+
+                  </div>
+
+                </div>
+
+              </motion.div>
+
+
+              {/* SIDE IMAGES */}
+              <div className="lg:col-span-5 grid grid-cols-2 lg:grid-cols-1 gap-5">
+
+                {/* IMAGE 02 */}
+                <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.8, delay: 0.15 }}
+                  className="relative group h-[250px] md:h-[270px] lg:h-[267px] overflow-hidden rounded-2xl border border-white/10"
+                >
+
+                  {/* INSERT SECOND IMAGE HERE */}
+                  <img
+                    src="/img/IMG_shoova1.jpg"
+                    alt="Shoova team at launch"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+
+                  <div className="absolute bottom-5 left-5">
+                    <p className="text-white font-semibold text-sm md:text-base">
+                      The People Behind the Vision
+                    </p>
+                  </div>
+
+                </motion.div>
+
+
+                {/* IMAGE 03 */}
+                <motion.div
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.8, delay: 0.25 }}
+                  className="relative group h-[250px] md:h-[270px] lg:h-[267px] overflow-hidden rounded-2xl border border-white/10"
+                >
+
+                  {/* INSERT THIRD IMAGE HERE */}
+                  <img
+                    src="/img/IMG_shoova.jpg"
+                    alt="Guests at Shoova Ghana launch"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+
+                  <div className="absolute bottom-5 left-5">
+                    <p className="text-white font-semibold text-sm md:text-base">
+                      A Community United for Restoration
+                    </p>
+                  </div>
+
+                </motion.div>
+
+              </div>
+
+            </div>
+
+
+            {/* ========================================================= */}
+            {/*                     CLOSING STATEMENT                      */}
+            {/* ========================================================= */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="mt-16 md:mt-20 grid md:grid-cols-2 gap-10 items-center"
+            >
+
+              {/* Statement */}
+              <div>
+
+                <p className="text-secondary uppercase tracking-[0.3em] text-xs font-bold mb-4">
+                  More Than A Launch
+                </p>
+
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                  This is where
+                  <span className="text-secondary"> restoration begins.</span>
+                </h3>
+
+              </div>
+
+
+              {/* Description */}
+              <div className="md:border-l md:border-white/15 md:pl-10">
+
+                <p className="text-white/60 text-base md:text-lg leading-relaxed">
+                  The launch marks the beginning of a long-term commitment to
+                  restoring land, rebuilding livelihoods, expanding access to
+                  technical education, and creating new possibilities for
+                  communities affected by irresponsible mining.
+                </p>
+
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 mt-7 text-secondary font-semibold hover:text-white transition-colors"
+                >
+                  Discover the Shoova vision
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+
+              </div>
+
+            </motion.div>
+
+
+            {/* Decorative line */}
+            <div className="mt-20 md:mt-24 flex items-center gap-4">
+
+              <div className="h-px flex-1 bg-white/10" />
+
+              <div className="w-2 h-2 rounded-full bg-secondary" />
+
+              <div className="h-px flex-1 bg-white/10" />
 
             </div>
 
