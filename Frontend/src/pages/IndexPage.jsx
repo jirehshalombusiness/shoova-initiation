@@ -19,7 +19,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaFacebookF, FaYoutube, FaShareAlt } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import GalamseySection from '../components/GalamseySection';
-import { GraduationCap, Leaf, Briefcase, Shield } from "lucide-react";
+import { GraduationCap, Leaf, Briefcase, Shield ,ArrowDownRight,ArrowUpRight} from "lucide-react";
 export const IndexPage = ({ className, children, variant, contentKey, ...props }) => {
 
   // const [birthday, setBirthday] = useState(null);
@@ -716,7 +716,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
             </div>
 
 
-            {/* LAUNCH DATE / LOCATION */}
             <motion.div
               initial={{ opacity: 0, scale: 0.97 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -745,8 +744,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
 
             {/* ========================================================= */}
-            {/*                     IMAGE STORY                            */}
-            {/* ========================================================= */}
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
 
@@ -761,17 +758,17 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                 <div className="relative h-[420px] md:h-[560px] overflow-hidden rounded-2xl border border-white/10">
 
-                  {/* INSERT MAIN GROUP IMAGE HERE */}
+                 
                   <img
                     src="/img/IMG_shoova.jpg"
                     alt="Shoova Ghana launch"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                  {/* Image overlay */}
+                
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
 
-                  {/* Image label */}
+            
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
 
                     <p className="text-secondary text-xs uppercase tracking-[0.3em] font-bold mb-2">
@@ -789,10 +786,8 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </motion.div>
 
 
-              {/* SIDE IMAGES */}
+            
               <div className="lg:col-span-5 grid grid-cols-2 lg:grid-cols-1 gap-5">
-
-                {/* IMAGE 02 */}
                 <motion.div
                   initial={{ opacity: 0, x: 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -801,7 +796,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   className="relative group h-[250px] md:h-[270px] lg:h-[267px] overflow-hidden rounded-2xl border border-white/10"
                 >
 
-                  {/* INSERT SECOND IMAGE HERE */}
                   <img
                     src="/img/IMG_shoova1.jpg"
                     alt="Shoova team at launch"
@@ -1406,9 +1400,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     01
                   </span>
 
-                  <span className="text-primary/20 group-hover:text-white/20 text-4xl font-bold transition">
-                    ↘
-                  </span>
+<ArrowDownRight
+  className="w-7 h-7 text-primary/20 group-hover:text-white/20 transition"
+/>
 
                 </div>
 
@@ -1438,9 +1432,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     02
                   </span>
 
-                  <span className="text-primary/20 group-hover:text-white/20 text-4xl font-bold transition">
-                    ↗
-                  </span>
+                  <ArrowUpRight
+                    className="w-7 h-7 text-primary/20 group-hover:text-white/20 transition"
+                  />
 
                 </div>
 
@@ -1470,9 +1464,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     03
                   </span>
 
-                  <span className="text-primary/20 group-hover:text-white/20 text-4xl font-bold transition">
-                    ↙
-                  </span>
+                  <ArrowDownLeft
+                    className="w-7 h-7 text-primary/20 group-hover:text-white/20 transition"
+                  />
 
                 </div>
 
@@ -1503,9 +1497,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     04
                   </span>
 
-                  <span className="text-primary/20 group-hover:text-white/20 text-4xl font-bold transition">
-                    ↗
-                  </span>
+                  <ArrowUpRight
+                    className="w-7 h-7 text-primary/20 group-hover:text-white/20 transition"
+                  />
 
                 </div>
 
