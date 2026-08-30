@@ -444,7 +444,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
-                    School of Engineering & Technical Trades
+                    School of Engineering & Technical Systems
                   </h3>
                   <p className="text-gray-600">
                    Students learn structural welding, precision manufacturing, solar technology, heavy machinery repair, and metal fabrication. Graduates leave ready to construct, power, and maintain Ghana’s growing infrastructure — from renewable energy systems to major industrial projects.
@@ -453,7 +453,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
 
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
-                    School of Agribusiness & Environmental Sustainability
+                    School of Agribusiness & Environmental Stewardship
                   </h3>
                   <p className="text-gray-600">
                     This school trains youth in organic farming, solar installation, land reclamation, and sustainable resource management. Graduates lead the green transition — restoring ecosystems while building commercially viable agricultural businesses.
@@ -470,7 +470,7 @@ export const AboutPage = ({ className, children, variant, contentKey, ...props }
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
-                    School of Ethical Leadership & Community Development
+                    School of Leadership & Public Service. 
                   </h3>
                   <p className="text-gray-600">
                     Focused on governance, public service, ethical decision‑making, and community mobilization. Graduates emerge as principled leaders who resist corruption, serve the common good, and transform their communities from within.
