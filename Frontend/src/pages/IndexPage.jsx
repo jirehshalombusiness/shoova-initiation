@@ -828,7 +828,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   className="relative group h-[250px] md:h-[270px] lg:h-[267px] overflow-hidden rounded-2xl border border-white/10"
                 >
 
-                
+
                   <img
                     src="/img/IMG_shoova2.jpg"
                     alt="Guests at Shoova Ghana launch"
@@ -839,7 +839,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                   <div className="absolute bottom-5 left-5">
                     <p className="text-white font-semibold text-sm md:text-base">
-                      A Community United for Restoration 
+                      A Community United for Restoration
                     </p>
                   </div>
 
@@ -1143,15 +1143,11 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
           viewport={{ once: true, amount: 0.2 }}
           className="relative py-32 bg-gray-50 overflow-hidden"
         >
-
-          {/* 🌫 Background Atmosphere */}
           <div className="absolute inset-0">
             <div className="absolute top-[-15%] left-1/2 w-[700px] h-[700px] bg-green-100/30 blur-3xl rounded-full -translate-x-1/2" />
           </div>
 
           <div className="max-w-7xl mx-auto px-6 md:px-10 relative">
-
-            {/* 🧠 HEADER */}
             <motion.div variants={fadeUp} className="max-w-4xl mx-auto text-center">
               <h2 className="text-4xl md:text-5xl font-semibold text-gray-900">
                 Shoova Restoration Campus
@@ -1162,7 +1158,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </p>
 
               <p className="mt-4 text-base text-gray-500">
-                Four specialized academies producing builders, creators, and ethical leaders who restore land, economy, and communities.
+                Four specialized systems producing builders, creators, and ethical leaders who restore land, economy, and communities.
               </p>
             </motion.div>
 
@@ -1195,15 +1191,14 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                   {/* LABEL */}
                   <p className="text-xs tracking-[0.3em] text-gray-400 mb-3">
-                    ACADEMY 01
+                    SYSTEM 01
                   </p>
 
-                  {/* TITLE */}
                   <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
-                    Engineering & Technical Trades
+                    Engineering & Technical Systems
                   </h3>
 
-                  {/* DESCRIPTION */}
+
                   <p className="mt-4 text-gray-600 leading-relaxed">
                     Structural welding, solar technology, heavy machinery repair, and precision fabrication that power national infrastructure.
                   </p>
@@ -1218,7 +1213,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 </div>
               </motion.div>
 
-              {/* 🌿 CARD 2 */}
+
               <motion.div
                 variants={fadeUp}
                 className="group relative p-9 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
@@ -1236,11 +1231,11 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <p className="text-xs tracking-[0.3em] text-gray-400 mb-3">
-                    ACADEMY 02
+                    SYSTEM 02
                   </p>
 
                   <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
-                    Agribusiness & Environmental Sustainability
+                    Agribusiness & Environmental Stewardship
                   </h3>
 
                   <p className="mt-4 text-gray-600 leading-relaxed">
@@ -1256,7 +1251,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 </div>
               </motion.div>
 
-              {/* 💼 CARD 3 */}
               <motion.div
                 variants={fadeUp}
                 className="group relative p-9 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
@@ -1274,7 +1268,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <p className="text-xs tracking-[0.3em] text-gray-400 mb-3">
-                    ACADEMY 03
+                    SYSTEM 03
                   </p>
 
                   <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
@@ -1294,7 +1288,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                 </div>
               </motion.div>
 
-              {/* 🧭 CARD 4 */}
+
               <motion.div
                 variants={fadeUp}
                 className="group relative p-9 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
@@ -1312,11 +1306,11 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   </div>
 
                   <p className="text-xs tracking-[0.3em] text-gray-400 mb-3">
-                    ACADEMY 04
+                    SYSTEM 04
                   </p>
 
                   <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
-                    Ethical Leadership & Community Development
+                    Leadership & Public Service
                   </h3>
 
                   <p className="mt-4 text-gray-600 leading-relaxed">
@@ -1336,6 +1330,366 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
           </div>
         </motion.section>
+
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.9 }}
+          className="relative overflow-hidden bg-[#f7f3ea] py-24 md:py-32"
+        >
+
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[-180px] right-[-120px] w-[420px] h-[420px] bg-secondary/10 blur-[110px] rounded-full" />
+            <div className="absolute bottom-[-200px] left-[-120px] w-[400px] h-[400px] bg-primary/10 blur-[110px] rounded-full" />
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end mb-16">
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="lg:col-span-7"
+              >
+
+                <p className="text-secondary uppercase tracking-[0.3em] text-xs md:text-sm font-bold mb-5">
+                  How We Work
+                </p>
+
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary leading-[1.05]">
+                  The Shoova
+                  <span className="block text-secondary">
+                    Restoration Method
+                  </span>
+                </h2>
+
+              </motion.div>
+
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="lg:col-span-5"
+              >
+
+                <p className="text-primary/70 text-base md:text-lg leading-relaxed">
+                  A common operating logic has been tested across business,
+                  engineering, living systems, communities and public institutions.
+                  Shoova applies that logic to the work of restoration.
+                </p>
+
+              </motion.div>
+
+            </div>
+
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-primary/10 rounded-2xl overflow-hidden shadow-sm">
+
+
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="group bg-white p-7 md:p-10 hover:bg-primary transition-all duration-500"
+              >
+
+                <div className="flex items-start justify-between mb-8">
+
+                  <span className="text-sm font-bold text-secondary tracking-[0.2em]">
+                    01
+                  </span>
+
+                  <span className="text-primary/20 group-hover:text-white/20 text-4xl font-bold transition">
+                    ↘
+                  </span>
+
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-bold text-primary group-hover:text-white mb-4 transition">
+                  Diagnose
+                </h3>
+
+                <p className="text-primary/65 group-hover:text-white/70 leading-relaxed transition">
+                  Understand the real system before prescribing: evidence,
+                  people, history, incentives, formal and informal institutions,
+                  assets, risks and previous interventions.
+                </p>
+
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+                className="group bg-[#eef2ef] p-7 md:p-10 hover:bg-secondary transition-all duration-500"
+              >
+
+                <div className="flex items-start justify-between mb-8">
+
+                  <span className="text-sm font-bold text-secondary group-hover:text-white tracking-[0.2em] transition">
+                    02
+                  </span>
+
+                  <span className="text-primary/20 group-hover:text-white/20 text-4xl font-bold transition">
+                    ↗
+                  </span>
+
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-bold text-primary group-hover:text-white mb-4 transition">
+                  Heal
+                </h3>
+
+                <p className="text-primary/65 group-hover:text-white/90 leading-relaxed transition">
+                  Restore function, capability, safety, dignity, ecological
+                  capacity, value, trust or institutional performance without
+                  creating avoidable downstream harm.
+                </p>
+
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="group bg-[#eef2ef] p-7 md:p-10 hover:bg-secondary transition-all duration-500"
+              >
+
+                <div className="flex items-start justify-between mb-8">
+
+                  <span className="text-sm font-bold text-secondary group-hover:text-white tracking-[0.2em] transition">
+                    03
+                  </span>
+
+                  <span className="text-primary/20 group-hover:text-white/20 text-4xl font-bold transition">
+                    ↙
+                  </span>
+
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-bold text-primary group-hover:text-white mb-4 transition">
+                  Mobilize
+                </h3>
+
+                <p className="text-primary/65 group-hover:text-white/90 leading-relaxed transition">
+                  Build the human, technical, financial and institutional
+                  capability required to sustain, adapt and extend the
+                  improvement.
+                </p>
+
+              </motion.div>
+
+
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="group bg-white p-7 md:p-10 hover:bg-primary transition-all duration-500"
+              >
+
+                <div className="flex items-start justify-between mb-8">
+
+                  <span className="text-sm font-bold text-secondary tracking-[0.2em]">
+                    04
+                  </span>
+
+                  <span className="text-primary/20 group-hover:text-white/20 text-4xl font-bold transition">
+                    ↗
+                  </span>
+
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-bold text-primary group-hover:text-white mb-4 transition">
+                  Return & Learn
+                </h3>
+
+                <p className="text-primary/65 group-hover:text-white/70 leading-relaxed transition">
+                  Follow up where appropriate. Measure establishment rather
+                  than ceremony. Learn what endured, what failed, what adapted
+                  and what the next steward needs.
+                </p>
+
+              </motion.div>
+
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="mt-16 md:mt-20"
+            >
+
+              <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+                <div className="lg:col-span-4">
+
+                  <p className="text-secondary uppercase tracking-[0.25em] text-xs font-bold mb-4">
+                    The Discipline Behind the Method
+                  </p>
+
+                  <h3 className="text-3xl md:text-4xl font-heading font-bold text-primary leading-tight">
+                    Methodological
+                    <span className="block text-secondary">
+                      Disciplines
+                    </span>
+                  </h3>
+
+                  <p className="mt-5 text-primary/60 leading-relaxed">
+                    Restoration requires more than good intentions. It requires
+                    understanding what has already happened, who holds influence,
+                    and what must remain in place after an intervention ends.
+                  </p>
+
+                </div>
+                <div className="lg:col-span-8">
+
+                  <div className="divide-y divide-primary/10">
+
+
+                    <div className="py-5 first:pt-0 flex gap-5">
+
+                      <span className="text-secondary font-bold text-sm pt-1">
+                        01
+                      </span>
+
+                      <div>
+                        <h4 className="font-bold text-primary text-lg">
+                          Development Archaeology
+                        </h4>
+
+                        <p className="text-primary/60 mt-1 leading-relaxed">
+                          Investigate what has already been tried and what remains
+                          before building something new.
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <div className="py-5 flex gap-5">
+
+                      <span className="text-secondary font-bold text-sm pt-1">
+                        02
+                      </span>
+
+                      <div>
+                        <h4 className="font-bold text-primary text-lg">
+                          Formal + Informal System Mapping
+                        </h4>
+
+                        <p className="text-primary/60 mt-1 leading-relaxed">
+                          Understand official authority and the networks, norms
+                          and trusted actors people actually use.
+                        </p>
+                      </div>
+
+                    </div>
+                    <div className="py-5 flex gap-5">
+
+                      <span className="text-secondary font-bold text-sm pt-1">
+                        03
+                      </span>
+
+                      <div>
+                        <h4 className="font-bold text-primary text-lg">
+                          Transition Architecture
+                        </h4>
+
+                        <p className="text-primary/60 mt-1 leading-relaxed">
+                          Design the bridge so people can survive and participate
+                          in the journey to a better system.
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <div className="py-5 flex gap-5">
+
+                      <span className="text-secondary font-bold text-sm pt-1">
+                        04
+                      </span>
+
+                      <div>
+                        <h4 className="font-bold text-primary text-lg">
+                          Professional Restraint
+                        </h4>
+
+                        <p className="text-primary/60 mt-1 leading-relaxed">
+                          Know when to intervene, when to wait, when to refer and
+                          when another institution is better positioned.
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <div className="py-5 last:pb-0 flex gap-5">
+
+                      <span className="text-secondary font-bold text-sm pt-1">
+                        05
+                      </span>
+
+                      <div>
+                        <h4 className="font-bold text-primary text-lg">
+                          Handover & Succession
+                        </h4>
+
+                        <p className="text-primary/60 mt-1 leading-relaxed">
+                          Preserve the reasoning, records, capability and
+                          responsibility needed by the next steward.
+                        </p>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-16 pt-10 border-t border-primary/10"
+            >
+
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+
+                <p className="text-primary/70 text-sm md:text-base max-w-2xl leading-relaxed">
+                  Restoration is not a single intervention. It is a process of
+                  understanding, action, recovery, learning and responsible
+                  handover.
+                </p>
+
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 text-secondary font-semibold hover:text-primary transition-colors whitespace-nowrap"
+                >
+                  Learn about Shoova
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+
+              </div>
+
+            </motion.div>
+
+          </div>
+        </motion.section>
+
         <section className="relative bg-white pt-24 pb-10">
           <div className="text-center mb-12 md:mb-16 px-6">
 
