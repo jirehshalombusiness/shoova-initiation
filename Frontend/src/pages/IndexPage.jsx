@@ -828,9 +828,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                   className="relative group h-[250px] md:h-[270px] lg:h-[267px] overflow-hidden rounded-2xl border border-white/10"
                 >
 
-                  {/* INSERT THIRD IMAGE HERE */}
+                
                   <img
-                    src="/img/IMG_shoova.jpg"
+                    src="/img/IMG_shoova2.jpg"
                     alt="Guests at Shoova Ghana launch"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -839,7 +839,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                   <div className="absolute bottom-5 left-5">
                     <p className="text-white font-semibold text-sm md:text-base">
-                      A Community United for Restoration
+                      A Community United for Restoration 
                     </p>
                   </div>
 
@@ -849,11 +849,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
             </div>
 
-
-            {/* ========================================================= */}
-            {/*                     CLOSING STATEMENT                      */}
-            {/* ========================================================= */}
-
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -862,7 +857,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               className="mt-16 md:mt-20 grid md:grid-cols-2 gap-10 items-center"
             >
 
-              {/* Statement */}
               <div>
 
                 <p className="text-secondary uppercase tracking-[0.3em] text-xs font-bold mb-4">
@@ -876,8 +870,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
               </div>
 
-
-              {/* Description */}
               <div className="md:border-l md:border-white/15 md:pl-10">
 
                 <p className="text-white/60 text-base md:text-lg leading-relaxed">
@@ -899,8 +891,6 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
             </motion.div>
 
-
-            {/* Decorative line */}
             <div className="mt-20 md:mt-24 flex items-center gap-4">
 
               <div className="h-px flex-1 bg-white/10" />
