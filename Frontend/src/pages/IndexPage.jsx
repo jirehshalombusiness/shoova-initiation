@@ -19,7 +19,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaFacebookF, FaYoutube, FaShareAlt } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import GalamseySection from '../components/GalamseySection';
-import { GraduationCap, Leaf, Briefcase, Shield ,ArrowDownRight,ArrowUpRight} from "lucide-react";
+import { GraduationCap, Leaf, Briefcase, Shield ,ArrowDownleft,ArrowUpRight} from "lucide-react";
 export const IndexPage = ({ className, children, variant, contentKey, ...props }) => {
 
   // const [birthday, setBirthday] = useState(null);
@@ -1400,7 +1400,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     01
                   </span>
 
-<ArrowDownRight
+<ArrowDownleft
   className="w-7 h-7 text-primary/20 group-hover:text-white/20 transition"
 />
 
@@ -1464,7 +1464,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     03
                   </span>
 
-                  <ArrowDownLeft
+                  <ArrowDownleft
                     className="w-7 h-7 text-primary/20 group-hover:text-white/20 transition"
                   />
 
