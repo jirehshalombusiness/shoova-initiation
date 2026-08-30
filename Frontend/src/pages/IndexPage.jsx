@@ -19,7 +19,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaFacebookF, FaYoutube, FaShareAlt } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import GalamseySection from '../components/GalamseySection';
-import { GraduationCap, Leaf, Briefcase, Shield ,ArrowDownLeft,ArrowUpRight} from "lucide-react";
+import { GraduationCap, Leaf, Briefcase, Shield, ArrowDownLeft, ArrowUpRight } from "lucide-react";
 export const IndexPage = ({ className, children, variant, contentKey, ...props }) => {
 
   // const [birthday, setBirthday] = useState(null);
@@ -758,17 +758,17 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
 
                 <div className="relative h-[420px] md:h-[560px] overflow-hidden rounded-2xl border border-white/10">
 
-                 
+
                   <img
                     src="/img/IMG_shoova.jpg"
                     alt="Shoova Ghana launch"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
-                
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
 
-            
+
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
 
                     <p className="text-secondary text-xs uppercase tracking-[0.3em] font-bold mb-2">
@@ -786,7 +786,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
               </motion.div>
 
 
-            
+
               <div className="lg:col-span-5 grid grid-cols-2 lg:grid-cols-1 gap-5">
                 <motion.div
                   initial={{ opacity: 0, x: 40 }}
@@ -1400,9 +1400,9 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     01
                   </span>
 
-<ArrowDownLeft
-  className="w-7 h-7 text-primary/20 group-hover:text-white/20 transition"
-/>
+                  <ArrowDownLeft
+                    className="w-7 h-7 text-primary/20 group-hover:text-white/20 transition"
+                  />
 
                 </div>
 
@@ -1464,7 +1464,7 @@ export const IndexPage = ({ className, children, variant, contentKey, ...props }
                     03
                   </span>
 
-                  <ArrowDownleft
+                  <ArrowDownLeft
                     className="w-7 h-7 text-primary/20 group-hover:text-white/20 transition"
                   />
 
