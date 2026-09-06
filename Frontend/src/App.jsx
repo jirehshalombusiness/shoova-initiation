@@ -229,8 +229,8 @@ const App = () => {
             <Route path="/admin/settings" element={<Settings />} />
             <Route path="donor/:email" element={<DonorProfile />} />
             <Route path="/admin/newsletter" element={<Newsletter />} />
-            <Route path="/admin/stories" element={<Stories />} />
-            <Route path="/admin/stories" element={<Stories />} />
+            <Route path="stories" element={<Stories />} />
+            <Route path="stories/new" element={<NewStory />} />
           </Route>
 
         </Routes>
