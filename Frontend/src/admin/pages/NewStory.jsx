@@ -130,12 +130,7 @@ export default function NewStory() {
         status,
       };
 
-      /*
-       * Cover image is intentionally not sent yet.
-       *
-       * The selected image currently exists only as a browser File object.
-       * We will connect this to Cloudinary in the next step.
-       */
+      
       const res = await fetch(`${API_URL}/stories`, {
         method: "POST",
         headers: {
@@ -171,7 +166,6 @@ export default function NewStory() {
   return (
     <div className="max-w-6xl mx-auto space-y-8">
 
-      {/* HEADER */}
       <div>
         <Link
           to="/admin/stories"
@@ -198,7 +192,7 @@ export default function NewStory() {
         </div>
       </div>
 
-      {/* STORY INFORMATION */}
+      
       <section className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 md:p-8">
 
         <div className="mb-6">
@@ -213,7 +207,6 @@ export default function NewStory() {
 
         <div className="space-y-6">
 
-          {/* TITLE */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Title
@@ -228,7 +221,7 @@ export default function NewStory() {
             />
           </div>
 
-          {/* SLUG */}
+        
           <div>
             <div className="flex items-center justify-between mb-2">
               <label className="block text-sm font-semibold text-gray-700">
@@ -265,7 +258,7 @@ export default function NewStory() {
             </p>
           </div>
 
-          {/* EXCERPT */}
+        
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Excerpt
@@ -284,7 +277,7 @@ export default function NewStory() {
             </p>
           </div>
 
-          {/* CATEGORY + AUTHOR */}
+        
           <div className="grid md:grid-cols-2 gap-6">
 
             <div>
@@ -324,7 +317,7 @@ export default function NewStory() {
         </div>
       </section>
 
-      {/* COVER IMAGE */}
+     
       <section className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 md:p-8">
 
         <div className="mb-6">
@@ -391,8 +384,6 @@ export default function NewStory() {
         )}
 
       </section>
-
-      {/* ARTICLE CONTENT */}
       <section className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 md:p-8">
 
         <div className="mb-6">
@@ -419,7 +410,7 @@ export default function NewStory() {
 
       </section>
 
-      {/* PUBLISHING */}
+ 
       <section className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 md:p-8">
 
         <div className="mb-6">
@@ -456,7 +447,7 @@ export default function NewStory() {
 
       </section>
 
-      {/* ACTIONS */}
+
       <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 flex flex-col sm:flex-row justify-between gap-4">
 
         <button
