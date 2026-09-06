@@ -177,7 +177,7 @@ export default function NewStory() {
                 category,
                 author: author.trim() || "Shoova Initiative",
                 featured,
-                status,
+                status: status,
             };
 
 
