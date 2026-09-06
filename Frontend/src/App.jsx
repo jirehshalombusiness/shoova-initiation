@@ -33,6 +33,7 @@ import ShoovaCampus from "./pages/ShoovaCampus";
 import ResetPassword from "./admin/pages/ResetPassword";
 import VerifyOTP from "./admin/pages/OtpPage";
 import Stories from "./admin/pages/Stories";
+import NewStory from "./admin/pages/NewStory";
 function loadAnalytics() {
   const GA_ID = "";
 
@@ -229,7 +230,7 @@ const App = () => {
             <Route path="donor/:email" element={<DonorProfile />} />
             <Route path="/admin/newsletter" element={<Newsletter />} />
             <Route path="/admin/stories" element={<Stories />} />
-
+            <Route path="/admin/stories" element={<Stories />} />
           </Route>
 
         </Routes>
