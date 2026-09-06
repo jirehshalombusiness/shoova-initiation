@@ -34,6 +34,7 @@ import ResetPassword from "./admin/pages/ResetPassword";
 import VerifyOTP from "./admin/pages/OtpPage";
 import Stories from "./admin/pages/Stories";
 import NewStory from "./admin/pages/NewStory";
+import EditStory from "./admin/pages/EditStory";
 function loadAnalytics() {
   const GA_ID = "";
 
@@ -231,6 +232,7 @@ const App = () => {
             <Route path="/admin/newsletter" element={<Newsletter />} />
             <Route path="stories" element={<Stories />} />
             <Route path="stories/new" element={<NewStory />} />
+            <Route path="stories/:id/edit" element={<EditStory />} />
           </Route>
 
         </Routes>
