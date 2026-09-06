@@ -6,7 +6,8 @@ import {
   Users,
   BarChart3,
   Settings,
-  LogOut
+  LogOut,
+  Newsletter
 } from "lucide-react";
 
 export default function AdminLayout() {
@@ -65,9 +66,16 @@ export default function AdminLayout() {
           <Link
             to="/admin/newsletter"
             className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition">
-              Newsletter
+            Newsletter
           </Link>
-
+          <Link
+            to="/admin/stories"
+            className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition"
+          >
+            <Newspaper size={20} />
+            Stories
+          </Link>
+ 
           <Link
             to="/admin/settings"
             className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition"

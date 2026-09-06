@@ -5,6 +5,8 @@ import Layout from "./components/Layout";
 import { IndexPage } from "./pages/IndexPage";
 import { AboutPage } from "./pages/AboutPage";
 import StoryPage from "./pages/StoryPage";
+import StoriesPage from "./pages/StoriesPage";
+import ArticlePage from "./pages/ArticlePage";
 import { InitiativesPage } from "./pages/InitiativesPage";
 import { ContactPage } from "./pages/ContactPage";
 import { DonatePage } from "./pages/DonatePage";
@@ -30,6 +32,7 @@ import ".././src/styles/globals.css";
 import ShoovaCampus from "./pages/ShoovaCampus";
 import ResetPassword from "./admin/pages/ResetPassword";
 import VerifyOTP from "./admin/pages/OtpPage";
+import Stories from "./admin/pages/Stories";
 function loadAnalytics() {
   const GA_ID = "";
 
@@ -143,30 +146,30 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-  if (window.googleTranslateLoaded) return;
-  window.googleTranslateLoaded = true;
+    if (window.googleTranslateLoaded) return;
+    window.googleTranslateLoaded = true;
 
-  const script = document.createElement("script");
-  script.src =
-    "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-  script.async = true;
+    const script = document.createElement("script");
+    script.src =
+      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.async = true;
 
-  window.googleTranslateElementInit = () => {
-    try {
-      new window.google.translate.TranslateElement(
-        {
-          pageLanguage: "en",
-          includedLanguages: "en,es,fr,zh-CN,ja",
-        },
-        "google_translate_element"
-      );
-    } catch (e) {
-      console.warn("Translate init failed", e);
-    }
-  };
+    window.googleTranslateElementInit = () => {
+      try {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,es,fr,zh-CN,ja",
+          },
+          "google_translate_element"
+        );
+      } catch (e) {
+        console.warn("Translate init failed", e);
+      }
+    };
 
-  document.body.appendChild(script);
-}, []);
+    document.body.appendChild(script);
+  }, []);
   return (
     <>
       <div id="google_translate_element" style={{ display: "none" }}></div>
@@ -192,6 +195,8 @@ const App = () => {
             <Route path="/" element={<IndexPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/shoovainitiatives" element={<InitiativesPage />} />
+            <Route path="/stories" element={<StoriesPage />} />
+            <Route path="/stories/:slug" element={<ArticlePage />} />
             <Route path="/story" element={<StoryPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/donate" element={<DonatePage />} />
@@ -223,7 +228,7 @@ const App = () => {
             <Route path="/admin/settings" element={<Settings />} />
             <Route path="donor/:email" element={<DonorProfile />} />
             <Route path="/admin/newsletter" element={<Newsletter />} />
-            
+            <Route path="/admin/stories" element={<Stories />} />
 
           </Route>
 

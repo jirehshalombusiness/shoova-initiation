@@ -13,8 +13,8 @@ const environment = process.env.NODE_ENV === "production"
         process.env.PAYPAL_SECRET
     );
 
-console.log("CLIENT:", process.env.PAYPAL_CLIENT_ID);
-console.log("SECRET:", process.env.PAYPAL_SECRET);
+// console.log("CLIENT:", process.env.PAYPAL_CLIENT_ID);
+// console.log("SECRET:", process.env.PAYPAL_SECRET);
 
 const client = new paypal.core.PayPalHttpClient(environment);
 

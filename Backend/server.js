@@ -28,7 +28,7 @@ import { sendEmail } from "./utils/sendEmail.js"
 import { verifyAdmin } from "./middleware/verifyAdmin.js";
 import paypal from "@paypal/checkout-server-sdk";
 import client from "./paypalClient.js";
-
+import storyRoute from "./routes/storyRoute.js";
 
 const app = express();
 
@@ -250,7 +250,7 @@ app.post("/create-paypal-order", async (req, res) => {
     if (!amount || isNaN(amount) || amount < 1) {
       return res.status(400).json({ error: "Invalid amount" });
     }
-    console.log(" PayPal amount:", amount);
+    
 
     const request = new paypal.orders.OrdersCreateRequest();
 
@@ -977,6 +977,7 @@ app.use("/newsletter-send", newsletterSendRoutes);
 
 app.use("/newsletter", newsletterRoutes);
 app.use("/draft", draftRoutes);
+app.use("/stories", storyRoute);
 app.use("/engagement", engagementRoutes);
 app.use("/api", contactRoutes);
 
