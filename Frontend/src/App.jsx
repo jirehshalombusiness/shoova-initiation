@@ -190,7 +190,7 @@ const App = () => {
 
         <Routes>
 
-          {/* PUBLIC WEBSITE ROUTES */}
+          
           <Route element={<Layout />}>
 
             <Route path="/" element={<IndexPage />} />
@@ -210,7 +210,7 @@ const App = () => {
 
           </Route>
 
-          {/* ADMIN DASHBOARD ROUTES */}
+
           <Route path="/admin/login" element={<Login />} />
           <Route
             path="/admin"
