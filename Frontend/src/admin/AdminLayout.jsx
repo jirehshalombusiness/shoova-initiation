@@ -7,7 +7,7 @@ import {
   BarChart3,
   Settings,
   LogOut,
-  Newsletter
+  Newspaper
 } from "lucide-react";
 
 export default function AdminLayout() {
@@ -66,6 +66,7 @@ export default function AdminLayout() {
           <Link
             to="/admin/newsletter"
             className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/10 transition">
+            <Newspaper size={20} />
             Newsletter
           </Link>
           <Link
