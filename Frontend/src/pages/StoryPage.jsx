@@ -14,75 +14,7 @@ export default function StoryPage() {
 
 
 
-  // const [birthday, setBirthday] = useState(null);
-  // const [subscribed, setSubscribed] = useState(false);
 
-  // const [formData, setFormData] = useState({
-  //   firstName: "",
-  //   lastName: "",
-  //   email: "",
-  //   birthdayMonth: "",
-  //   birthdayDay: "",
-  //   birthdayYear: "",
-  //   birthdayReminder: false
-  // });
-
-  // const handleChange = (e) => {
-  //   const { name, value, type, checked } = e.target;
-
-  //   setFormData({
-  //     ...formData,
-  //     [name]: type === "checkbox" ? checked : value
-  //   });
-  // };
-
-  // const handleSubscribe = async (e) => {
-
-  //   e.preventDefault();
-
-  //   try {
-
-  //     const res = await fetch("http://localhost:5000/newsletter/subscribe", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       },
-  //       body: JSON.stringify({
-  //         ...formData,
-  //         birthday: birthday ? birthday.toISOString() : null
-  //       })
-  //     });
-
-  //     const data = await res.json();
-
-  //     console.log("SERVER RESPONSE:", data);
-
-  //     if (data.success) {
-  //       setSubscribed(true);
-
-  //       // clear form
-  //       setFormData({
-  //         firstName: "",
-  //         lastName: "",
-  //         email: "",
-  //         birthdayMonth: "",
-  //         birthdayDay: "",
-  //         birthdayYear: "",
-  //         birthdayReminder: false
-  //       });
-
-  //       setBirthday(null);
-
-  //       window.scrollTo({ top: 0, behavior: "smooth" });
-  //     }
-
-  //   } catch (error) {
-
-  //     console.error("Subscription failed:", error);
-
-  //   }
-
-  // };
   return (
     <div className="font-body antialiased bg-white text-gray-900">
       <section

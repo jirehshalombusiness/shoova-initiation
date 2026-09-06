@@ -178,7 +178,7 @@ export default function NewStory() {
     
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Excerpt
+              Excerpts
             </label>
 
             <textarea
@@ -255,7 +255,7 @@ export default function NewStory() {
               </div>
 
               <p className="font-semibold text-gray-800">
-                Upload cover image
+                Upload image
               </p>
 
               <p className="text-sm text-gray-500 mt-1">
